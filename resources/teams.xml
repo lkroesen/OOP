@@ -1,1 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
+	<competitie name="eredivisie", regio="Nederland">
+		<club name="Ajax" budget="12000000">
+			<Player name="Ricardo van Rhijn">
+			</Player>
+			<Player name="Joel Veltman">
+			</Player>
+			<Player name="Niklas Moisander">
+			</Player>
+			<Player name="Nicolai Boilesen">
+			</Player>
+			<Player name="Mike van der Hoorn">
+			</Player>
+			<Player name="Viktor Fischer">
+			</Player>
+			<Player name="Lerin Duarte">
+			</Player>
+			<Player name="Kolbeinn Sigporsson">
+			</Player>
+			<Player name="Davy Klaassen">
+			</Player>
+			<Player name="Ricardo Kishna">
+			</Player>
+			<Player name="Jairo Riedewald">
+			</Player>
+			<Player name="Lucas Andersen">
+			</Player>
+			<Player name="Robert Muric">
+			</Player>
+			<Player name="Arkadiusz Milik">
+			</Player>
+			<Player name="Lasse Schone">
+			</Player>
+			<Player name="Anwar el Ghazi">
+			</Player>
+			<Player name="Jasper Cillessen">
+			</Player>
+			<Player name="Kenny Tete">
+			</Player>
+			<Player name="Stefano Denswil">
+			</Player>
+			<Player name="Thulano Serero">
+			</Player>
+			<Player name="Nick Viergever">
+			</Player>
+			<Player name="Riechedly Bazoer">
+			</Player>
+		</club>
+		<club name="Feyenoord" budget="12000000">
+			<Player name="Erwin Mulder">
+			</Player>
+			<Player name="Luke Wilkshire">
+			</Player>
+			<Player name="Joris Mathijsen">
+			</Player>
+			<Player name="Terence Kongolo">
+			</Player>
+			<Player name="Jordy Clasie">
+			</Player>
+			<Player name="Jean-Paul Boetius">
+			</Player>
+			<Player name="Karim El Ahmadi">
+			</Player>
+			<Player name="Lex Immers">
+			</Player>
+			<Player name="Wesley Verhoek">
+			</Player>
+			<Player name="Ronald Graafland">
+			</Player>
+			<Player name="Bilal Basacikoglu">
+			</Player>
+			<Player name="Colin Kazim-Richards">
+			</Player>
+			<Player name="Kenneth Vermeer">
+			</Player>
+			<Player name="Elvis Manu">
+			</Player>
+			<Player name="Miquel Nelom">
+			</Player>
+			<Player name="Mitchell te Vrede">
+			</Player>
+			<Player name="Tonny Vilhena">
+			</Player>
+			<Player name="Sven van Beek">
+			</Player>
+			<Player name="Khalid Boulahrouz">
+			</Player>
+			<Player name="Matthew Steenvoorden">
+			</Player>
+			<Player name="Lucas Woudenberg">
+			</Player>
+			<Player name="Rick Karsdorp">
+			</Player>
+		</club>
+	</competitie>
