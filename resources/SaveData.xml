@@ -3,7 +3,6 @@
   <!--User specific data-->
   <user id="user">
     <team>team1</team>
-    <saldo>999999</saldo>
     <!--Opstelling op basis van rugnummers-->
     <opstelling>9-5-4-6-2-3-1-7-6-8-10</opstelling>
   </user>
