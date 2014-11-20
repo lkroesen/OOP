@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Save_Data>
+  <!--User specific data-->
+  <user id="user">
+    <team>team1</team>
+    <saldo>999999</saldo>
+    <!--Opstelling op basis van rugnummers-->
+    <opstelling>9-5-4-6-2-3-1-7-6-8-10</opstelling>
+  </user>
+  <!--Team specific data-->
+  <teams id="teams">
+    <!--Er zijn (minimaal) 18 teams-->
+    <!--Saldo's van teams, gescheiden door '-'-->
+    <saldo>1234-5467-8549-9651-5498-5478-4154-2154-5471-5876-3218-3184-5631-6541-6578-1876-1337</saldo>
+    <!--Speler specific data-->
+    <spelers>
+      <team1>TEAM_NAAM<!--overtredingen format: [speler rug nummer]-[overtreding]:[speler rug nummer]-[overtreding]-->
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<!--blessures format: [speler rug nummer]-[blessure tijd]:[speler rug nummer]-[blessure tijd] tijd is in dagen of weken-->
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team1>
+      <team2>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team2>
+      <team3>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team3>
+      <team4>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team4>
+      <team5>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team5>
+      <team6>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team6>
+      <team7>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team7>
+      <team8>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team8>
+      <team9>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team9>
+      <team10>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team10>
+      <team11>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team11>
+      <team12>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team12>
+      <team13>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team13>
+      <team14>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team14>
+      <team15>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team15>
+      <team16>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team16>
+      <team17>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team17>
+      <team18>TEAM_NAAM
+		<overtredingen>2-geel:4-rood:9-geel</overtredingen>
+		<blessures>2-7:4-8:9-2</blessures>
+	  </team18>
+    </spelers>
+  </teams>
+  <!--Huidige stand van de competitie data-->
+  <meta id="meta">
+    <!--eerst volgende wedstrijd op [wedstrijd_id]-->
+    <volgende_wedstrijd>003</volgende_wedstrijd>
+    <!--transfers format: [rugnummer orgineel]:[team]-[rugnummer nieuw]:[team]+[rugnummer orgineel]:[team]-[rugnummer nieuw]:[team]+-->
+    <transfers>12:2-2:8+9:5-3:1</transfers>
+    <!--uitslagen format: [week].[uitslag].[wedstrijd_id]+[week].[uitslag].[wedstrijd_id]-->
+    <uitslagen>1.2-2.001+1.0-1.002</uitslagen>
+  </meta>
+  <!--System specifieke data-->
+  <system id="sys">
+    <!--Laatste keer dat het spel geopend is [dd/MM/yyyy,hh:mm.ss]-->
+    <date>20/11/2014,15:15.15</date>
+    <!--Huidige week van het spel-->
+    <week>2</week>
+  </system>
+</Save_Data>
