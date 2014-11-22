@@ -46,11 +46,8 @@ public class Wedstrijd
 	 */
 	public Wedstrijd(String id, String Uitslag, Team Thuis, Team Ander, String Date)
 	{
-		ID = id;
+		this(id,Thuis,Ander,Date);
 		uitslag = Uitslag;
-		thuis = Thuis;
-		ander = Ander;
-		date = Date;
 	}
 	
 	/**
