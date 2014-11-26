@@ -1,5 +1,7 @@
 package xml;
 
+import model.Team;
+
 public class Wedstrijd 
 {
 	//Een ID zoals 002

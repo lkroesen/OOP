@@ -35,6 +35,12 @@ public class Transfer {
 	public int getDay() {
 		return day;
 	}
+
+	@Override
+	public String toString() {
+		return "Transfer [from=" + from + ", to=" + to + ", player=" + player
+				+ ", price=" + price + ", day=" + day + "]";
+	}
 	
 	
 

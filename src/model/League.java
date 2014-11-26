@@ -54,6 +54,12 @@ public class League {
 	public void addTeam(Team t) {
 		this.teams.add(t);
 	}
+	@Override
+	public String toString() {
+		return "League [id=" + id + ", name=" + name + ", country=" + country
+				+ ", teams=" + teams + "]";
+	}
+	
 	
 	
 	

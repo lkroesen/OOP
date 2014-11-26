@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game id="0" name="Ajax_career" currentday="0" currentteam="0">
+    <transfer id="0">
+        <from>
+            1
+        </from>
+        <to>
+            0
+        </to>
+        <price>
+            20000000
+        </price>
+        <player>
+            50
+        </player>
+        <day>
+            0
+        </day>
+    </transfer>
+</game>
+<league id="0" name="Eredivisie" country="Holland">
+    <team id="0" name="AFC Ajax">
+        <player id="0">
+            <name>
+                Joris
+            </name>
+            <surname>
+                Oudejans
+            </surname>
+            <jerseyNumber>
+                10
+            </jerseyNumber>
+            <type>
+                1
+            </type>
+            <offensiveRating>
+                99
+            </offensiveRating>
+            <defensiveRating>
+                99
+            </defensiveRating>
+            <staminaRating>
+                99
+            </staminaRating>
+            <teamId>
+                0
+            </teamId>
+            <status>
+                4
+            </status>
+            <price>
+                1000000000
+            </price>
+        </player>
+        <player id="1">
+            <name>
+                Dennis
+            </name>
+            <surname>
+                de Jong
+            </surname>
+            <jerseyNumber>
+                2
+            </jerseyNumber>
+            <type>
+                2
+            </type>
+            <offensiveRating>
+               30
+            </offensiveRating>
+            <defensiveRating>
+                65
+            </defensiveRating>
+            <staminaRating>
+                60
+            </staminaRating>
+            <teamId>
+                0
+            </teamId>
+            <status>
+                4
+            </status>
+            <price>
+                500000
+            </price>
+        </player>
+        <player id="2">
+            <name>
+                Laurens
+            </name>
+            <surname>
+                Kroesen
+            </surname>
+            <jerseyNumber>
+                14
+            </jerseyNumber>
+            <type>
+                0
+            </type>
+            <offensiveRating>
+               80
+            </offensiveRating>
+            <defensiveRating>
+                42
+            </defensiveRating>
+            <staminaRating>
+                69
+            </staminaRating>
+            <teamId>
+                0
+            </teamId>
+            <status>
+                4
+            </status>
+            <price>
+                15000000
+            </price>
+        </player>
+    </team>
+</league>

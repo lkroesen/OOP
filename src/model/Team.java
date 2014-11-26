@@ -46,6 +46,11 @@ public class Team {
 		this.name = name;
 		this.players = new ArrayList<Player>();
 	}
+	@Override
+	public String toString() {
+		return "Team [id=" + id + ", name=" + name + ", players=" + players
+				+ "]";
+	}
 	
 	
 

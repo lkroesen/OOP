@@ -136,6 +136,18 @@ public class Player {
 		this.price = price;
 	}
 
+	@Override
+	public String toString() {
+		return "Player [id=" + id + ", firstname=" + firstname + ", surname="
+				+ surname + ", jerseyNumber=" + jerseyNumber + ", type=" + type
+				+ ", offensiveRating=" + offensiveRating + ", defensiveRating="
+				+ defensiveRating + ", staminaRating=" + staminaRating
+				+ ", teamId=" + teamId + ", status=" + status + ", price="
+				+ price + "]";
+	}
+
 	// Getters and Setters end
+	
+	
 
 }

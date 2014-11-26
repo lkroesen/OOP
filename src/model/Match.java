@@ -86,6 +86,12 @@ public class Match {
 	public int getScoreAway() {
 		return scoreAway;
 	}
+
+	@Override
+	public String toString() {
+		return "Match [teamHome=" + teamHome + ", teamAway=" + teamAway
+				+ ", scoreHome=" + scoreHome + ", scoreAway=" + scoreAway + "]";
+	}
 	
 	
 	
