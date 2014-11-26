@@ -26,11 +26,39 @@ private int outfor;
 		return minute;
 	}
 
+	public int getOutfor() {
+		return outfor;
+	}
+	
 	@Override
 	public String toString() {
 		return "Event [player=" + player + ", type=" + type + ", minute="
 				+ minute + ", outfor=" + outfor + "]";
 	}
 	
-	
+	/**
+	 * Input an object to be checked
+	 * @param
+	 * Input an object
+	 * @return
+	 * Returns true or false
+	 */
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		
+		if (obj instanceof Event)
+		{
+			Event that = (Event) obj;
+			if (		this.getMinute() 	== 	that.getMinute() 
+					&&	this.getPlayer() 	== 	that.getPlayer()
+					&&	this.getType() 		==	that.getType()
+					&&	this.getOutfor()	==	that.getOutfor())
+				return true;
+		}
+		
+		return false;
+		
+	}
 }
