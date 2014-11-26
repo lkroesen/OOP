@@ -33,6 +33,7 @@ public class XML {
 		factory.setIgnoringElementContentWhitespace(true);
 		builder = factory.newDocumentBuilder(); // Initialize builder
 		
+		//enter
 	}
 	
 	public Game parseGame() throws SAXException, IOException, Exception {		
