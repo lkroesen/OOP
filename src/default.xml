@@ -9,6 +9,9 @@
 		        <minute>
 		            22
 		        </minute>
+		        <outfor>
+		            1
+		        </outfor>
 		    </event>
 		    <event player="0">
 		        <type>
@@ -17,6 +20,9 @@
 		        <minute>
 		            10
 		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
 		    </event>
 		    <event player="0">
 		        <type>
@@ -25,6 +31,9 @@
 		        <minute>
 		            14
 		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
 		    </event>
 		    <event player="0">
 		        <type>
@@ -33,6 +42,9 @@
 		        <minute>
 		            15
 		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
 		    </event>
 		    <event player="0">
 		        <type>
@@ -41,6 +53,9 @@
 		        <minute>
 		            16
 		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
 		    </event>
 		    <event player="0">
 		        <type>
@@ -49,6 +64,9 @@
 		        <minute>
 		            23
 		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
 		    </event>
 		    <event player="0">
 		        <type>
@@ -57,6 +75,9 @@
 		        <minute>
 		            26
 		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
 		    </event>
 		    <event player="0">
 		        <type>
@@ -65,6 +86,9 @@
 		        <minute>
 		            30
 		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
 		    </event>
 		    <event player="0">
 		        <type>
@@ -73,6 +97,9 @@
 		        <minute>
 		            33
 		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
 		    </event>
 		</team_home>
 		<team_away id="0">
@@ -95,7 +122,7 @@
         </day>
     </transfer>
     <league id="0" name="Eredivisie" country="Holland">
-	    <team id="0" name="AFC Ajax">
+	    <team id="0" name="AFC Ajax" formation="433">
 	        <player id="0">
 	            <name>
 	                Joris
@@ -109,6 +136,9 @@
 	            <type>
 	                1
 	            </type>
+	            <position>
+	                8
+	            </position>
 	            <offensiveRating>
 	                99
 	            </offensiveRating>
@@ -121,9 +151,6 @@
 	            <teamId>
 	                0
 	            </teamId>
-	            <status>
-	                4
-	            </status>
 	            <price>
 	                1000000000
 	            </price>
@@ -141,6 +168,9 @@
 	            <type>
 	                2
 	            </type>
+	            <position>
+	                3
+	            </position>
 	            <offensiveRating>
 	               30
 	            </offensiveRating>
@@ -153,9 +183,6 @@
 	            <teamId>
 	                0
 	            </teamId>
-	            <status>
-	                4
-	            </status>
 	            <price>
 	                500000
 	            </price>
@@ -173,6 +200,9 @@
 	            <type>
 	                0
 	            </type>
+	            <position>
+	                10
+	            </position>
 	            <offensiveRating>
 	               80
 	            </offensiveRating>
@@ -185,9 +215,6 @@
 	            <teamId>
 	                0
 	            </teamId>
-	            <status>
-	                4
-	            </status>
 	            <price>
 	                15000000
 	            </price>

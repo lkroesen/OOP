@@ -7,6 +7,7 @@ public class Player {
 	private String surname;
 	private byte number;
 	private PlayerType type;
+	private int position;
 	private byte offensiveRating;
 	private byte defensiveRating;
 	private byte stamina;
@@ -29,7 +30,7 @@ public class Player {
 	 * @param price
 	 */
 	public Player(int id, String firstname, String surname, byte jerseyNumber,
-			PlayerType type, byte offensiveScore, byte defensiveScore,
+			PlayerType type, int position, byte offensiveScore, byte defensiveScore,
 			byte staminaScore, int teamId, int price) {
 		super();
 		this.id = id;
@@ -42,6 +43,7 @@ public class Player {
 		this.stamina = staminaScore;
 		this.teamId = teamId;
 		this.price = price;
+		this.position = position;
 	}
 
 	// Getters and Setters

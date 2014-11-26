@@ -66,6 +66,7 @@ public class XML {
 					// Get home team data
 					NodeList homeData = match.getElementsByTagName("team_home");
 					
+					
 					game.addMatch(new Match(mid, day));
 					
 				}
@@ -124,8 +125,9 @@ public class XML {
 							String pname = getChildValue(player, "name");
 							String surname = getChildValue(player, "surname");
 							byte number = Byte.parseByte(getChildValue(player, "number"));
-							
+
 							int player_type = Integer.parseInt(getChildValue(player, "type"));
+							int player_position = Integer.parseInt(getChildValue(player, "position"));
 							byte rating_offensive = Byte.parseByte(getChildValue(player, "offensiveRating"));
 							byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
 							byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
@@ -135,7 +137,7 @@ public class XML {
 							
 							PlayerType playerType = PlayerType.values()[player_type]; // Convert to enum counterparts
 							
-							team.addPlayer(new Player(pid, pname, surname, number, playerType, rating_offensive, rating_def, stamina, team_id, price));
+							team.addPlayer(new Player(pid, pname, surname, number, playerType, player_position, rating_offensive, rating_def, stamina, team_id, price));
 						}
 						
 						leagueObject.addTeam(team);
