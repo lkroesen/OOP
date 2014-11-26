@@ -6,7 +6,7 @@ public class Player {
 	private String firstname;
 	private String surname;
 	private byte number;
-	private PlayerType type;
+	private int type;
 	private int position;
 	private byte offensiveRating;
 	private byte defensiveRating;
@@ -30,7 +30,7 @@ public class Player {
 	 * @param price
 	 */
 	public Player(int id, String firstname, String surname, byte jerseyNumber,
-			PlayerType type, int position, byte offensiveScore, byte defensiveScore,
+			int type, int position, byte offensiveScore, byte defensiveScore,
 			byte staminaScore, int teamId, int price) {
 		super();
 		this.id = id;
@@ -80,11 +80,11 @@ public class Player {
 		this.number = jerseyNumber;
 	}
 
-	public PlayerType getType() {
+	public int getType() {
 		return type;
 	}
 
-	public void setType(PlayerType type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 

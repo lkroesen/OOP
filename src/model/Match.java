@@ -19,11 +19,17 @@ private int team_away;
 		
 		this.team_home = team_home;
 		this.team_away = team_away;
+
+		events_home = new ArrayList<Event>();
+		events_away = new ArrayList<Event>();
 	}
 	
 	public Match(int id, int day){
 		this.id = id;
 		this.day = day;
+
+		events_home = new ArrayList<Event>();
+		events_away = new ArrayList<Event>();
 	}
 	
 	public void addEventHome(Event e){

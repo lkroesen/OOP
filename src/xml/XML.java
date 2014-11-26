@@ -13,11 +13,11 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import model.Event;
 import model.Game;
 import model.League;
 import model.Match;
 import model.Player;
-import model.PlayerType;
 import model.Team;
 import model.Transfer;
 
@@ -63,11 +63,36 @@ public class XML {
 					int mid = Integer.parseInt(getAttribute(match.getAttributes(), "id"));
 					int day = Integer.parseInt(getAttribute(match.getAttributes(), "day"));
 					
+					Match matchObject = new Match(mid,day);
+					
 					// Get home team data
 					NodeList homeData = match.getElementsByTagName("team_home");
+					for (int a = 0; a < homeData.getLength(); a++) {
+						Node homeNode = homeData.item(a);
+						if(homeNode.getNodeType() == Node.ELEMENT_NODE){
+							Element home = (Element)homeNode;
+							
+							int team = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
+							
+							NodeList homeEvents = home.getElementsByTagName("event");
+							for(int b = 0; b < homeEvents.getLength(); b++){
+								Node eventNode = homeEvents.item(b);
+								if(eventNode.getNodeType() == Node.ELEMENT_NODE){
+									Element event = (Element)eventNode;
+									
+									int player = Integer.parseInt(getAttribute(event.getAttributes(), "player"));
+									
+									int type = Integer.parseInt(getChildValue(event, "type"));
+									int minute = Integer.parseInt(getChildValue(event, "minute"));
+									int outfor = Integer.parseInt(getChildValue(event, "outfor"));
+									
+									matchObject.addEventHome(new Event(player, type, minute, outfor));
+								}
+							}
+						}
+					}
 					
-					
-					game.addMatch(new Match(mid, day));
+					game.addMatch(matchObject);
 					
 				}
 			}
@@ -135,9 +160,7 @@ public class XML {
 							int team_id = Integer.parseInt(getChildValue(player, "teamId"));
 							int price = Integer.parseInt(getChildValue(player, "price"));
 							
-							PlayerType playerType = PlayerType.values()[player_type]; // Convert to enum counterparts
-							
-							team.addPlayer(new Player(pid, pname, surname, number, playerType, player_position, rating_offensive, rating_def, stamina, team_id, price));
+							team.addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, team_id, price));
 						}
 						
 						leagueObject.addTeam(team);
