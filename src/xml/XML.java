@@ -15,8 +15,8 @@ import org.xml.sax.SAXException;
 
 import model.Game;
 import model.League;
+import model.Match;
 import model.Player;
-import model.PlayerStatus;
 import model.PlayerType;
 import model.Team;
 import model.Transfer;
@@ -52,12 +52,33 @@ public class XML {
 			
 			game = new Game(id, name, currentDay, currentTeam);
 			
+			// Get match data
+			
+			NodeList matchData = gameNode.getElementsByTagName("match");
+			for (int i = 0; i < matchData.getLength(); i++){
+				Node matchNode = matchData.item(i);
+				if (matchNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element match = (Element)matchNode;
+
+					int mid = Integer.parseInt(getAttribute(match.getAttributes(), "id"));
+					int day = Integer.parseInt(getAttribute(match.getAttributes(), "day"));
+					
+					// Get home team data
+					NodeList homeData = match.getElementsByTagName("team_home");
+					
+					game.addMatch(new Match(mid, day));
+					
+				}
+			}
+			
 			// Get transfer data			
 			NodeList transferData = gameNode.getElementsByTagName("transfer");
 			for (int i = 0; i < transferData.getLength(); i++) {
 				Node transferNode = transferData.item(i);
 				if (transferNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element transfer = (Element)transferNode;
+					
+					int tid = Integer.parseInt(getAttribute(transfer.getAttributes(), "id"));
 	
 					int from = Integer.parseInt(getChildValue(transfer, "from"));
 					int to = Integer.parseInt(getChildValue(transfer, "to"));
@@ -65,7 +86,7 @@ public class XML {
 					int price = Integer.parseInt(getChildValue(transfer, "price"));
 					int day = Integer.parseInt(getChildValue(transfer, "day"));
 					
-					game.addTransfer(new Transfer(from, to, player, price, day));
+					game.addTransfer(new Transfer(tid, from, to, player, price, day));
 				}
 			}
 			
@@ -109,14 +130,12 @@ public class XML {
 							byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
 							byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
 							
-							int player_status = Integer.parseInt(getChildValue(player, "status"));
 							int team_id = Integer.parseInt(getChildValue(player, "teamId"));
 							int price = Integer.parseInt(getChildValue(player, "price"));
 							
 							PlayerType playerType = PlayerType.values()[player_type]; // Convert to enum counterparts
-							PlayerStatus playerStatus = PlayerStatus.values()[player_status];
 							
-							team.addPlayer(new Player(pid, pname, surname, number, playerType, rating_offensive, rating_def, stamina, team_id, playerStatus, price));
+							team.addPlayer(new Player(pid, pname, surname, number, playerType, rating_offensive, rating_def, stamina, team_id, price));
 						}
 						
 						leagueObject.addTeam(team);

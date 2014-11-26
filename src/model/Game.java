@@ -17,6 +17,7 @@ public class Game {
 	private int currentTeam;
 	private ArrayList<League> leagues;
 	private ArrayList<Transfer> transfers;
+	private ArrayList<Match> matches;
 
 	public Game(int id, String name, int currentDay, int currentTeam) {
 		super();
@@ -27,6 +28,7 @@ public class Game {
 		
 		leagues = new ArrayList<League>();
 		transfers = new ArrayList<Transfer>();
+		matches = new ArrayList<Match>();
 	}
 
 	public String getName() {
@@ -60,6 +62,10 @@ public class Game {
 	public void addTransfer(Transfer t) {
 		this.transfers.add(t);
 	}
+	
+	public void addMatch(Match m) {
+		this.matches.add(m);
+	}
 
 	public int getId() {
 		return id;
@@ -69,9 +75,10 @@ public class Game {
 	public String toString() {
 		return "Game [id=" + id + ", name=" + name + ", currentDay="
 				+ currentDay + ", currentTeam=" + currentTeam + ", leagues="
-				+ leagues + ", transfers=" + transfers
+				+ leagues + ", transfers=" + transfers + ", matches=" + matches
 				+ "]";
 	}
+	
 	
 	
 }

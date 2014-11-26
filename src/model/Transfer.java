@@ -2,18 +2,25 @@ package model;
 
 public class Transfer {
 	
+	private int id;
+	
 	private int from;
 	private int to;
 	private int player;
 	private int price;
 	private int day;
 
-	public Transfer(int from, int to, int player, int price, int day) {
+	public Transfer(int id, int from, int to, int player, int price, int day) {
+		this.id = id;
 		this.from = from;
 		this.to = to;
 		this.player = player;
 		this.price = price;
 		this.day = day;
+	}
+	
+	public int getId(){
+		return id;
 	}
 
 	public int getFrom() {
@@ -38,7 +45,7 @@ public class Transfer {
 
 	@Override
 	public String toString() {
-		return "Transfer [from=" + from + ", to=" + to + ", player=" + player
+		return "Transfer [id=" + id +", from=" + from + ", to=" + to + ", player=" + player
 				+ ", price=" + price + ", day=" + day + "]";
 	}
 	

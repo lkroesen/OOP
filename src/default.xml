@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game id="0" name="Ajax_career" currentday="0" currentteam="0">
+    <match id="0" day="1">
+        <team_home id="0">
+		    <event player="2">
+		        <type>
+		            1
+		        </type>
+		        <minute>
+		            22
+		        </minute>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            10
+		        </minute>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            14
+		        </minute>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            15
+		        </minute>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            16
+		        </minute>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            23
+		        </minute>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            26
+		        </minute>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            30
+		        </minute>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            33
+		        </minute>
+		    </event>
+		</team_home>
+		<team_away id="0">
+		    
+		</team_away>
+    </match>
     <transfer id="0">
         <from>1</from>
         <to>

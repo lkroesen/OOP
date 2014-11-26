@@ -11,7 +11,6 @@ public class Player {
 	private byte defensiveRating;
 	private byte stamina;
 	private int teamId;
-	private PlayerStatus status;
 	private int price;
 
 	/**
@@ -31,7 +30,7 @@ public class Player {
 	 */
 	public Player(int id, String firstname, String surname, byte jerseyNumber,
 			PlayerType type, byte offensiveScore, byte defensiveScore,
-			byte staminaScore, int teamId, PlayerStatus status, int price) {
+			byte staminaScore, int teamId, int price) {
 		super();
 		this.id = id;
 		this.firstname = firstname;
@@ -42,7 +41,6 @@ public class Player {
 		this.defensiveRating = defensiveScore;
 		this.stamina = staminaScore;
 		this.teamId = teamId;
-		this.status = status;
 		this.price = price;
 	}
 
@@ -120,14 +118,6 @@ public class Player {
 		this.teamId = teamId;
 	}
 
-	public PlayerStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(PlayerStatus status) {
-		this.status = status;
-	}
-
 	public int getPrice() {
 		return price;
 	}
@@ -142,7 +132,7 @@ public class Player {
 				+ surname + ", jerseyNumber=" + number + ", type=" + type
 				+ ", offensiveRating=" + offensiveRating + ", defensiveRating="
 				+ defensiveRating + ", staminaRating=" + stamina
-				+ ", teamId=" + teamId + ", status=" + status + ", price="
+				+ ", teamId=" + teamId + ", price="
 				+ price + "]";
 	}
 
