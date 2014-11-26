@@ -1,5 +1,6 @@
 *.pydevproject
 .metadata
+.metadata/
 .gradle
 bin/
 tmp/
@@ -28,3 +29,6 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
+
+# Eclipse System Temp Files
+RemoteSystemsTempFiles/
