@@ -16,23 +16,7 @@ public class Game {
 	private int currentDay;
 	private int currentTeam;
 	private ArrayList<League> leagues;
-	private ArrayList<Match> matches;
 	private ArrayList<Transfer> transfers;
-
-	public int calcPoints(Team team) {
-		int points = 0;
-		for (int i = 0; i < matches.size(); i++) {
-			if (team.equals(matches.get(i).getWinningTeam())) {
-				points = points + 3;
-			}
-			if (team.equals(matches.get(i).getTeamAway())
-					|| team.equals(matches.get(i).getTeamHome())
-					&& matches.get(i).getResult() == MatchResult.TIE) {
-				points++;
-			}
-		}
-		return points;
-	}
 
 	public Game(int id, String name, int currentDay, int currentTeam) {
 		super();
@@ -41,7 +25,6 @@ public class Game {
 		this.currentDay = currentDay;
 		this.currentTeam = currentTeam;
 		
-		matches = new ArrayList<Match>();
 		leagues = new ArrayList<League>();
 		transfers = new ArrayList<Transfer>();
 	}
@@ -78,14 +61,6 @@ public class Game {
 		this.transfers.add(t);
 	}
 
-	public ArrayList<Match> getMatches() {
-		return matches;
-	}
-
-	public void setMatches(ArrayList<Match> matches) {
-		this.matches = matches;
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -94,7 +69,7 @@ public class Game {
 	public String toString() {
 		return "Game [id=" + id + ", name=" + name + ", currentDay="
 				+ currentDay + ", currentTeam=" + currentTeam + ", leagues="
-				+ leagues + ", matches=" + matches + ", transfers=" + transfers
+				+ leagues + ", transfers=" + transfers
 				+ "]";
 	}
 	

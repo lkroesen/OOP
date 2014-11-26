@@ -24,9 +24,9 @@
 	            <surname>
 	                Oudejans
 	            </surname>
-	            <jerseyNumber>
+	            <number>
 	                10
-	            </jerseyNumber>
+	            </number>
 	            <type>
 	                1
 	            </type>
@@ -36,9 +36,9 @@
 	            <defensiveRating>
 	                99
 	            </defensiveRating>
-	            <staminaRating>
+	            <stamina>
 	                99
-	            </staminaRating>
+	            </stamina>
 	            <teamId>
 	                0
 	            </teamId>
@@ -56,9 +56,9 @@
 	            <surname>
 	                de Jong
 	            </surname>
-	            <jerseyNumber>
+	            <number>
 	                2
-	            </jerseyNumber>
+	            </number>
 	            <type>
 	                2
 	            </type>
@@ -68,9 +68,9 @@
 	            <defensiveRating>
 	                65
 	            </defensiveRating>
-	            <staminaRating>
+	            <stamina>
 	                60
-	            </staminaRating>
+	            </stamina>
 	            <teamId>
 	                0
 	            </teamId>
@@ -88,9 +88,9 @@
 	            <surname>
 	                Kroesen
 	            </surname>
-	            <jerseyNumber>
+	            <number>
 	                14
-	            </jerseyNumber>
+	            </number>
 	            <type>
 	                0
 	            </type>
@@ -100,9 +100,9 @@
 	            <defensiveRating>
 	                42
 	            </defensiveRating>
-	            <staminaRating>
+	            <stamina>
 	                69
-	            </staminaRating>
+	            </stamina>
 	            <teamId>
 	                0
 	            </teamId>

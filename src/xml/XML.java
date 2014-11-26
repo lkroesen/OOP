@@ -41,8 +41,6 @@ public class XML {
 		
 		Game game = null;
 		
-		// Get game data
-		//NodeList gameNodeData = document.getElementsByTagName("game");
 	    Element gameNode = document.getDocumentElement();
 
 		if (gameNode != null) { // Check for game settings data
@@ -104,12 +102,12 @@ public class XML {
 							int pid = Integer.parseInt(getAttribute(player.getAttributes(), "id"));
 							String pname = getChildValue(player, "name");
 							String surname = getChildValue(player, "surname");
-							byte number = Byte.parseByte(getChildValue(player, "jerseyNumber"));
+							byte number = Byte.parseByte(getChildValue(player, "number"));
 							
 							int player_type = Integer.parseInt(getChildValue(player, "type"));
-							short rating_offensive = Short.parseShort(getChildValue(player, "offensiveRating"));
-							short rating_def = Short.parseShort(getChildValue(player, "defensiveRating"));
-							short rating_stamina = Short.parseShort(getChildValue(player, "staminaRating"));
+							byte rating_offensive = Byte.parseByte(getChildValue(player, "offensiveRating"));
+							byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
+							byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
 							
 							int player_status = Integer.parseInt(getChildValue(player, "status"));
 							int team_id = Integer.parseInt(getChildValue(player, "teamId"));
@@ -118,7 +116,7 @@ public class XML {
 							PlayerType playerType = PlayerType.values()[player_type]; // Convert to enum counterparts
 							PlayerStatus playerStatus = PlayerStatus.values()[player_status];
 							
-							team.addPlayer(new Player(pid, pname, surname, number, playerType, rating_offensive, rating_def, rating_stamina, team_id, playerStatus, price));
+							team.addPlayer(new Player(pid, pname, surname, number, playerType, rating_offensive, rating_def, stamina, team_id, playerStatus, price));
 						}
 						
 						leagueObject.addTeam(team);
