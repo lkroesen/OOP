@@ -10,12 +10,12 @@ private int day;
 ArrayList<Event> events_home;
 ArrayList<Event> events_away;
 
-private int team_home;
-private int team_away;
+private Team team_home;
+private Team team_away;
 
 private String result;
 	
-	public Match(int id, int day, int team_home, int team_away) {
+	public Match(int id, int day, Team team_home, Team team_away) {
 		this.id = id;
 		this.day = day;
 		
@@ -58,19 +58,19 @@ private String result;
 		return events_away;
 	}
 
-	public int getTeam_home() {
+	public Team getTeam_home() {
 		return team_home;
 	}
 
-	public int getTeam_away() {
+	public Team getTeam_away() {
 		return team_away;
 	}
 
-	public void setTeam_home(int team_home) {
+	public void setTeam_home(Team team_home) {
 		this.team_home = team_home;
 	}
 
-	public void setTeam_away(int team_away) {
+	public void setTeam_away(Team team_away) {
 		this.team_away = team_away;
 	}
 

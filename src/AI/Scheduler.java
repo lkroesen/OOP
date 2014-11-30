@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Random;
 
 import model.League;
+import model.Team;
 
 // Algorithm to schedule all teams in matches at the start of the game
 public class Scheduler 
@@ -69,8 +70,10 @@ public class Scheduler
 		for (int b = 0; b < ((TeamSize)/2); b++)
 			System.out.println(HomeTeam[b] + " vs " + OutTeam[b]);
 		
-		// keep track of which team played vs which
+		ArrayList<Team> Team = new ArrayList<Team>();
 		
+		Team.add(league.getTeamByName(HomeTeam[0]));
+
 		/*	TODO:
 		 * 	Rotate matches around using a "clock" method which means,
 		 * 	we keep 1 team at it's original position and rotate all teams around

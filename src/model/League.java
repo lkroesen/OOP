@@ -61,7 +61,23 @@ public class League {
 				+ ", teams=" + teams + "]";
 	}
 	
+	public Team getTeamById(int id)
+	{
+		for(int c = 0; c < this.teams.size(); c++)
+		{
+			if (id == this.teams.get(c).getId())
+				return this.teams.get(c);
+		}
+		return teams.get(0);
+	}
 	
-	
-	
+	public Team getTeamByName(String name)
+	{
+		for(int c = 0; c < this.teams.size(); c++)
+		{
+			if (name.equals(this.teams.get(c).getName()))
+				return this.teams.get(c);
+		}
+		return teams.get(0);
+	}
 }
