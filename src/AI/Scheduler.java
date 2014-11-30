@@ -177,8 +177,11 @@ public class Scheduler
 	{
 		int[] New_Order = new int[18];
 		
+		// Exception
 		New_Order[0] = Old_Order[0];
 		New_Order[17] = Old_Order[8];
+		
+		// Linear
 		New_Order[8] = Old_Order[7];
 		New_Order[7] = Old_Order[6];
 		New_Order[6] = Old_Order[5];
@@ -186,7 +189,11 @@ public class Scheduler
 		New_Order[4] = Old_Order[3];
 		New_Order[3] = Old_Order[2];
 		New_Order[2] = Old_Order[1];
+		
+		// Exception
 		New_Order[1] = Old_Order[9];
+		
+		// Linear
 		New_Order[9] = Old_Order[10];
 		New_Order[10] = Old_Order[11];
 		New_Order[11] = Old_Order[12];
