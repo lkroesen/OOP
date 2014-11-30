@@ -3,12 +3,13 @@
 .root {
 	-fx-spacing: 30;
 	-fx-background-color:#BDBDBD;
-	-fx-background-image: url(latest.jpg);
-	-fx-background-size: 500px 500px;
+	-fx-background-image: url(fmimage.jpg);
 	-fx-background-size: cover;
 	-fx-background-repeat: no-repeat;
 	-fx-padding: 10;
 }
+
+
 
 .mycustomLabel {
 	-fx-font-size: 40px;
