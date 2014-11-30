@@ -12,6 +12,8 @@ ArrayList<Event> events_away;
 
 private int team_home;
 private int team_away;
+
+private String result;
 	
 	public Match(int id, int day, int team_home, int team_away) {
 		this.id = id;
@@ -72,6 +74,15 @@ private int team_away;
 		this.team_away = team_away;
 	}
 
+	public void setResult(String re){
+		this.result = re;
+	}
+	
+	public String getResult()
+	{
+		return result;
+	}
+	
 	@Override
 	public String toString() {
 		return "Match [id=" + id + ", day=" + day + ", events_home="
