@@ -13,6 +13,7 @@ public class League {
 	private String name;
 	private String country;
 	private ArrayList<Team> teams;
+	
 	public League(int id, String name, String country, ArrayList<Team> teams) {
 		super();
 		this.id = id;
