@@ -1,8 +1,6 @@
 package AI;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Random;
 
 import model.League;
@@ -61,10 +59,9 @@ public class Scheduler
 		
 		
 		
-		while (week < TeamSize)
+		while (week < TeamSize-1)
 		{
 			// initial order
-			System.out.print("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
 			if (week == 0)
 				s.add(PlayRoundGenerator(Team, Order, TeamSize, week));
 			else
@@ -72,13 +69,16 @@ public class Scheduler
 				Order = ClockShuffle(Order, TeamSize);
 				s.add(PlayRoundGenerator(Team, Order, TeamSize, week));
 			}
+			
+			System.out.println("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
+			print(TeamSize, league, Order);
+			
 			week++;
 			
 			//failsafe
-			if (week == 18)
+			if (week == (TeamSize-1))
 				break;
-			System.out.println();
-			print(TeamSize, league, Order);
+
 			
 		}
 		
@@ -89,22 +89,29 @@ public class Scheduler
 		Order = OrderRandomizer(TeamSize, Order);
 		
 		// Weeks 18/34
-		while (week < 35)
+		while (week < ((2*TeamSize)-2))
 		{
 			// inital order
-			if (week == 18)
+			if (week == (TeamSize-1))
 				s.add(PlayRoundGenerator(Team, Order, TeamSize, week));
 			else
 			{
 				Order = ClockShuffle(Order, TeamSize);
 				s.add(PlayRoundGenerator(Team, Order, TeamSize, week));
 			}
+			
+			System.out.println("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
+			print(TeamSize, league, Order);
+			
 			week++;
 			
 			//failsafe
-			if (week == 36)
+			if (week == ((2*TeamSize)-2))
 				break;
+			
+
 		}
+
 		
 		/*	TODO:
 		 * 	Rotate matches around using a "clock" method which means,
@@ -306,7 +313,16 @@ public class Scheduler
 		}
 		
 		for (int b = 0; b < ((TeamSize)/2); b++)
-			System.out.println(HomeTeam[b] + " vs " + OutTeam[b]);
+		{
+			if (b == 0)
+				System.out.println("Friday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+			if (b > 0 && b < 5)
+				System.out.println("Saturday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+			if (b > 4)
+				System.out.println("Sunday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+			
+		}
+		
 		
 	}
 }
