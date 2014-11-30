@@ -22,7 +22,7 @@ public class Main {
 		ArrayList<Team> teams = new ArrayList<Team>();
 		for (int c = 0; c < 18; c++){String a = "team " + c;Team team = new Team(c, a);teams.add(c, team);}
 		League league = new League(0, "Eredivisie", "Nederland", teams);
-		Scheduler.Scheduler(league);
+		Scheduler.scheduler(league).toString();
 		// Do not touch this please </START>
 		
 		XML xml = new XML("default.xml");

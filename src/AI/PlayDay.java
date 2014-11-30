@@ -10,20 +10,21 @@ public class PlayDay
 	private int Day;
 	private int Month;
 	private int Year;
-	private String Result;
 	
 	public PlayDay()
-	{
-		
-	}
+	{}
 	
-	public PlayDay(ArrayList<Match> matches, int day, int month, int year, String result)
+	public PlayDay(ArrayList<Match> matches)
 	{
 		Matches = matches;
+	}
+	
+	public PlayDay(ArrayList<Match> matches, int day, int month, int year)
+	{
+		this(matches);
 		Day = day;
 		Month = month;
 		Year = year;
-		Result = result;
 	}
 	
 	public ArrayList<Match> getMatches() {
@@ -49,11 +50,5 @@ public class PlayDay
 	}
 	public void setYear(int year) {
 		Year = year;
-	}
-	public String getResult() {
-		return Result;
-	}
-	public void setResult(String result) {
-		this.Result = result;
 	}
 }

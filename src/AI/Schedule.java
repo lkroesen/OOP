@@ -4,13 +4,14 @@ import java.util.ArrayList;
 
 public class Schedule {
 
-	private ArrayList<PlayRound> Schedule;
+	private ArrayList<PlayRound> S = new ArrayList<PlayRound>();
 	
 	public Schedule()
 	{}
 		
 	public void add(PlayRound PR)
 	{
-		Schedule.add(PR);
+		S.add(PR);
 	}
+	
 }

@@ -12,6 +12,14 @@ public class PlayRound {
 		RoundNumber = roundnumber;
 	}
 	
+	public PlayRound(PlayDay friday, PlayDay saturday, PlayDay sunday, int RN)
+	{
+		this(RN);
+		Friday = friday;
+		Saturday = saturday;
+		Sunday = sunday;
+	}
+	
 	public PlayDay getFriday() {
 		return Friday;
 	}
