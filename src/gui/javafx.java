@@ -1,7 +1,8 @@
 package gui;
-import java.io.File;
 
 //unused imports are unused
+import java.io.File;
+import model.Team;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
@@ -35,7 +36,7 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame;
+	Button newgame, loadgame, mute;
 	
 	//all buttons for teams to be made with xml-parser
 	Button ADO = new Button ("ADO");
@@ -66,6 +67,7 @@ public class javafx extends Application{
 
 	@Override
 	public void start(Stage stage) throws Exception {
+		
 		//song name in file form
 		File file = new File("C:/Users/Denver/oop/OOP/bin/fmsong.mp3");
 		
@@ -107,6 +109,7 @@ public class javafx extends Application{
 		lbtext = new Label("Footballmanager");
 		newgame = new Button("new game");
 		loadgame = new Button("load game");
+		mute = new Button("Mute/resume");
 		
 		lbtext.setEffect(reflection);
 		
@@ -157,9 +160,9 @@ public class javafx extends Application{
 					public void handle(ActionEvent arg0){
 						//sets the old stage back possible error with calling new game screen again(testing)
 						VBox back = root;
-						back.getChildren().removeAll(newgame,loadgame);
+						back.getChildren().removeAll(newgame,loadgame,mute);
 						lbtext.setText("Footballmanager");
-						back.getChildren().addAll(lbtext,newgame,loadgame);
+						back.getChildren().addAll(lbtext,newgame,loadgame,mute);
 						stage.setScene(scene);
 					}
 					
@@ -199,18 +202,32 @@ public class javafx extends Application{
 					public void handle(ActionEvent arg0){
 						//sets the old stage see back button from new game
 						VBox backlg = root;
-						backlg.getChildren().removeAll(newgame,loadgame);
+						backlg.getChildren().removeAll(newgame,loadgame,mute);
 						lbtext.setText("Footballmanager");
-						backlg.getChildren().addAll(lbtext,newgame,loadgame);
+						backlg.getChildren().addAll(lbtext,newgame,loadgame,mute);
 						stage.setScene(scene);
 					}
 					
 				});
 			}
 			
+			
+		});
+		
+		//actions for mute or resume music
+		mute.setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				if(audio.getVolume()==0){
+					audio.setVolume(100);
+				}
+				else{
+					audio.setVolume(0);
+				}
+			}
 		});
 		//first box getting children 
-		root.getChildren().addAll(lbtext, newgame, loadgame);
-		
+		root.getChildren().addAll(lbtext, newgame, loadgame, mute);
 	}
 }
