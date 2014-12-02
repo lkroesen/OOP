@@ -152,30 +152,29 @@ public class javafx extends Application{
 				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);
 				vbBack.getChildren().addAll(Back);
 				start.getChildren().addAll(teams1,teams2);
-				VBox toptext = new VBox();
-				toptext.getChildren().addAll(lbtext,start,vbBack);
-				Scene ng = new Scene(toptext,500,500);
+				VBox ngtext = new VBox();
+				ngtext.getChildren().addAll(lbtext,start,vbBack);
+				Scene ng = new Scene(ngtext,500,500);
 				ng.getStylesheets().add("mystyle.css");
 				stage.setScene(ng);
-				
-				//back button actions
-				Back.setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						//sets the old stage back possible error with calling new game screen again(testing)
-						VBox back = root;
-						back.getChildren().removeAll(newgame,loadgame,mute);
-						lbtext.setText("Footballmanager");
-						back.getChildren().addAll(lbtext,newgame,loadgame,mute);
-						stage.setScene(scene);
-					}
-					
-				});
-				
+				}
+			
+		});
+		//back button actions
+		Back.setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				//sets the old stage back possible error with calling new game screen again(testing)
+				VBox back = root;
+				back.getChildren().removeAll(newgame,loadgame,mute);
+				lbtext.setText("Footballmanager");
+				back.getChildren().addAll(lbtext,newgame,loadgame,mute);
+				stage.setScene(scene);
 			}
 			
 		});
+		
 		//actions for the load game button
 		loadgame.setOnAction(new EventHandler<ActionEvent>(){
 			
@@ -192,30 +191,13 @@ public class javafx extends Application{
 				Button save = new Button ("save 1");
 				VBox lgtext = new VBox();
 				VBox backpos = new VBox();
-				Button Backlg = new Button ("Back");
 				backpos.setAlignment(Pos.BOTTOM_RIGHT);
-				backpos.getChildren().add(Backlg);
+				backpos.getChildren().add(Back);
 				lgtext.getChildren().addAll(lbtext,save,backpos);
 				lgtext.getStylesheets().add("mystyle.css");
 				Scene lg = new Scene(lgtext,500,500);
 				stage.setScene(lg);
-				
-				//back button actions
-				Backlg.setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						//sets the old stage see back button from new game
-						VBox backlg = root;
-						backlg.getChildren().removeAll(newgame,loadgame,mute);
-						lbtext.setText("Footballmanager");
-						backlg.getChildren().addAll(lbtext,newgame,loadgame,mute);
-						stage.setScene(scene);
-					}
-					
-				});
-			}
-			
+				}
 			
 		});
 		
