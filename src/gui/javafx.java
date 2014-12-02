@@ -2,6 +2,7 @@ package gui;
 
 //unused imports are unused
 import java.io.File;
+import java.util.Scanner;
 import model.Team;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
@@ -38,26 +39,11 @@ public class javafx extends Application{
 	Label lbtext;
 	Button newgame, loadgame, mute;
 	
-	//all buttons for teams to be made with xml-parser
-	Button ADO = new Button ("ADO");
-	Button Ajax = new Button ("Ajax");
-	Button AZ = new Button ("AZ");
-	Button Cambuur = new Button ("Cambuur");
-	Button Dordrecht = new Button ("Dordrecht");
-	Button Excelsior = new Button ("Excelsior");
-	Button Feyenoord = new Button ("Feyenoord");
-	Button GAEagles = new Button ("G.A. Eagles");
-	Button Groningen = new Button ("Groningen");
-	Button Heracles = new Button ("Heracles");
-	Button Heerenveen = new Button ("Heerenveen");
-	Button NAC = new Button ("NAC");
-	Button PSV = new Button ("PSV");
-	Button Twente = new Button ("Twente");
-	Button Utrecht = new Button ("Utrecht");
-	Button Vitesse = new Button ("Vitesse");
-	Button WillemII = new Button ("WillemII");
-	Button Zwolle = new Button ("Zwolle");
+	Button team_1, team_2, team_3, team_4, team_5, team_6, team_7, team_8, team_9,
+	team_10, team_11, team_12, team_13, team_14, team_15, team_16, team_17, team_18;
+	
 	Button Back = new Button ("Back");
+	
 	
 	
 	//launches the gui
@@ -105,6 +91,25 @@ public class javafx extends Application{
 	       also video stuff
 		*/
 		
+		team_1 = createButton1();
+		team_2 = createButton2();
+		team_3 = createButton3();
+		team_4 = createButton4();
+		team_5 = createButton5();
+		team_6 = createButton6();
+		team_7 = createButton7();
+		team_8 = createButton8();
+		team_9 = createButton9();
+		team_10 = createButton10();
+		team_11 = createButton11();
+		team_12 = createButton12();
+		team_13 = createButton13();
+		team_14 = createButton14();
+		team_15 = createButton15();
+		team_16 = createButton16();
+		team_17 = createButton17();
+		team_18 = createButton18();
+		
 		//set the text for first buttons and label and giving effects
 		lbtext = new Label("Footballmanager");
 		newgame = new Button("new game");
@@ -143,8 +148,8 @@ public class javafx extends Application{
 				Label empty = new Label(" ");
 				
 				//adds the buttons and the label and sets the scene in the stage
-				teams1.getChildren().addAll(lbtext,ADO,Ajax,AZ,Cambuur,Dordrecht,Excelsior,Feyenoord,GAEagles,Groningen);
-				teams2.getChildren().addAll(empty,Heracles,Heerenveen,NAC,PSV,Twente,Utrecht,Vitesse,WillemII,Zwolle);
+				teams1.getChildren().addAll(lbtext,team_1,team_2,team_3,team_4,team_5,team_6,team_7,team_8,team_9);
+				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);
 				vbBack.getChildren().addAll(Back);
 				start.getChildren().addAll(teams1,teams2);
 				VBox toptext = new VBox();
@@ -230,4 +235,133 @@ public class javafx extends Application{
 		//first box getting children 
 		root.getChildren().addAll(lbtext, newgame, loadgame, mute);
 	}
+	
+	//These 18 methods create the team buttons for the team selection screen
+		public static Button createButton1(){
+
+			String team1 = "ADO";
+			Button team_1 = new Button (team1);
+			return team_1;	
+		}
+		
+		
+		public static Button createButton2(){
+			
+			String team2 = "Ajax";
+			Button team_2 = new Button (team2);
+			return team_2;
+			
+		}
+		public static Button createButton3(){
+			
+			String team3 = "AZ";
+			Button team_3 = new Button (team3);
+			return team_3;
+			
+		}
+		public static Button createButton4(){
+			
+			String team4 = "Cambuur";
+			Button team_4 = new Button (team4);
+			return team_4;
+			
+		}
+		public static Button createButton5(){
+			
+			String team5 = "Dordrecht";
+			Button team_5 = new Button (team5);
+			return team_5;
+			
+		}
+		public static Button createButton6(){
+			
+			String team6 = "Excelsior";
+			Button team_6 = new Button (team6);
+			return team_6;
+			
+		}
+		public static Button createButton7(){
+			
+			String team7 = "Feyenoord";
+			Button team_7 = new Button (team7);
+			return team_7;
+			
+		}
+		public static Button createButton8(){
+			
+			String team8 = "G.A. Eagles";
+			Button team_8 = new Button (team8);
+			return team_8;
+			
+		}
+		public static Button createButton9(){
+			
+			String team9 = "Groningen";
+			Button team_9 = new Button (team9);
+			return team_9;
+			
+		}
+		public static Button createButton10(){
+			
+			String team10 = "Heracles";
+			Button team_10 = new Button (team10);
+			return team_10;
+			
+		}
+		public static Button createButton11(){
+			
+			String team11 = "Heerenveen";
+			Button team_11 = new Button (team11);
+			return team_11;
+			
+		}
+		public static Button createButton12(){
+			
+			String team12 = "NAC";
+			Button team_12 = new Button (team12);
+			return team_12;
+			
+		}
+		public static Button createButton13(){
+			
+			String team13 = "PSV";
+			Button team_13 = new Button (team13);
+			return team_13;
+			
+		}
+		public static Button createButton14(){
+			
+			String team14 = "Twente";
+			Button team_14 = new Button (team14);
+			return team_14;
+			
+		}
+		public static Button createButton15(){
+			
+			String team15 = "Utrecht";
+			Button team_15 = new Button (team15);
+			return team_15;
+			
+		}
+		public static Button createButton16(){
+			
+			String team16 = "Vitesse";
+			Button team_16 = new Button (team16);
+			return team_16;
+			
+		}
+		public static Button createButton17(){
+			
+			String team17 = "WillemII";
+			Button team_17 = new Button (team17);
+			return team_17;
+			
+		}
+		public static Button createButton18(){
+			
+			String team18 = "Zwolle";
+			Button team_18 = new Button (team18);
+			return team_18;
+			
+		}
 }
