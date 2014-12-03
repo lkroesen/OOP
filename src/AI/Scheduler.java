@@ -333,4 +333,39 @@ public class Scheduler
 		
 		
 	}
+	
+	public static PlayRound Gen(int TeamSize, League league, int[] Order)
+	{
+		// first order our first matches
+		// change 1
+		PlayRound PR = new PlayRound(1);
+		String[] HomeTeam = new String[(TeamSize/2)];
+		String[] OutTeam = new String[(TeamSize/2)];
+
+		// Assign teams to Home and Out positions
+		int c = 0;
+		int d = (TeamSize/2);
+		
+		while (d < TeamSize)
+		{
+			HomeTeam[c] = league.getTeams().get(Order[c]).getName();
+			OutTeam[c] = league.getTeams().get(Order[d]).getName();
+			c++;
+			d++;
+		}
+		
+		for (int b = 0; b < ((TeamSize)/2); b++)
+		{
+			if (b == 0)
+				System.out.println("Friday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+			if (b > 0 && b < 5)
+				System.out.println("Saturday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+			if (b > 4)
+				System.out.println("Sunday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+			
+		}
+		
+		return PR;
+		
+	}
 }
