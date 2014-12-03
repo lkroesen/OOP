@@ -45,27 +45,37 @@ public class javafx extends Application{
 	team_10, team_11, team_12, team_13, team_14, team_15, team_16, team_17, team_18;
 	Button Back = new Button ("Back");
 	
-	
+	Media song;
+	MediaPlayer audio;
+	VBox root;
+	HBox start;
+	Stage stage;
+	Scene scene;
 	//launches the gui
 	public static void main(String[] args){
 		launch(args);
 	}
-
+	
+	//final
 	@Override
-	public void start(Stage stage) throws Exception {
-		
+	public void start(final Stage stage) throws Exception {
+		this.stage = stage;
 		//song name in file form
 		File file = new File("src/fmsong.mp3");
 		//plays the song endless
 		final String mediaLocation = file.toURI().toURL().toExternalForm();
-		Media song = new Media(mediaLocation);
-		MediaPlayer audio = new MediaPlayer(song);
+		//Media song = new Media(mediaLocation);
+		//MediaPlayer audio = new MediaPlayer(song);
+		song = new Media(mediaLocation);
+		audio = new MediaPlayer(song);
 		audio.play();
 		audio.setCycleCount(audio.INDEFINITE);
 		
 		//first boxes for scene layout
-		VBox root = new VBox(10);
-		HBox start = new HBox();
+//		VBox root = new VBox(10);
+//		HBox start = new HBox();
+		root = new VBox(10);
+		start = new HBox();
 		//StackPane fm = new StackPane(); //for video
 		
 		//effects on buttons
@@ -120,7 +130,8 @@ public class javafx extends Application{
 		lbtext.getStyleClass().add("mycustomLabel");
 		
 		//makes a scene with the title setting it in the stage
-		Scene scene = new Scene(root,500,500);
+		//Scene scene = new Scene(root,500,500);
+		scene = new Scene(root,500,500);
 		stage.setTitle("Footballmanager");
 		stage.setScene(scene);
 		//fm.getChildren().addAll(mediaView,root); // video stuff
