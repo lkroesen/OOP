@@ -121,7 +121,7 @@ public class Scheduler
 		 */
 		
 		// Return a Schedule which contains all the playing data.
-		
+		//s.print();
 		return s;
 	}
 	
