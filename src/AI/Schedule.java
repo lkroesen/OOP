@@ -14,4 +14,9 @@ public class Schedule {
 		S.add(PR);
 	}
 	
+	public void print()
+	{
+		
+	}
+	
 }
