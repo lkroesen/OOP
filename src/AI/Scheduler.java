@@ -47,11 +47,12 @@ public class Scheduler
 		Order = OrderRandomizer(TeamSize, Order);
 
 		ArrayList<Team> Team = new ArrayList<Team>();
-		
+		Team = league.getTeams();
 		// ArrayList<Team> formatted in the following: First half is Home teams, second half is out teams
+		/*
 		for (int a = 0; a < Order.length; a++)
 			Team.add(league.getTeamByName(league.getTeams().get(Order[a]).getName()));
-		
+		*/
 		// Week 0/17
 		int week = 0;
 		Schedule s = new Schedule();
@@ -121,7 +122,7 @@ public class Scheduler
 		 */
 		
 		// Return a Schedule which contains all the playing data.
-		
+		//s.print();
 		return s;
 	}
 	
@@ -276,13 +277,13 @@ public class Scheduler
 			
 			if (c >= 2 && c < 6)
 			{
-				Match f = new Match(id,5,TeamList.get(Order[c]),TeamList.get(Order[d]));
+				Match f = new Match(id,6,TeamList.get(Order[c]),TeamList.get(Order[d]));
 				Saturday.add(f);
 			}
 			
 			if (c >= 6)
 			{
-				Match f = new Match(id,5,TeamList.get(Order[c]),TeamList.get(Order[d]));
+				Match f = new Match(id,7,TeamList.get(Order[c]),TeamList.get(Order[d]));
 				Sunday.add(f);
 			}
 			
