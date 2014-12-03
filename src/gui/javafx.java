@@ -55,8 +55,7 @@ public class javafx extends Application{
 	public void start(Stage stage) throws Exception {
 		
 		//song name in file form
-		File file = new File("C:/Users/Denver/oop/OOP/src/fmsong.mp3");
-		javafx.class.getResource("fmsong.mp3");
+		File file = new File("src/fmsong.mp3");
 		//plays the song endless
 		final String mediaLocation = file.toURI().toURL().toExternalForm();
 		Media song = new Media(mediaLocation);
