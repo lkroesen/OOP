@@ -56,7 +56,7 @@ public class javafx extends Application{
 		
 		//song name in file form
 		File file = new File("C:/Users/Denver/oop/OOP/bin/fmsong.mp3");
-		//File file = new File("C:/Users/Remi/Music/Punch-Out!!.mp3"); Dan werkt ie wel bij mij - Remi
+		//File file = new File("C:/Users/Remi/Music/Punch-Out!!.mp3"); //Dan werkt ie wel bij mij - Remi
 		
 		//plays the song endless
 		final String mediaLocation = file.toURI().toURL().toExternalForm();
