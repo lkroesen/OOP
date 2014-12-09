@@ -184,10 +184,9 @@ public class XML {
 							byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
 							byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
 							
-							int team_id = Integer.parseInt(getChildValue(player, "teamId"));
 							int price = Integer.parseInt(getChildValue(player, "price"));
 							
-							team.addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, team_id, price));
+							team.addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
 						}
 						
 						leagueObject.addTeam(team);
