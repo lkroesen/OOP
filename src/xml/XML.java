@@ -99,7 +99,7 @@ public class XML {
 					}
 					
 					// Get away team data
-					NodeList homeData = match.getElementsByTagName("team_away");
+					NodeList awayData = match.getElementsByTagName("team_away");
 					for (int a = 0; a < awayData.getLength(); a++) {
 						Node awayNode = awayData.item(a);
 						if(awayNode.getNodeType() == Node.ELEMENT_NODE){
@@ -239,7 +239,7 @@ public class XML {
                 rootElement.setAttribute("id", g.getId()+"");
                 rootElement.setAttribute("name", g.getName()+"");
                 rootElement.setAttribute("currentday", g.getCurrentDay()+"");
-                rootElement.setAttribute("currentteam", g.getUserTeam().getId()+"");
+                rootElement.setAttribute("currentteam", g.getCurrentTeam()+"");
                
                 for (League l : g.getLeagues()) {
                         Element eLeague = doc.createElement("league");
@@ -252,7 +252,7 @@ public class XML {
                                 Element eTeam = doc.createElement("team");
                                 eTeam.setAttribute("id", t.getId()+"");
                                 eTeam.setAttribute("name", t.getName());
-                                eTeam.setAttribute("formation", t.getFormation());
+                               // eTeam.setAttribute("formation", t.getFormation());
                                
                                 for (Player p : t.getPlayers()) {
                                         Element ePlayer = doc.createElement("player");
