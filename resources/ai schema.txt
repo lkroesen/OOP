@@ -1,7 +1,7 @@
 4 posities: aanvaller, middenvelder, verdediger, keeper
 
 aanvallers krijger 20% bonus op offencive rating
-middenvelders krijgen 10% bonus op offencive rating en defencife rating
+middenvelders krijgen 10% bonus op offencive rating en defencive rating
 verdedigers krijgen 20% bonus op defencife rating
 keeper krijgt 50% bonus of defencive rating
 
@@ -18,3 +18,17 @@ na 11 aanvallen is de wedstrijd over. voor elke aanval verlies je een hoeveelhei
 optioneel kunnen we ook een percentage stamina weghalen bij een aaval van de aanvallers en bij een verdedigen van de verdigers.
 
 aan het einde van elke dag krijg je een hoeveeldheid stamina terug. 
+
+Gele kaarten:
+
+gemiddeld 4 gele kaarten per wedstrijd 
+11 aanvallen per wedstrijd dus 36,36% kans op een gele kaart per aanval.
+
+verhouding gele kaarten:
+aanvaller: 11
+verdediger: 33
+middenvelder: 35
+keeper: 2
+
+bij het aanvallende team kunnen alleen de aanvallers een gelekaart krijgen, bij het verdidgende team kunnen de verdedigers, middenvelder, keeper. Eerst wordt berekend of er deze aanval een gele kaart wordt uitgedeeld, daarna wordt bekeken welke posisite de gele kaart krijgt, daarna wordt bekeken welke van de spelers op die posisite de gele kaart krijgt. als die speler al een gelekaart heeft krijg hij een rode kaart en wordt hij van het spel verwijderd. 
+ 
