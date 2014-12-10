@@ -2,8 +2,12 @@ package gui;
 
 //unused imports are unused
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
+
 import xml.XML;
+import model.Game;
+import model.League;
 import model.Team;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
@@ -53,13 +57,18 @@ public class javafx extends Application{
 	}
 
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(final Stage stage) throws Exception {
 		
 		stage.setResizable(false);
 		
-		XML game = new XML("teams.xml");
+		//XML xml = new XML("teams.xml");
+		//Game game = xml.parseGame();
+		//ArrayList<League> leagues = game.getLeagues();
+		//League league = leagues[1];
+		
 		//song name in file form
 		File file = new File("src/fmsong.mp3");
+
 		
 		//plays the song endless
 		final String mediaLocation = file.toURI().toURL().toExternalForm();
@@ -91,7 +100,9 @@ public class javafx extends Application{
 	       //also video stuff
 		
 		
-		team_1 = createButton1();
+	       String team1 = "ADO";
+			//String team1 = game.getAttribute("teams.xml", null);
+			Button team_1 = new Button (team1);
 		team_2 = createButton2();
 		team_3 = createButton3();
 		team_4 = createButton4();
