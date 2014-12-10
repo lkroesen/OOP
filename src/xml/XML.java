@@ -5,6 +5,11 @@ import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -219,7 +224,7 @@ public class XML {
 		return attrs.getNamedItem(name).getNodeValue();
 	}
 	
-	public boolean writeGame(Game g) {
+	public boolean writeGame(Game g, String filename) {
         try {
                  
                 DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -267,6 +272,12 @@ public class XML {
                                 eLeague.appendChild(eTeam);
                         }
                 }
+                
+        		// write the content into xml file
+        		TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        		Transformer transformer = transformerFactory.newTransformer();
+        		DOMSource source = new DOMSource(doc);
+        		StreamResult result = new StreamResult(new File(filename));
  
                 transformer.transform(source, result);
  
