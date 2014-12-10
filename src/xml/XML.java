@@ -92,6 +92,33 @@ public class XML {
 						}
 					}
 					
+					// Get away team data
+					NodeList homeData = match.getElementsByTagName("team_away");
+					for (int a = 0; a < awayData.getLength(); a++) {
+						Node awayNode = awayData.item(a);
+						if(awayNode.getNodeType() == Node.ELEMENT_NODE){
+							Element away = (Element)awayNode;
+							
+							int team = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
+							
+							NodeList awayEvents = away.getElementsByTagName("event");
+							for(int b = 0; b < awayEvents.getLength(); b++){
+								Node eventNode = awayEvents.item(b);
+								if(eventNode.getNodeType() == Node.ELEMENT_NODE){
+									Element event = (Element)eventNode;
+									
+									int player = Integer.parseInt(getAttribute(event.getAttributes(), "player"));
+									
+									int type = Integer.parseInt(getChildValue(event, "type"));
+									int minute = Integer.parseInt(getChildValue(event, "minute"));
+									int outfor = Integer.parseInt(getChildValue(event, "outfor"));
+									
+									matchObject.addEventAway(new Event(player, type, minute, outfor));
+								}
+							}
+						}
+					}
+					
 					game.addMatch(matchObject);
 					
 				}
@@ -157,10 +184,9 @@ public class XML {
 							byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
 							byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
 							
-							int team_id = Integer.parseInt(getChildValue(player, "teamId"));
 							int price = Integer.parseInt(getChildValue(player, "price"));
 							
-							team.addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, team_id, price));
+							team.addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
 						}
 						
 						leagueObject.addTeam(team);

@@ -33,12 +33,6 @@ public class Scheduler
 			TeamNames[c] = league.getTeams().get(c).getName();
 		}
 
-		// Not sure what I was gonna use this for oops, leaving it in for now
-		PlayRound[] Week;
-		Week = new PlayRound[TeamSize];
-		for (int c = 0; c < TeamSize; c++)
-			Week[c] = new PlayRound(c);
-
 		int[] Order = new int[TeamSize];
 
 		// Pre-initialize the array so my method can be shorter
@@ -47,11 +41,8 @@ public class Scheduler
 		Order = OrderRandomizer(TeamSize, Order);
 
 		ArrayList<Team> Team = new ArrayList<Team>();
-		
-		// ArrayList<Team> formatted in the following: First half is Home teams, second half is out teams
-		for (int a = 0; a < Order.length; a++)
-			Team.add(league.getTeamByName(league.getTeams().get(Order[a]).getName()));
-		
+		Team = league.getTeams();
+
 		// Week 0/17
 		int week = 0;
 		Schedule s = new Schedule();
@@ -63,11 +54,11 @@ public class Scheduler
 		{
 			// initial order
 			if (week == 0)
-				s.add(PlayRoundGenerator(Team, Order, TeamSize, week));
+				s.add(Gen(TeamSize, league, Order, week));
 			else
 			{
 				Order = ClockShuffle(Order, TeamSize);
-				s.add(PlayRoundGenerator(Team, Order, TeamSize, week));
+				s.add(Gen(TeamSize, league, Order, week));
 			}
 			
 			System.out.println("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
@@ -93,11 +84,11 @@ public class Scheduler
 		{
 			// inital order
 			if (week == (TeamSize-1))
-				s.add(PlayRoundGenerator(Team, Order, TeamSize, week));
+				s.add(Gen(TeamSize, league, Order, week));
 			else
 			{
 				Order = ClockShuffle(Order, TeamSize);
-				s.add(PlayRoundGenerator(Team, Order, TeamSize, week));
+				s.add(Gen(TeamSize, league, Order, week));
 			}
 			
 			System.out.println("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
@@ -111,17 +102,6 @@ public class Scheduler
 			
 
 		}
-
-		
-		/*	TODO:
-		 * 	Rotate matches around using a "clock" method which means,
-		 * 	we keep 1 team at it's original position and rotate all teams around
-		 * 	until the 1 team plays vs the out team of the 2nd match, then we regenerate
-		 * 	the entire schedule, and repeat
-		 */
-		
-		// Return a Schedule which contains all the playing data.
-		
 		return s;
 	}
 	
@@ -172,7 +152,15 @@ public class Scheduler
 		return Order;
 	}
 	
-	// Hardcoded for now
+	/**
+	 * Clockshufles teams, this is hardcoded and will only work for 18 teams
+	 * @param Old_Order
+	 * The order to be shuffled
+	 * @param TeamSize
+	 * The teamsize
+	 * @return
+	 * Returns a clockshuffled array
+	 */
 	public static int[] ClockShuffle(int[] Old_Order, int TeamSize)
 	{
 		int[] New_Order = new int[18];
@@ -205,45 +193,7 @@ public class Scheduler
 		
 		return New_Order;	
 	}
-	
-	// Not finished
-	/*
-	public static int[] ClockShuffle(int[] Old_Order, int TeamSize)
-	{
-		int[] New_Order = new int[TeamSize];
-		int done = 0;
-		
-		int c = ((TeamSize/2) + 1);
-		
-		while (done != 1)
-		{
-			// old 10 -> new 9 etc until old 17 -> new 16 
-			if (c > (TeamSize/2) && c < (TeamSize-1))
-			New_Order[c] = Old_Order[c-1];
-			
-			c++;
-			
-			if(c == (TeamSize))
-			{
-				New_Order[c-1] = Old_Order[(TeamSize/2)-1];	
-				New_Order[1] = Old_Order[(TeamSize/2)];
-				
-				int d = 7;
-				while (d != 0)
-				{
-					New_Order[d+1] = Old_Order[d];
-					d--;
-				}
-				
-				done = 1;
-				break;
-			}
 
-		}
-		
-		return New_Order;
-	}
-	*/
 	public static int AmountOfMatches(League le)
 	{
 		int number = 0;
@@ -255,52 +205,15 @@ public class Scheduler
 		
 	}
 	
-	public static PlayRound PlayRoundGenerator(ArrayList<Team> TeamList, int[] Order, int TeamSize, int Week)
-	{
-		int c = 0;
-		int d = (TeamSize/2);
-		
-		ArrayList<Match> Friday = new ArrayList<Match>();
-		ArrayList<Match> Saturday = new ArrayList<Match>();
-		ArrayList<Match> Sunday = new ArrayList<Match>();
-		
-		while (d < TeamSize)
-		{
-			int id = (Week*10)+c;
-			
-			if (c == 1)
-			{
-				Match f = new Match(id,5,TeamList.get(Order[c]),TeamList.get(Order[d]));
-				Friday.add(f);
-			}
-			
-			if (c >= 2 && c < 6)
-			{
-				Match f = new Match(id,5,TeamList.get(Order[c]),TeamList.get(Order[d]));
-				Saturday.add(f);
-			}
-			
-			if (c >= 6)
-			{
-				Match f = new Match(id,5,TeamList.get(Order[c]),TeamList.get(Order[d]));
-				Sunday.add(f);
-			}
-			
-			c++;
-			d++;
-		}
-		
-		// 1 on friday
-		PlayDay friday = new PlayDay(Friday);
-		// 4 on saturday
-		PlayDay saturday = new PlayDay(Saturday);
-		// 4 on sunday
-		PlayDay sunday = new PlayDay(Sunday);
-		
-		PlayRound PR = new PlayRound(friday,saturday,sunday,Week);
-		return PR;
-	}
-	
+	/**
+	 * Prints teams based on inputed data (works similar to Gen and was used for testing)
+	 * @param TeamSize
+	 * Input a teamsize
+	 * @param league
+	 * Input a league
+	 * @param Order
+	 * Input an order
+	 */
 	public static void print(int TeamSize, League league, int[] Order)
 	{
 		// first order our first matches
@@ -330,6 +243,85 @@ public class Scheduler
 			
 		}
 		
+		
+	}
+	
+	/**
+	 * Generates playrounds based on inputed data
+	 * @param TeamSize
+	 * Input the size of the team
+	 * @param league
+	 * Input a league object
+	 * @param Order
+	 * Input an order to be sorted with
+	 * @param w
+	 * Input week number
+	 * @return
+	 * Returns a generated Playround for inserted week
+	 */
+	public static PlayRound Gen(int TeamSize, League league, int[] Order, int w)
+	{
+		// first order our first matches
+		// change 1
+		PlayRound PR = new PlayRound(w);
+		Team[] HomeTeam = new Team[(TeamSize/2)];
+		Team[] OutTeam = new Team[(TeamSize/2)];
+
+		// Assign teams to Home and Out positions
+		int c = 0;
+		int d = (TeamSize/2);
+		
+		while (d < TeamSize)
+		{
+			HomeTeam[c] = league.getTeams().get(Order[c]);
+			OutTeam[c] = league.getTeams().get(Order[d]);
+			c++;
+			d++;
+		}
+		
+		
+		ArrayList<Match> friday = new ArrayList<Match>();
+		ArrayList<Match> saturday = new ArrayList<Match>();
+		ArrayList<Match> sunday = new ArrayList<Match>();
+		
+		while (true)
+		{
+
+		int id = 0;
+
+
+			for (int b = 0; b < ((TeamSize)/2); b++)
+			{
+				id = (w*10) + b;
+				
+				if (b == 0)
+				{
+					Match match = new Match(id, 4, HomeTeam[b], OutTeam[b]);
+					System.out.println("Friday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+				}
+				if (b > 0 && b < 5)
+				{
+					Match match = new Match(id, 5, HomeTeam[b], OutTeam[b]);
+					System.out.println("Saturday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+				}
+				if (b > 4)
+				{
+					Match match = new Match(id, 6, HomeTeam[b], OutTeam[b]);
+					System.out.println("Sunday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+				}
+			}
+		break;
+		}
+		
+		PlayDay f = new PlayDay(friday, "Friday");
+		PlayDay s = new PlayDay(saturday, "Saturday");
+		PlayDay S = new PlayDay(sunday, "Sunday");
+		
+		PR.setFriday(f);
+		PR.setSaturday(s);
+		PR.setSunday(S);
+		
+		return PR;
 		
 	}
 }

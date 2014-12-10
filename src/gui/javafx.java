@@ -3,8 +3,11 @@ package gui;
 //unused imports are unused
 import java.io.File;
 import java.util.Scanner;
+<<<<<<< HEAD
 
 import xml.XML;
+=======
+>>>>>>> origin/master
 import model.Team;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
@@ -43,7 +46,9 @@ public class javafx extends Application{
 	
 	Button team_1, team_2, team_3, team_4, team_5, team_6, team_7, team_8, team_9,
 	team_10, team_11, team_12, team_13, team_14, team_15, team_16, team_17, team_18;
+	
 	Button Back = new Button ("Back");
+	
 	
 	
 	//launches the gui
@@ -58,7 +63,9 @@ public class javafx extends Application{
 		
 		XML game = new XML("teams.xml");
 		//song name in file form
-		File file = new File("src/fmsong.mp3");
+		File file = new File("C:/Users/Denver/oop/OOP/bin/fmsong.mp3");
+		//File file = new File("C:/Users/Remi/Music/Punch-Out!!.mp3"); //Dan werkt ie wel bij mij - Remi
+		
 		//plays the song endless
 		final String mediaLocation = file.toURI().toURL().toExternalForm();
 		Media song = new Media(mediaLocation);
@@ -107,7 +114,7 @@ public class javafx extends Application{
 		team_16 = createButton16();
 		team_17 = createButton17();
 		team_18 = createButton18();
-	
+		
 		//set the text for first buttons and label and giving effects
 		lbtext = new Label("Footballmanager");
 		newgame = new Button("new game");
@@ -150,8 +157,13 @@ public class javafx extends Application{
 				
 				//adds the buttons and the label and sets the scene in the stage
 				teams1.getChildren().addAll(lbtext,team_1,team_2,team_3,team_4,team_5,team_6,team_7,team_8,team_9);
+<<<<<<< HEAD
 				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);	
 				vbBack.getChildren().addAll(mutesong,Back);
+=======
+				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);
+				vbBack.getChildren().addAll(Back);
+>>>>>>> origin/master
 				start.getChildren().addAll(teams1,teams2);
 				VBox ngtext = new VBox();
 				ngtext.getChildren().addAll(lbtext,start,vbBack);
@@ -236,9 +248,7 @@ public class javafx extends Application{
 		test.getChildren().addAll(mediaView,root);
 	}
 	
-	
 	//These 18 methods create the team buttons for the team selection screen
-	
 		public static Button createButton1(){
 
 			String team1 = "ADO";

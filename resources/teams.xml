@@ -1,889 +1,1658 @@
-<?xml version="1.0" encoding="UTF-8"?>
-	<competitie name="eredivisie", regio="Nederland">
-		<club name="Ajax" budget="65000000" city="Amsterdam">
-			<Player name="Ricardo van Rhijn">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><game currentday="0" currentteam="0" id="0" name="Ajax_career">
+    <match day="1" id="0">
+        <team_home id="0">
+		    <event player="2">
+		        <type>
+		            1
+		        </type>
+		        <minute>
+		            22
+		        </minute>
+		        <outfor>
+		            1
+		        </outfor>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            10
+		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            14
+		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            15
+		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            16
+		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            23
+		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            26
+		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            30
+		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
+		    </event>
+		    <event player="0">
+		        <type>
+		            3
+		        </type>
+		        <minute>
+		            33
+		        </minute>
+		        <outfor>
+		            0
+		        </outfor>
+		    </event>
+		</team_home>
+		<team_away id="0">
+		    
+		</team_away>
+    </match>
+    <transfer id="0">
+        <from>1</from>
+        <to>
+            0
+        </to>
+        <price>
+            20000000
+        </price>
+        <player>
+            50
+        </player>
+        <day>
+            0
+        </day>
+    </transfer>
+	<league country="Nederland" id="0" name="Eredivisie">
+		<club city="Amsterdam" id="0" name="AFC Ajax">
+			<budget>
+				65000000
+			</budget>
+			<player id="0">
+				<name>
+					Ricardo
+				</name>
+				<surname>
+					van Rhijn
+				</surname>
 				<number>
 					2
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Joel Veltman">
+				<type>
+				</type>
+				
+				<offensiveRating>1</offensiveRating>
+				<defensiveRating>48</defensiveRating>	
+				<stamina>16</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					2200000
+				</price>
+			</player>
+			<player id="1">
+				<name>
+					Joel
+				</name>
+				<surname>
+					Veltman
+				</surname>
 				<number>
 					3
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Niklas Moisander">
+				<type>
+				</type>
+				
+				<offensiveRating>57</offensiveRating>
+				<defensiveRating>48</defensiveRating>
+				<stamina>71</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					3200000
+				</price>	
+			</player>
+			<player id="2">
+				<name>
+					Niklas
+				</name>
+				<surname>
+					Moisander
+				</surname>
 				<number>
 					4
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Nicolai Boilesen">
+				<type>
+				</type>
+				
+				<offensiveRating>72</offensiveRating>
+				<defensiveRating>87</defensiveRating>
+				<stamina>91</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					1700000
+				</price>	
+			</player>
+			<player id="3">
+				<name>
+					Nicolai
+				</name>
+				<surname>
+					Boilesen
+				</surname>
 				<number>
 					5
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Mike van der Hoorn">
+				<type>
+				</type>
+				
+				<offensiveRating>50</offensiveRating>
+				<defensiveRating>83</defensiveRating>
+				<stamina>12</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					3400000
+				</price>	
+			</player>
+			<player id="22">
+				<name>
+					Mike
+				</name>
+				<surname>
+					van der Hoorn
+				</surname>
 				<number>
 					6
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Viktor Fischer">
+				<type>
+				</type>
+				
+				<offensiveRating>17</offensiveRating>
+				<defensiveRating>50</defensiveRating>
+				<stamina>67</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					1400000
+				</price>		
+			</player>
+			<player id="4">
+				<name>
+					Viktor
+				</name>
+				<surname>
+					Fischer
+				</surname>
 				<number>
 					7
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Lerin Duarte">
+				<type>
+				</type>
+				
+				<offensiveRating>76</offensiveRating>
+				<defensiveRating>53</defensiveRating>
+				<stamina>39</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					3200000
+				</price>	
+			</player>
+			<player id="5">
+				<name>
+					Lerin
+				</name>
+				<surname>
+					Duarte
+				</surname>
 				<number>
 					8
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Kolbeinn Sigporsson">
+				<type>
+				</type>
+				
+				<offensiveRating>84</offensiveRating>
+				<defensiveRating>49</defensiveRating>	
+				<stamina>92</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					6700000
+				</price>
+			</player>
+			<player id="6">
+				<name>
+					Kolbeinn
+				</name>
+				<surname>
+					Sigporsson
+				</surname>
 				<number>
 					9
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Davy Klaassen">
+				<type>
+				</type>
+				
+				<offensiveRating>30</offensiveRating>
+				<defensiveRating>13</defensiveRating>
+				<stamina>41</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					2500000
+				</price>
+			</player>
+			<player id="7">
+				<name>
+					Davy
+				</name>
+				<surname>
+					Klaassen
+				</surname>
 				<number>
 					10
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Ricardo Kishna">
+				<type>
+				</type>
+				
+				<offensiveRating>27</offensiveRating>
+				<defensiveRating>27</defensiveRating>
+				<stamina>72</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					3700000
+				</price>	
+			</player>
+			<player id="8">
+				<name>
+					Ricardo
+				</name>
+				<surname>
+					Kishna
+				</surname>
 				<number>
 					11
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Jairo Riedewald">
+				<type>
+				</type>
+				
+				<offensiveRating>56</offensiveRating>
+				<defensiveRating>74</defensiveRating>
+				<stamina>71</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					3400000
+				</price>	
+			</player>
+			<player id="9">
+				<name>
+					Jairo
+				</name>
+				<surname>
+					Riedewald
+				</surname>
 				<number>
 					12
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Lucas Andersen">
+				<type>
+				</type>
+				
+				<offensiveRating>73</offensiveRating>
+				<defensiveRating>76</defensiveRating>
+				<stamina>98</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					5400000
+				</price>	
+			</player>
+			<player id="10">
+				<name>
+					Lucas
+				</name>
+				<surname>
+					Andersen
+				</surname>
 				<number>
 					16
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Robert Muric">
+				<type>
+				</type>
+				
+				<offensiveRating>71</offensiveRating>
+				<defensiveRating>57</defensiveRating>
+				<stamina>25</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					2300000
+				</price>	
+			</player>
+			<player id="11">
+				<name>
+					Robert
+				</name>
+				<surname>
+					Muric
+				</surname>
 				<number>
 					18
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Arkadiusz Milik">
+				<type>
+				</type>
+				
+				<offensiveRating>80</offensiveRating>
+				<defensiveRating>24</defensiveRating>
+				<stamina>10</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					2700000
+				</price>	
+			</player>
+			<player id="12">
+				<name>
+					Arkadiusz
+				</name>
+				<surname>
+					Milik
+				</surname>
 				<number>
 					19
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Lasse Schone">
+				<type>
+				</type>
+				
+				<offensiveRating>60</offensiveRating>
+				<defensiveRating>83</defensiveRating>
+				<stamina>34</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					5600000
+				</price>	
+			</player>
+			<player id="13">
+				<name>
+					Lasse
+				</name>
+				<surname>
+					Schone
+				</surname>
 				<number>
 					20
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Anwar el Ghazi">
+				<type>
+				</type>
+				
+				<offensiveRating>70</offensiveRating>
+				<defensiveRating>92</defensiveRating>
+				<stamina>54</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					5800000
+				</price>	
+			</player>
+			<player id="14">
+				<name>
+					Anwar
+				</name>
+				<surname>
+					el Ghazi
+				</surname>
 				<number>
 					21
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Jasper Cillessen">
+				<type>
+				</type>
+				
+				<offensiveRating>53</offensiveRating>
+				<defensiveRating>97</defensiveRating>
+				<stamina>86</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					5100000
+				</price>	
+			</player>
+			<player id="15">
+				<name>
+					Jasper
+				</name>
+				<surname>
+					Cillessen
+				</surname>
 				<number>
 					22
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>
-			</Player>
-			<Player name="Kenny Tete">
+				<type>
+				</type>
+				
+				<offensiveRating>82</offensiveRating>
+				<defensiveRating>49</defensiveRating>
+				<stamina>51</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					7700000
+				</price>
+			</player>
+			<player id="16">
+				<name>
+					Kenny
+				</name>
+				<surname>
+					Tete
+				</surname>
 				<number>
 					23
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Stefano Denswil">
+				<type>
+				</type>
+				
+				<offensiveRating>93</offensiveRating>
+				<defensiveRating>50</defensiveRating>
+				<stamina>46</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					6500000
+				</price>	
+			</player>
+			<player id="17">
+				<name>
+					Stefano
+				</name>
+				<surname>
+					Denswil
+				</surname>
 				<number>
 					24
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Thulano Serero">
+				<type>
+				</type>
+				
+				<offensiveRating>50</offensiveRating>
+				<defensiveRating>13</defensiveRating>
+				<stamina>85</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					4300000
+				</price>	
+			</player>
+			<player id="18">
+				<name>
+					Thulano
+				</name>
+				<surname>
+					Serero
+				</surname>
 				<number>
 					25
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Nick Viergever">
+				<type>
+				</type>
+				
+				<offensiveRating>40</offensiveRating>
+				<defensiveRating>75</defensiveRating>
+				<stamina>70</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					3900000
+				</price>	
+			</player>
+			<player id="19">
+				<name>
+					Nick
+				</name>
+				<surname>
+					Viergever
+				</surname>
 				<number>
 					26
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Riechedly Bazoer">
+				<type>
+				</type>
+				
+				<offensiveRating>61</offensiveRating>
+				<defensiveRating>67</defensiveRating>
+				<stamina>11</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					5600000
+				</price>	
+			</player>
+			<player id="20">
+				<name>
+					Riechedly
+				</name>
+				<surname>
+					Bazoer
+				</surname>
 				<number>
 					27
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
+				<type>
+				</type>
+				
+				<offensiveRating>56</offensiveRating>
+				<defensiveRating>29</defensiveRating>
+				<stamina>4</stamina>
+				<teamId>
+					0
+				</teamId>
+				<price>
+					4900000
+				</price>	
+			</player>
 		</club>
-		<club name="Feyenoord" budget="50000000" city="Rotterdam">
-			<Player name="Erwin Mulder">
+		<club city="Rotterdam" id="1" name="Feyenoord">
+			<budget>
+				50000000
+			</budget>
+			<player id="21">
+				<name>
+					Erwin
+				</name>
+				<surname>
+					Mulder
+				</surname>
 				<number>
 					1
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					GK
-				</position>	
-			</Player>
-			<Player name="Luke Wilkshire">
+				<type>
+				</type>
+				
+				<offensiveRating>83</offensiveRating>
+				<defensiveRating>2</defensiveRating>
+				<stamina>14</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					1900000
+				</price>		
+			</player>
+			<player id="23">
+				<name>
+					Luke
+				</name>
+				<surname>
+					Wilkshire
+				</surname>
 				<number>
 					2
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
-			<Player name="Joris Mathijsen">
+				<type>
+				</type>
+				
+				<offensiveRating>2</offensiveRating>
+				<defensiveRating>18</defensiveRating>
+				<stamina>64</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					1900000
+				</price>	
+			</player>
+			<player id="24">
+				<name>
+					Joris
+				</name>
+				<surname>
+					Mathijsen
+				</surname>
 				<number>
 					4
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
-			<Player name="Terence Kongolo">
+				<type>
+				</type>
+				
+				<offensiveRating>31</offensiveRating>
+				<defensiveRating>52</defensiveRating>
+				<stamina>96</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					2800000
+				</price>	
+			</player>
+			<player id="25">
+				<name>
+					Terence
+				</name>
+				<surname>
+					Kongolo
+				</surname>
 				<number>
 					5
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
-			<Player name="Jordy Clasie">
+				<type>
+				</type>
+				
+				<offensiveRating>31</offensiveRating>
+				<defensiveRating>90</defensiveRating>
+				<stamina>70</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					5400000
+				</price>	
+			</player>
+			<player id="26">
+				<name>
+					Jordy
+				</name>
+				<surname>
+					Clasie
+				</surname>
 				<number>
 					6
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					MF
-				</position>	
-			</Player>
-			<Player name="Jean-Paul Boetius">
+				<type>
+				</type>
+				
+				<offensiveRating>77</offensiveRating>
+				<defensiveRating>71</defensiveRating>
+				<stamina>92</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					4500000
+				</price>	
+			</player>
+			<player id="27">
+				<name>
+					Jean-Paul
+				</name>
+				<surname>
+					Boetius
+				</surname>
 				<number>
 					7
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					FW
-				</position>	
-			</Player>
-			<Player name="Karim El Ahmadi">
+				<type>
+				</type>
+				
+				<offensiveRating>6</offensiveRating>
+				<defensiveRating>93</defensiveRating>
+				<stamina>27</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					3400000
+				</price>	
+			</player>
+			<player id="28">
+				<name>
+					Karim
+				</name>
+				<surname>
+					El Ahmadi
+				</surname>
 				<number>
 					8
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					MF
-				</position>	
-			</Player>
-			<Player name="Lex Immers">
+				<type>
+				</type>
+				
+				<offensiveRating>0</offensiveRating>
+				<defensiveRating>54</defensiveRating>
+				<stamina>46</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					3900000
+				</price>	
+			</player>
+			<player id="29">
+				<name>
+					Lex
+				</name>
+				<surname>
+					Immers
+				</surname>
 				<number>
 					10
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					MF
-				</position>	
-			</Player>
-			<Player name="Wesley Verhoek">
+				<type>
+				</type>
+				
+				<offensiveRating>23</offensiveRating>
+				<defensiveRating>57</defensiveRating>
+				<stamina>81</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					6800000
+				</price>	
+			</player>
+			<player id="30">
+				<name>
+					Wesley
+				</name>
+				<surname>
+					Verhoek
+				</surname>
 				<number>
 					11
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					FW
-				</position>	
-			</Player>
-			<Player name="Ronald Graafland">
+				<type>
+				</type>
+				
+				<offensiveRating>36</offensiveRating>
+				<defensiveRating>2</defensiveRating>
+				<stamina>5</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					5800000
+				</price>	
+			</player>
+			<player id="31">
+				<name>
+					Ronald
+				</name>
+				<surname>
+					Graafland
+				</surname>
 				<number>
 					13
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					GK
-				</position>	
-			</Player>
-			<Player name="Bilal Basacikoglu">
+				<type>
+				</type>
+				
+				<offensiveRating>10</offensiveRating>
+				<defensiveRating>51</defensiveRating>
+				<stamina>32</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					2300000
+				</price>	
+			</player>
+			<player id="32">
+				<name>
+					Bilal
+				</name>
+				<surname>
+					Basacikoglu
+				</surname>
 				<number>
 					14
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					FW
-				</position>	
-			</Player>
-			<Player name="Colin Kazim-Richards">
+				<type>
+				</type>
+				
+				<offensiveRating>60</offensiveRating>
+				<defensiveRating>38</defensiveRating>
+				<stamina>38</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					5600000
+				</price>	
+			</player>
+			<player id="33">
+				<name>
+					Colin
+				</name>
+				<surname>
+					Kazim-Richards
+				</surname>
 				<number>
 					15
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					FW
-				</position>	
-			</Player>
-			<Player name="Kenneth Vermeer">
+				<type>
+				</type>
+				
+				<offensiveRating>39</offensiveRating>
+				<defensiveRating>12</defensiveRating>
+				<stamina>64</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					3600000
+				</price>	
+			</player>
+			<player id="34">
+				<name>
+					Kenneth
+				</name>
+				<surname>
+					Vermeer
+				</surname>
 				<number>
 					16
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					GK
-				</position>	
-			</Player>
-			<Player name="Elvis Manu">
+				<type>
+				</type>
+				
+				<offensiveRating>16</offensiveRating>
+				<defensiveRating>89</defensiveRating>
+				<stamina>14</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					6700000
+				</price>	
+			</player>
+			<player id="35">
+				<name>
+					Elvis
+				</name>
+				<surname>
+					Manu
+				</surname>
 				<number>
 					17
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					FW
-				</position>	
-			</Player>
-			<Player name="Miquel Nelom">
+				<type>
+				</type>
+				
+				<offensiveRating>86</offensiveRating>
+				<defensiveRating>83</defensiveRating>
+				<stamina>98</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					6700000
+				</price>	
+			</player>
+			<player id="36">
+				<name>
+					Miquel
+				</name>
+				<surname>
+					Nelom
+				</surname>
 				<number>
 					18
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
-			<Player name="Mitchell te Vrede">
+				<type>
+				</type>
+				
+				<offensiveRating>30</offensiveRating>
+				<defensiveRating>40</defensiveRating>
+				<stamina>84</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					2700000
+				</price>	
+			</player>
+			<player id="37">
+				<name>
+					Mitchell
+				</name>
+				<surname>
+					te Vrede
+				</surname>
 				<number>
 					19
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					FW
-				</position>	
-			</Player>
-			<Player name="Tonny Vilhena">
+				<type>
+				</type>
+				
+				<offensiveRating>5</offensiveRating>
+				<defensiveRating>57</defensiveRating>
+				<stamina>51</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					7800000
+				</price>	
+			</player>
+			<player id="38">
+				<name>
+					Tonny
+				</name>
+				<surname>
+					Vilhena
+				</surname>
 				<number>
 					21
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					MF
-				</position>	
-			</Player>
-			<Player name="Sven van Beek">
+				<type>
+				</type>
+				
+				<offensiveRating>58</offensiveRating>
+				<defensiveRating>52</defensiveRating>
+				<stamina>28</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					7400000
+				</price>	
+			</player>
+			<player id="39">
+				<name>
+					Sven
+				</name>
+				<surname>
+					van Beek
+				</surname>
 				<number>
 					22
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
-			<Player name="Khalid Boulahrouz">
+				<type>
+				</type>
+				
+				<offensiveRating>92</offensiveRating>
+				<defensiveRating>20</defensiveRating>
+				<stamina>7</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					2500000
+				</price>	
+			</player>
+			<player id="40">
+				<name>
+					Khalid
+				</name>
+				<surname>
+					Boulahrouz
+				</surname>
 				<number>
 					23
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
-			<Player name="Matthew Steenvoorden">
+				<type>
+				</type>
+				
+				<offensiveRating>40</offensiveRating>
+				<defensiveRating>60</defensiveRating>
+				<stamina>52</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					4500000
+				</price>	
+			</player>
+			<player id="41">
+				<name>
+					Matthew
+				</name>
+				<surname>
+					Steenvoorden
+				</surname>
 				<number>
 					24
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
-			<Player name="Lucas Woudenberg">
+				<type>
+				</type>
+				
+				<offensiveRating>71</offensiveRating>
+				<defensiveRating>61</defensiveRating>
+				<stamina>42</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					3500000
+				</price>	
+			</player>
+			<player id="42">
+				<name>
+					Lucas
+				</name>
+				<surname>
+					Woudenberg
+				</surname>
 				<number>
 					25
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
-			<Player name="Rick Karsdorp">
+				<type>
+				</type>
+				
+				<offensiveRating>53</offensiveRating>
+				<defensiveRating>93</defensiveRating>
+				<stamina>25</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					3200000
+				</price>	
+			</player>
+			<player id="43">
+				<name>
+					Rick
+				</name>
+				<surname>
+					Karsdorp
+				</surname>
 				<number>
 					26
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-					DF
-				</position>	
-			</Player>
+				<type>
+				</type>
+				
+				<offensiveRating>65</offensiveRating>
+				<defensiveRating>97</defensiveRating>
+				<stamina>87</stamina>
+				<teamId>
+					1
+				</teamId>
+				<price>
+					3200000
+				</price>	
+			</player>
 		</club>
-		<club name="AZ" budget="28000000" city="Alkmaar">
-			<Player name="Esteban Alvardo">
+		<club city="Alkmaar" id="2" name="AZ">
+			<budget>
+				28000000
+			</budget>
+			<player id="44">
+				<name>
+					Esteban
+				</name>
+				<surname>
+					Alvardo
+				</surname>
 				<number>
 					1
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>
-			</Player>
-			<Player name="Yves de Winter">
+				<type>
+				</type>
+				
+				<offensiveRating>66</offensiveRating>
+				<defensiveRating>33</defensiveRating>
+				<stamina>66</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					2200000
+				</price>
+			</player>
+			<player id="45">
+				<name>
+					Yves
+				</name>
+				<surname>
+					de Winter
+				</surname>
 				<number>
 					16
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>			
-			</Player>
-			<Player name="Mattias Johansson">
+				<type>
+				</type>
+				
+				<offensiveRating>71</offensiveRating>
+				<defensiveRating>44</defensiveRating>
+				<stamina>5</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					1200000
+				</price>			
+			</player>
+			<player id="46">
+				<name>
+					Mattias
+				</name>
+				<surname>
+					Johansson
+				</surname>
 				<number>
 					2
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Jeffrey Gouweleeuw">
+				<type>
+				</type>
+				
+				<offensiveRating>6</offensiveRating>
+				<defensiveRating>81</defensiveRating>
+				<stamina>49</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					2200000
+				</price>	
+			</player>
+			<player id="47">
+				<name>
+					Jeffrey
+				</name>
+				<surname>
+					Gouweleeuw
+				</surname>
 				<number>
 					3
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Jan Wuytens">
+				<type>
+				</type>
+				
+				<offensiveRating>90</offensiveRating>
+				<defensiveRating>24</defensiveRating>
+				<stamina>97</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					3400000
+				</price>	
+			</player>
+			<player id="48">
+				<name>
+					Jan
+				</name>
+				<surname>
+					Wuytens
+				</surname>
 				<number>
 					4
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Wesley Hoedt">
+				<type>
+				</type>
+				
+				<offensiveRating>46</offensiveRating>
+				<defensiveRating>76</defensiveRating>
+				<stamina>30</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					3200000
+				</price>	
+			</player>
+			<player id="49">
+				<name>
+					Wesley
+				</name>
+				<surname>
+					Hoedt
+				</surname>
 				<number>
 					14
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Simon Poulsen">
+				<type>
+				</type>
+				
+				<offensiveRating>19</offensiveRating>
+				<defensiveRating>69</defensiveRating>
+				<stamina>87</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					2800000
+				</price>	
+			</player>
+			<player id="50">
+				<name>
+					Simon
+				</name>
+				<surname>
+					Poulsen
+				</surname>
 				<number>
 					15
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Djavan Anderson">
+				<type>
+				</type>
+				
+				<offensiveRating>11</offensiveRating>
+				<defensiveRating>56</defensiveRating>
+				<stamina>63</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					3900000
+				</price>	
+			</player>
+			<player id="51">
+				<name>
+					Djavan
+				</name>
+				<surname>
+					Anderson
+				</surname>
 				<number>
 					17
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Derrick Luckassen">
+				<type>
+				</type>
+				
+				<offensiveRating>63</offensiveRating>
+				<defensiveRating>44</defensiveRating>
+				<stamina>65</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					2500000
+				</price>	
+			</player>
+			<player id="52">
+				<name>
+					Derrick
+				</name>
+				<surname>
+					Luckassen
+				</surname>
 				<number>
 					23
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Ridgeciano Haps">
+				<type>
+				</type>
+				
+				<offensiveRating>9</offensiveRating>
+				<defensiveRating>35</defensiveRating>
+				<stamina>35</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					4500000
+				</price>	
+			</player>
+			<player id="53">
+				<name>
+					Ridgeciano
+				</name>
+				<surname>
+					Haps
+				</surname>
 				<number>
 					24
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Celso Ortiz">
+				<type>
+				</type>
+				
+				<offensiveRating>91</offensiveRating>
+				<defensiveRating>76</defensiveRating>
+				<stamina>75</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					3400000
+				</price>	
+			</player>
+			<player id="54">
+				<name>
+					Celso
+				</name>
+				<surname>
+					Ortiz
+				</surname>
 				<number>
 					6
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Nemanja Gudelj">
+				<type>
+				</type>
+				
+				<offensiveRating>12</offensiveRating>
+				<defensiveRating>24</defensiveRating>
+				<stamina>16</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					3700000
+				</price>	
+			</player>
+			<player id="55">
+				<name>
+					Nemanja
+				</name>
+				<surname>
+					Gudelj
+				</surname>
 				<number>
 					8
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Markus Henriksen">
+				<type>
+				</type>
+				
+				<offensiveRating>8</offensiveRating>
+				<defensiveRating>17</defensiveRating>
+				<stamina>72</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					6700000
+				</price>	
+			</player>
+			<player id="56">
+				<name>
+					Markus
+				</name>
+				<surname>
+					Henriksen
+				</surname>
 				<number>
 					10
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Viktor Elm">
+				<type>
+				</type>
+				
+				<offensiveRating>42</offensiveRating>
+				<defensiveRating>17</defensiveRating>
+				<stamina>36</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					3500000
+				</price>	
+			</player>
+			<player id="57">
+				<name>
+					Viktor
+				</name>
+				<surname>
+					Elm
+				</surname>
 				<number>
 					12
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Thom Haye">
+				<type>
+				</type>
+				
+				<offensiveRating>35</offensiveRating>
+				<defensiveRating>88</defensiveRating>
+				<stamina>86</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					4300000
+				</price>	
+			</player>
+			<player id="58">
+				<name>
+					Thom
+				</name>
+				<surname>
+					Haye
+				</surname>
 				<number>
 					20
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Guus Hupperts">
+				<type>
+				</type>
+				
+				<offensiveRating>69</offensiveRating>
+				<defensiveRating>16</defensiveRating>
+				<stamina>15</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					2900000
+				</price>	
+			</player>
+			<player id="59">
+				<name>
+					Guus
+				</name>
+				<surname>
+					Hupperts
+				</surname>
 				<number>
 					7
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Aron Johannsson">
+				<type>
+				</type>
+				
+				<offensiveRating>5</offensiveRating>
+				<defensiveRating>42</defensiveRating>
+				<stamina>6</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					2500000
+				</price>	
+			</player>
+			<player id="60">
+				<name>
+					Aron
+				</name>
+				<surname>
+					Johannsson
+				</surname>
 				<number>
 					9
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Muamer Tankovic">
+				<type>
+				</type>
+				
+				<offensiveRating>36</offensiveRating>
+				<defensiveRating>65</defensiveRating>
+				<stamina>3</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					5500000
+				</price>	
+			</player>
+			<player id="61">
+				<name>
+					Muamer
+				</name>
+				<surname>
+					Tankovic
+				</surname>
 				<number>
 					11
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Mikhail Rosheuvel">
+				<type>
+				</type>
+				
+				<offensiveRating>70</offensiveRating>
+				<defensiveRating>90</defensiveRating>
+				<stamina>90</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					1900000
+				</price>	
+			</player>
+			<player id="62">
+				<name>
+					Mikhail
+				</name>
+				<surname>
+					Rosheuvel
+				</surname>
 				<number>
 					18
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Eli Babalj">
+				<type>
+				</type>
+				
+				<offensiveRating>25</offensiveRating>
+				<defensiveRating>32</defensiveRating>
+				<stamina>16</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					4500000
+				</price>	
+			</player>
+			<player id="63">
+				<name>
+					Eli
+				</name>
+				<surname>
+					Babalj
+				</surname>
 				<number>
 					19
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Robert Muhren">
+				<type>
+				</type>
+				
+				<offensiveRating>77</offensiveRating>
+				<defensiveRating>51</defensiveRating>
+				<stamina>34</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					4800000
+				</price>	
+			</player>
+			<player id="64">
+				<name>
+					Robert
+				</name>
+				<surname>
+					Muhren
+				</surname>
 				<number>
 					21
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
-			<Player name="Steven Berghuis">
+				<type>
+				</type>
+				
+				<offensiveRating>68</offensiveRating>
+				<defensiveRating>14</defensiveRating>
+				<stamina>4</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					4500000
+				</price>	
+			</player>
+			<player id="65">
+				<name>
+					Steven
+				</name>
+				<surname>
+					Berghuis
+				</surname>
 				<number>
 					22
 				</number>
-				<defence>
-				</defence>
-				<attack>
-				</attack>
-				<overall>
-				</overall>
-				<position>
-				</position>	
-			</Player>
+				<type>
+				</type>
+				
+				<offensiveRating>27</offensiveRating>
+				<defensiveRating>19</defensiveRating>
+				<stamina>11</stamina>
+				<teamId>
+					2
+				</teamId>
+				<price>
+					6500000
+				</price>	
+			</player>
 		</club>
-	</competitie>
+	</league>
+</game>

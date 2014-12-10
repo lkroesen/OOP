@@ -148,9 +148,6 @@
 	            <stamina>
 	                99
 	            </stamina>
-	            <teamId>
-	                0
-	            </teamId>
 	            <price>
 	                1000000000
 	            </price>
@@ -180,9 +177,6 @@
 	            <stamina>
 	                60
 	            </stamina>
-	            <teamId>
-	                0
-	            </teamId>
 	            <price>
 	                500000
 	            </price>
@@ -212,9 +206,6 @@
 	            <stamina>
 	                69
 	            </stamina>
-	            <teamId>
-	                0
-	            </teamId>
 	            <price>
 	                15000000
 	            </price>

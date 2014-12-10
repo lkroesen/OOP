@@ -11,7 +11,6 @@ public class Player {
 	private byte offensiveRating;
 	private byte defensiveRating;
 	private byte stamina;
-	private int teamId;
 	private int price;
 
 	/**

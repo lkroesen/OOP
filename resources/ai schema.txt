@@ -1,0 +1,20 @@
+4 posities: aanvaller, middenvelder, verdediger, keeper
+
+aanvallers krijger 20% bonus op offencive rating
+middenvelders krijgen 10% bonus op offencive rating en defencife rating
+verdedigers krijgen 20% bonus op defencife rating
+keeper krijgt 50% bonus of defencive rating
+
+tel de stamina van de twee teems bij elkaar op en kies een random getal tussen 0 en de stamina kijk dan welk team wint. dat team begint met aanvallen. Er zijn 11 aanvallen dus de persoon die begint mag 1 keer extra aanvallen.
+
+11 aanvallen gemiddeld 2 dulpunten per wedstrijd dus een kans van 18,18% op een doepunt.
+
+deel de offenciferating van het aanvallende team door de defecive rating van het verdedigende team. (dit kan nog maal een ander getal doen afhankelijk van hoe balanced het is)
+
+doe dat getal maal 18,18 dat is de kans dat deze aanval een doelpunt wordt.
+
+na de aanval valt het andere team aan en wordt dit herhaald. 
+na 11 aanvallen is de wedstrijd over. voor elke aanval verlies je een hoeveelheid stamina.(Afhankelijk van hoevel het team heeft en hoevel wedstrijden er in totaal gespeed worden)
+optioneel kunnen we ook een percentage stamina weghalen bij een aaval van de aanvallers en bij een verdedigen van de verdigers.
+
+aan het einde van elke dag krijg je een hoeveeldheid stamina terug. 
