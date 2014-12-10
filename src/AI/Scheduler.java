@@ -297,16 +297,19 @@ public class Scheduler
 				if (b == 0)
 				{
 					Match match = new Match(id, 4, HomeTeam[b], OutTeam[b]);
+					friday.add(match);
 					System.out.println("Friday: " + HomeTeam[b] + " vs " + OutTeam[b]);
 				}
 				if (b > 0 && b < 5)
 				{
 					Match match = new Match(id, 5, HomeTeam[b], OutTeam[b]);
+					saturday.add(match);
 					System.out.println("Saturday: " + HomeTeam[b] + " vs " + OutTeam[b]);
 				}
 				if (b > 4)
 				{
 					Match match = new Match(id, 6, HomeTeam[b], OutTeam[b]);
+					sunday.add(match);
 					System.out.println("Sunday: " + HomeTeam[b] + " vs " + OutTeam[b]);
 				}
 			}

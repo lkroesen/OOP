@@ -3,6 +3,7 @@ package gui;
 //unused imports are unused
 import java.io.File;
 import java.util.Scanner;
+import xml.XML;
 import model.Team;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
@@ -37,7 +38,7 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mute;
+	Button newgame, loadgame, mutesong, mutevideo;
 	
 	Button team_1, team_2, team_3, team_4, team_5, team_6, team_7, team_8, team_9,
 	team_10, team_11, team_12, team_13, team_14, team_15, team_16, team_17, team_18;
@@ -54,18 +55,20 @@ public class javafx extends Application{
 	@Override
 	public void start(Stage stage) throws Exception {
 		
+		stage.setResizable(false);
+		
+		XML game = new XML("teams.xml");
 		//song name in file form
-		File file = new File("C:/Users/Denver/oop/OOP/bin/fmsong.mp3");
-		//File file = new File("C:/Users/Remi/Music/Punch-Out!!.mp3"); //Dan werkt ie wel bij mij - Remi
+		File file = new File("src/fmsong.mp3");
 		
 		//plays the song endless
 		final String mediaLocation = file.toURI().toURL().toExternalForm();
 		Media song = new Media(mediaLocation);
 		MediaPlayer audio = new MediaPlayer(song);
-		audio.play();
 		audio.setCycleCount(audio.INDEFINITE);
 		
 		//first boxes for scene layout
+		StackPane test = new StackPane();
 		VBox root = new VBox(10);
 		HBox start = new HBox();
 		//StackPane fm = new StackPane(); //for video
@@ -75,22 +78,18 @@ public class javafx extends Application{
 		reflection.setFraction(0.8);
 		reflection.setTopOffset(-20);
 		
-		//Media media = new Media((arg1 != null) ? arg1 : MEDIA_URL);
-	    //MediaPlayer mediaPlayer = new MediaPlayer(media);
-	    //mediaPlayer.setAutoPlay(true);
-	    //mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+		Media media = new Media(new File("src/Footballvideo.mp4").toURI().toString());
+	    MediaPlayer mediaPlayer = new MediaPlayer(media);
+	    mediaPlayer.setAutoPlay(true);
+	    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 		//all video stuff
 	        
 	       
-	       /*MediaView mediaView = new MediaView(mediaPlayer);
-	       final DoubleProperty width = mediaView.fitWidthProperty();
-	       final DoubleProperty height = mediaView.fitHeightProperty();
-	       mediaView.setScaleY(1.5);
+	       MediaView mediaView = new MediaView(mediaPlayer);
 	       
-	       width.bind(Bindings.selectDouble(mediaView.sceneProperty(), "width"));
-	       height.bind(Bindings.selectDouble(mediaView.sceneProperty(), "height"));
-	       also video stuff
-		*/
+	       mediaView.setFitWidth(1000);
+	       //also video stuff
+		
 		
 		team_1 = createButton1();
 		team_2 = createButton2();
@@ -115,17 +114,17 @@ public class javafx extends Application{
 		lbtext = new Label("Footballmanager");
 		newgame = new Button("new game");
 		loadgame = new Button("load game");
-		mute = new Button("Mute/resume");
+		mutesong = new Button("Mute/resume");
+		mutevideo = new Button("Mute/resume");
 		
 		lbtext.setEffect(reflection);
 		
 		lbtext.getStyleClass().add("mycustomLabel");
 		
 		//makes a scene with the title setting it in the stage
-		Scene scene = new Scene(root,500,500);
+		Scene scene = new Scene(test,1000,500);
 		stage.setTitle("Footballmanager");
 		stage.setScene(scene);
-		//fm.getChildren().addAll(mediaView,root); // video stuff
 		scene.getStylesheets().add("mystyle.css");
 		
 		//shows current scene
@@ -136,6 +135,9 @@ public class javafx extends Application{
 			
 			@Override
 			public void handle(ActionEvent arg0){
+				audio.play();
+				mediaPlayer.setVolume(0);
+				start.setTranslateX(200);
 				//changes the text
 				lbtext.setText("Selection menu");
 				
@@ -143,19 +145,19 @@ public class javafx extends Application{
 				VBox teams1 = new VBox(10);
 				teams1.setAlignment(Pos.CENTER_LEFT);
 				VBox teams2 = new VBox(10);
-				teams2.setAlignment(Pos.TOP_CENTER);
-				VBox vbBack = new VBox();
+				teams2.setAlignment(Pos.CENTER);
+				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				Label empty = new Label(" ");
 				
 				//adds the buttons and the label and sets the scene in the stage
 				teams1.getChildren().addAll(lbtext,team_1,team_2,team_3,team_4,team_5,team_6,team_7,team_8,team_9);
-				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);
-				vbBack.getChildren().addAll(Back);
+				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);	
+				vbBack.getChildren().addAll(mutesong,Back);
 				start.getChildren().addAll(teams1,teams2);
 				VBox ngtext = new VBox();
 				ngtext.getChildren().addAll(lbtext,start,vbBack);
-				Scene ng = new Scene(ngtext,500,500);
+				Scene ng = new Scene(ngtext,1000,500);
 				ng.getStylesheets().add("mystyle.css");
 				stage.setScene(ng);
 				}
@@ -166,11 +168,13 @@ public class javafx extends Application{
 			
 			@Override
 			public void handle(ActionEvent arg0){
+				audio.stop();
+				mediaPlayer.setVolume(100);
 				//sets the old stage back possible error with calling new game screen again(testing)
 				VBox back = root;
-				back.getChildren().removeAll(newgame,loadgame,mute);
+				back.getChildren().removeAll(newgame,loadgame,mutevideo);
 				lbtext.setText("Footballmanager");
-				back.getChildren().addAll(lbtext,newgame,loadgame,mute);
+				back.getChildren().addAll(lbtext,newgame,loadgame,mutevideo);
 				stage.setScene(scene);
 			}
 			
@@ -181,6 +185,8 @@ public class javafx extends Application{
 			
 			@Override
 			public void handle(ActionEvent arg0){
+				audio.play();
+				mediaPlayer.setVolume(0);
 				lbtext.setText("Select save game");
 				//makes the amount of saves visable as buttons
 				//for(int i = 1; i < 4/*savedgames + 1*/;i++){
@@ -191,19 +197,19 @@ public class javafx extends Application{
 				//making boxes and buttons for load game screen
 				Button save = new Button ("save 1");
 				VBox lgtext = new VBox();
-				VBox backpos = new VBox();
+				VBox backpos = new VBox(10);
 				backpos.setAlignment(Pos.BOTTOM_RIGHT);
-				backpos.getChildren().add(Back);
+				backpos.getChildren().addAll(mutesong,Back);
 				lgtext.getChildren().addAll(lbtext,save,backpos);
 				lgtext.getStylesheets().add("mystyle.css");
-				Scene lg = new Scene(lgtext,500,500);
+				Scene lg = new Scene(lgtext,1000,500);
 				stage.setScene(lg);
 				}
 			
 		});
 		
 		//actions for mute or resume music
-		mute.setOnAction(new EventHandler<ActionEvent>(){
+		mutesong.setOnAction(new EventHandler<ActionEvent>(){
 			
 			@Override
 			public void handle(ActionEvent arg0){
@@ -215,14 +221,28 @@ public class javafx extends Application{
 				}
 			}
 		});
+		mutevideo.setOnAction(new EventHandler<ActionEvent>(){
+					
+			@Override
+			public void handle(ActionEvent arg0){
+				if(mediaPlayer.getVolume()==0){
+					mediaPlayer.setVolume(100);
+				}
+				else{
+					mediaPlayer.setVolume(0);
+				}
+			}
+		});
 		//first box getting children 
-		root.getChildren().addAll(lbtext, newgame, loadgame, mute);
+		root.getChildren().addAll(lbtext, newgame, loadgame, mutevideo);
+		test.getChildren().addAll(mediaView,root);
 	}
 	
 	//These 18 methods create the team buttons for the team selection screen
 		public static Button createButton1(){
 
 			String team1 = "ADO";
+			//String team1 = game.getAttribute("teams.xml", null);
 			Button team_1 = new Button (team1);
 			return team_1;	
 		}
