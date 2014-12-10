@@ -1,5 +1,6 @@
 package xml;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -289,7 +290,7 @@ public class XML {
           } catch (TransformerException tfe) {
                 tfe.printStackTrace();
           }
-        }
+        
 		return false;
 	}
 	
