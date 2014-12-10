@@ -30,7 +30,7 @@ public class Player {
 	 */
 	public Player(int id, String firstname, String surname, byte jerseyNumber,
 			int type, int position, byte offensiveScore, byte defensiveScore,
-			byte staminaScore, int teamId, int price) {
+			byte staminaScore, int price) {
 		super();
 		this.id = id;
 		this.firstname = firstname;
@@ -40,7 +40,6 @@ public class Player {
 		this.offensiveRating = offensiveScore;
 		this.defensiveRating = defensiveScore;
 		this.stamina = staminaScore;
-		this.teamId = teamId;
 		this.price = price;
 		this.position = position;
 	}
@@ -111,14 +110,6 @@ public class Player {
 		this.stamina = staminaScore;
 	}
 
-	public int getTeamId() {
-		return teamId;
-	}
-
-	public void setTeamId(int teamId) {
-		this.teamId = teamId;
-	}
-
 	public int getPrice() {
 		return price;
 	}
@@ -133,8 +124,7 @@ public class Player {
 				+ surname + ", jerseyNumber=" + number + ", type=" + type
 				+ ", offensiveRating=" + offensiveRating + ", defensiveRating="
 				+ defensiveRating + ", staminaRating=" + stamina
-				+ ", teamId=" + teamId + ", price="
-				+ price + "]";
+				+ ", price=" + price + "]";
 	}
 
 	// Getters and Setters end
