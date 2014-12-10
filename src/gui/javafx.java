@@ -99,8 +99,8 @@ public class javafx extends Application{
 	       mediaView.setFitWidth(1000);
 	       //also video stuff
 	       ArrayList<Button> teambuttons = new ArrayList<Button>();
-		for(int i = 0;i < 18;i++){
-			String teamname =teams.get(i).toString();
+		for(int i = 0;i < teams.size();i++){
+			String teamname =teams.get(i).getName().toString();
 			teambuttons.add(new Button(teamname));
 			
 		}
@@ -163,7 +163,7 @@ public class javafx extends Application{
 				Label empty = new Label(" ");
 				
 				//adds the buttons and the label and sets the scene in the stage
-				teams1.getChildren().addAll(lbtext,teambuttons.get(0),team_2,team_3,team_4,team_5,team_6,team_7,team_8,team_9);
+				teams1.getChildren().addAll(lbtext,teambuttons.get(0),teambuttons.get(1),teambuttons.get(2),team_4,team_5,team_6,team_7,team_8,team_9);
 				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);	
 				vbBack.getChildren().addAll(mutesong,Back);
 				start.getChildren().addAll(teams1,teams2);
