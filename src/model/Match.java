@@ -90,6 +90,24 @@ private String result;
 				+ team_home + ", team_away=" + team_away + "]";
 	}
 	
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		
+		if (obj instanceof Match)
+		{
+			Match that = (Match) obj;
+			if (		this.getId() 	== 	that.getId() 
+					&&	this.getDay() 	== 	that.getDay()
+					&&	this.getTeam_home() ==	that.getTeam_home()
+					&&	this.getTeam_away()	==	that.getTeam_away())
+				return true;
+		}
+		
+		return false;
+		
+	}
 	
 
 }

@@ -3,7 +3,6 @@ package model;
 public class Transfer {
 	
 	private int id;
-	
 	private int from;
 	private int to;
 	private int player;
@@ -47,6 +46,29 @@ public class Transfer {
 	public String toString() {
 		return "Transfer [id=" + id +", from=" + from + ", to=" + to + ", player=" + player
 				+ ", price=" + price + ", day=" + day + "]";
+	}
+	
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		
+		if (obj instanceof Transfer)
+		{
+			Transfer that = (Transfer) obj;
+			if (		this.getId() 	== 	that.getId() 
+					&&	this.getFrom() 	== 	that.getFrom()
+					&&	this.getTo() 		==	that.getTo()
+					&&	this.getPlayer()	==	that.getPlayer()
+					&&	this.getPrice()		==	that.getPrice()
+					&&	this.getDay()	==	that.getDay()
+					
+					)
+				return true;
+		}
+		
+		return false;
+		
 	}
 	
 	

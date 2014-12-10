@@ -19,7 +19,7 @@ public class testEvent
 	public void testConstructorFalse()
 	{
 		Event e1 = new Event(1,2,3,4);
-		Event e2 = new Event(2,3,4,5);
+		Event e2 = new Event(1,5,3,4);
 		assertNotEquals(e1,e2);
 	}
 	
