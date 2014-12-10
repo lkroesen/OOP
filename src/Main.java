@@ -26,7 +26,7 @@ public class Main {
 		Schedule s = Scheduler.scheduler(league);
 		// Do not touch this please </START>
 		
-		XML xml = new XML("default.xml");
+		XML xml = new XML("teams.xml");
 		
 		System.out.println(xml.parseGame());
 		

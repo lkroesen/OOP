@@ -135,8 +135,7 @@
 				<number>
 					2
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>1</offensiveRating>
 				<defensiveRating>48</defensiveRating>	
@@ -147,7 +146,7 @@
 				<price>
 					2200000
 				</price>
-			</player>
+			<position>-1</position></player>
 			<player id="1">
 				<name>
 					Joel
@@ -158,8 +157,7 @@
 				<number>
 					3
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>57</offensiveRating>
 				<defensiveRating>48</defensiveRating>
@@ -170,7 +168,7 @@
 				<price>
 					3200000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="2">
 				<name>
 					Niklas
@@ -181,8 +179,7 @@
 				<number>
 					4
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>72</offensiveRating>
 				<defensiveRating>87</defensiveRating>
@@ -193,7 +190,7 @@
 				<price>
 					1700000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="3">
 				<name>
 					Nicolai
@@ -204,8 +201,7 @@
 				<number>
 					5
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>50</offensiveRating>
 				<defensiveRating>83</defensiveRating>
@@ -216,7 +212,7 @@
 				<price>
 					3400000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="22">
 				<name>
 					Mike
@@ -227,8 +223,7 @@
 				<number>
 					6
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>17</offensiveRating>
 				<defensiveRating>50</defensiveRating>
@@ -239,7 +234,7 @@
 				<price>
 					1400000
 				</price>		
-			</player>
+			<position>-1</position></player>
 			<player id="4">
 				<name>
 					Viktor
@@ -250,8 +245,7 @@
 				<number>
 					7
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>76</offensiveRating>
 				<defensiveRating>53</defensiveRating>
@@ -262,7 +256,7 @@
 				<price>
 					3200000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="5">
 				<name>
 					Lerin
@@ -273,8 +267,7 @@
 				<number>
 					8
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>84</offensiveRating>
 				<defensiveRating>49</defensiveRating>	
@@ -285,7 +278,7 @@
 				<price>
 					6700000
 				</price>
-			</player>
+			<position>-1</position></player>
 			<player id="6">
 				<name>
 					Kolbeinn
@@ -296,8 +289,7 @@
 				<number>
 					9
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>30</offensiveRating>
 				<defensiveRating>13</defensiveRating>
@@ -308,7 +300,7 @@
 				<price>
 					2500000
 				</price>
-			</player>
+			<position>-1</position></player>
 			<player id="7">
 				<name>
 					Davy
@@ -319,8 +311,7 @@
 				<number>
 					10
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>27</offensiveRating>
 				<defensiveRating>27</defensiveRating>
@@ -331,7 +322,7 @@
 				<price>
 					3700000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="8">
 				<name>
 					Ricardo
@@ -342,8 +333,7 @@
 				<number>
 					11
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>56</offensiveRating>
 				<defensiveRating>74</defensiveRating>
@@ -354,7 +344,7 @@
 				<price>
 					3400000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="9">
 				<name>
 					Jairo
@@ -365,8 +355,7 @@
 				<number>
 					12
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>73</offensiveRating>
 				<defensiveRating>76</defensiveRating>
@@ -377,7 +366,7 @@
 				<price>
 					5400000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="10">
 				<name>
 					Lucas
@@ -388,8 +377,7 @@
 				<number>
 					16
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>71</offensiveRating>
 				<defensiveRating>57</defensiveRating>
@@ -400,7 +388,7 @@
 				<price>
 					2300000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="11">
 				<name>
 					Robert
@@ -411,8 +399,7 @@
 				<number>
 					18
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>80</offensiveRating>
 				<defensiveRating>24</defensiveRating>
@@ -423,7 +410,7 @@
 				<price>
 					2700000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="12">
 				<name>
 					Arkadiusz
@@ -434,8 +421,7 @@
 				<number>
 					19
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>60</offensiveRating>
 				<defensiveRating>83</defensiveRating>
@@ -446,7 +432,7 @@
 				<price>
 					5600000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="13">
 				<name>
 					Lasse
@@ -457,8 +443,7 @@
 				<number>
 					20
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>70</offensiveRating>
 				<defensiveRating>92</defensiveRating>
@@ -469,7 +454,7 @@
 				<price>
 					5800000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="14">
 				<name>
 					Anwar
@@ -480,8 +465,7 @@
 				<number>
 					21
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>53</offensiveRating>
 				<defensiveRating>97</defensiveRating>
@@ -492,7 +476,7 @@
 				<price>
 					5100000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="15">
 				<name>
 					Jasper
@@ -503,8 +487,7 @@
 				<number>
 					22
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>82</offensiveRating>
 				<defensiveRating>49</defensiveRating>
@@ -515,7 +498,7 @@
 				<price>
 					7700000
 				</price>
-			</player>
+			<position>-1</position></player>
 			<player id="16">
 				<name>
 					Kenny
@@ -526,8 +509,7 @@
 				<number>
 					23
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>93</offensiveRating>
 				<defensiveRating>50</defensiveRating>
@@ -538,7 +520,7 @@
 				<price>
 					6500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="17">
 				<name>
 					Stefano
@@ -549,8 +531,7 @@
 				<number>
 					24
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>50</offensiveRating>
 				<defensiveRating>13</defensiveRating>
@@ -561,7 +542,7 @@
 				<price>
 					4300000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="18">
 				<name>
 					Thulano
@@ -572,8 +553,7 @@
 				<number>
 					25
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>40</offensiveRating>
 				<defensiveRating>75</defensiveRating>
@@ -584,7 +564,7 @@
 				<price>
 					3900000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="19">
 				<name>
 					Nick
@@ -595,8 +575,7 @@
 				<number>
 					26
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>61</offensiveRating>
 				<defensiveRating>67</defensiveRating>
@@ -607,7 +586,7 @@
 				<price>
 					5600000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="20">
 				<name>
 					Riechedly
@@ -618,8 +597,7 @@
 				<number>
 					27
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>56</offensiveRating>
 				<defensiveRating>29</defensiveRating>
@@ -630,7 +608,7 @@
 				<price>
 					4900000
 				</price>	
-			</player>
+			<position>-1</position></player>
 		</club>
 		<club city="Rotterdam" id="1" name="Feyenoord">
 			<budget>
@@ -646,8 +624,7 @@
 				<number>
 					1
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>83</offensiveRating>
 				<defensiveRating>2</defensiveRating>
@@ -658,7 +635,7 @@
 				<price>
 					1900000
 				</price>		
-			</player>
+			<position>-1</position></player>
 			<player id="23">
 				<name>
 					Luke
@@ -669,8 +646,7 @@
 				<number>
 					2
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>2</offensiveRating>
 				<defensiveRating>18</defensiveRating>
@@ -681,7 +657,7 @@
 				<price>
 					1900000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="24">
 				<name>
 					Joris
@@ -692,8 +668,7 @@
 				<number>
 					4
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>31</offensiveRating>
 				<defensiveRating>52</defensiveRating>
@@ -704,7 +679,7 @@
 				<price>
 					2800000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="25">
 				<name>
 					Terence
@@ -715,8 +690,7 @@
 				<number>
 					5
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>31</offensiveRating>
 				<defensiveRating>90</defensiveRating>
@@ -727,7 +701,7 @@
 				<price>
 					5400000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="26">
 				<name>
 					Jordy
@@ -738,8 +712,7 @@
 				<number>
 					6
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>77</offensiveRating>
 				<defensiveRating>71</defensiveRating>
@@ -750,7 +723,7 @@
 				<price>
 					4500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="27">
 				<name>
 					Jean-Paul
@@ -761,8 +734,7 @@
 				<number>
 					7
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>6</offensiveRating>
 				<defensiveRating>93</defensiveRating>
@@ -773,7 +745,7 @@
 				<price>
 					3400000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="28">
 				<name>
 					Karim
@@ -784,8 +756,7 @@
 				<number>
 					8
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>0</offensiveRating>
 				<defensiveRating>54</defensiveRating>
@@ -796,7 +767,7 @@
 				<price>
 					3900000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="29">
 				<name>
 					Lex
@@ -807,8 +778,7 @@
 				<number>
 					10
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>23</offensiveRating>
 				<defensiveRating>57</defensiveRating>
@@ -819,7 +789,7 @@
 				<price>
 					6800000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="30">
 				<name>
 					Wesley
@@ -830,8 +800,7 @@
 				<number>
 					11
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>36</offensiveRating>
 				<defensiveRating>2</defensiveRating>
@@ -842,7 +811,7 @@
 				<price>
 					5800000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="31">
 				<name>
 					Ronald
@@ -853,8 +822,7 @@
 				<number>
 					13
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>10</offensiveRating>
 				<defensiveRating>51</defensiveRating>
@@ -865,7 +833,7 @@
 				<price>
 					2300000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="32">
 				<name>
 					Bilal
@@ -876,8 +844,7 @@
 				<number>
 					14
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>60</offensiveRating>
 				<defensiveRating>38</defensiveRating>
@@ -888,7 +855,7 @@
 				<price>
 					5600000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="33">
 				<name>
 					Colin
@@ -899,8 +866,7 @@
 				<number>
 					15
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>39</offensiveRating>
 				<defensiveRating>12</defensiveRating>
@@ -911,7 +877,7 @@
 				<price>
 					3600000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="34">
 				<name>
 					Kenneth
@@ -922,8 +888,7 @@
 				<number>
 					16
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>16</offensiveRating>
 				<defensiveRating>89</defensiveRating>
@@ -934,7 +899,7 @@
 				<price>
 					6700000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="35">
 				<name>
 					Elvis
@@ -945,8 +910,7 @@
 				<number>
 					17
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>86</offensiveRating>
 				<defensiveRating>83</defensiveRating>
@@ -957,7 +921,7 @@
 				<price>
 					6700000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="36">
 				<name>
 					Miquel
@@ -968,8 +932,7 @@
 				<number>
 					18
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>30</offensiveRating>
 				<defensiveRating>40</defensiveRating>
@@ -980,7 +943,7 @@
 				<price>
 					2700000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="37">
 				<name>
 					Mitchell
@@ -991,8 +954,7 @@
 				<number>
 					19
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>5</offensiveRating>
 				<defensiveRating>57</defensiveRating>
@@ -1003,7 +965,7 @@
 				<price>
 					7800000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="38">
 				<name>
 					Tonny
@@ -1014,8 +976,7 @@
 				<number>
 					21
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>58</offensiveRating>
 				<defensiveRating>52</defensiveRating>
@@ -1026,7 +987,7 @@
 				<price>
 					7400000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="39">
 				<name>
 					Sven
@@ -1037,8 +998,7 @@
 				<number>
 					22
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>92</offensiveRating>
 				<defensiveRating>20</defensiveRating>
@@ -1049,7 +1009,7 @@
 				<price>
 					2500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="40">
 				<name>
 					Khalid
@@ -1060,8 +1020,7 @@
 				<number>
 					23
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>40</offensiveRating>
 				<defensiveRating>60</defensiveRating>
@@ -1072,7 +1031,7 @@
 				<price>
 					4500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="41">
 				<name>
 					Matthew
@@ -1083,8 +1042,7 @@
 				<number>
 					24
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>71</offensiveRating>
 				<defensiveRating>61</defensiveRating>
@@ -1095,7 +1053,7 @@
 				<price>
 					3500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="42">
 				<name>
 					Lucas
@@ -1106,8 +1064,7 @@
 				<number>
 					25
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>53</offensiveRating>
 				<defensiveRating>93</defensiveRating>
@@ -1118,7 +1075,7 @@
 				<price>
 					3200000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="43">
 				<name>
 					Rick
@@ -1129,8 +1086,7 @@
 				<number>
 					26
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>65</offensiveRating>
 				<defensiveRating>97</defensiveRating>
@@ -1141,7 +1097,7 @@
 				<price>
 					3200000
 				</price>	
-			</player>
+			<position>-1</position></player>
 		</club>
 		<club city="Alkmaar" id="2" name="AZ">
 			<budget>
@@ -1157,8 +1113,7 @@
 				<number>
 					1
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>66</offensiveRating>
 				<defensiveRating>33</defensiveRating>
@@ -1169,7 +1124,7 @@
 				<price>
 					2200000
 				</price>
-			</player>
+			<position>-1</position></player>
 			<player id="45">
 				<name>
 					Yves
@@ -1180,8 +1135,7 @@
 				<number>
 					16
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>71</offensiveRating>
 				<defensiveRating>44</defensiveRating>
@@ -1192,7 +1146,7 @@
 				<price>
 					1200000
 				</price>			
-			</player>
+			<position>-1</position></player>
 			<player id="46">
 				<name>
 					Mattias
@@ -1203,8 +1157,7 @@
 				<number>
 					2
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>6</offensiveRating>
 				<defensiveRating>81</defensiveRating>
@@ -1215,7 +1168,7 @@
 				<price>
 					2200000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="47">
 				<name>
 					Jeffrey
@@ -1226,8 +1179,7 @@
 				<number>
 					3
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>90</offensiveRating>
 				<defensiveRating>24</defensiveRating>
@@ -1238,7 +1190,7 @@
 				<price>
 					3400000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="48">
 				<name>
 					Jan
@@ -1249,8 +1201,7 @@
 				<number>
 					4
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>46</offensiveRating>
 				<defensiveRating>76</defensiveRating>
@@ -1261,7 +1212,7 @@
 				<price>
 					3200000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="49">
 				<name>
 					Wesley
@@ -1272,8 +1223,7 @@
 				<number>
 					14
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>19</offensiveRating>
 				<defensiveRating>69</defensiveRating>
@@ -1284,7 +1234,7 @@
 				<price>
 					2800000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="50">
 				<name>
 					Simon
@@ -1295,8 +1245,7 @@
 				<number>
 					15
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>11</offensiveRating>
 				<defensiveRating>56</defensiveRating>
@@ -1307,7 +1256,7 @@
 				<price>
 					3900000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="51">
 				<name>
 					Djavan
@@ -1318,8 +1267,7 @@
 				<number>
 					17
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>63</offensiveRating>
 				<defensiveRating>44</defensiveRating>
@@ -1330,7 +1278,7 @@
 				<price>
 					2500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="52">
 				<name>
 					Derrick
@@ -1341,8 +1289,7 @@
 				<number>
 					23
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>9</offensiveRating>
 				<defensiveRating>35</defensiveRating>
@@ -1353,7 +1300,7 @@
 				<price>
 					4500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="53">
 				<name>
 					Ridgeciano
@@ -1364,8 +1311,7 @@
 				<number>
 					24
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>91</offensiveRating>
 				<defensiveRating>76</defensiveRating>
@@ -1376,7 +1322,7 @@
 				<price>
 					3400000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="54">
 				<name>
 					Celso
@@ -1387,8 +1333,7 @@
 				<number>
 					6
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>12</offensiveRating>
 				<defensiveRating>24</defensiveRating>
@@ -1399,7 +1344,7 @@
 				<price>
 					3700000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="55">
 				<name>
 					Nemanja
@@ -1410,8 +1355,7 @@
 				<number>
 					8
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>8</offensiveRating>
 				<defensiveRating>17</defensiveRating>
@@ -1422,7 +1366,7 @@
 				<price>
 					6700000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="56">
 				<name>
 					Markus
@@ -1433,8 +1377,7 @@
 				<number>
 					10
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>42</offensiveRating>
 				<defensiveRating>17</defensiveRating>
@@ -1445,7 +1388,7 @@
 				<price>
 					3500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="57">
 				<name>
 					Viktor
@@ -1456,8 +1399,7 @@
 				<number>
 					12
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>35</offensiveRating>
 				<defensiveRating>88</defensiveRating>
@@ -1468,7 +1410,7 @@
 				<price>
 					4300000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="58">
 				<name>
 					Thom
@@ -1479,8 +1421,7 @@
 				<number>
 					20
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>69</offensiveRating>
 				<defensiveRating>16</defensiveRating>
@@ -1491,7 +1432,7 @@
 				<price>
 					2900000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="59">
 				<name>
 					Guus
@@ -1502,8 +1443,7 @@
 				<number>
 					7
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>5</offensiveRating>
 				<defensiveRating>42</defensiveRating>
@@ -1514,7 +1454,7 @@
 				<price>
 					2500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="60">
 				<name>
 					Aron
@@ -1525,8 +1465,7 @@
 				<number>
 					9
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>36</offensiveRating>
 				<defensiveRating>65</defensiveRating>
@@ -1537,7 +1476,7 @@
 				<price>
 					5500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="61">
 				<name>
 					Muamer
@@ -1548,8 +1487,7 @@
 				<number>
 					11
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>70</offensiveRating>
 				<defensiveRating>90</defensiveRating>
@@ -1560,7 +1498,7 @@
 				<price>
 					1900000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="62">
 				<name>
 					Mikhail
@@ -1571,8 +1509,7 @@
 				<number>
 					18
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>25</offensiveRating>
 				<defensiveRating>32</defensiveRating>
@@ -1583,7 +1520,7 @@
 				<price>
 					4500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="63">
 				<name>
 					Eli
@@ -1594,8 +1531,7 @@
 				<number>
 					19
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>77</offensiveRating>
 				<defensiveRating>51</defensiveRating>
@@ -1606,7 +1542,7 @@
 				<price>
 					4800000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="64">
 				<name>
 					Robert
@@ -1617,8 +1553,7 @@
 				<number>
 					21
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>68</offensiveRating>
 				<defensiveRating>14</defensiveRating>
@@ -1629,7 +1564,7 @@
 				<price>
 					4500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 			<player id="65">
 				<name>
 					Steven
@@ -1640,8 +1575,7 @@
 				<number>
 					22
 				</number>
-				<type>
-				</type>
+				<type>1</type>
 				
 				<offensiveRating>27</offensiveRating>
 				<defensiveRating>19</defensiveRating>
@@ -1652,7 +1586,7 @@
 				<price>
 					6500000
 				</price>	
-			</player>
+			<position>-1</position></player>
 		</club>
 	</league>
 </game>
