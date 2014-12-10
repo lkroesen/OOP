@@ -60,11 +60,11 @@ public class javafx extends Application{
 	public void start(final Stage stage) throws Exception {
 		
 		stage.setResizable(false);
-		
-		//XML xml = new XML("teams.xml");
-		//Game game = xml.parseGame();
-		//ArrayList<League> leagues = game.getLeagues();
-		//League league = leagues[1];
+		XML xml = new XML("teams.xml");
+		Game game = xml.parseGame();
+		ArrayList<League> leagues = game.getLeagues();
+		League league = leagues.get(0);
+		ArrayList<Team> teams = league.getTeams();
 		
 		//song name in file form
 		File file = new File("src/fmsong.mp3");
@@ -98,11 +98,12 @@ public class javafx extends Application{
 	       
 	       mediaView.setFitWidth(1000);
 	       //also video stuff
-		
-		
-	       String team1 = "ADO";
-			//String team1 = game.getAttribute("teams.xml", null);
-			Button team_1 = new Button (team1);
+	       ArrayList<Button> teambuttons = new ArrayList<Button>();
+		for(int i = 0;i < 18;i++){
+			String teamname =teams.get(i).toString();
+			teambuttons.add(new Button(teamname));
+			
+		}
 		team_2 = createButton2();
 		team_3 = createButton3();
 		team_4 = createButton4();
@@ -162,7 +163,7 @@ public class javafx extends Application{
 				Label empty = new Label(" ");
 				
 				//adds the buttons and the label and sets the scene in the stage
-				teams1.getChildren().addAll(lbtext,team_1,team_2,team_3,team_4,team_5,team_6,team_7,team_8,team_9);
+				teams1.getChildren().addAll(lbtext,teambuttons.get(0),team_2,team_3,team_4,team_5,team_6,team_7,team_8,team_9);
 				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);	
 				vbBack.getChildren().addAll(mutesong,Back);
 				start.getChildren().addAll(teams1,teams2);
