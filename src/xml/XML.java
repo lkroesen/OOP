@@ -203,6 +203,7 @@ public class XML {
 		return game;
 	}
 	
+	
 	public String getChildValue(Node p, String name) {
 		for (int i = 0; i < p.getChildNodes().getLength(); i++) {
 			if (p.getChildNodes().item(i).getNodeType() != Node.ELEMENT_NODE)
@@ -216,6 +217,69 @@ public class XML {
 	
 	public String getAttribute(NamedNodeMap attrs, String name) {
 		return attrs.getNamedItem(name).getNodeValue();
+	}
+	
+	public boolean writeGame(Game g) {
+        try {
+                 
+                DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+ 
+                // root elements
+                Document doc = docBuilder.newDocument();
+                Element rootElement = doc.createElement("game");
+                doc.appendChild(rootElement);
+               
+                rootElement.setAttribute("id", g.getId()+"");
+                rootElement.setAttribute("name", g.getName()+"");
+                rootElement.setAttribute("currentday", g.getCurrentDay()+"");
+                rootElement.setAttribute("currentteam", g.getUserTeam().getId()+"");
+               
+                for (League l : g.getLeagues()) {
+                        Element eLeague = doc.createElement("league");
+                        eLeague.setAttribute("id", l.getId()+"");
+                        eLeague.setAttribute("name", l.getName());
+                        eLeague.setAttribute("country", l.getCountry());
+                        rootElement.appendChild(eLeague);
+                       
+                        for (Team t : l.getTeams()) {
+                                Element eTeam = doc.createElement("team");
+                                eTeam.setAttribute("id", t.getId()+"");
+                                eTeam.setAttribute("name", t.getName());
+                                eTeam.setAttribute("formation", t.getFormation());
+                               
+                                for (Player p : t.getPlayers()) {
+                                        Element ePlayer = doc.createElement("player");
+                                        ePlayer.setAttribute("id", p.getId()+"");
+                                       
+                                        Element eName = doc.createElement("name");
+                                        Element eLastName = doc.createElement("surname");
+                                        Element eNumber = doc.createElement("number");
+                                        Element eType = doc.createElement("type");
+                                        Element offensive = doc.createElement("offensiveRating");
+                                        Element defensive = doc.createElement("defensiveRating");
+                                        Element stamina = doc.createElement("stamina");
+                                        Element price = doc.createElement("price");
+                                       
+                                        eTeam.appendChild(ePlayer);
+                                }
+                               
+                                eLeague.appendChild(eTeam);
+                        }
+                }
+ 
+                transformer.transform(source, result);
+ 
+                System.out.println("File saved!");
+ 
+                return true;
+          } catch (ParserConfigurationException pce) {
+                pce.printStackTrace();
+          } catch (TransformerException tfe) {
+                tfe.printStackTrace();
+          }
+        }
+		return false;
 	}
 	
 	
