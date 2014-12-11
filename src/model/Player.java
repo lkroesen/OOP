@@ -118,6 +118,14 @@ public class Player {
 		this.price = price;
 	}
 
+	public int getPosition() {
+		return position;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+
 	@Override
 	public String toString() {
 		return "Player [id=" + id + ", firstname=" + firstname + ", surname="
