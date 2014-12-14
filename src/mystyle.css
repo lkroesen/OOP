@@ -18,7 +18,7 @@
 
 .button {
 	-fx-font-family: "Arial";
-	-fx-size: 20px;
+	-fx-padding: 10 20 10 20;
 	-fx-font-size: 10px;
 	-fx-font-weight: bold;
 	-fx-background-color: Linear-gradient(#9EA7E5, #61a2b1);

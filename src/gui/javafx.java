@@ -9,6 +9,7 @@ import xml.XML;
 import model.Game;
 import model.League;
 import model.Team;
+import model.Player;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
@@ -42,9 +43,9 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mutesong, mutevideo;
+	Button newgame, loadgame, mutesong, mutevideo, backng;
 	
-	Button team_1, team_2, team_3, team_4, team_5, team_6, team_7, team_8, team_9,
+	Button team_4, team_5, team_6, team_7, team_8, team_9,
 	team_10, team_11, team_12, team_13, team_14, team_15, team_16, team_17, team_18;
 	
 	Button Back = new Button ("Back");
@@ -80,6 +81,7 @@ public class javafx extends Application{
 		StackPane test = new StackPane();
 		VBox root = new VBox(10);
 		HBox start = new HBox();
+		start.setAlignment(Pos.CENTER);
 		//StackPane fm = new StackPane(); //for video
 		
 		//effects on buttons
@@ -104,8 +106,6 @@ public class javafx extends Application{
 			teambuttons.add(new Button(teamname));
 			
 		}
-		team_2 = createButton2();
-		team_3 = createButton3();
 		team_4 = createButton4();
 		team_5 = createButton5();
 		team_6 = createButton6();
@@ -128,6 +128,7 @@ public class javafx extends Application{
 		loadgame = new Button("load game");
 		mutesong = new Button("Mute/resume");
 		mutevideo = new Button("Mute/resume");
+		backng = new Button("back");
 		
 		lbtext.setEffect(reflection);
 		
@@ -149,7 +150,6 @@ public class javafx extends Application{
 			public void handle(ActionEvent arg0){
 				audio.play();
 				mediaPlayer.setVolume(0);
-				start.setTranslateX(200);
 				//changes the text
 				lbtext.setText("Selection menu");
 				
@@ -233,8 +233,107 @@ public class javafx extends Application{
 				}
 			}
 		});
+		
+		backng.setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				newgame.fire();
+				
+			}
+		});
+		
+		teambuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(0).getName().toString());
+				ArrayList<Player> players = teams.get(0).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(0).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		
+		teambuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(1).getName().toString());
+				ArrayList<Player> players = teams.get(1).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(1).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		
+		teambuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(2).getName().toString());
+				ArrayList<Player> players = teams.get(2).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(2).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		//first box getting children
+		root.getChildren().addAll(lbtext, newgame, loadgame, mutevideo);
+		test.getChildren().addAll(mediaView,root);
 		mutevideo.setOnAction(new EventHandler<ActionEvent>(){
-					
+			
 			@Override
 			public void handle(ActionEvent arg0){
 				if(mediaPlayer.getVolume()==0){
@@ -245,41 +344,15 @@ public class javafx extends Application{
 				}
 			}
 		});
-		//first box getting children 
-		root.getChildren().addAll(lbtext, newgame, loadgame, mutevideo);
-		test.getChildren().addAll(mediaView,root);
 	}
 	
 	//These 18 methods create the team buttons for the team selection screen
-		public static Button createButton1(){
-
-			String team1 = "ADO";
-			//String team1 = game.getAttribute("teams.xml", null);
-			Button team_1 = new Button (team1);
-			return team_1;	
-		}
-		
-		
-		public static Button createButton2(){
-			
-			String team2 = "Ajax";
-			Button team_2 = new Button (team2);
-			return team_2;
-			
-		}
-		public static Button createButton3(){
-			
-			String team3 = "AZ";
-			Button team_3 = new Button (team3);
-			return team_3;
-			
-		}
 		public static Button createButton4(){
-			
-			String team4 = "Cambuur";
+		
+			String team4 = "Dordrecht";
 			Button team_4 = new Button (team4);
 			return team_4;
-			
+		
 		}
 		public static Button createButton5(){
 			
