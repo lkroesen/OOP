@@ -40,9 +40,6 @@ public class Scheduler
 			Order[c] = -1;
 		Order = OrderRandomizer(TeamSize, Order);
 
-		ArrayList<Team> Team = new ArrayList<Team>();
-		Team = league.getTeams();
-
 		// Week 0/17
 		int week = 0;
 		Schedule s = new Schedule();
