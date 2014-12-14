@@ -80,4 +80,23 @@ public class League {
 		}
 		return teams.get(0);
 	}
+	
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		
+		if (obj instanceof League)
+		{
+			League that = (League) obj;
+			if (		this.getName() 	== 	that.getName() 
+					&&	this.getId() 	== 	that.getId()
+					&&	this.getCountry() ==	that.getCountry()
+					&&	this.getTeams()	==	that.getTeams())
+				return true;
+		}
+		
+		return false;
+		
+	}
 }

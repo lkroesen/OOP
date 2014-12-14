@@ -12,6 +12,7 @@ public class Team {
 	private int id;
 	private String name;
 	private ArrayList<Player> players;
+	
 	public int getId() {
 		return id;
 	}
@@ -51,7 +52,23 @@ public class Team {
 		return "Team [id=" + id + ", name=" + name + ", players=" + players
 				+ "]";
 	}
-	
-	
+
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		
+		if (obj instanceof Team)
+		{
+			Team that = (Team) obj;
+			if (		this.getId() 	== 	that.getId() 
+					&&	this.getName() 	== 	that.getName()
+					)
+				return true;
+		}
+		
+		return false;
+		
+	}	
 
 }

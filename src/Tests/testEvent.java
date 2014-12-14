@@ -36,7 +36,7 @@ public class testEvent
 	public void testEqualsFalse()
 	{
 		Event e1 = new Event(1,42,430,102);
-		Event e2 = new Event(42,42,420,142);
+		Event e2 = new Event(42,4,420,142);
 		assertFalse(e1.equals(e2));
 	}
 	
