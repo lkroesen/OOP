@@ -35,15 +35,10 @@ import javafx.stage.Stage;
 
 
 public class javafx extends Application{
-	//looking into xml parser and video filling the background 
-	
-	//possible image for video still creating
-	//private static final String MEDIA_URL = "http://ak5.picdn.net/shutterstock/videos/3340358/preview/stock-footage-spinning-football-d-animation-stock-footage-clip-isolated-on-white-background-full-hd-video.mp4";
-    //private static String arg1;
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mutesong, mutevideo, backng;
+	Button newgame, loadgame, mutesong, mutevideo, backng, backteam;
 	
 	Button team_4, team_5, team_6, team_7, team_8, team_9,
 	team_10, team_11, team_12, team_13, team_14, team_15, team_16, team_17, team_18;
@@ -129,10 +124,11 @@ public class javafx extends Application{
 		mutesong = new Button("Mute/resume");
 		mutevideo = new Button("Mute/resume");
 		backng = new Button("back");
+		backteam = new Button("back");
 		
 		lbtext.setEffect(reflection);
 		
-		lbtext.getStyleClass().add("mycustomLabel");
+		lbtext.getStyleClass().add("Headline");
 		
 		//makes a scene with the title setting it in the stage
 		Scene scene = new Scene(test,1000,500);
@@ -160,6 +156,7 @@ public class javafx extends Application{
 				teams2.setAlignment(Pos.CENTER);
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateY(-40);
 				Label empty = new Label(" ");
 				
 				//adds the buttons and the label and sets the scene in the stage
@@ -258,7 +255,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(0).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -271,6 +268,564 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(0).fire();
+					}
+				});
 			}
 		});
 		
@@ -287,7 +842,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(1).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -300,6 +855,564 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(1).fire();
+					}
+				});
 			}
 		});
 		
@@ -316,7 +1429,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(2).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -329,6 +1442,564 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(2).fire();
+					}
+				});
 			}
 		});
 		
@@ -347,7 +2018,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(3).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -360,6 +2031,564 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(3).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -379,7 +2608,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(4).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -392,6 +2621,564 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(4).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -410,7 +3197,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(5).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -423,6 +3210,564 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(5).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -441,7 +3786,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(6).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -454,6 +3799,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(6).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -472,7 +4374,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(7).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -485,6 +4387,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(7).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -503,7 +4962,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(8).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -516,6 +4975,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(8).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -534,7 +5550,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(9).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -547,6 +5563,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(9).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -565,7 +6138,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(10).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -578,6 +6151,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(10).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -596,7 +6726,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(11).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -609,6 +6739,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(11).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -627,7 +7314,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(12).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -640,6 +7327,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(12).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -658,7 +7902,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(13).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -671,6 +7915,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(13).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -689,7 +8490,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(14).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -702,6 +8503,564 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(14).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -720,7 +9079,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(15).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -733,6 +9092,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(15).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -751,7 +9667,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(16).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -764,6 +9680,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(16).fire();
+					}
+				});
 			}
 		});
 		*/
@@ -782,7 +10255,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(500);
-				vbBack.getChildren().add(backng);
+				vbBack.getChildren().addAll(mutesong,backng);
 				for(int i = 0; i < teams.get(17).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -795,6 +10268,563 @@ public class javafx extends Application{
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
+				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(0).getPosition());
+						Label pr = new Label("Price: " + players.get(0).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(1).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(1).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(1).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(1).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(1).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(1).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(1).getPosition());
+						Label pr = new Label("Price: " + players.get(1).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg2){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(2).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(2).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(2).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(2).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(2).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(2).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(2).getPosition());
+						Label pr = new Label("Price: " + players.get(2).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg3){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(3).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(3).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(3).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(3).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(3).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(3).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(3).getPosition());
+						Label pr = new Label("Price: " + players.get(3).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg4){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(4).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(4).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(4).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(4).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(4).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(4).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(4).getPosition());
+						Label pr = new Label("Price: " + players.get(4).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg5){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(5).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(5).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(5).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(5).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(5).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(5).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(5).getPosition());
+						Label pr = new Label("Price: " + players.get(5).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg6){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(6).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(6).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(6).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(6).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(6).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(6).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(6).getPosition());
+						Label pr = new Label("Price: " + players.get(6).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg7){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(7).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(7).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(7).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(7).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(7).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(7).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(7).getPosition());
+						Label pr = new Label("Price: " + players.get(7).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg8){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(8).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(8).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(8).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(8).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(8).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(8).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(8).getPosition());
+						Label pr = new Label("Price: " + players.get(8).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg9){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(9).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(9).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(9).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(9).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(9).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(9).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(9).getPosition());
+						Label pr = new Label("Price: " + players.get(9).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg10){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(10).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(10).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(10).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(10).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(10).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(10).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(10).getPosition());
+						Label pr = new Label("Price: " + players.get(10).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg11){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(11).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(11).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(11).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(11).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(11).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(11).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(11).getPosition());
+						Label pr = new Label("Price: " + players.get(11).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg12){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(12).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(12).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(12).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(12).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(12).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(12).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(12).getPosition());
+						Label pr = new Label("Price: " + players.get(12).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg13){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(13).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(13).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(13).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(13).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(13).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(13).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(13).getPosition());
+						Label pr = new Label("Price: " + players.get(13).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg14){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(14).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(14).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(14).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(14).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(14).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(14).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(14).getPosition());
+						Label pr = new Label("Price: " + players.get(14).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg15){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(15).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(15).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(15).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(15).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(15).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(15).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(15).getPosition());
+						Label pr = new Label("Price: " + players.get(15).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg16){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(16).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(16).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(16).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(16).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(16).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(16).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(16).getPosition());
+						Label pr = new Label("Price: " + players.get(16).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg17){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(17).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(17).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(17).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(17).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(17).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(17).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(17).getPosition());
+						Label pr = new Label("Price: " + players.get(17).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg18){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(18).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(18).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(18).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(18).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(18).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(18).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(18).getPosition());
+						Label pr = new Label("Price: " + players.get(18).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg19){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(19).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(19).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(19).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(19).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(19).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(19).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(19).getPosition());
+						Label pr = new Label("Price: " + players.get(19).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg20){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(20).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(20).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(20).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(20).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(20).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(20).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(20).getPosition());
+						Label pr = new Label("Price: " + players.get(20).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg21){
+						lbtext.setText("stats");
+						Label fn = new Label("Firstname: " + players.get(21).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(21).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(21).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(21).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(21).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(21).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(21).getPosition());
+						Label pr = new Label("Price: " + players.get(21).getPrice());
+						VBox playerbox = new VBox(10);
+						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
+						HBox screenbox = new HBox();
+						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
+						teamback.getChildren().addAll(mutesong,backteam);
+						screenbox.getChildren().addAll(playerbox,teamback);
+						Scene playerscreen = new Scene(screenbox,1000,500);
+						playerscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(playerscreen);
+						
+					}
+				});
+				backteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						teambuttons.get(17).fire();
+					}
+				});
 			}
 		});
 		*/
