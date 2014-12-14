@@ -165,6 +165,8 @@ public class javafx extends Application{
 				//adds the buttons and the label and sets the scene in the stage
 				teams1.getChildren().addAll(lbtext,teambuttons.get(0),teambuttons.get(1),teambuttons.get(2),team_4,team_5,team_6,team_7,team_8,team_9);
 				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);	
+				//teams1.getChildren().addAll(lbtext,teambuttons.get(0),teambuttons.get(1),teambuttons.get(2),teambuttons.get(3),teambuttons.get(4),teambuttons.get(5),teambuttons.get(6),teambuttons.get(7),teambuttons.get(8));
+				//teams2.getChildren().addAll(empty,teambuttons.get(9),teambuttons.get(10),teambuttons.get(11),teambuttons.get(12),teambuttons.get(13),teambuttons.get(14),teambuttons.get(15),teambuttons.get(16),teambuttons.get(17));
 				vbBack.getChildren().addAll(mutesong,Back);
 				start.getChildren().addAll(teams1,teams2);
 				VBox ngtext = new VBox();
@@ -329,6 +331,474 @@ public class javafx extends Application{
 				stage.setScene(teamscreen);
 			}
 		});
+		
+		
+		/*
+		teambuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(3).getName().toString());
+				ArrayList<Player> players = teams.get(3).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(3).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		
+		/*
+		teambuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(4).getName().toString());
+				ArrayList<Player> players = teams.get(4).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(4).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(5).getName().toString());
+				ArrayList<Player> players = teams.get(5).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(5).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(6).getName().toString());
+				ArrayList<Player> players = teams.get(6).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(6).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(7).getName().toString());
+				ArrayList<Player> players = teams.get(7).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(7).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(8).getName().toString());
+				ArrayList<Player> players = teams.get(8).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(8).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(9).getName().toString());
+				ArrayList<Player> players = teams.get(9).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(9).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(10).getName().toString());
+				ArrayList<Player> players = teams.get(10).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(10).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(11).getName().toString());
+				ArrayList<Player> players = teams.get(11).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(11).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(12).getName().toString());
+				ArrayList<Player> players = teams.get(12).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(12).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(13).getName().toString());
+				ArrayList<Player> players = teams.get(13).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(13).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(14).getName().toString());
+				ArrayList<Player> players = teams.get(14).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(14).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(15).getName().toString());
+				ArrayList<Player> players = teams.get(15).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(15).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(16).getName().toString());
+				ArrayList<Player> players = teams.get(16).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(550);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(16).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
+		/*
+		teambuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
+			
+			@Override
+			public void handle(ActionEvent arg0){
+				lbtext.setText(teams.get(17).getName().toString());
+				ArrayList<Player> players = teams.get(17).getPlayers();
+				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				VBox teambox1 = new VBox(10);
+				VBox teambox2 = new VBox(10);
+				HBox playerdisplay = new HBox();
+				VBox vbBack = new VBox(10);
+				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
+				vbBack.setTranslateX(500);
+				vbBack.getChildren().add(backng);
+				for(int i = 0; i < teams.get(17).getPlayers().size();i++){
+				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+				}
+				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
+						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
+				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
+				teambox2.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				Scene teamscreen = new Scene(playerdisplay,1000,500);
+				teamscreen.getStylesheets().add("mystyle.css");
+				stage.setScene(teamscreen);
+			}
+		});
+		*/
+		
 		//first box getting children
 		root.getChildren().addAll(lbtext, newgame, loadgame, mutevideo);
 		test.getChildren().addAll(mediaView,root);
