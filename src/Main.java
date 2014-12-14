@@ -13,7 +13,6 @@ import AI.Schedule;
 import AI.Scheduler;
 import xml.XML;
 
-
 public class Main {
 
 	public Main() {
