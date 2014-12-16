@@ -5,9 +5,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import AI.PlayMatch;
+import AI.Schedule;
+import AI.Scheduler;
 import xml.XML;
 import model.Game;
 import model.League;
+import model.Match;
 import model.Team;
 import model.Player;
 import javafx.application.Application;
@@ -38,7 +42,7 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mutesong, mutevideo, backng, backteam;
+	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, playmatch;
 	
 	Button team_4, team_5, team_6, team_7, team_8, team_9,
 	team_10, team_11, team_12, team_13, team_14, team_15, team_16, team_17, team_18;
@@ -61,6 +65,8 @@ public class javafx extends Application{
 		ArrayList<League> leagues = game.getLeagues();
 		League league = leagues.get(0);
 		ArrayList<Team> teams = league.getTeams();
+		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
+		//Schedule s = Scheduler.scheduler(leaguee);
 		
 		//song name in file form
 		File file = new File("src/fmsong.mp3");
@@ -125,6 +131,8 @@ public class javafx extends Application{
 		mutevideo = new Button("Mute/resume");
 		backng = new Button("back");
 		backteam = new Button("back");
+		select = new Button("choose this team");
+		playmatch = new Button("Play match");
 		
 		lbtext.setEffect(reflection);
 		
@@ -255,7 +263,7 @@ public class javafx extends Application{
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateX(550);
-				vbBack.getChildren().addAll(mutesong,backng);
+				vbBack.getChildren().addAll(select,mutesong,backng);
 				for(int i = 0; i < teams.get(0).getPlayers().size();i++){
 				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 				}
@@ -824,6 +832,35 @@ public class javafx extends Application{
 					@Override
 					public void handle(ActionEvent arg0){
 						teambuttons.get(0).fire();
+					}
+				});
+				select.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						VBox teamchoicebox = new VBox();
+						teamchoicebox.getStylesheets().add("mystyle.css");
+						Scene teamchoicescreen = new Scene(teamchoicebox,1000,500);
+						lbtext.setText(teams.get(0).getName());
+						teamchoicebox.getChildren().addAll(lbtext,playmatch);
+						stage.setScene(teamchoicescreen);
+						
+					}
+				});
+				playmatch.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+					lbtext.setText("Results");
+					VBox playmatchbox = new VBox();
+					Label teamnamematch = new Label(teams.get(0).getName() + " vs " + teams.get(1).getName());
+					playmatchbox.getStylesheets().add("mystyle.css");
+					Scene playmatchscreen = new Scene(playmatchbox,1000,500);
+					Match match = new Match(1,1,teams.get(0),teams.get(1));
+					String result = PlayMatch.play(match);
+					Label stats = new Label("goals home - away: " + result);
+					playmatchbox.getChildren().addAll(lbtext,stats);
+					stage.setScene(playmatchscreen);
 					}
 				});
 			}
