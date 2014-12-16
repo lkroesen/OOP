@@ -9,8 +9,10 @@ import model.Team;
 import org.xml.sax.SAXException;
 
 import AI.PlayMatch;
+import AI.Ranking;
 import AI.Schedule;
 import AI.Scheduler;
+import AI.Ranking;
 import xml.XML;
 
 public class Main {
@@ -51,7 +53,20 @@ public class Main {
 		System.out.println("ajax - feyenoord (totaal)");
 		System.out.println(at + "-" + def);
 		System.out.println(xml.parseGame());
+
+		// Setting some matchs scores for testing
+		s.getS().get(0).getSaturday().getMatches().get(0).setResult("1-0");
+		s.getS().get(0).getSaturday().getMatches().get(1).setResult("0-2");
+		s.getS().get(0).getSaturday().getMatches().get(2).setResult("3-0");
+		s.getS().get(1).getSaturday().getMatches().get(0).setResult("5-0");
+		s.getS().get(1).getSaturday().getMatches().get(1).setResult("1-9");
+		s.getS().get(1).getSaturday().getMatches().get(2).setResult("1-8");
 		
+		// Ranking will work for any match that has a result
+		// if the match has no result it will not be used
+		// So, don't set a result EVER, unless a match has been played!
+		Ranking r = Ranking.generate(s);
+		System.out.println(r.toString());
 	}
 
 }

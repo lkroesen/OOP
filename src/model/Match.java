@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Match {
 
@@ -109,6 +110,30 @@ private String result;
 		
 	}
 	
+	/**
+	 * Parses the results in the Match object 
+	 * @return
+	 * returning an array with at pos 0 home score, and at pos 1 away score
+	 */
+	public int[] ParseResult()
+	{
+		int[] results = new int[2];
+		
+		/*
+		if (result == null)
+			result = "0-0";
+		*/
+		
+		String[] se = result.split("-");
+		// first part of the result
+		Scanner a = new Scanner(se[0]);
+		results[0] = a.nextInt();
+		
+		// second part of the result
+		Scanner b = new Scanner(se[1]);
+		results[1] = b.nextInt();
 
+		return results;
+	}
 }
 
