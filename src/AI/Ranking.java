@@ -111,6 +111,9 @@ public class Ranking
 			TeamScores[j] = -1;
 		}
 		
+		// Check for ties
+		Dispute(FinalScores);
+		
 		Ranking Rank = new Ranking(FinalTeamList, FinalScores);
 		return Rank;
 	}
@@ -254,5 +257,18 @@ public class Ranking
 		}
 		
 		return high;
+	}
+	
+	public static void Dispute(int[] Scores)
+	{
+		int AoD = 0;
+		for (int l = 0; l < Scores.length; l++)
+		{
+			if (Scores[0] == Scores[l])
+				AoD++;
+		}
+		
+		if (AoD > 0)
+			System.out.println(AoD + "-way tie, extra matches required!");
 	}
 }
