@@ -25,12 +25,12 @@ public class PlayMatch {
 	private static int hgoal;
 	private static int agoal;
 	
-	public static void play(Match match){
+	public static String play(Match match){
 		attackn = 0;
 		amatch = match;
 		Team home = match.getTeam_home();
 		hplayers = home.getPlayers();
-		System.out.println(home.getPlayers());
+		//System.out.println(home.getPlayers());
 		Team away = match.getTeam_away();
 		aplayers = away.getPlayers();
 		generatestats(hplayers,aplayers);
@@ -50,15 +50,16 @@ public class PlayMatch {
 		match.setResult(hgoal + "-" + agoal);
 		System.out.println(home.getName() + " - " + away.getName());
 		System.out.println(hgoal + "-" + agoal);
+		return hgoal+","+agoal;
 	}
 	
 	private static void addevent(int id, boolean home, int pos){
 		int time = (int) Math.round((new Random().nextDouble() * 8.18) + (attackn * 8.18)); 
 		if(home){
 			ArrayList<Player> posplayers = new ArrayList<Player>();
-			System.out.println(hplayers);
+			//System.out.println(hplayers);
 			for(Player player:hplayers){
-				System.out.println(player.getPosition() + ":" + pos);
+				//System.out.println(player.getPosition() + ":" + pos);
 				if(player.getPosition() == pos){
 					posplayers.add(player);
 				}
@@ -68,7 +69,7 @@ public class PlayMatch {
 		}else{
 			ArrayList<Player> posplayers = new ArrayList<Player>();
 			for(Player player:aplayers){
-				System.out.println(player.getPosition() + ":" + pos);
+				//System.out.println(player.getPosition() + ":" + pos);
 				if(player.getPosition() == pos){
 					posplayers.add(player);
 				}
@@ -158,6 +159,8 @@ public class PlayMatch {
 		astamina = getStamina(aplayers);
 		aattack = getOffenciveScore(aplayers);
 		adefend = getDefenciveScore(aplayers);
+		agoal = 0;
+		hgoal = 0;
 	}
 	
 	private static double getStamina(ArrayList<Player> players){

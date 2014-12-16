@@ -31,11 +31,25 @@ public class Main {
 		
 		XML xml = new XML("teams.xml");
 		Game game = xml.parseGame();
+		
+		int at = 0;
+		int def = 0;
 		League league = game.getLeagues().get(0);
 		Team team1 = league.getTeams().get(0);
 		Team team2 = league.getTeams().get(1);
+		int x = 0;
+		int aantalkeer = 1000;
 		Match match = new Match(1,1,team1,team2);
-		PlayMatch.play(match);
+		while(x<aantalkeer){
+			String tp[] = PlayMatch.play(match).split(",");
+			at += Integer.parseInt(tp[0]);
+			def += Integer.parseInt(tp[1]);
+			x++;
+		}
+		System.out.println("ajax - feyenoord (gemmideld)");
+		System.out.println((double)at/aantalkeer + "-" + (double)def/aantalkeer);
+		System.out.println("ajax - feyenoord (totaal)");
+		System.out.println(at + "-" + def);
 		System.out.println(xml.parseGame());
 		
 	}
