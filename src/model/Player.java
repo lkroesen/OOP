@@ -137,6 +137,31 @@ public class Player {
 
 	// Getters and Setters end
 	
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		
+		if (obj instanceof Player)
+		{
+			Player that = (Player) obj;
+			if (		this.getId() 	== 	that.getId() 
+					&&	this.getFirstname() 	== 	that.getFirstname()
+					&&	this.getSurname() 		==	that.getSurname()
+					&&	this.getJerseyNumber()	==	that.getJerseyNumber()
+					&&	this.getType()		==	that.getType()
+					&&	this.getPosition()	==	that.getPosition()
+					&&	this.getOffensiveScore() == that.getOffensiveScore()
+					&&	this.getDefensiveScore() == that.getDefensiveScore()
+					&&	this.getStaminaScore()	== that.getStaminaScore()
+					&&	this.getPrice()			== that.getPrice()
+					)
+				return true;
+		}
+		
+		return false;
+		
+	}
 	
 
 }
