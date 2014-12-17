@@ -858,6 +858,7 @@ public class javafx extends Application{
 						VBox teamchoicebox = new VBox(10);
 						HBox imageadd = new HBox(10);
 						teamchoicebox.getStylesheets().add("mystyle.css");
+						imageadd.getStylesheets().add("mystyle.css");
 						Scene teamchoicescreen = new Scene(imageadd,1000,500);
 						lbtext.setText(teams.get(0).getName());
 						teamchoicebox.getChildren().addAll(lbtext,playmatch);
