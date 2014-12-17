@@ -28,6 +28,8 @@ import javafx.scene.control.Label;
 import javafx.scene.effect.Reflection;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -44,7 +46,7 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, playmatch;
+	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, playmatch, next;
 	
 	Button team_4, team_5, team_6, team_7, team_8, team_9,
 	team_10, team_11, team_12, team_13, team_14, team_15, team_16, team_17, team_18;
@@ -135,6 +137,7 @@ public class javafx extends Application{
 		backteam = new Button("back");
 		select = new Button("choose this team");
 		playmatch = new Button("Play match");
+		next = new Button("continue");
 		
 		ImageView image0 = new ImageView(new Image("/AFC_AJAX 200px.png", true));
 		ImageView image1 = new ImageView(new Image("/Feyenoord 200px.png", true));
@@ -150,6 +153,22 @@ public class javafx extends Application{
 		stage.setScene(scene);
 		scene.getStylesheets().add("mystyle.css");
 		
+		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+	        @Override
+	        public void handle(KeyEvent ke) {
+	            if (ke.getCode() == KeyCode.UP) {
+	            	scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+	        	        @Override
+	        	        public void handle(KeyEvent ke) {
+	        	            if (ke.getCode() == KeyCode.UP) {
+	        	                System.out.println("space pressed");
+	        	            }
+	        	        }
+	        	    });
+	            }
+	            else;
+	        }
+	    });
 		//shows current scene
 		stage.show();
 		
@@ -879,8 +898,15 @@ public class javafx extends Application{
 					Match match = new Match(1,1,teams.get(0),teams.get(1));
 					String result = PlayMatch.play(match);
 					Label stats = new Label("goals home - away: " + result);
-					playmatchbox.getChildren().addAll(lbtext,teamnamematch,stats);
+					playmatchbox.getChildren().addAll(lbtext,teamnamematch,stats,next);
 					stage.setScene(playmatchscreen);
+					}
+				});
+				next.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						select.fire();
 					}
 				});
 			}
