@@ -26,6 +26,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Reflection;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -134,6 +136,10 @@ public class javafx extends Application{
 		select = new Button("choose this team");
 		playmatch = new Button("Play match");
 		
+		ImageView image0 = new ImageView(new Image("/AFC_AJAX 200px.png", true));
+		ImageView image1 = new ImageView(new Image("/Feyenoord 200px.png", true));
+		ImageView image2 = new ImageView(new Image("/AZ 200px.png", true));
+		
 		lbtext.setEffect(reflection);
 		
 		lbtext.getStyleClass().add("Headline");
@@ -158,6 +164,8 @@ public class javafx extends Application{
 				lbtext.setText("Selection menu");
 				
 				//makes new boxes for layout new game screen
+				VBox imagerow1 = new VBox(10);
+				imagerow1.setTranslateY(23);
 				VBox teams1 = new VBox(10);
 				teams1.setAlignment(Pos.CENTER_LEFT);
 				VBox teams2 = new VBox(10);
@@ -166,14 +174,20 @@ public class javafx extends Application{
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				vbBack.setTranslateY(-40);
 				Label empty = new Label(" ");
-				
 				//adds the buttons and the label and sets the scene in the stage
+				image0.setFitWidth(21);
+				image0.setFitHeight(21);
+				image1.setFitWidth(21);
+				image1.setFitHeight(21);
+				image2.setFitWidth(21);
+				image2.setFitHeight(21);
+				imagerow1.getChildren().addAll(image0,image1,image2);
 				teams1.getChildren().addAll(lbtext,teambuttons.get(0),teambuttons.get(1),teambuttons.get(2),team_4,team_5,team_6,team_7,team_8,team_9);
 				teams2.getChildren().addAll(empty,team_10,team_11,team_12,team_13,team_14,team_15,team_16,team_17,team_18);	
 				//teams1.getChildren().addAll(lbtext,teambuttons.get(0),teambuttons.get(1),teambuttons.get(2),teambuttons.get(3),teambuttons.get(4),teambuttons.get(5),teambuttons.get(6),teambuttons.get(7),teambuttons.get(8));
 				//teams2.getChildren().addAll(empty,teambuttons.get(9),teambuttons.get(10),teambuttons.get(11),teambuttons.get(12),teambuttons.get(13),teambuttons.get(14),teambuttons.get(15),teambuttons.get(16),teambuttons.get(17));
 				vbBack.getChildren().addAll(mutesong,Back);
-				start.getChildren().addAll(teams1,teams2);
+				start.getChildren().addAll(imagerow1,teams1,teams2);
 				VBox ngtext = new VBox();
 				ngtext.getChildren().addAll(lbtext,start,vbBack);
 				Scene ng = new Scene(ngtext,1000,500);
@@ -254,6 +268,9 @@ public class javafx extends Application{
 			
 			@Override
 			public void handle(ActionEvent arg0){
+				image0.setFitWidth(60);
+				image0.setFitHeight(60);
+				image0.setSmooth(true);
 				lbtext.setText(teams.get(0).getName().toString());
 				ArrayList<Player> players = teams.get(0).getPlayers();
 				ArrayList<Button> playerbuttons = new ArrayList<Button>();
@@ -269,9 +286,9 @@ public class javafx extends Application{
 				}
 				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
 						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
-				teambox2.getChildren().addAll(playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
+				teambox2.getChildren().addAll(image0,playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
 						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
-				teambox2.translateYProperty().set(70);
+				teambox2.translateYProperty().set(10);
 				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
@@ -838,11 +855,13 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
-						VBox teamchoicebox = new VBox();
+						VBox teamchoicebox = new VBox(10);
+						HBox imageadd = new HBox(10);
 						teamchoicebox.getStylesheets().add("mystyle.css");
-						Scene teamchoicescreen = new Scene(teamchoicebox,1000,500);
+						Scene teamchoicescreen = new Scene(imageadd,1000,500);
 						lbtext.setText(teams.get(0).getName());
 						teamchoicebox.getChildren().addAll(lbtext,playmatch);
+						imageadd.getChildren().addAll(teamchoicebox,image0);
 						stage.setScene(teamchoicescreen);
 						
 					}
@@ -859,7 +878,7 @@ public class javafx extends Application{
 					Match match = new Match(1,1,teams.get(0),teams.get(1));
 					String result = PlayMatch.play(match);
 					Label stats = new Label("goals home - away: " + result);
-					playmatchbox.getChildren().addAll(lbtext,stats);
+					playmatchbox.getChildren().addAll(lbtext,teamnamematch,stats);
 					stage.setScene(playmatchscreen);
 					}
 				});
