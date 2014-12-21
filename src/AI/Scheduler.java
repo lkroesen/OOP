@@ -11,7 +11,7 @@ import model.Team;
 public class Scheduler 
 {
 	/**
-	 * The core of the Scheduler, this will eventually return a Schedule object with the schedule for the entire game, this is randomized
+	 * The core of the Scheduler, WARNING: !!! WILL ONLY WORK FOR 18 TEAMS !!!
 	 * @param league
 	 * Input a league for which the schedule is to be generated
 	 * @return
