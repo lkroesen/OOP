@@ -38,6 +38,12 @@ public class Training {
 	 * Lose Nothing (90%)
 	 * Lose Attack  (5%)
 	 * Lose Defence (5%)
+	 * 
+	 * Specific Training
+	 * +0-2 to chosen stat, costs 5 stamina
+	 * Randomly costs:
+	 * The other stat - (-1 - 2)
+	 * Stamina - (-1 - 2)
 	 */
 	
 	 
