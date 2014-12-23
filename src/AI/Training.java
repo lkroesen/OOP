@@ -71,13 +71,13 @@ public class Training {
 		 int points = (int) (Math.random() * 100);
 		 int spendable = 0;
 		 
-		 if (points > 40 && points <= 80)
+		 if (points >= 40 && points < 80)
 			 spendable = 1;
 		 
-		 if (points > 80 && points <= 95)
+		 if (points >= 80 && points < 95)
 			 spendable = 2;
 		 
-		 if (points > 95 && points <= 100)
+		 if (points >= 95 && points < 100)
 			 spendable = 3;
 		 
 		 if (spendable > 0)
@@ -85,11 +85,11 @@ public class Training {
 			 int offensivebonus = 0;
 			 
 			 // Offensive positions
-			 if (p.getType() == 1 || p.getType() == 2)
+			 if (p.getType() == 2 || p.getType() == 3)
 				 offensivebonus = 10;
 			 
 			 // Defensive positions
-			 if (p.getType() == 3 || p.getType() == 4)
+			 if (p.getType() == 0 || p.getType() == 1)
 				 offensivebonus = -10;
 			 
 			 for(int c = 0; c < spendable; c++)
@@ -97,7 +97,7 @@ public class Training {
 				 int percentage = (int) (Math.random() * 100);
 
 				 // see if we add to offensive
-				 if (percentage <= (40 + offensivebonus))
+				 if (percentage < (40 + offensivebonus))
 					 p.setOffensiveScore((byte) (p.getOffensiveScore() + 1));
 				 
 				 // Stamina bonus
@@ -119,7 +119,7 @@ public class Training {
 	 */
 	 public static Player rest(Player p)
 	 {
-		 byte s = (byte) ((byte) p.getStaminaScore() + 2);
+		 byte s = (byte) ((byte) p.getStaminaScore() + 4);
 		 p.setStaminaScore(s);
 		 
 		 int rng = (int) (Math.random()*100);
@@ -127,7 +127,7 @@ public class Training {
 		 // Randomly Gain
 		 
 		 // Stamina boost
-		 if (rng >= 48 && rng <= 98)
+		 if (rng >= 48 && rng <= 97)
 		 {
 			 rng = (int) (Math.random()*100);
 			 
@@ -142,7 +142,7 @@ public class Training {
 		 }
 		 
 		 // Offense boost
-		 if (rng == 99)
+		 if (rng == 98)
 		 {
 			 rng = (int) (Math.random()*100);
 			 
@@ -151,7 +151,7 @@ public class Training {
 		 }
 		 
 		 // Defense boost
-		 if (rng == 100)
+		 if (rng == 99)
 		 {
 			 rng = (int) (Math.random()*100);
 			 
@@ -163,10 +163,10 @@ public class Training {
 		 // Randomly Lose
 		 rng = (int) (Math.random()*100);
 		 
-		 if (rng >= 90 && rng <= 95)
+		 if (rng >= 89 && rng <= 94)
 			 p.setOffensiveScore((byte) (Math.abs((byte)p.getOffensiveScore()-1)));
 			 
-		 if (rng >= 95 && rng <= 100)
+		 if (rng >= 95 && rng <= 99)
 			 p.setDefensiveScore((byte) (Math.abs((byte)p.getDefensiveScore()-1)));
 		 
 		 return check(p);

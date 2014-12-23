@@ -52,7 +52,7 @@ public class TrainingTest {
 	{
 		for (int c = 0; c < 10000; c++){
 		// Player( id, firstname, surname, number, type, position, offesnive, defensive, stamina, price )
-		Player test = new Player(1, "Mr.", "Test", (byte)1, 3, 3, (byte)50, (byte)50, (byte)50, 500000);
+		Player test = new Player(1, "Mr.", "Test", (byte)1, 3, 3, (byte)50, (byte)50, (byte)1, 500000);
 		
 		test = Training.HeavyTraining(test);
 		System.out.println(test);
@@ -65,7 +65,7 @@ public class TrainingTest {
 	{
 		for (int c = 0; c < 10000; c++){
 		// Player( id, firstname, surname, number, type, position, offesnive, defensive, stamina, price )
-		Player test = new Player(1, "Mr.", "Test", (byte)1, 3, 3, (byte)50, (byte)50, (byte)50, 500000);
+		Player test = new Player(1, "Mr.", "Test", (byte)1, 3, 3, (byte)50, (byte)50, (byte)1, 500000);
 		
 		test = Training.RegularTraining(test);
 		System.out.println(test);
