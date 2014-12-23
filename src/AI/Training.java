@@ -4,6 +4,13 @@ import model.Player;
 
 public class Training {
 	
+	/*
+	 * So, how is training balanced?
+	 * You can get someone with perfect 50 / 50 / 50 stats
+	 * To a high range in 200 days that's about 28 weeks
+	 * A highe range would be 100
+	 */
+	
 	 /* Regular Training: costs 1 stamina per player
 	 * Gains: 0 (50%) or 1 (50%) point bonus on their position
 	 * Randomly Gains: 0-2 in Stamina, Attack or Defence
@@ -20,7 +27,7 @@ public class Training {
 		 
 		 System.out.println(points);
 		 
-		 if (points >=70 && points < 95)
+		 if (points >=80 && points < 95)
 			 spendable = 1;
 		 
 		 if (points >= 95 && points <= 100)
@@ -31,10 +38,10 @@ public class Training {
 			 int offensivebonus = 0;
 			 
 			 // offensive bonus / penalty
-			 if (p.getType() == 1 || p.getType() == 2)
+			 if (p.getType() == 2 || p.getType() == 3)
 				 offensivebonus = 5;
 			 
-			 if (p.getType() == 3 || p.getType() == 4)
+			 if (p.getType() == 0 || p.getType() == 1)
 				 offensivebonus = -5;
 			 
 			 for(int c = 0; c < spendable; c++)
@@ -71,7 +78,7 @@ public class Training {
 		 int points = (int) (Math.random() * 100);
 		 int spendable = 0;
 		 
-		 if (points >= 40 && points < 80)
+		 if (points >= 50 && points < 80)
 			 spendable = 1;
 		 
 		 if (points >= 80 && points < 95)
@@ -119,7 +126,7 @@ public class Training {
 	 */
 	 public static Player rest(Player p)
 	 {
-		 byte s = (byte) ((byte) p.getStaminaScore() + 4);
+		 byte s = (byte) ((byte) p.getStaminaScore() + 2);
 		 p.setStaminaScore(s);
 		 
 		 int rng = (int) (Math.random()*100);
