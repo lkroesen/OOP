@@ -77,9 +77,7 @@ public class Schedule {
 	public boolean[] WeeksPlayed()
 	{
 		boolean[] played = new boolean[S.size()];
-		
-		int a = 0;
-		
+
 		// Label the outer loop so we can break out of it easily
 		loop:for (int c = 0; c < S.size(); c++)
 		{

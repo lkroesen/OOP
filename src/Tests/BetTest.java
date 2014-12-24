@@ -1,10 +1,9 @@
-package AI;
+package Tests;
 
 import static org.junit.Assert.*;
-
 import model.Team;
-
 import org.junit.Test;
+import AI.Bet;
 
 public class BetTest {
 

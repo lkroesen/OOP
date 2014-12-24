@@ -1,4 +1,4 @@
-package AI;
+package Tests;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +8,9 @@ import model.League;
 import model.Team;
 
 import org.junit.Test;
+import AI.Schedule;
+import AI.Scheduler;
+
 
 public class ScheduleTest {
 
