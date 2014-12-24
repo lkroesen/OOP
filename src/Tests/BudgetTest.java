@@ -63,7 +63,6 @@ public class BudgetTest {
 		
 		ArrayList<Team> t = new ArrayList<Team>();
 		ArrayList<Team> t2 = new ArrayList<Team>();
-		ArrayList<Team> n = null;
 		
 		t.add(test1);
 		t.add(test2);
