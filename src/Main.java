@@ -62,11 +62,25 @@ public class Main {
 		s.getS().get(1).getSaturday().getMatches().get(1).setResult("1-9");
 		s.getS().get(1).getSaturday().getMatches().get(2).setResult("1-8");
 		
+		s.getS().get(0).getSunday().getMatches().get(0).setResult("1-0");
+		s.getS().get(0).getSunday().getMatches().get(1).setResult("0-2");
+		s.getS().get(0).getSunday().getMatches().get(2).setResult("3-0");
+
+		s.getS().get(0).getSaturday().getMatches().get(3).setResult("1-0");
+		s.getS().get(0).getSunday().getMatches().get(3).setResult("0-2");
+		s.getS().get(0).getFriday().getMatches().get(0).setResult("3-0");
+
+		
+		
+		
 		// Ranking will work for any match that has a result
 		// if the match has no result it will not be used
 		// So, don't set a result EVER, unless a match has been played!
 		Ranking r = Ranking.generate(s);
 		System.out.println(r.toString());
+		
+		boolean[] a = s.WeeksPlayed();
+		System.out.println(a[0]);
 	}
 
 }

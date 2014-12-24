@@ -69,4 +69,39 @@ public class Schedule {
 		return true;
 	}
 	
+	/**
+	 * Creates a list of weeks that has been played, true = played
+	 * @return
+	 * Returns an array of booleans
+	 */
+	public boolean[] WeeksPlayed()
+	{
+		boolean[] played = new boolean[S.size()];
+		
+		int a = 0;
+		
+		// Label the outer loop so we can break out of it easily
+		loop:for (int c = 0; c < S.size(); c++)
+		{
+			// if it's null then a match has not been played yet
+			if (S.get(c).getFriday().getMatches().get(0).getResult() == null)
+				break loop;
+			
+			for (int d = 0; d < S.get(c).getSaturday().getMatches().size(); d++)
+				if (S.get(c).getSaturday().getMatches().get(d).getResult() == null)
+					break loop;
+
+			for (int e = 0; e < S.get(c).getSunday().getMatches().size(); e++)
+				if (S.get(c).getSunday().getMatches().get(e).getResult() == null)
+					break loop;
+			
+			played[c] = true;
+			
+		}
+		
+		
+		
+		return played;
+				
+	}
 }
