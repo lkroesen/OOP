@@ -1,11 +1,110 @@
 package AI;
 
 import java.util.ArrayList;
+
 import model.Budget;
 import model.Match;
+import model.Team;
 
 public class Betting 
 {
+	private double rate1;
+	private double rate2;
+	
+	private Team team1;
+	private Team team2;
+	
+	private String result;
+	
+	
+	public Betting(double rate1, double rate2, Team team1, Team team2, String result) 
+	{
+		this.rate1 = rate1;
+		this.rate2 = rate2;
+		this.team1 = team1;
+		this.team2 = team2;
+		this.result = result;
+	}	
+
+	public double getRate1() {
+		return rate1;
+	}
+
+	public void setRate1(double rate1) {
+		this.rate1 = rate1;
+	}
+
+	public double getRate2() {
+		return rate2;
+	}
+
+	public void setRate2(double rate2) {
+		this.rate2 = rate2;
+	}
+
+	public Team getTeam1() {
+		return team1;
+	}
+
+	public void setTeam1(Team team1) {
+		this.team1 = team1;
+	}
+
+	public Team getTeam2() {
+		return team2;
+	}
+
+	public void setTeam2(Team team2) {
+		this.team2 = team2;
+	}
+
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}	
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Betting other = (Betting) obj;
+		if (Double.doubleToLongBits(rate1) != Double
+				.doubleToLongBits(other.rate1))
+			return false;
+		if (Double.doubleToLongBits(rate2) != Double
+				.doubleToLongBits(other.rate2))
+			return false;
+		if (result == null) {
+			if (other.result != null)
+				return false;
+		} else if (!result.equals(other.result))
+			return false;
+		if (team1 == null) {
+			if (other.team1 != null)
+				return false;
+		} else if (!team1.equals(other.team1))
+			return false;
+		if (team2 == null) {
+			if (other.team2 != null)
+				return false;
+		} else if (!team2.equals(other.team2))
+			return false;
+		return true;
+	}
+	
+	/************************************************************************
+	 * 																		*
+	 *                             STATIC METHODS							*
+	 * 																		*
+	 * **********************************************************************/
+
 	// make a bet, and return it
 	/**
 	 * Betting before matches take place, generates ONE bet, call multiple times for multiple bets
@@ -13,29 +112,91 @@ public class Betting
 	 * Input the budget of the team betting ( Budget.getBudgetByTeam(Team) )
 	 * @param s
 	 * Input the Schedule
+	 * @param c_week
+	 * Input the week for which the bet is to be generated
 	 * @return
 	 */
-	public static Bet Before_Match (Long Budget, Schedule s)
+	public static ArrayList<Betting> Before_Match (Schedule s, int c_week)
 	{
 		// Get a list of upcoming matches this week
 		// check which matches have been played
 		
 		// check which all still will take place
 		
-		// Generate a list of weeks that have been played
-		boolean[] played = s.WeeksPlayed();
+		// Creates an object, that has matches that can be bet on.
+		ArrayList<Match> ListOfBets = GenerateBetsPerWeek(c_week, s.getS());
+		ArrayList<Betting> BetList = new ArrayList<Betting>();
 		
-		int c_week = 0;
+		for (int c = 0; c < ListOfBets.size(); c++)
+		{
+			// Count winners
+			int home = 0;
+			int out = 0;
+			int c_home = 0;
+			int c_out = 0;
+			// Simulate upcoming matches a couple of times
+			
+			for (int d = 0; d < 1000; d++)
+			{
+				String a[] = PlayMatch.play(ListOfBets.get(c)).split(",");
+				home = Integer.parseInt(a[0]);
+				out = Integer.parseInt(a[1]);
+				
+				// home won
+				if (home > out)
+					c_home++;
+				
+				// out won
+				if (out > home)
+					c_out++;
+				
+			}
+			System.out.println(out);
+			System.out.println(home);
+			
+			double rateone = 0;
+			double ratetwo = 0;
+			
+			// amount of ties
+			int ties = 1000 - (c_home + c_out);
+			
+			// This means that this match is likely to tie
+			if (ties > c_home && ties > c_out)
+			{
+				rateone = (double) 1.5;
+				ratetwo = (double) 1.5;
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home(), ListOfBets.get(c).getTeam_away(), "tie");
+				BetList.add(bet);
+			}
+			
+			else if (c_home > c_out)
+			{
+				double e = ties / (double) 1000;
+				rateone = (e) + (c_home / (double) 1000);
+				ratetwo = ((double) 1.5 + e) + (c_out / (double) 1000);
+				System.out.println("Wining home-rate: " + rateone);
+				System.out.println("Winning out-rate: " + ratetwo);
+				
+				
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home(), ListOfBets.get(c).getTeam_away(), "home");
+				BetList.add(bet);
+			}
+			
+			else if (c_out > c_home)
+			{
+				double e = ties / (double) 1000;
+				rateone = (e) + (c_out / (double) 1000);
+				ratetwo = ((double) 1.5 + e) + (c_home / (double) 1000);
+				System.out.println("Wining out-rate: " + rateone);
+				System.out.println("Winning home-rate: " + ratetwo);
+				
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_away(), ListOfBets.get(c).getTeam_home(), "away");
+				BetList.add(bet);
+			}
 		
-		for (int c = 0; c < played.length; c++)
-			if (played[c] == false)
-				c_week = c;
+		}
 		
-		// Creates an object, that has matches that can be bet on. ? ArrayList<Match> ?
-		GenerateBetsPerWeek(c_week, s.getS(), Budget);
-		
-		Bet placeholder = new Bet(0,0.1,null,null);
-		return placeholder;
+		return BetList;
 	}
 	
 	public static Budget After_Match (Budget Budget, Bet bet)
@@ -43,7 +204,7 @@ public class Betting
 		return Budget;
 	}
 	
-	public static ArrayList<Match> GenerateBetsPerWeek(int c_week, ArrayList<PlayRound> S, Long Budget)
+	public static ArrayList<Match> GenerateBetsPerWeek(int c_week, ArrayList<PlayRound> S)
 	{
 		ArrayList<Match> ListOfBets = new ArrayList<Match>();
 		
@@ -51,20 +212,21 @@ public class Betting
 		// Can only bet if none of the matches of that day have taken place
 		
 		// Check if Friday has not been played
-		if (!DayPlayed(S.get(c_week).getFriday()))
-			//Get matches that can be bet on
+		if (!DayPlayed(S.get(c_week).getFriday())) 
+			ListOfBets.add(S.get(c_week).getFriday().getMatches().get(0));
 			
 			
 			
 		// Check if Saturday has not been played
 		if (!DayPlayed(S.get(c_week).getSaturday()))
-			// Get matches that can be bet on
-			
+			for (int c = 0; c < S.get(c_week).getSaturday().getMatches().size(); c++)
+				ListOfBets.add(S.get(c_week).getSaturday().getMatches().get(c));
 			
 			
 		// Check if Sunday has not been played
 		if (!DayPlayed(S.get(c_week).getSunday()))
-			return ListOfBets;
+			for (int c = 0; c < S.get(c_week).getSunday().getMatches().size(); c++)
+				ListOfBets.add(S.get(c_week).getSaturday().getMatches().get(c));
 		
 		return ListOfBets;
 	}
