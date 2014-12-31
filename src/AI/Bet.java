@@ -23,7 +23,7 @@ public class Bet
 		this.s_won = s_won;
 		this.result = result;
 	}
-
+	
 	public long getMoney_bet() {
 		return money_bet;
 	}

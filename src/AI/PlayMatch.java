@@ -64,8 +64,8 @@ public class PlayMatch {
 					posplayers.add(player);
 				}
 			}
-			int pid = posplayers.get(new Random().nextInt(posplayers.size())).getPosition();
-			amatch.addEventHome(new Event(pid, id, time, 0));
+			//int pid = posplayers.get(new Random().nextInt(posplayers.size())).getPosition();
+			//amatch.addEventHome(new Event(pid, id, time, 0));
 		}else{
 			ArrayList<Player> posplayers = new ArrayList<Player>();
 			for(Player player:aplayers){
@@ -74,8 +74,8 @@ public class PlayMatch {
 					posplayers.add(player);
 				}
 			}
-			int pid = posplayers.get(new Random().nextInt(posplayers.size())).getPosition();
-			amatch.addEventAway(new Event(pid, id, time, 0));
+			//int pid = posplayers.get(new Random().nextInt(posplayers.size())).getPosition();
+			//amatch.addEventAway(new Event(pid, id, time, 0));
 		}
 		
 	}

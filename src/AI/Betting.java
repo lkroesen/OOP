@@ -1,6 +1,7 @@
 package AI;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import model.Budget;
 import model.Match;
@@ -26,6 +27,12 @@ public class Betting
 		this.result = result;
 	}	
 
+	public String toString()
+	{
+		return "[" + team1.getName() + " Rate: " + rate1 + " " + team2.getName() + " Rate: " + rate2 + " Predicted Result: " + result + "]";
+	}
+	
+	
 	public double getRate1() {
 		return rate1;
 	}
@@ -199,8 +206,276 @@ public class Betting
 		return BetList;
 	}
 	
-	public static Budget After_Match (Budget Budget, Bet bet)
+	public static Bet Bet_Maker(ArrayList<Betting> BL, Budget Bu, Team P_Team)
 	{
+		// Show users bets he can make
+		for (int c = 0; c < BL.size(); c++)
+			System.out.println(c+1 + ") " + BL.get(c).toString()); 
+		
+		// Select a match to bet on
+		Scanner sc = new Scanner(System.in);
+		String n = sc.next();
+		
+		String winner = "none";
+		Long bet_amount = (long) 0;
+		Double rate = 0.00;
+		Team win = null;
+		
+		int a = (int) n.charAt(0) - 49;
+		System.out.println("Selected: " + a);
+		
+		// This whole system is just for testing
+		
+		if (n.charAt(0) == '1')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;	
+		}
+		
+		else if (n.charAt(0) == '2')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;
+		}
+		
+		else if (n.charAt(0) == '3')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;
+		}
+		
+		else if (n.charAt(0) == '4')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;
+		}
+		
+		else if (n.charAt(0) == '5')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;
+		}
+		
+		else if (n.charAt(0) == '6')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;
+		}
+		
+		else if (n.charAt(0) == '7')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;
+		}
+		
+		else if (n.charAt(0) == '8')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;
+		}
+		
+		else if (n.charAt(0) == '9')
+		{
+			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			n = sc.next();
+			if (n.charAt(0) == '1')
+			{
+				win = BL.get(a).getTeam1();
+				rate = BL.get(a).getRate1();
+				winner = BL.get(a).getTeam1().getName();
+			}
+			
+			else
+			{
+				win = BL.get(a).getTeam2();
+				rate = BL.get(a).getRate2();
+				winner = BL.get(a).getTeam2().getName();
+			}
+
+			System.out.println("How much money do you want to bet?" + "\n>");
+			bet_amount = sc.nextLong();
+			if (bet_amount > Bu.getBudgetByTeam(P_Team))
+				bet_amount = Bu.getBudgetByTeam(P_Team);
+			else if(bet_amount < (long) 0)
+				bet_amount = (long) 0;
+		}
+			
+		Bet b = new Bet(bet_amount, rate, win, winner);
+		
+		// Don't forget to change the amount of money in budget!
+		return b;
+	}
+	
+	public static Budget After_Match (Budget Budget, Bet bet, Team Won, Team P_Team)
+	{
+		// Check if the team that won is the team that was bet on
+		if (bet.getS_won().equals(Won))
+		{
+			long money = Budget.getBudgetByTeam(P_Team);
+			money += bet.getMoney_bet() * bet.getRate();		
+			Budget.setBudgetByTeam(P_Team, money); 
+		}
+				
 		return Budget;
 	}
 	
