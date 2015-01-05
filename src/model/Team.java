@@ -12,7 +12,11 @@ public class Team {
 	private int id;
 	private String name;
 	private ArrayList<Player> players;
+	private int budget;
 	
+	public int getBudget(){
+		return budget;
+	}
 	public int getId() {
 		return id;
 	}
@@ -21,6 +25,9 @@ public class Team {
 	}
 	public String getName() {
 		return name;
+	}
+	public void setBudget(int i){
+		this.budget = i;
 	}
 	public void setName(String name) {
 		this.name = name;
