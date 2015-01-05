@@ -172,7 +172,9 @@ public class XML {
 						String tname = getAttribute(teamNode.getAttributes(), "name");
 						
 						Team team = new Team(tid, tname);
-						
+						// Get budget
+							//int budget = Integer.parseInt(getChildValue(team, "budget"));
+							//team.setBudget(budget);
 						// Get players
 						NodeList playerData = teamNode.getElementsByTagName("player");
 						for (int b = 0; b < playerData.getLength(); b++) {

@@ -15,8 +15,9 @@ public class TransferAlgorithm {
 	}
 	public static void TransferPlayer(Team to, Team tn, Player p){
 		int cost = p.getPrice();
+		tn.setBudget((tn.getBudget()-cost));
+		to.setBudget((to.getBudget()+cost));
 		to.delPlayer(p);
-		
 		tn.addPlayer(p);
 	}
 }
