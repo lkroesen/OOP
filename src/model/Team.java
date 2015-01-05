@@ -34,6 +34,9 @@ public class Team {
 	public void addPlayer(Player p) {
 		this.players.add(p);
 	}
+	public void delPlayer(Player p){
+		this.players.remove(p);
+	}
 	public Team(int id, String name, ArrayList<Player> players) {
 		super();
 		this.id = id;
