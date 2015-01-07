@@ -1,6 +1,7 @@
 package Tests;
 
 import static org.junit.Assert.*;
+import model.Player;
 import model.Team;
 
 import org.junit.Test;
@@ -10,6 +11,8 @@ public class testTeam {
 	@Test
 	public void testConstructor(){
 		Team t1 = new Team(1,"Ajax");
+		Player p1 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		
 		assertTrue(t1.equals(t1));
 	}
 	
