@@ -180,8 +180,8 @@ public class javafx extends Application{
 				image2.setFitWidth(21);
 				image2.setFitHeight(21);
 				imagerow1.getChildren().addAll(image0,image1,image2);
-				teams1.getChildren().addAll(lbtext,teambuttons.get(0),teambuttons.get(1),teambuttons.get(2),teambuttons.get(3),teambuttons.get(4),teambuttons.get(5),teambuttons.get(6),teambuttons.get(7),teambuttons.get(8));
-				teams2.getChildren().addAll(empty,teambuttons.get(9),teambuttons.get(10),teambuttons.get(11),teambuttons.get(12),teambuttons.get(13),teambuttons.get(14),teambuttons.get(15),teambuttons.get(16),teambuttons.get(17));
+				//teams1.getChildren().addAll(lbtext,teambuttons.get(0),teambuttons.get(1),teambuttons.get(2),teambuttons.get(3),teambuttons.get(4),teambuttons.get(5),teambuttons.get(6),teambuttons.get(7),teambuttons.get(8));
+				//getChildren().addAll(empty,teambuttons.get(9),teambuttons.get(10),teambuttons.get(11),teambuttons.get(12),teambuttons.get(13),teambuttons.get(14),teambuttons.get(15),teambuttons.get(16),teambuttons.get(17));
 				vbBack.getChildren().addAll(mutesong,Back);
 				start.getChildren().addAll(imagerow1,teams1,teams2);
 				HBox ngtext = new HBox();
@@ -285,7 +285,7 @@ public class javafx extends Application{
 			teamchoiceint = 2;
 		}
 	});
-	teambuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
+	/*teambuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
 		
 		@Override
 		public void handle(ActionEvent arg0){
@@ -389,7 +389,7 @@ public class javafx extends Application{
 		public void handle(ActionEvent arg0){
 			teamchoiceint = 17;
 		}
-});
+});*/
 	teambuttons.get(teamchoiceint).setOnAction(new EventHandler<ActionEvent>(){
 			
 			@Override
@@ -580,14 +580,14 @@ public class javafx extends Application{
 					@Override
 					public void handle(ActionEvent arg0){
 						lbtext.setText("stats");
-						Label fn = new Label("Firstname: " + players.get(0).getFirstname().toString());
-						Label sn = new Label("Surname: " + players.get(0).getSurname().toString());
-						Label j = new Label("Jerseynumber: " + players.get(0).getJerseyNumber());
-						Label os = new Label("Offensive score: " + players.get(0).getOffensiveScore());
-						Label ds = new Label("Defensive score: " + players.get(0).getDefensiveScore());
-						Label ss = new Label("Stamina score: " + players.get(0).getStaminaScore());
-						Label pos = new Label("Position: " + players.get(0).getPosition());
-						Label pr = new Label("Price: " + players.get(0).getPrice());
+						Label fn = new Label("Firstname: " + players.get(playerchoiceint).getFirstname().toString());
+						Label sn = new Label("Surname: " + players.get(playerchoiceint).getSurname().toString());
+						Label j = new Label("Jerseynumber: " + players.get(playerchoiceint).getJerseyNumber());
+						Label os = new Label("Offensive score: " + players.get(playerchoiceint).getOffensiveScore());
+						Label ds = new Label("Defensive score: " + players.get(playerchoiceint).getDefensiveScore());
+						Label ss = new Label("Stamina score: " + players.get(playerchoiceint).getStaminaScore());
+						Label pos = new Label("Position: " + players.get(playerchoiceint).getPosition());
+						Label pr = new Label("Price: " + players.get(playerchoiceint).getPrice());
 						VBox playerbox = new VBox(10);
 						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
 						HBox screenbox = new HBox();
@@ -605,7 +605,7 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
-						teambuttons.get(0).fire();
+						teambuttons.get(teamchoiceint).fire();
 					}
 				});
 				select.setOnAction(new EventHandler<ActionEvent>(){
@@ -649,6 +649,21 @@ public class javafx extends Application{
 				});
 			}
 		});
+	root.getChildren().addAll(lbtext, newgame, loadgame, mutevideo);
+	root.setLayoutY(50);
+	test.getChildren().addAll(mediaView,root);
+	mutevideo.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			if(mediaPlayer.getVolume()==0){
+				mediaPlayer.setVolume(100);
+			}
+			else{
+				mediaPlayer.setVolume(0);
+			}
+		}
+	});
 	}
 }
 		
