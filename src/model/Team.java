@@ -12,9 +12,9 @@ public class Team {
 	private int id;
 	private String name;
 	private ArrayList<Player> players;
-	private int budget;
+	private long budget;
 	
-	public int getBudget(){
+	public long getBudget(){
 		return budget;
 	}
 	public int getId() {
@@ -26,7 +26,7 @@ public class Team {
 	public String getName() {
 		return name;
 	}
-	public void setBudget(int i){
+	public void setBudget(long i){
 		this.budget = i;
 	}
 	public void setName(String name) {
@@ -49,6 +49,14 @@ public class Team {
 		this.id = id;
 		this.name = name;
 		this.players = players;
+	}
+	
+	public Team(int id, String name, ArrayList<Player> players, long budget) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.players = players;
+		this.budget = budget;
 	}
 	
 	public Team(int id, String name) {
