@@ -11,16 +11,16 @@ public class Bet
 	private double rate;
 	
 	// Team user selected as winner
-	private Team s_won;
+	private int id_won;
 	
 	// Score the user predicted
 	private String result;
 
-	public Bet(long money_bet, double rate, Team s_won, String result) 
+	public Bet(long money_bet, double rate, int id_won, String result) 
 	{
 		this.money_bet = money_bet;
 		this.rate = rate;
-		this.s_won = s_won;
+		this.id_won = id_won;
 		this.result = result;
 	}
 	
@@ -40,12 +40,12 @@ public class Bet
 		this.rate = rate;
 	}
 
-	public Team getS_won() {
-		return s_won;
+	public int getS_won() {
+		return id_won;
 	}
 
-	public void setS_won(Team s_won) {
-		this.s_won = s_won;
+	public void setS_won(int id_won) {
+		this.id_won = id_won;
 	}
 
 	public String getResult() {
@@ -58,8 +58,8 @@ public class Bet
 
 	@Override
 	public String toString() {
-		return "Bet [money_bet=" + money_bet + ", rate=" + rate + ", s_won="
-				+ s_won + ", result=" + result + "]";
+		return "Bet [money_bet=" + money_bet + ", rate=" + rate + ", id_won="
+				+ id_won + ", result=" + result + "]";
 	}
 
 	@Override
@@ -71,6 +71,8 @@ public class Bet
 		if (getClass() != obj.getClass())
 			return false;
 		Bet other = (Bet) obj;
+		if (id_won != other.id_won)
+			return false;
 		if (money_bet != other.money_bet)
 			return false;
 		if (Double.doubleToLongBits(rate) != Double
@@ -81,13 +83,9 @@ public class Bet
 				return false;
 		} else if (!result.equals(other.result))
 			return false;
-		if (s_won == null) {
-			if (other.s_won != null)
-				return false;
-		} else if (!s_won.equals(other.s_won))
-			return false;
 		return true;
 	}
+
 	
 	
 }

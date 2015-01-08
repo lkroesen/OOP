@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
-import model.Budget;
 import model.Team;
 import model.Player;
 import model.Match;
@@ -61,6 +60,10 @@ public class BettingTest {
 		Team winners = new Team(1, "Winners", Team);
 		Team losers = new Team(2, "Losers", Teame);
 		
+		ArrayList<Team> tl = new ArrayList<Team>();
+		tl.add(winners);
+		tl.add(losers);
+		
 		Match m = new Match(0, 5, winners, losers);
 		
 		ArrayList<Match> mat = new ArrayList<Match>();
@@ -78,20 +81,14 @@ public class BettingTest {
 		Schedule s = new Schedule();
 		s.setS(sch);
 		
-		ArrayList<Betting> b = new ArrayList<Betting>();
-		b = Betting.Before_Match(s, 0);
+		ArrayList<Betting> b = Betting.Before_Match(s, 0);
 		
 		ArrayList<Team> TeamList = new ArrayList<Team>();
 		Team P_Team = new Team(4, "Player");
 		TeamList.add(P_Team);
-		Budget bu = new Budget(TeamList);
-		bu.setBudgetByTeam(P_Team, (long)123456);
 		
-		Bet bi = Betting.Bet_Maker(b, bu, P_Team);
-		System.out.println(bi.toString());
-		
-		bu.setBudgetByTeam(P_Team, bu.getBudgetByTeam(P_Team) - bi.getMoney_bet());
-		System.out.println("The player now has: " + bu.getBudgetByTeam(P_Team) + " imaginary money left");
+		long Budget = Betting.After_Match((long)123456, Betting.Bet_Maker(b, (long)123456, tl), winners.getId());
+		System.out.println("The player now has: " + Budget + " imaginary money left");
 		
 		assertNotNull(b);
 	}

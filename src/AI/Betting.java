@@ -3,7 +3,6 @@ package AI;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import model.Budget;
 import model.Match;
 import model.Team;
 
@@ -12,13 +11,14 @@ public class Betting
 	private double rate1;
 	private double rate2;
 	
-	private Team team1;
-	private Team team2;
+	// Team IDs
+	private int team1;
+	private int team2;
 	
 	private String result;
 	
 	
-	public Betting(double rate1, double rate2, Team team1, Team team2, String result) 
+	public Betting(double rate1, double rate2, int team1, int team2, String result) 
 	{
 		this.rate1 = rate1;
 		this.rate2 = rate2;
@@ -29,7 +29,7 @@ public class Betting
 
 	public String toString()
 	{
-		return "[" + team1.getName() + " Rate: " + rate1 + " " + team2.getName() + " Rate: " + rate2 + " Predicted Result: " + result + "]";
+		return "[" + team1 + " Rate: " + rate1 + " " + team2 + " Rate: " + rate2 + " Predicted Result: " + result + "]";
 	}
 	
 	
@@ -49,19 +49,19 @@ public class Betting
 		this.rate2 = rate2;
 	}
 
-	public Team getTeam1() {
+	public int getTeam1() {
 		return team1;
 	}
 
-	public void setTeam1(Team team1) {
+	public void setTeam1(int team1) {
 		this.team1 = team1;
 	}
 
-	public Team getTeam2() {
+	public int getTeam2() {
 		return team2;
 	}
 
-	public void setTeam2(Team team2) {
+	public void setTeam2(int team2) {
 		this.team2 = team2;
 	}
 
@@ -93,15 +93,9 @@ public class Betting
 				return false;
 		} else if (!result.equals(other.result))
 			return false;
-		if (team1 == null) {
-			if (other.team1 != null)
-				return false;
-		} else if (!team1.equals(other.team1))
+		if (!(this.team1 == other.team1))
 			return false;
-		if (team2 == null) {
-			if (other.team2 != null)
-				return false;
-		} else if (!team2.equals(other.team2))
+		if (!(this.team2 == other.team2))
 			return false;
 		return true;
 	}
@@ -172,7 +166,7 @@ public class Betting
 			{
 				rateone = (double) 1.5;
 				ratetwo = (double) 1.5;
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home(), ListOfBets.get(c).getTeam_away(), "tie");
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "tie");
 				BetList.add(bet);
 			}
 			
@@ -185,7 +179,7 @@ public class Betting
 				System.out.println("Winning out-rate: " + ratetwo);
 				
 				
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home(), ListOfBets.get(c).getTeam_away(), "home");
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "home");
 				BetList.add(bet);
 			}
 			
@@ -197,7 +191,7 @@ public class Betting
 				System.out.println("Wining out-rate: " + rateone);
 				System.out.println("Winning home-rate: " + ratetwo);
 				
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_away(), ListOfBets.get(c).getTeam_home(), "away");
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_away().getId(), ListOfBets.get(c).getTeam_home().getId(), "away");
 				BetList.add(bet);
 			}
 		
@@ -206,7 +200,26 @@ public class Betting
 		return BetList;
 	}
 	
-	public static Bet Bet_Maker(ArrayList<Betting> BL, Budget Bu, Team P_Team)
+	public static String getTeamNameById(int id, ArrayList<Team> tl)
+	{
+		for (int c = 0; c < tl.size(); c++)
+			if (tl.get(c).getId() == id)
+				return tl.get(c).getName();
+		return "";
+	}
+	
+	/**
+	 * Method for making a bet
+	 * @param BL
+	 * Input the betting list
+	 * @param Money
+	 * Input the amount of money the player has
+	 * @param TeamList
+	 * Input the current list of all teams
+	 * @return
+	 * Returns the made bet
+	 */
+	public static Bet Bet_Maker(ArrayList<Betting> BL, Long Money, ArrayList<Team> TeamList)
 	{
 		// Show users bets he can make
 		for (int c = 0; c < BL.size(); c++)
@@ -219,7 +232,7 @@ public class Betting
 		String winner = "none";
 		Long bet_amount = (long) 0;
 		Double rate = 0.00;
-		Team win = null;
+		int win = 0;
 		
 		int a = (int) n.charAt(0) - 49;
 		System.out.println("Selected: " + a);
@@ -228,234 +241,234 @@ public class Betting
 		
 		if (n.charAt(0) == '1')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;	
 		}
 		
 		else if (n.charAt(0) == '2')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;
 		}
 		
 		else if (n.charAt(0) == '3')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;
 		}
 		
 		else if (n.charAt(0) == '4')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;
 		}
 		
 		else if (n.charAt(0) == '5')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;
 		}
 		
 		else if (n.charAt(0) == '6')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;
 		}
 		
 		else if (n.charAt(0) == '7')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;
 		}
 		
 		else if (n.charAt(0) == '8')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;
 		}
 		
 		else if (n.charAt(0) == '9')
 		{
-			System.out.println("Select a team:\n" + "1) " + BL.get(a).getTeam1().getName() + "\n2) " + BL.get(a).getTeam2().getName());
+			System.out.println("Select a team:\n" + "1) " + getTeamNameById(BL.get(a).getTeam1(), TeamList) + "\n2) " + getTeamNameById(BL.get(a).getTeam2(), TeamList));
 			n = sc.next();
 			if (n.charAt(0) == '1')
 			{
 				win = BL.get(a).getTeam1();
 				rate = BL.get(a).getRate1();
-				winner = BL.get(a).getTeam1().getName();
+				winner = getTeamNameById(BL.get(a).getTeam1(), TeamList);
 			}
 			
 			else
 			{
 				win = BL.get(a).getTeam2();
 				rate = BL.get(a).getRate2();
-				winner = BL.get(a).getTeam2().getName();
+				winner = getTeamNameById(BL.get(a).getTeam2(), TeamList);
 			}
 
 			System.out.println("How much money do you want to bet?" + "\n>");
 			bet_amount = sc.nextLong();
-			if (bet_amount > Bu.getBudgetByTeam(P_Team))
-				bet_amount = Bu.getBudgetByTeam(P_Team);
+			if (bet_amount > Money)
+				bet_amount = Money;
 			else if(bet_amount < (long) 0)
 				bet_amount = (long) 0;
 		}
@@ -466,17 +479,13 @@ public class Betting
 		return b;
 	}
 	
-	public static Budget After_Match (Budget Budget, Bet bet, Team Won, Team P_Team)
+	public static long After_Match (long Money, Bet bet, int TeamIDWon)
 	{
 		// Check if the team that won is the team that was bet on
-		if (bet.getS_won().equals(Won))
-		{
-			long money = Budget.getBudgetByTeam(P_Team);
-			money += bet.getMoney_bet() * bet.getRate();		
-			Budget.setBudgetByTeam(P_Team, money); 
-		}
+		if (bet.getS_won() == TeamIDWon)
+			Money = (long) (bet.getMoney_bet() * bet.getRate());
 				
-		return Budget;
+		return Money;
 	}
 	
 	public static ArrayList<Match> GenerateBetsPerWeek(int c_week, ArrayList<PlayRound> S)
