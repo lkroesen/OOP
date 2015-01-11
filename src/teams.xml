@@ -245,7 +245,7 @@
 				<number>
 					7
 				</number>
-				<type>1</type>
+				<type>3</type>
 				
 				<offensiveRating>76</offensiveRating>
 				<defensiveRating>53</defensiveRating>
@@ -267,7 +267,7 @@
 				<number>
 					8
 				</number>
-				<type>1</type>
+				<type>2</type>
 				
 				<offensiveRating>84</offensiveRating>
 				<defensiveRating>49</defensiveRating>	
@@ -284,12 +284,12 @@
 					Kolbeinn
 				</name>
 				<surname>
-					Sigporsson
+					Sigthórsson
 				</surname>
 				<number>
 					9
 				</number>
-				<type>1</type>
+				<type>3</type>
 				
 				<offensiveRating>30</offensiveRating>
 				<defensiveRating>13</defensiveRating>
@@ -311,7 +311,7 @@
 				<number>
 					10
 				</number>
-				<type>1</type>
+				<type>2</type>
 				
 				<offensiveRating>27</offensiveRating>
 				<defensiveRating>27</defensiveRating>
@@ -333,7 +333,7 @@
 				<number>
 					11
 				</number>
-				<type>1</type>
+				<type>3</type>
 				
 				<offensiveRating>56</offensiveRating>
 				<defensiveRating>74</defensiveRating>
@@ -377,7 +377,7 @@
 				<number>
 					16
 				</number>
-				<type>1</type>
+				<type>2</type>
 				
 				<offensiveRating>71</offensiveRating>
 				<defensiveRating>57</defensiveRating>
@@ -399,7 +399,7 @@
 				<number>
 					18
 				</number>
-				<type>1</type>
+				<type>3</type>
 				
 				<offensiveRating>80</offensiveRating>
 				<defensiveRating>24</defensiveRating>
@@ -421,7 +421,7 @@
 				<number>
 					19
 				</number>
-				<type>1</type>
+				<type>3</type>
 				
 				<offensiveRating>60</offensiveRating>
 				<defensiveRating>83</defensiveRating>
@@ -443,7 +443,7 @@
 				<number>
 					20
 				</number>
-				<type>1</type>
+				<type>2</type>
 				
 				<offensiveRating>70</offensiveRating>
 				<defensiveRating>92</defensiveRating>
@@ -465,7 +465,7 @@
 				<number>
 					21
 				</number>
-				<type>1</type>
+				<type>3</type>
 				
 				<offensiveRating>53</offensiveRating>
 				<defensiveRating>97</defensiveRating>
@@ -487,7 +487,7 @@
 				<number>
 					22
 				</number>
-				<type>1</type>
+				<type>0</type>
 				
 				<offensiveRating>82</offensiveRating>
 				<defensiveRating>49</defensiveRating>
@@ -553,7 +553,7 @@
 				<number>
 					25
 				</number>
-				<type>1</type>
+				<type>2</type>
 				
 				<offensiveRating>40</offensiveRating>
 				<defensiveRating>75</defensiveRating>
@@ -597,7 +597,7 @@
 				<number>
 					27
 				</number>
-				<type>1</type>
+				<type>2</type>
 				
 				<offensiveRating>56</offensiveRating>
 				<defensiveRating>29</defensiveRating>
@@ -1587,6 +1587,7341 @@
 					6500000
 				</price>	
 			<position>-1</position></player>
+		</club>
+		<club city="Den Haag" id="3" name="ADO Den Haag">
+			<budget>
+				
+			</budget>
+			<player id="66">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="67">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="68">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="69">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="70">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="71">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="72">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="73">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="74">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="75">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="76">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="77">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="78">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="79">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="80">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="81">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="82">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="83">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="84">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="85">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="86">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="87">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					3
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Leeuwarden" id="4" name="SC Cambuur">
+			<budget>
+				
+			</budget>
+			<player id="88">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="89">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="90">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="91">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="92">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="93">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="94">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="95">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="96">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="97">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="98">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="99">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="100">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="101">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="102">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="103">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="104">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="105">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="106">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="107">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="108">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="109">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					4
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Dordrecht" id="5" name="FC Dordrecht">
+			<budget>
+				
+			</budget>
+			<player id="110">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="111">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="112">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="113">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="114">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="115">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="116">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="117">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="118">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="119">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="120">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="121">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="122">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="123">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="124">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="125">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="126">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="127">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="128">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="129">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="130">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="131">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					5
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Rotterdam" id="6" name="Excelsior">
+			<budget>
+				
+			</budget>
+			<player id="132">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="133">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="134">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="135">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="136">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="137">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="138">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="139">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="140">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="141">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="142">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="143">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="144">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="145">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="146">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="147">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="148">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="149">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="150">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="151">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="152">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="153">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					6
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Deventer" id="7" name="Go Ahead Eagles">
+			<budget>
+				
+			</budget>
+			<player id="154">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="155">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="156">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="157">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="158">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="159">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="160">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="161">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="162">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="163">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="164">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="165">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="166">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="167">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="168">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="169">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="170">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="171">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="172">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="173">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="174">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="175">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					7
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Groningen" id="8" name="FC Groningen">
+			<budget>
+				
+			</budget>
+			<player id="176">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="177">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="178">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="179">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="180">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="181">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="182">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="183">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="184">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="185">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="186">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="187">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="188">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="189">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="190">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="191">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="192">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="193">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="194">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="195">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="196">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="197">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					8
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Heerenveen" id="9" name="SC Heerenveen">
+			<budget>
+				
+			</budget>
+			<player id="198">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="199">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="200">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="201">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="202">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="203">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="204">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="205">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="206">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="207">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="208">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="209">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="210">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="211">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="212">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="213">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="214">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="215">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="216">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="217">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="218">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="219">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					9
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Almelo" id="10" name="Heracles Almelo">
+			<budget>
+				
+			</budget>
+			<player id="220">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="221">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="222">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="223">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="224">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="225">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="226">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="227">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="228">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="229">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="230">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="231">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="232">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="233">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="234">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="235">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="236">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="237">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="238">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="239">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="240">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="241">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					10
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Breda" id="11" name="NAC Breda">
+			<budget>
+				
+			</budget>
+			<player id="242">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="243">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="244">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="245">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="246">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="247">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="248">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="249">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="250">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="251">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="252">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="253">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="254">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="255">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="256">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="257">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="258">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="259">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="260">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="261">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="262">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="263">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					11
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Zwolle" id="12" name="PEC Zwolle">
+			<budget>
+				
+			</budget>
+			<player id="264">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="265">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="266">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="267">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="268">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="269">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="270">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="271">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="272">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="273">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="274">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="275">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="276">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="277">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="278">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="279">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="280">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="281">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="282">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="283">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="284">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="285">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					12
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Eindhoven" id="13" name="PSV">
+			<budget>
+				
+			</budget>
+			<player id="286">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="287">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="288">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="289">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="290">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="291">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="292">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="293">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="294">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="295">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="296">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="297">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="298">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="299">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="300">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="301">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="302">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="303">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="304">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="305">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="306">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="307">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					13
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Enschede" id="14" name="FC Twente">
+			<budget>
+				
+			</budget>
+			<player id="308">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="309">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="310">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="311">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="312">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="313">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="314">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="315">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="316">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="317">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="318">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="319">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="320">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="321">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="322">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="323">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="324">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="325">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="326">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="327">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="328">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="329">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					14
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Utrecht" id="15" name="FC Utrecht">
+			<budget>
+				
+			</budget>
+			<player id="330">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="331">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="332">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="333">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="334">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="335">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="336">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="337">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="338">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="339">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="340">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="341">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="342">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="343">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="344">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="345">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="346">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="347">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="348">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="349">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="350">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="351">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					15
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Arnhem" id="16" name="Vitesse">
+			<budget>
+				
+			</budget>
+			<player id="352">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="353">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="354">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="355">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="356">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="357">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="358">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="359">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="360">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="361">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="362">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="363">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="364">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="365">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="366">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="367">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="368">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="369">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="370">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="371">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="372">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="373">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					16
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+		</club>
+		<club city="Tilburg" id="17" name="Willem II">
+			<budget>
+				
+			</budget>
+			<player id="374">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="375">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="376">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="377">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="378">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="379">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="380">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="381">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="382">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="383">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="384">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="385">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="386">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="387">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="388">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="389">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="390">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="391">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="392">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="393">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="394">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
+			<player id="395">
+				<name>
+					
+				</name>
+				<surname>
+					
+				</surname>
+				<number>
+					
+				</number>
+				<type></type>
+				
+				<offensiveRating></offensiveRating>
+				<defensiveRating></defensiveRating>
+				<stamina></stamina>
+				<teamId>
+					17
+				</teamId>
+				<price>
+					
+				</price>
+			<position></position></player>
 		</club>
 	</league>
 </game>
