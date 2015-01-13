@@ -219,7 +219,7 @@ public class Betting
 	 * @return
 	 * Returns the made bet
 	 */
-	public static Bet Bet_Maker(ArrayList<Betting> BL, Long Money, ArrayList<Team> TeamList)
+	public static Bet Bet_Maker(ArrayList<Betting> BL, long Money, ArrayList<Team> TeamList)
 	{
 		// Show users bets he can make
 		for (int c = 0; c < BL.size(); c++)
@@ -230,7 +230,7 @@ public class Betting
 		String n = sc.next();
 		
 		String winner = "none";
-		Long bet_amount = (long) 0;
+		long bet_amount = (long) 0;
 		Double rate = 0.00;
 		int win = 0;
 		
@@ -515,7 +515,7 @@ public class Betting
 		return ListOfBets;
 	}
 	
-	public static Boolean DayPlayed(PlayDay Day)
+	public static boolean DayPlayed(PlayDay Day)
 	{
 		if (Day.getMatches().get(0).getResult() == null)
 			return false;
