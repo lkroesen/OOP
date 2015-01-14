@@ -68,7 +68,7 @@ public class javafx extends Application{
 		Game game = xml.parseGame();
 		ArrayList<League> leagues = game.getLeagues();
 		League league = leagues.get(0);
-		ArrayList<Team> teams = league.getTeams();
+		final ArrayList<Team> teams = league.getTeams();
 		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
 		//Schedule s = Scheduler.scheduler(leaguee);
 		
@@ -79,12 +79,12 @@ public class javafx extends Application{
 		//plays the song endless
 		final String mediaLocation = file.toURI().toURL().toExternalForm();
 		Media song = new Media(mediaLocation);
-		MediaPlayer audio = new MediaPlayer(song);
+		final MediaPlayer audio = new MediaPlayer(song);
 		audio.setCycleCount(audio.INDEFINITE);
 		
 		//first boxes for scene layout
 		StackPane test = new StackPane();
-		VBox root = new VBox(10);
+		final VBox root = new VBox(10);
 		HBox start = new HBox(10);
 		start.setAlignment(Pos.CENTER);
 		
@@ -94,7 +94,7 @@ public class javafx extends Application{
 		reflection.setTopOffset(-20);
 		
 		Media media = new Media(new File("src/Footballvideo.mp4").toURI().toString());
-	    MediaPlayer mediaPlayer = new MediaPlayer(media);
+	    final MediaPlayer mediaPlayer = new MediaPlayer(media);
 	    mediaPlayer.setAutoPlay(true);
 	    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 		//all video stuff
@@ -104,7 +104,7 @@ public class javafx extends Application{
 	       
 	       mediaView.setFitWidth(1000);
 	       //also video stuff
-	       ArrayList<Button> teambuttons = new ArrayList<Button>();
+	       final ArrayList<Button> teambuttons = new ArrayList<Button>();
 		for(int i = 0;i < teams.size();i++){
 			String teamname =teams.get(i).getName().toString();
 			teambuttons.add(new Button(teamname));
@@ -126,31 +126,31 @@ public class javafx extends Application{
 		next = new Button("continue");
 		train = new Button("train");
 		
-		ImageView image0 = new ImageView(new Image("/ADO_Den_Haag 200px.png", true));
-		ImageView image1 = new ImageView(new Image("/AFC_AJAX 200px.png", true));
-		ImageView image2 = new ImageView(new Image("/AZ 200px.png", true));
-		ImageView image3 = new ImageView(new Image("/FC_Dordrecht 200px.png", true));
-		ImageView image4 = new ImageView(new Image("/FC_Groningen 200px.png", true));
-		ImageView image5 = new ImageView(new Image("/FC_Twente 200px.png", true));
-		ImageView image6 = new ImageView(new Image("/FC_Utrecht 200px.png", true));
-		ImageView image7 = new ImageView(new Image("/Feyenoord 200px.png", true));
-		ImageView image8 = new ImageView(new Image("/Go_Ahead_Eagles 200px.png", true));
-		ImageView image9 = new ImageView(new Image("/Heracles 200px.png", true));
-		ImageView image10 = new ImageView(new Image("/NAC_Breda 200px.png", true));
-		ImageView image11 = new ImageView(new Image("/PEC_Zwolle 200px.png", true));
-		ImageView image12 = new ImageView(new Image("/PSV 200px.png", true));
-		ImageView image13 = new ImageView(new Image("/SBV_Excelsior 200px.png", true));
-		ImageView image14 = new ImageView(new Image("/SC_Cambuur 200px.png", true));
-		ImageView image15 = new ImageView(new Image("/Heerenveen 200px.png", true));
-		ImageView image16 = new ImageView(new Image("/Vitesse 200px.png", true));
-		ImageView image17 = new ImageView(new Image("/Willem_II 200px.png", true));
+		final ImageView image0 = new ImageView(new Image("/ADO_Den_Haag 200px.png", true));
+		final ImageView image1 = new ImageView(new Image("/AFC_AJAX 200px.png", true));
+		final ImageView image2 = new ImageView(new Image("/AZ 200px.png", true));
+		final ImageView image3 = new ImageView(new Image("/FC_Dordrecht 200px.png", true));
+		final ImageView image4 = new ImageView(new Image("/FC_Groningen 200px.png", true));
+		final ImageView image5 = new ImageView(new Image("/FC_Twente 200px.png", true));
+		final ImageView image6 = new ImageView(new Image("/FC_Utrecht 200px.png", true));
+		final ImageView image7 = new ImageView(new Image("/Feyenoord 200px.png", true));
+		final ImageView image8 = new ImageView(new Image("/Go_Ahead_Eagles 200px.png", true));
+		final ImageView image9 = new ImageView(new Image("/Heracles 200px.png", true));
+		final ImageView image10 = new ImageView(new Image("/NAC_Breda 200px.png", true));
+		final ImageView image11 = new ImageView(new Image("/PEC_Zwolle 200px.png", true));
+		final ImageView image12 = new ImageView(new Image("/PSV 200px.png", true));
+		final ImageView image13 = new ImageView(new Image("/SBV_Excelsior 200px.png", true));
+		final ImageView image14 = new ImageView(new Image("/SC_Cambuur 200px.png", true));
+		final ImageView image15 = new ImageView(new Image("/Heerenveen 200px.png", true));
+		final ImageView image16 = new ImageView(new Image("/Vitesse 200px.png", true));
+		final ImageView image17 = new ImageView(new Image("/Willem_II 200px.png", true));
 		
 		lbtext.setEffect(reflection);
 		
 		lbtext.getStyleClass().add("Headline");
 		
 		//makes a scene with the title setting it in the stage
-		Scene scene = new Scene(test,1000,500);
+		final Scene scene = new Scene(test,1000,500);
 		stage.setTitle("Footballmanager");
 		stage.setScene(scene);
 		scene.getStylesheets().add("mystyle.css");
@@ -465,7 +465,7 @@ public class javafx extends Application{
 			@Override
 			public void handle(ActionEvent arg0){
 				lbtext.setText(teams.get(teamchoiceint).getName().toString());
-				ArrayList<Player> players = teams.get(teamchoiceint).getPlayers();
+				final ArrayList<Player> players = teams.get(teamchoiceint).getPlayers();
 				ArrayList<Button> playerbuttons = new ArrayList<Button>();
 				VBox teambox1 = new VBox(10);
 				VBox teambox2 = new VBox(10);
