@@ -31,7 +31,12 @@ public class XML {
 	
 	private DocumentBuilder builder;
 	private String filename;
-	
+
+	/**
+	 * Initializing Documentbuilder for parsing.
+	 * @param filename File to be parsed
+	 * @throws ParserConfigurationException
+	 */
 	public XML(String filename) throws ParserConfigurationException {
 		this.filename = filename;
 		
@@ -40,7 +45,14 @@ public class XML {
 		builder = factory.newDocumentBuilder(); // Initialize builder
 		
 	}
-	
+
+	/**
+	 * Parses the Game element in the XML-file and all child nodes and puts them into a Game object.
+	 * @return Game to be used by application
+	 * @throws SAXException
+	 * @throws IOException
+	 * @throws Exception
+	 */
 	public Game parseGame() throws SAXException, IOException, Exception {		
 		Document document = builder.parse(ClassLoader.getSystemResourceAsStream(filename));
 		document.normalize();
@@ -49,26 +61,30 @@ public class XML {
 		
 	    Element gameNode = document.getDocumentElement();
 
-		if (gameNode != null) { // Check for game settings data
-			
+		if (gameNode != null) {
+
+			// Check for game settings data
 			int id = Integer.parseInt(getAttribute(gameNode.getAttributes(), "id"));
 			String name = getAttribute(gameNode.getAttributes(), "name");
 			int currentDay = Integer.parseInt(getAttribute(gameNode.getAttributes(), "currentday"));
 			int currentTeam = Integer.parseInt(getAttribute(gameNode.getAttributes(), "currentteam"));
-			
+
+			// Create instance of Game with appropriate settings
 			game = new Game(id, name, currentDay, currentTeam);
 			
 			// Get match data
-			
 			NodeList matchData = gameNode.getElementsByTagName("match");
 			for (int i = 0; i < matchData.getLength(); i++){
+				// Looping through matches
 				Node matchNode = matchData.item(i);
 				if (matchNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element match = (Element)matchNode;
 
+					// Getting match attributes
 					int mid = Integer.parseInt(getAttribute(match.getAttributes(), "id"));
 					int day = Integer.parseInt(getAttribute(match.getAttributes(), "day"));
-					
+
+					// Create match instance with appropriate settings
 					Match matchObject = new Match(mid,day);
 					
 					// Get home team data
@@ -77,21 +93,26 @@ public class XML {
 						Node homeNode = homeData.item(a);
 						if(homeNode.getNodeType() == Node.ELEMENT_NODE){
 							Element home = (Element)homeNode;
-							
+
+							// Get home team id
 							int team = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
 							
 							NodeList homeEvents = home.getElementsByTagName("event");
 							for(int b = 0; b < homeEvents.getLength(); b++){
+								// Loop through events
 								Node eventNode = homeEvents.item(b);
 								if(eventNode.getNodeType() == Node.ELEMENT_NODE){
+									// Create instance of Event
 									Element event = (Element)eventNode;
-									
+
+									// Get Event attributes
 									int player = Integer.parseInt(getAttribute(event.getAttributes(), "player"));
-									
+
 									int type = Integer.parseInt(getChildValue(event, "type"));
 									int minute = Integer.parseInt(getChildValue(event, "minute"));
 									int outfor = Integer.parseInt(getChildValue(event, "outfor"));
-									
+
+									// Add Event to match object
 									matchObject.addEventHome(new Event(player, type, minute, outfor));
 								}
 							}
@@ -104,21 +125,26 @@ public class XML {
 						Node awayNode = awayData.item(a);
 						if(awayNode.getNodeType() == Node.ELEMENT_NODE){
 							Element away = (Element)awayNode;
-							
+
+							// Get away team id
 							int team = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
 							
 							NodeList awayEvents = away.getElementsByTagName("event");
 							for(int b = 0; b < awayEvents.getLength(); b++){
+								// Loop through events
 								Node eventNode = awayEvents.item(b);
 								if(eventNode.getNodeType() == Node.ELEMENT_NODE){
+									// Create instance of Event
 									Element event = (Element)eventNode;
-									
+
+									// Get Event attributes
 									int player = Integer.parseInt(getAttribute(event.getAttributes(), "player"));
 									
 									int type = Integer.parseInt(getChildValue(event, "type"));
 									int minute = Integer.parseInt(getChildValue(event, "minute"));
 									int outfor = Integer.parseInt(getChildValue(event, "outfor"));
-									
+
+									// Add Event to match object
 									matchObject.addEventAway(new Event(player, type, minute, outfor));
 								}
 							}
@@ -133,10 +159,12 @@ public class XML {
 			// Get transfer data			
 			NodeList transferData = gameNode.getElementsByTagName("transfer");
 			for (int i = 0; i < transferData.getLength(); i++) {
+				//Loop through transfers
 				Node transferNode = transferData.item(i);
 				if (transferNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element transfer = (Element)transferNode;
-					
+
+					// Get Transfer attributes
 					int tid = Integer.parseInt(getAttribute(transfer.getAttributes(), "id"));
 	
 					int from = Integer.parseInt(getChildValue(transfer, "from"));
@@ -144,7 +172,8 @@ public class XML {
 					int player = Integer.parseInt(getChildValue(transfer, "player"));
 					int price = Integer.parseInt(getChildValue(transfer, "price"));
 					int day = Integer.parseInt(getChildValue(transfer, "day"));
-					
+
+					// Add new Transfer to game with appropriate attributes
 					game.addTransfer(new Transfer(tid, from, to, player, price, day));
 				}
 			}
@@ -153,34 +182,40 @@ public class XML {
 			NodeList lData = document.getElementsByTagName("league");
 			if (lData != null && lData.getLength() > 0) { // Check for game settings data
 				for (int i = 0; i < lData.getLength(); i++) {
+					// Loop through leagues
+
 					Node league = lData.item(i);
-					
+
+					// Get attributes of league
 					int lid = Integer.parseInt(getAttribute(league.getAttributes(), "id"));
 					String lname = getAttribute(league.getAttributes(), "name");
 					String country = getAttribute(league.getAttributes(), "country");
-					
+
+					// Create instance of league
 					League leagueObject = new League(lid, lname, country);
-					
-					// Get teams
+
 					for (int a = 0; a < league.getChildNodes().getLength(); a++) {
+						// Loop through teams
+
 						if (league.getChildNodes().item(a).getNodeType() != Node.ELEMENT_NODE)
 							continue;
 						
 						Element teamNode = (Element)league.getChildNodes().item(a);
-						
+
+						// Get attributes of team
 						int tid = Integer.parseInt(getAttribute(teamNode.getAttributes(), "id"));
 						String tname = getAttribute(teamNode.getAttributes(), "name");
-						
-						Team team = new Team(tid, tname);
-						// Get budget
-							//int budget = Integer.parseInt(getChildValue(team, "budget"));
-							//team.setBudget(budget);
-						// Get players
+						long budget = Long.parseLong(getAttribute(teamNode.getAttributes(), "budget"));
+
+						// create instance of Team.
+						Team team = new Team(tid, tname, budget);
+
 						NodeList playerData = teamNode.getElementsByTagName("player");
 						for (int b = 0; b < playerData.getLength(); b++) {
-							// Single player
+							// Loop through players
 							Element player = (Element)playerData.item(b);
-							
+
+							// Get player attributes
 							int pid = Integer.parseInt(getAttribute(player.getAttributes(), "id"));
 							String pname = getChildValue(player, "name");
 							String surname = getChildValue(player, "surname");
@@ -193,13 +228,16 @@ public class XML {
 							byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
 							
 							int price = Integer.parseInt(getChildValue(player, "price"));
-							
+
+							// Create instance of player and add him to the current team
 							team.addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
 						}
-						
+
+						// Add current team to current league
 						leagueObject.addTeam(team);
 					}
-					
+
+					// Add current league to current game
 					game.addLeague(leagueObject);
 					
 				}
