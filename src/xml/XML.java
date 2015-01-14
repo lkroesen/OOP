@@ -319,31 +319,31 @@ public class XML {
 						ePlayer.appendChild(eName);
 
 						Element eLastName = doc.createElement("surname");
-						eName.setTextContent(p.getSurname());
+						eLastName.setTextContent(p.getSurname());
 						ePlayer.appendChild(eLastName);
 
 						Element eNumber = doc.createElement("number");
-						eName.setTextContent(p.getJerseyNumber() + "");
+						eNumber.setTextContent(p.getJerseyNumber() + "");
 						ePlayer.appendChild(eNumber);
 
 						Element eType = doc.createElement("type");
-						eName.setTextContent(p.getType() + "");
+						eType.setTextContent(p.getType() + "");
 						ePlayer.appendChild(eType);
 
 						Element offensive = doc.createElement("offensiveRating");
-						eName.setTextContent(p.getOffensiveScore() + "");
+						offensive.setTextContent(p.getOffensiveScore() + "");
 						ePlayer.appendChild(offensive);
 
 						Element defensive = doc.createElement("defensiveRating");
-						eName.setTextContent(p.getDefensiveScore() + "");
+						defensive.setTextContent(p.getDefensiveScore() + "");
 						ePlayer.appendChild(defensive);
 
 						Element stamina = doc.createElement("stamina");
-						eName.setTextContent(p.getStaminaScore() + "");
+						stamina.setTextContent(p.getStaminaScore() + "");
 						ePlayer.appendChild(stamina);
 
 						Element price = doc.createElement("price");
-						eName.setTextContent(p.getPrice() + "");
+						price.setTextContent(p.getPrice() + "");
 						ePlayer.appendChild(price);
 
 						// Add player to team
@@ -366,19 +366,19 @@ public class XML {
 					eTransfer.appendChild(eFrom);
 
 					Element eTo = doc.createElement("to");
-					eFrom.setTextContent(t.getTo() + "");
+					eTo.setTextContent(t.getTo() + "");
 					eTransfer.appendChild(eTo);
 
 					Element ePrice = doc.createElement("price");
-					eFrom.setTextContent(t.getPrice() + "");
+					ePrice.setTextContent(t.getPrice() + "");
 					eTransfer.appendChild(ePrice);
 
 					Element ePlayer = doc.createElement("player");
-					eFrom.setTextContent(t.getPlayer() + "");
+					ePlayer.setTextContent(t.getPlayer() + "");
 					eTransfer.appendChild(ePlayer);
 
 					Element eDay = doc.createElement("day");
-					eFrom.setTextContent(t.getDay() + "");
+					eDay.setTextContent(t.getDay() + "");
 					eTransfer.appendChild(eDay);
 
 					rootElement.appendChild(eTransfer);
