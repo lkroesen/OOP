@@ -7,8 +7,11 @@ import model.Event;
 import model.Match;
 import model.Player;
 import model.Team;
-
-//assuming that playertype 1=attach, 2=defencife, 3=middenvelder, 4=keeper
+//eerst kijken hoevel wissels,
+//dan wie er gewisseld wordt random
+//dan wie er in gaat roandom van zelfde 
+//dan event
+//opnieuwe scoren bereken van team.
 
 public class PlayMatch {
 
