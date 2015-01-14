@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import AI.PlayMatch;
+import AI.PlayRound;
 import AI.Schedule;
 import AI.Scheduler;
 import xml.XML;
@@ -51,7 +52,7 @@ public class javafx extends Application{
 	
 	
 	Button Back = new Button ("Back");
-	int teamchoiceint, playerchoiceint;
+	int teamchoiceint, playerchoiceint, currentplayround;
 	
 	
 	
@@ -70,7 +71,7 @@ public class javafx extends Application{
 		League league = leagues.get(0);
 		final ArrayList<Team> teams = league.getTeams();
 		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
-		//Schedule s = Scheduler.scheduler(leaguee);
+		Schedule scheme = Scheduler.scheduler(leaguee);
 		
 		//song name in file form
 		File file = new File("src/fmsong.mp3");
@@ -718,13 +719,44 @@ public class javafx extends Application{
 					public void handle(ActionEvent arg0){
 					lbtext.setText("Results");
 					VBox playmatchbox = new VBox();
-					Label teamnamematch = new Label(teams.get(0).getName() + " vs " + teams.get(1).getName());
+					HBox matchresult = new HBox(20);
+					VBox matchresultfriday = new VBox();
+					VBox matchresultsaturday = new VBox();
+					VBox matchresultsunday = new VBox();
+					Label standard0 = new Label("home - away");
+					Label standard1 = new Label("home - away");
+					Label standard2 = new Label("home - away");
+					Label friday = new Label("Friday");
+					Label saturday = new Label("saturday");
+					Label sunday = new Label("sunday");
+					matchresultfriday.getChildren().addAll(friday,standard0);
+					matchresultsaturday.getChildren().addAll(saturday,standard1);
+					matchresultsunday.getChildren().addAll(sunday,standard2);
+					for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
+						String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getFriday().getMatches().get(i).getTeam_away().getName());
+						String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i)));
+						Label matchlabel = new Label(match);
+						Label resultlabel = new Label(result);
+						matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+					}
+					for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
+						String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+						String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i)));
+						Label matchlabel = new Label(match);
+						Label resultlabel = new Label(result);
+						matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+					}
+					for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
+						String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+						String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i)));
+						Label matchlabel = new Label(match);
+						Label resultlabel = new Label(result);
+						matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+					}
 					playmatchbox.getStylesheets().add("mystyle.css");
 					Scene playmatchscreen = new Scene(playmatchbox,1000,500);
-					Match match = new Match(1,1,teams.get(0),teams.get(1));
-					String result = PlayMatch.play(match);
-					Label stats = new Label("goals home - away: " + result);
-					playmatchbox.getChildren().addAll(lbtext,teamnamematch,stats,next);
+					matchresult.getChildren().addAll(matchresultfriday,matchresultsaturday,matchresultsunday);
+					playmatchbox.getChildren().addAll(lbtext,matchresult,next);
 					stage.setScene(playmatchscreen);
 					}
 				});
