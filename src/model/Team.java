@@ -13,6 +13,7 @@ public class Team {
 	private String name;
 	private ArrayList<Player> players;
 	private long budget;
+	private String stadium;
 	
 	public long getBudget(){
 		return budget;
@@ -44,6 +45,13 @@ public class Team {
 	public void delPlayer(Player p){
 		this.players.remove(p);
 	}
+	public String getStadium() {
+		return stadium;
+	}
+	public void setStadium(String stadium) {
+		this.stadium = stadium;
+	}
+
 	public Team(int id, String name, ArrayList<Player> players) {
 		super();
 		this.id = id;
@@ -59,12 +67,13 @@ public class Team {
 		this.budget = budget;
 	}
 
-	public Team(int id, String name, long budget) {
+	public Team(int id, String name, long budget, String stadium) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.players = players;
 		this.budget = budget;
+		this.stadium = stadium;
 	}
 	
 	public Team(int id, String name) {

@@ -206,9 +206,10 @@ public class XML {
 						int tid = Integer.parseInt(getAttribute(teamNode.getAttributes(), "id"));
 						String tname = getAttribute(teamNode.getAttributes(), "name");
 						long budget = Long.parseLong(getAttribute(teamNode.getAttributes(), "budget"));
+						String stadium = getAttribute(teamNode.getAttributes(), "stadium");
 
 						// create instance of Team.
-						Team team = new Team(tid, tname, budget);
+						Team team = new Team(tid, tname, budget, stadium);
 
 						NodeList playerData = teamNode.getElementsByTagName("player");
 						for (int b = 0; b < playerData.getLength(); b++) {
@@ -264,67 +265,208 @@ public class XML {
 	public String getAttribute(NamedNodeMap attrs, String name) {
 		return attrs.getNamedItem(name).getNodeValue();
 	}
-	
-	public boolean writeGame(Game g, String filename) {
+
+	/**
+	 * Writes Game object to prescribed XML file.
+	 * @param g Game to be writed to XML file.
+	 * @param filename Name of file to be writed to.
+	 * @return Whether writing succeeded
+	 */
+	public static boolean writeGame(Game g, String filename) {
         try {
                  
-                DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-                DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
- 
-                // root elements
-                Document doc = docBuilder.newDocument();
-                Element rootElement = doc.createElement("game");
-                doc.appendChild(rootElement);
-               
-                rootElement.setAttribute("id", g.getId()+"");
-                rootElement.setAttribute("name", g.getName()+"");
-                rootElement.setAttribute("currentday", g.getCurrentDay()+"");
-                rootElement.setAttribute("currentteam", g.getCurrentTeam()+"");
-               
-                for (League l : g.getLeagues()) {
-                        Element eLeague = doc.createElement("league");
-                        eLeague.setAttribute("id", l.getId()+"");
-                        eLeague.setAttribute("name", l.getName());
-                        eLeague.setAttribute("country", l.getCountry());
-                        rootElement.appendChild(eLeague);
-                       
-                        for (Team t : l.getTeams()) {
-                                Element eTeam = doc.createElement("team");
-                                eTeam.setAttribute("id", t.getId()+"");
-                                eTeam.setAttribute("name", t.getName());
-                               // eTeam.setAttribute("formation", t.getFormation());
-                               
-                                for (Player p : t.getPlayers()) {
-                                        Element ePlayer = doc.createElement("player");
-                                        ePlayer.setAttribute("id", p.getId()+"");
-                                       
-                                        Element eName = doc.createElement("name");
-                                        Element eLastName = doc.createElement("surname");
-                                        Element eNumber = doc.createElement("number");
-                                        Element eType = doc.createElement("type");
-                                        Element offensive = doc.createElement("offensiveRating");
-                                        Element defensive = doc.createElement("defensiveRating");
-                                        Element stamina = doc.createElement("stamina");
-                                        Element price = doc.createElement("price");
-                                       
-                                        eTeam.appendChild(ePlayer);
-                                }
-                               
-                                eLeague.appendChild(eTeam);
-                        }
-                }
-                
-        		// write the content into xml file
-        		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        		Transformer transformer = transformerFactory.newTransformer();
-        		DOMSource source = new DOMSource(doc);
-        		StreamResult result = new StreamResult(new File(filename));
- 
-                transformer.transform(source, result);
- 
-                System.out.println("File saved!");
- 
-                return true;
+			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+
+			// Create root element game
+			Document doc = docBuilder.newDocument();
+			Element rootElement = doc.createElement("game");
+			doc.appendChild(rootElement);
+
+			// Set game settings
+			rootElement.setAttribute("id", g.getId()+"");
+			rootElement.setAttribute("name", g.getName()+"");
+			rootElement.setAttribute("currentday", g.getCurrentDay()+"");
+			rootElement.setAttribute("currentteam", g.getCurrentTeam()+"");
+
+			// Loop through leagues
+			for (League l : g.getLeagues()) {
+
+				Element eLeague = doc.createElement("league");
+
+				// Set league attributes
+				eLeague.setAttribute("id", l.getId()+"");
+				eLeague.setAttribute("name", l.getName());
+				eLeague.setAttribute("country", l.getCountry());
+
+				// Loop through teams
+				for (Team t : l.getTeams()) {
+					// Set team attributes
+					Element eTeam = doc.createElement("team");
+					eTeam.setAttribute("id", t.getId()+"");
+					eTeam.setAttribute("name", t.getName());
+				   	eTeam.setAttribute("stadium", t.getStadium());
+
+					// Loop trough players
+					for (Player p : t.getPlayers()) {
+						Element ePlayer = doc.createElement("player");
+
+						// Set Player attributes
+						ePlayer.setAttribute("id", p.getId()+"");
+
+						Element eName = doc.createElement("name");
+						eName.setTextContent(p.getFirstname());
+						ePlayer.appendChild(eName);
+
+						Element eLastName = doc.createElement("surname");
+						eName.setTextContent(p.getSurname());
+						ePlayer.appendChild(eLastName);
+
+						Element eNumber = doc.createElement("number");
+						eName.setTextContent(p.getJerseyNumber() + "");
+						ePlayer.appendChild(eNumber);
+
+						Element eType = doc.createElement("type");
+						eName.setTextContent(p.getType() + "");
+						ePlayer.appendChild(eType);
+
+						Element offensive = doc.createElement("offensiveRating");
+						eName.setTextContent(p.getOffensiveScore() + "");
+						ePlayer.appendChild(offensive);
+
+						Element defensive = doc.createElement("defensiveRating");
+						eName.setTextContent(p.getDefensiveScore() + "");
+						ePlayer.appendChild(defensive);
+
+						Element stamina = doc.createElement("stamina");
+						eName.setTextContent(p.getStaminaScore() + "");
+						ePlayer.appendChild(stamina);
+
+						Element price = doc.createElement("price");
+						eName.setTextContent(p.getPrice() + "");
+						ePlayer.appendChild(price);
+
+						// Add player to team
+						eTeam.appendChild(ePlayer);
+					}
+					// Add team to league
+					eLeague.appendChild(eTeam);
+				}
+				// Add league to game
+				rootElement.appendChild(eLeague);
+
+				for (Transfer t : g.getTransfers()) {
+					Element eTransfer = doc.createElement("transfer");
+
+					// Set Transfer attributes
+					eTransfer.setAttribute("id", t.getId() + "");
+
+					Element eFrom = doc.createElement("from");
+					eFrom.setTextContent(t.getFrom() + "");
+					eTransfer.appendChild(eFrom);
+
+					Element eTo = doc.createElement("to");
+					eFrom.setTextContent(t.getTo() + "");
+					eTransfer.appendChild(eTo);
+
+					Element ePrice = doc.createElement("price");
+					eFrom.setTextContent(t.getPrice() + "");
+					eTransfer.appendChild(ePrice);
+
+					Element ePlayer = doc.createElement("player");
+					eFrom.setTextContent(t.getPlayer() + "");
+					eTransfer.appendChild(ePlayer);
+
+					Element eDay = doc.createElement("day");
+					eFrom.setTextContent(t.getDay() + "");
+					eTransfer.appendChild(eDay);
+
+					rootElement.appendChild(eTransfer);
+				}
+
+				for (Match m : g.getMatches()) {
+					Element eMatch = doc.createElement("match");
+
+					// Set Match attributes
+					eMatch.setAttribute("id", m.getId() + "");
+					eMatch.setAttribute("day", m.getDay() + "");
+
+					// Initialize HomeEvents
+					Element eHomeEvents = doc.createElement("team_home");
+
+					// Set team_home attributes
+					eHomeEvents.setAttribute("id", m.getTeam_home()+ "");
+
+					// Loop through HomeEvents
+					for (Event e : m.getEvents_home()){
+						Element eEvent = doc.createElement("event");
+
+						// Set attributes for event
+						eEvent.setAttribute("player", e.getPlayer()+ "");
+
+						Element eType = doc.createElement("type");
+						eType.setTextContent(e.getPlayer() + "");
+						eEvent.appendChild(eType);
+
+						Element eMinute = doc.createElement("minute");
+						eMinute.setTextContent(e.getMinute() + "");
+						eEvent.appendChild(eMinute);
+
+						Element eOutfor = doc.createElement("outfor");
+						eOutfor.setTextContent(e.getOutfor() + "");
+						eEvent.appendChild(eOutfor);
+
+						eHomeEvents.appendChild(eEvent);
+					}
+
+					eMatch.appendChild(eHomeEvents);
+
+
+					// Initialize AwayEvents
+					Element eAwayEvents = doc.createElement("team_away");
+
+					// Set team_home attributes
+					eHomeEvents.setAttribute("id", m.getTeam_away()+ "");
+
+					// Loop through HomeEvents
+					for (Event e : m.getEvents_away()){
+						Element eEvent = doc.createElement("event");
+
+						// Set attributes for event
+						eEvent.setAttribute("player", e.getPlayer()+ "");
+
+						Element eType = doc.createElement("type");
+						eType.setTextContent(e.getPlayer() + "");
+						eEvent.appendChild(eType);
+
+						Element eMinute = doc.createElement("minute");
+						eMinute.setTextContent(e.getMinute() + "");
+						eEvent.appendChild(eMinute);
+
+						Element eOutfor = doc.createElement("outfor");
+						eOutfor.setTextContent(e.getOutfor() + "");
+						eEvent.appendChild(eOutfor);
+
+						eHomeEvents.appendChild(eEvent);
+					}
+
+					eMatch.appendChild(eAwayEvents);
+
+					rootElement.appendChild(eMatch);
+				}
+			}
+
+			// write the content into xml file
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(doc);
+			StreamResult result = new StreamResult(new File(filename));
+
+			transformer.transform(source, result);
+
+			System.out.println("File saved!");
+
+			return true;
           } catch (ParserConfigurationException pce) {
                 pce.printStackTrace();
           } catch (TransformerException tfe) {

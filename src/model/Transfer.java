@@ -9,8 +9,12 @@ public class Transfer {
 	private int price;
 	private int day;
 
+	private static int curId = 0;
+
 	public Transfer(int id, int from, int to, int player, int price, int day) {
-		this.id = id;
+		this.id = Transfer.curId;
+		curId++;
+
 		this.from = from;
 		this.to = to;
 		this.player = player;
