@@ -21,7 +21,7 @@ public class XMLTest{
         try {
             XML xml = new XML("toms_teams.xml");
             Game g = xml.parseGame();
-            XML.writeGame(g, "test_write_xml.xml");
+            assertTrue(XML.writeGame(g, "test_write_xml.xml"));
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
