@@ -75,6 +75,30 @@ public class Game {
 		return id;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setCurrentTeam(int currentTeam) {
+		this.currentTeam = currentTeam;
+	}
+
+	public ArrayList<Transfer> getTransfers() {
+		return transfers;
+	}
+
+	public void setTransfers(ArrayList<Transfer> transfers) {
+		this.transfers = transfers;
+	}
+
+	public ArrayList<Match> getMatches() {
+		return matches;
+	}
+
+	public void setMatches(ArrayList<Match> matches) {
+		this.matches = matches;
+	}
+
 	@Override
 	public String toString() {
 		return "Game [id=" + id + ", name=" + name + ", currentDay="
