@@ -63,11 +63,11 @@ public class javafx extends Application{
 	public void start(final Stage stage) throws Exception {
 		
 		stage.setResizable(false);
-		XML xml = new XML("teams.xml");
+		XML xml = new XML("toms_teams.xml");
 		Game game = xml.parseGame();
 		ArrayList<League> leagues = game.getLeagues();
 		League league = leagues.get(0);
-		ArrayList<Team> teams = league.getTeams();
+		final ArrayList<Team> teams = league.getTeams();
 		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
 		//Schedule s = Scheduler.scheduler(leaguee);
 		
@@ -78,13 +78,13 @@ public class javafx extends Application{
 		//plays the song endless
 		final String mediaLocation = file.toURI().toURL().toExternalForm();
 		Media song = new Media(mediaLocation);
-		MediaPlayer audio = new MediaPlayer(song);
+		final MediaPlayer audio = new MediaPlayer(song);
 		audio.setCycleCount(audio.INDEFINITE);
 		
 		//first boxes for scene layout
 		StackPane test = new StackPane();
-		VBox root = new VBox(10);
-		HBox start = new HBox();
+		final VBox root = new VBox(10);
+		final HBox start = new HBox();
 		start.setAlignment(Pos.CENTER);
 		
 		//effects on buttons
@@ -93,7 +93,7 @@ public class javafx extends Application{
 		reflection.setTopOffset(-20);
 		
 		Media media = new Media(new File("src/Footballvideo.mp4").toURI().toString());
-	    MediaPlayer mediaPlayer = new MediaPlayer(media);
+	    final MediaPlayer mediaPlayer = new MediaPlayer(media);
 	    mediaPlayer.setAutoPlay(true);
 	    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 		//all video stuff
@@ -103,7 +103,7 @@ public class javafx extends Application{
 	       
 	       mediaView.setFitWidth(1000);
 	       //also video stuff
-	       ArrayList<Button> teambuttons = new ArrayList<Button>();
+	       final ArrayList<Button> teambuttons = new ArrayList<Button>();
 		for(int i = 0;i < teams.size();i++){
 			String teamname =teams.get(i).getName().toString();
 			teambuttons.add(new Button(teamname));
@@ -122,16 +122,16 @@ public class javafx extends Application{
 		playmatch = new Button("Play match");
 		next = new Button("continue");
 		
-		ImageView image0 = new ImageView(new Image("/AFC_AJAX 200px.png", true));
-		ImageView image1 = new ImageView(new Image("/Feyenoord 200px.png", true));
-		ImageView image2 = new ImageView(new Image("/AZ 200px.png", true));
+		final ImageView image0 = new ImageView(new Image("/AFC_AJAX 200px.png", true));
+		final ImageView image1 = new ImageView(new Image("/Feyenoord 200px.png", true));
+		final ImageView image2 = new ImageView(new Image("/AZ 200px.png", true));
 		
 		lbtext.setEffect(reflection);
 		
 		lbtext.getStyleClass().add("Headline");
 		
 		//makes a scene with the title setting it in the stage
-		Scene scene = new Scene(test,1000,500);
+		final Scene scene = new Scene(test,1000,500);
 		stage.setTitle("Footballmanager");
 		stage.setScene(scene);
 		scene.getStylesheets().add("mystyle.css");
@@ -398,7 +398,7 @@ public class javafx extends Application{
 				image0.setFitHeight(60);
 				image0.setSmooth(true);
 				lbtext.setText(teams.get(0).getName().toString());
-				ArrayList<Player> players = teams.get(0).getPlayers();
+				final ArrayList<Player> players = teams.get(0).getPlayers();
 				ArrayList<Button> playerbuttons = new ArrayList<Button>();
 				VBox teambox1 = new VBox(10);
 				VBox teambox2 = new VBox(10);
