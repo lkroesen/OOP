@@ -71,7 +71,7 @@ public class Team {
 		super();
 		this.id = id;
 		this.name = name;
-		this.players = players;
+		this.players = new ArrayList<Player>();
 		this.budget = budget;
 		this.stadium = stadium;
 	}
