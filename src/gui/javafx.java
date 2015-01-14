@@ -71,7 +71,7 @@ public class javafx extends Application{
 		League league = leagues.get(0);
 		final ArrayList<Team> teams = league.getTeams();
 		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
-		Schedule scheme = Scheduler.scheduler(leaguee);
+		final Schedule scheme = Scheduler.scheduler(leaguee);
 		
 		//song name in file form
 		File file = new File("src/fmsong.mp3");
