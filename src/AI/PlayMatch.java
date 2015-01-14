@@ -169,7 +169,9 @@ public class PlayMatch {
 	private static double getStamina(ArrayList<Player> players){
 		double i = 0;
 		for(Player player:players){
-			i += player.getStaminaScore();
+			if(player.getPosition() <= 10){
+				i += player.getStaminaScore();
+			}
 		}
 		return i;
 	}
@@ -177,12 +179,14 @@ public class PlayMatch {
 	private static double getOffenciveScore(ArrayList<Player> players){
 		double i = 0;
 		for(Player player:players){
-			if(player.getType() == 1){
-				i += player.getOffensiveScore() * 1.20;
-			}else if(player.getType() == 2){
-				i += player.getOffensiveScore() * 1.10;
-			}else{
-				i += player.getOffensiveScore();
+			if(player.getPosition() <= 10){
+				if(player.getType() == 1){
+					i += player.getOffensiveScore() * 1.20;
+				}else if(player.getType() == 2){
+					i += player.getOffensiveScore() * 1.10;
+				}else{
+					i += player.getOffensiveScore();
+				}
 			}
 		}
 		return i;
@@ -191,14 +195,16 @@ public class PlayMatch {
 	private static double getDefenciveScore(ArrayList<Player> players){
 		double i = 0;
 		for(Player player:players){
-			if(player.getType() == 2){
-				i += player.getDefensiveScore() * 1.10; 
-			}else if(player.getType() == 3){
-				i+= player.getDefensiveScore() * 1.20;
-			}else if(player.getType() == 4){
-				i += player.getDefensiveScore() * 1.50;
-			}else{
-				i += player.getDefensiveScore();
+			if(player.getPosition() <= 10){
+				if(player.getType() == 2){
+					i += player.getDefensiveScore() * 1.10; 
+				}else if(player.getType() == 3){
+					i+= player.getDefensiveScore() * 1.20;
+				}else if(player.getType() == 4){
+					i += player.getDefensiveScore() * 1.50;
+				}else{
+					i += player.getDefensiveScore();
+				}
 			}
 		}
 		return i;
