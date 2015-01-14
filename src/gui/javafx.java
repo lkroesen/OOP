@@ -47,12 +47,12 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, playmatch, next, teamaction, playeraction, train;
+	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, nextday, next, teamaction, playeraction, train;
 	ImageView imagechoice;
 	
 	
 	Button Back = new Button ("Back");
-	int teamchoiceint, playerchoiceint, currentplayround;
+	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0;
 	
 	
 	
@@ -123,7 +123,7 @@ public class javafx extends Application{
 		backng = new Button("back");
 		backteam = new Button("back");
 		select = new Button("choose this team");
-		playmatch = new Button("Play match");
+		nextday = new Button("Next day");
 		next = new Button("continue");
 		train = new Button("train");
 		
@@ -707,57 +707,78 @@ public class javafx extends Application{
 						imageadd.getStylesheets().add("mystyle.css");
 						Scene teamchoicescreen = new Scene(imageadd,1000,500);
 						lbtext.setText(teams.get(teamchoiceint).getName());
-						teamchoicebox.getChildren().addAll(lbtext,playmatch,train);
+						teamchoicebox.getChildren().addAll(lbtext,nextday,train);
 						imageadd.getChildren().addAll(teamchoicebox,imagechoice);
 						stage.setScene(teamchoicescreen);
 						
 					}
 				});
-				playmatch.setOnAction(new EventHandler<ActionEvent>(){
+				nextday.setOnAction(new EventHandler<ActionEvent>(){
 					
 					@Override
 					public void handle(ActionEvent arg0){
-					lbtext.setText("Results");
-					VBox playmatchbox = new VBox();
-					HBox matchresult = new HBox(20);
-					VBox matchresultfriday = new VBox();
-					VBox matchresultsaturday = new VBox();
-					VBox matchresultsunday = new VBox();
-					Label standard0 = new Label("home - away");
-					Label standard1 = new Label("home - away");
-					Label standard2 = new Label("home - away");
-					Label friday = new Label("Friday");
-					Label saturday = new Label("saturday");
-					Label sunday = new Label("sunday");
-					matchresultfriday.getChildren().addAll(friday,standard0);
-					matchresultsaturday.getChildren().addAll(saturday,standard1);
-					matchresultsunday.getChildren().addAll(sunday,standard2);
-					for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
-						String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getFriday().getMatches().get(i).getTeam_away().getName());
-						String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i)));
-						Label matchlabel = new Label(match);
-						Label resultlabel = new Label(result);
-						matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+						VBox playmatchbox = new VBox();
+						HBox matchresult = new HBox(20);
+						VBox matchresultfriday = new VBox();
+						VBox matchresultsaturday = new VBox();
+						VBox matchresultsunday = new VBox();
+						Label standard0 = new Label("home - away");
+						Label standard1 = new Label("home - away");
+						Label standard2 = new Label("home - away");
+						Label friday = new Label("Friday");
+						Label saturday = new Label("saturday");
+						Label sunday = new Label("sunday");
+						matchresultfriday.getChildren().addAll(friday,standard0);
+						matchresultsaturday.getChildren().addAll(saturday,standard1);
+						matchresultsunday.getChildren().addAll(sunday,standard2);
+						playmatchbox.getStylesheets().add("mystyle.css");
+						Scene playmatchscreen = new Scene(playmatchbox,1000,500);
+					if(currentday<4){
+						playmatchbox.getChildren().addAll(lbtext,matchresult,next);
+						stage.setScene(playmatchscreen);
 					}
-					for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
-						String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
-						String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i)));
-						Label matchlabel = new Label(match);
-						Label resultlabel = new Label(result);
-						matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+					if (currentday == 4) {
+						for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
+							String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getFriday().getMatches().get(i).getTeam_away().getName());
+							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i)));
+							Label matchlabel = new Label(match);
+							Label resultlabel = new Label(result);
+							matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+						}
+						matchresult.getChildren().addAll(matchresultfriday);
+						playmatchbox.getChildren().addAll(lbtext,matchresult,next);
+						stage.setScene(playmatchscreen);
 					}
-					for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
-						String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
-						String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i)));
-						Label matchlabel = new Label(match);
-						Label resultlabel = new Label(result);
-						matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+					if (currentday == 5){
+						for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
+							String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i)));
+							Label matchlabel = new Label(match);
+							Label resultlabel = new Label(result);
+							matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+						}
+						matchresult.getChildren().addAll(matchresultsaturday);
+						playmatchbox.getChildren().addAll(lbtext,matchresult,next);
+						stage.setScene(playmatchscreen);
 					}
-					playmatchbox.getStylesheets().add("mystyle.css");
-					Scene playmatchscreen = new Scene(playmatchbox,1000,500);
-					matchresult.getChildren().addAll(matchresultfriday,matchresultsaturday,matchresultsunday);
-					playmatchbox.getChildren().addAll(lbtext,matchresult,next);
-					stage.setScene(playmatchscreen);
+					if(currentday == 6){
+						currentday = 0;
+						for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
+							String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i)));
+							Label matchlabel = new Label(match);
+							Label resultlabel = new Label(result);
+							matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+						}
+						matchresult.getChildren().addAll(matchresultsunday);
+						playmatchbox.getChildren().addAll(lbtext,matchresult,next);
+						stage.setScene(playmatchscreen);
+						currentplayround ++;
+					}
+					else{
+						currentday++;
+					}
+					System.out.print(currentday);
 					}
 				});
 				next.setOnAction(new EventHandler<ActionEvent>(){
