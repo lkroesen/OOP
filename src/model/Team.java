@@ -50,8 +50,16 @@ public class Team {
 		this.name = name;
 		this.players = players;
 	}
-	
+
 	public Team(int id, String name, ArrayList<Player> players, long budget) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.players = players;
+		this.budget = budget;
+	}
+
+	public Team(int id, String name, long budget) {
 		super();
 		this.id = id;
 		this.name = name;
