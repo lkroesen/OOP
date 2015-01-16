@@ -9,6 +9,7 @@ import AI.PlayMatch;
 import AI.PlayRound;
 import AI.Schedule;
 import AI.Scheduler;
+import AI.Training;
 import xml.XML;
 import model.Game;
 import model.League;
@@ -47,12 +48,14 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, nextday, next, teamaction, playeraction, train;
+	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, nextday, next, teamaction, playeraction, train, lighttrain
+	, heavytrain, rest, savegame, save1, save2, save3, save4;
 	ImageView imagechoice;
 	
 	
 	Button Back = new Button ("Back");
 	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0;
+	boolean traintoday= false;
 	
 	
 	
@@ -126,6 +129,14 @@ public class javafx extends Application{
 		nextday = new Button("Next day");
 		next = new Button("continue");
 		train = new Button("train");
+		lighttrain = new Button ("light training");
+		heavytrain = new Button ("heavy training");
+		rest = new Button ("rest");
+		savegame = new Button("save game");
+		save1 = new Button("save 1");
+		save2 = new Button("save 2");
+		save3 = new Button("save 3");
+		save4 = new Button("save 4");
 		
 		final ImageView image0 = new ImageView(new Image("/ADO_Den_Haag 200px.png", true));
 		final ImageView image1 = new ImageView(new Image("/AFC_AJAX 200px.png", true));
@@ -254,24 +265,27 @@ public class javafx extends Application{
 				audio.play();
 				mediaPlayer.setVolume(0);
 				lbtext.setText("Select save game");
-				//makes the amount of saves visable as buttons
-				//for(int i = 1; i < 4/*savedgames + 1*/;i++){
-				//	Button save = new Button ("save " + i);
-				//	root.getChildren().add(save);
-				//}
+				
 				
 				//making boxes and buttons for load game screen
-				Button save = new Button ("save 1");
 				VBox lgtext = new VBox();
 				VBox backpos = new VBox(10);
 				backpos.setAlignment(Pos.BOTTOM_RIGHT);
-				save.setAlignment(Pos.CENTER_LEFT);
 				lbtext.setAlignment(Pos.TOP_LEFT);
 				backpos.getChildren().addAll(mutesong,Back);
-				lgtext.getChildren().addAll(lbtext,save,backpos);
+				lgtext.getChildren().addAll(lbtext,save1,save2,save3,save4,backpos);
 				lgtext.getStylesheets().add("mystyle.css");
 				Scene lg = new Scene(lgtext,1000,500);
 				stage.setScene(lg);
+				save1.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						//take scheduler
+						select.fire();
+					}
+				});
+				
 				}
 			
 		});
@@ -707,10 +721,82 @@ public class javafx extends Application{
 						imageadd.getStylesheets().add("mystyle.css");
 						Scene teamchoicescreen = new Scene(imageadd,1000,500);
 						lbtext.setText(teams.get(teamchoiceint).getName());
-						teamchoicebox.getChildren().addAll(lbtext,nextday,train);
+						if(traintoday == false){
+						teamchoicebox.getChildren().addAll(lbtext,nextday,train,savegame);
+						}
+						else{
+							teamchoicebox.getChildren().addAll(lbtext,nextday,savegame);
+						}
 						imageadd.getChildren().addAll(teamchoicebox,imagechoice);
 						stage.setScene(teamchoicescreen);
 						
+					}
+				});
+				savegame.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("save game");
+						VBox saves = new VBox();
+						saves.getChildren().addAll(lbtext,save1,save2,save3,save4,next);
+						saves.getStylesheets().add("mystyle.css");
+						Scene savegamescreen = new Scene(saves,1000,500);
+						stage.setScene(savegamescreen);
+						
+						save1.setOnAction(new EventHandler<ActionEvent>(){
+							
+							@Override
+							public void handle(ActionEvent arg0){
+								Game.setCurrentDay(currentday);
+								Game.setCurrentTeam(teamchoiceint);
+								xml.writeGame(game, "save1");
+							}
+						});
+					}
+				});
+				train.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						VBox trainbox = new VBox();
+						trainbox.getStylesheets().add("mystyle.css");
+						lbtext.setText("Training");
+						trainbox.getChildren().addAll(lbtext,lighttrain,heavytrain,rest);
+						Scene trainscreen = new Scene(trainbox,1000,500);
+						stage.setScene(trainscreen);
+					}
+				});
+				lighttrain.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+						Training.RegularTraining(teams.get(teamchoiceint).getPlayers().get(i));
+						}
+						traintoday = true;
+						select.fire();
+					}
+				});
+				heavytrain.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+						Training.HeavyTraining(teams.get(teamchoiceint).getPlayers().get(i));
+						}
+						traintoday = true;
+						select.fire();
+					}
+				});
+				rest.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+						Training.rest(teams.get(teamchoiceint).getPlayers().get(i));
+						}
+						traintoday = true;
+						select.fire();
 					}
 				});
 				nextday.setOnAction(new EventHandler<ActionEvent>(){
@@ -778,7 +864,7 @@ public class javafx extends Application{
 					else{
 						currentday++;
 					}
-					System.out.print(currentday);
+					traintoday = false;
 					}
 				});
 				next.setOnAction(new EventHandler<ActionEvent>(){

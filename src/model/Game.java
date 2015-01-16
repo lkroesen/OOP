@@ -13,8 +13,8 @@ public class Game {
 
 	private int id;
 	private String name;
-	private int currentDay;
-	private int currentTeam;
+	private static int currentDay;
+	private static int currentTeam;
 	private ArrayList<League> leagues;
 	private ArrayList<Transfer> transfers;
 	private ArrayList<Match> matches;
@@ -23,8 +23,8 @@ public class Game {
 		super();
 		this.id = id;
 		this.name = name;
-		this.currentDay = currentDay;
-		this.currentTeam = currentTeam;
+		Game.currentDay = currentDay;
+		Game.currentTeam = currentTeam;
 		
 		leagues = new ArrayList<League>();
 		transfers = new ArrayList<Transfer>();
@@ -47,8 +47,8 @@ public class Game {
 		return currentTeam;
 	}
 
-	public void setCurrentDay(int currentDay) {
-		this.currentDay = currentDay;
+	public static void setCurrentDay(int currentDay) {
+		Game.currentDay = currentDay;
 	}
 
 	public ArrayList<League> getLeagues() {
@@ -79,8 +79,8 @@ public class Game {
 		this.id = id;
 	}
 
-	public void setCurrentTeam(int currentTeam) {
-		this.currentTeam = currentTeam;
+	public static void setCurrentTeam(int currentTeam) {
+		Game.currentTeam = currentTeam;
 	}
 
 	public ArrayList<Transfer> getTransfers() {
