@@ -23,9 +23,13 @@ public class testTransfer {
 	@Test
 	public void testEquals(){
 		Transfer t1 = new Transfer(15,20,3,15,10000,3);
-		Transfer t2 = new Transfer(15,20,3,15,10000,3);
-		assertTrue(t1.equals(t2));
-		
+		Transfer t2 = new Transfer(15,21,3,15,10000,3);
+		assertFalse(t1.equals(t2));
+		assertEquals(t1.getDay(),3);
+		assertTrue(t1.equals(t1));
+		assertTrue(t1.equals(t1));
+		assertNotEquals(t1,t2);
+		assertEquals(t1,t1);
 	}
 	
 	@Test
@@ -33,12 +37,15 @@ public class testTransfer {
 		Transfer t1 = new Transfer(10,6,3,200,300000,31);
 		Transfer t2 = new Transfer(156,31,31,10,250,15);
 		assertFalse(t1.equals(t2));
+		Transfer t3 = new Transfer(10,6,3,200,300000,31);
+		assertFalse(t1.equals(t3));
+		assertFalse(t1.equals(null));
 	}
 	
 	@Test
 	public void testGetId(){
 		Transfer t1 = new Transfer(36,1,2,36,3000000,1);
-		assertEquals(t1.getId(),36);
+		assertEquals(t1.getId(),7);
 	}
 	
 	@Test
@@ -98,7 +105,7 @@ public class testTransfer {
 	@Test
 	public void testToString(){
 		Transfer t2 = new Transfer(30,1,2,36,3000000,1);
-		assertEquals(t2.toString(),"Transfer [id=30, from=1, to=2, player=36, price=3000000, day=1]");
+		assertEquals(t2.toString(),"Transfer [id=9, from=1, to=2, player=36, price=3000000, day=1]");
 	}
 	
 	@Test

@@ -52,27 +52,18 @@ public class Transfer {
 				+ ", price=" + price + ", day=" + day + "]";
 	}
 	
+	@Override
 	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		
+	{		
 		if (obj instanceof Transfer)
 		{
 			Transfer that = (Transfer) obj;
-			if (		this.getId() 	== 	that.getId() 
-					&&	this.getFrom() 	== 	that.getFrom()
-					&&	this.getTo() 		==	that.getTo()
-					&&	this.getPlayer()	==	that.getPlayer()
-					&&	this.getPrice()		==	that.getPrice()
-					&&	this.getDay()	==	that.getDay()
-					
-					)
+			
+			// ID defines a transfer
+			if (this.id == that.id)
 				return true;
 		}
-		
 		return false;
-		
 	}
 	
 	

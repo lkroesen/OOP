@@ -105,27 +105,7 @@ public class Game {
 				+ currentDay + ", currentTeam=" + currentTeam + ", leagues="
 				+ leagues + ", transfers=" + transfers + ", matches=" + matches
 				+ "]";
-	}
-	
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		
-		if (obj instanceof Game)
-		{
-			Game that = (Game) obj;
-			if (		this.getName() 	== 	that.getName() 
-					&&	this.getCurrentDay() 	== 	that.getCurrentDay()
-					&&	this.getId() 		==	that.getId()
-					&&	this.getCurrentTeam()	==	that.getCurrentTeam())
-				return true;
-		}
-		
-		return false;
-		
-	}
-	
+	}	
 	
 	
 }

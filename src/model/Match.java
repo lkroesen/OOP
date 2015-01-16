@@ -93,16 +93,14 @@ private String result;
 	
 	public boolean equals(Object obj)
 	{
-		if (this == obj)
-			return true;
-		
+
 		if (obj instanceof Match)
 		{
 			Match that = (Match) obj;
 			if (		this.getId() 	== 	that.getId() 
 					&&	this.getDay() 	== 	that.getDay()
-					&&	this.getTeam_home() ==	that.getTeam_home()
-					&&	this.getTeam_away()	==	that.getTeam_away())
+					&&	this.getTeam_home().equals(that.getTeam_home())
+					&&	this.getTeam_away().equals(that.getTeam_away()))
 				return true;
 		}
 		

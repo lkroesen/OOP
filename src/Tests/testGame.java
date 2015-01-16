@@ -1,8 +1,13 @@
 package Tests;
 
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
 import model.Game;
 import model.League;
+import model.Match;
+import model.Transfer;
 
 import org.junit.Test;
 
@@ -21,20 +26,32 @@ public class testGame {
 		assertNotEquals(g1,g2);
 	}
 	
-	@Test
-	public void testEquals() {
-		Game g1 = new Game(30,"Karel",61,3);
-		Game g4 = new Game(30,"Karel",61,3);
-		assertTrue(g1.equals(g4));
-	}
 	
 	@Test
-	public void testEqualsFalse(){
-		Game g1 = new Game(20,"Peter",2,15);
-		Game g2 = new Game(10,"Sven",3,12);
-		assertFalse(g1.equals(g2));
+	public void TestSetters(){
+		Game g = new Game(1,"1",1,1);
+		League l = new League(0, null, null);
+		ArrayList<League> ll = new ArrayList<League>();
+		ll.add(l);
+		g.setLeagues(ll);
+		Transfer t = new Transfer(1,1,1,1,1,1);
+		g.addTransfer(t);
+		Match m = new Match(1,1);
+		g.addMatch(m);
+		g.setId(0);
+		Game.setCurrentTeam(1);
+		ArrayList<Match> ml = new ArrayList<Match>();
+		ml.add(m);
+		g.setMatches(ml);
+		ArrayList<Transfer> tl = new ArrayList<Transfer>();
+		tl.add(t);
+		g.setTransfers(tl);
+		
+		assertEquals(g.getTransfers(),tl);
+		assertEquals(g.getMatches(),ml);
+		assertEquals(g.getLeagues(),ll);
 	}
-	
+
 	@Test
 	public void testGetName(){
 		Game g1 = new Game(20,"Karel",25,4);

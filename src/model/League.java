@@ -83,9 +83,6 @@ public class League {
 	
 	public boolean equals(Object obj)
 	{
-		if (this == obj)
-			return true;
-		
 		if (obj instanceof League)
 		{
 			League that = (League) obj;
