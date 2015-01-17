@@ -68,8 +68,8 @@ public class javafx extends Application{
 	public void start(final Stage stage) throws Exception {
 		
 		stage.setResizable(false);
-		XML xml = new XML("toms_teams.xml");
-		Game game = xml.parseGame();
+		final XML xml = new XML("toms_teams.xml");
+		final Game game = xml.parseGame();
 		ArrayList<League> leagues = game.getLeagues();
 		League league = leagues.get(0);
 		final ArrayList<Team> teams = league.getTeams();
