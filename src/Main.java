@@ -16,7 +16,7 @@ import AI.Ranking;
 import xml.XML;
 
 public class Main {
-
+/*
 	public Main() {
 		// TODO Auto-generated constructor stub
 	}
@@ -82,5 +82,5 @@ public class Main {
 		boolean[] a = s.WeeksPlayed();
 		System.out.println(a[0]);
 	}
-
+*/
 }

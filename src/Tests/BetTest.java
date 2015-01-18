@@ -32,8 +32,7 @@ public class BetTest {
 		Bet b = new Bet(1337, 1.3, two.getId(), "2-1");
 		
 		assertEquals(b.getMoney_bet(), 1337);
-		assertTrue(b.getRate() == 1.3);
-		assertFalse(b.getRate() == 1.5);
+		assertEquals(b.getRate(),1.3,0.0);
 		assertEquals(b.getS_won(), two.getId());
 		assertEquals(b.getResult(), "2-1");
 	}

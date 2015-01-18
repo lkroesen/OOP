@@ -23,22 +23,6 @@ public class Ranking
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Ranking other = (Ranking) obj;
-		if (!Arrays.equals(ScoreOfTeam, other.ScoreOfTeam))
-			return false;
-		if (!Arrays.equals(ranking, other.ranking))
-			return false;
-		return true;
-	}
-
-	@Override
 	public String toString() {
 		String fi = "";
 		
@@ -261,12 +245,11 @@ public class Ranking
 	
 	public static void Dispute(int[] Scores)
 	{
-		int AoD = 0;
-		for (int l = 0; l < Scores.length; l++)
-		{
+		int AoD = 0;		
+		
+		for (int l = 1; l < Scores.length; l++)
 			if (Scores[0] == Scores[l])
 				AoD++;
-		}
 		
 		if (AoD > 0)
 			System.out.println(AoD + "-way tie, extra matches required!");
