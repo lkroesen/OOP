@@ -29,35 +29,6 @@ public class PlayRound {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		PlayRound other = (PlayRound) obj;
-		if (Friday == null) {
-			if (other.Friday != null)
-				return false;
-		} else if (!Friday.equals(other.Friday))
-			return false;
-		if (RoundNumber != other.RoundNumber)
-			return false;
-		if (Saturday == null) {
-			if (other.Saturday != null)
-				return false;
-		} else if (!Saturday.equals(other.Saturday))
-			return false;
-		if (Sunday == null) {
-			if (other.Sunday != null)
-				return false;
-		} else if (!Sunday.equals(other.Sunday))
-			return false;
-		return true;
-	}
-
-	@Override
 	public String toString() {
 		return "PlayRound [Friday=" + Friday + ", Saturday=" + Saturday
 				+ ", Sunday=" + Sunday + ", RoundNumber=" + RoundNumber

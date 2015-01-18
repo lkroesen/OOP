@@ -1,4 +1,4 @@
-package AI;
+package Tests;
 
 import static org.junit.Assert.*;
 
@@ -20,6 +20,7 @@ public class BettingTest {
 	@Test
 	public void testBetting() 
 	{
+		for (int c = 0; c < 200; c++){
 		ArrayList<Player> Team = new ArrayList<Player>();
 		//Likely winners            ID       NAME        SURNAME        JERSEY_NR  	TYPE   POS  OFFENSIVE   DEFENSIVE  STAMINA       PRICE
 		Player one    = new Player	(1, 	"Neo", 		"Keeper", 		(byte)  1, 	 0, 	1, 	(byte)  99, (byte) 99,  (byte) 99, 	 1000);
@@ -91,6 +92,60 @@ public class BettingTest {
 		System.out.println("The player now has: " + Budget + " imaginary money left");
 		
 		assertNotNull(b);
+		}
 	}
 
+	@Test
+	public void testTeamByID()
+	{
+		Team winners = new Team(1, "Winners");
+		Team losers = new Team(2, "Losers");
+		ArrayList<Team> tl = new ArrayList<Team>();
+		tl.add(winners);
+		tl.add(losers);
+		assertEquals(Betting.getTeamNameById(1, tl), "Winners");
+		assertEquals(Betting.getTeamNameById(2, tl), "Losers");
+		assertNotEquals(Betting.getTeamNameById(1,tl),"Losers");
+		assertEquals(Betting.getTeamNameById(0,tl),"");
+		
+	}
+	
+	@Test
+	public void testGettersNSetters()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1");
+		Betting c = new Betting((double)1.6, (double)1.3, 2,3, "2-2");
+		Betting d = new Betting((double)1.2, (double)1.6, 1,0, "2-2");
+		Betting e = new Betting((double)1.2, (double)1.3, 6,3, "2-2");
+		Betting f = new Betting((double)1.2, (double)1.3, 2,1, "2-2");
+		Betting g = new Betting((double)1.2, (double)1.3, 2,3, "2-1");
+		Betting h = new Betting((double)1.2, (double)1.3, 2,3, null);
+		
+		Player one    = new Player	(1, 	"Neo", 		"Keeper", 		(byte)  1, 	 0, 	1, 	(byte)  99, (byte) 99,  (byte) 99, 	 1000);
+		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
+		assertEquals(b.equals(b),true);
+		assertEquals(b.equals(c), false);
+		assertEquals(b.equals(d), false);
+		assertEquals(b.equals(e), false);
+		assertEquals(b.equals(f), false);
+		assertEquals(b.equals(g), false);
+		assertEquals(b.equals(one), false);
+		assertEquals(b.equals(null), false);
+		assertEquals(b.equals(h), false);
+		assertEquals(h.equals(h), true);
+		assertEquals(h.equals(b), false);
+		
+		assertEquals(b.getRate1(),1.2,0.0);
+		assertEquals(b.getRate2(),1.3,0.0);
+		assertEquals(b.getResult(),"2-2");
+		assertEquals(b.getTeam1(),2);
+		assertEquals(b.getTeam2(),3);
+		
+	}
 }
