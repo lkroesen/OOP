@@ -350,10 +350,6 @@ public class XML {
 						position.setTextContent(p.getPosition() + "");
 						ePlayer.appendChild(position);
 
-						Element position = doc.createElement("position");
-						position.setTextContent(p.getPosition() + "");
-						ePlayer.appendChild(position);
-
 						// Add player to team
 						eTeam.appendChild(ePlayer);
 					}
