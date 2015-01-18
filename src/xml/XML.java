@@ -345,6 +345,10 @@ public class XML {
 						Element price = doc.createElement("price");
 						price.setTextContent(p.getPrice() + "");
 						ePlayer.appendChild(price);
+						
+						Element position = doc.createElement("position");
+						position.setTextContent(p.getPosition() + "");
+						ePlayer.appendChild(position);
 
 						// Add player to team
 						eTeam.appendChild(ePlayer);

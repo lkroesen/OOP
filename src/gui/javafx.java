@@ -49,13 +49,16 @@ public class javafx extends Application{
     //toptext of every scene and button for starting screen
 	Label lbtext;
 	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, nextday, next, teamaction, playeraction, train, lighttrain
-	, heavytrain, rest, savegame, save1, save2, save3, save4;
+	, heavytrain, rest, position, showteam, savegame, save1, save2, save3, save4;
 	ImageView imagechoice;
 	
 	
 	Button Back = new Button ("Back");
-	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0;
-	boolean traintoday= false;
+	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0, positionint = 0, swapplayer;
+	boolean traintoday = false;
+	boolean pastnewgame = false;
+	boolean swapfirst = false;
+	boolean showboolean = false;
 	
 	
 	
@@ -132,6 +135,8 @@ public class javafx extends Application{
 		lighttrain = new Button ("light training");
 		heavytrain = new Button ("heavy training");
 		rest = new Button ("rest");
+		position = new Button ("change positions");
+		showteam = new Button ("show team");
 		savegame = new Button("save game");
 		save1 = new Button("save 1");
 		save2 = new Button("save 2");
@@ -484,205 +489,51 @@ public class javafx extends Application{
 				ArrayList<Button> playerbuttons = new ArrayList<Button>();
 				VBox teambox1 = new VBox(10);
 				VBox teambox2 = new VBox(10);
+				VBox teambox3 = new VBox(10);
 				HBox playerdisplay = new HBox();
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
 				imagechoice.setFitWidth(60);imagechoice.setFitHeight(60);
 				vbBack.getChildren().addAll(select,mutesong,backng);
+				teambox1.getChildren().addAll(lbtext);
+				teambox2.getChildren().addAll(imagechoice);
 				for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
-				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+					playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+					if(0 <= i && i < 10){
+						teambox1.getChildren().addAll(playerbuttons.get(i));
+					}
+					if(10 <= i && i < 20){
+						teambox2.getChildren().addAll(playerbuttons.get(i));
+					}
+					if(20 <= i && i < 30){
+						teambox3.getChildren().addAll(playerbuttons.get(i));
+					}
 				}
-				teambox1.getChildren().addAll(lbtext,playerbuttons.get(0),playerbuttons.get(1),playerbuttons.get(2),playerbuttons.get(3),playerbuttons.get(4),playerbuttons.get(5)
-						,playerbuttons.get(6),playerbuttons.get(7),playerbuttons.get(8),playerbuttons.get(9),playerbuttons.get(10));
-				teambox2.getChildren().addAll(imagechoice,playerbuttons.get(11),playerbuttons.get(12),playerbuttons.get(13),playerbuttons.get(14),playerbuttons.get(15),playerbuttons.get(16)
-						,playerbuttons.get(17),playerbuttons.get(18),playerbuttons.get(19),playerbuttons.get(20),playerbuttons.get(21));
 				teambox2.translateYProperty().set(10);
-				playerdisplay.getChildren().addAll(teambox1,teambox2,vbBack);
+				teambox3.translateYProperty().set(70);
+				playerdisplay.getChildren().addAll(teambox1,teambox2,teambox3,vbBack);
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
 				teamscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(teamscreen);
 				
+				for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+					final int a = i;
+				playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						playerchoiceint = a;
+						playeraction.fire();
+					}
+				});
+				}
 				
-				playerbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 0;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 1;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 2;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 3;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 4;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 5;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 6;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 7;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 8;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 9;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 10;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 11;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 12;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 13;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 14;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 15;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 16;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 17;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(18).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 18;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(19).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 19;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(20).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 20;
-						playeraction.fire();
-					}
-				});
-				playerbuttons.get(21).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						playerchoiceint = 21;
-						playeraction.fire();
-					}
-				});
 				playeraction.setOnAction(new EventHandler<ActionEvent>(){
 					
 					@Override
 					public void handle(ActionEvent arg0){
+						if(pastnewgame == false || showboolean == true){
+						Label pos = new Label(null);
 						lbtext.setText("stats");
 						Label fn = new Label("Firstname: " + players.get(playerchoiceint).getFirstname().toString());
 						Label sn = new Label("Surname: " + players.get(playerchoiceint).getSurname().toString());
@@ -690,18 +541,137 @@ public class javafx extends Application{
 						Label os = new Label("Offensive score: " + players.get(playerchoiceint).getOffensiveScore());
 						Label ds = new Label("Defensive score: " + players.get(playerchoiceint).getDefensiveScore());
 						Label ss = new Label("Stamina score: " + players.get(playerchoiceint).getStaminaScore());
-						Label pos = new Label("Position: " + players.get(playerchoiceint).getPosition());
+						if(players.get(playerchoiceint).getType() == 0){
+							pos.setText("Position: goalkeeper");
+						}
+						if(players.get(playerchoiceint).getType() == 1){
+							pos.setText("Position: defender");
+						}
+						if(players.get(playerchoiceint).getType() == 2){
+							pos.setText("Position: midfield");
+						}
+						if(players.get(playerchoiceint).getType() == 3){
+							pos.setText("Position: attack");
+						}
 						Label pr = new Label("Price: " + players.get(playerchoiceint).getPrice());
 						VBox playerbox = new VBox(10);
 						VBox teamback = new VBox(10);teamback.setAlignment(Pos.BOTTOM_RIGHT);
 						HBox screenbox = new HBox();
 						playerbox.getChildren().addAll(fn,sn,j,os,ds,ss,pos,pr);
 						teamback.getChildren().addAll(mutesong,backteam);
-						screenbox.getChildren().addAll(playerbox,teamback);
+						if(showboolean == false){
+							screenbox.getChildren().addAll(playerbox,teamback);
+						}
+						if(showboolean == true){
+							screenbox.getChildren().addAll(playerbox,next);
+						}
 						Scene playerscreen = new Scene(screenbox,1000,500);
 						playerscreen.getStylesheets().add("mystyle.css");
 						stage.setScene(playerscreen);
-						
+						}
+						if(swapfirst == false && showboolean == false && pastnewgame == true){
+							lbtext.setText("swap out for");
+							positionint = players.get(playerchoiceint).getPosition();
+							swapplayer = playerchoiceint;
+							Label def = new Label("defense");
+							Label def1 = new Label("defense");
+							Label def2 = new Label("defense");
+							Label atk = new Label("attack");
+							Label atk1 = new Label("attack");
+							Label atk2 = new Label("attack");
+							Label mid = new Label("midfield");
+							Label mid1 = new Label("midfield");
+							Label mid2 = new Label("midfield");
+							Label keep = new Label("goalkeeper");
+							Label keep1 = new Label("goalkeeper");
+							Label keep2 = new Label("goalkeeper");
+							Label bench = new Label("bench");
+							Label res = new Label("reserve");
+							HBox totalswap = new HBox();
+							VBox swapboxkeep = new VBox(10);
+							VBox swapboxdef = new VBox(10);
+							VBox swapboxmid = new VBox(10);
+							VBox swapboxatk = new VBox(10);
+							VBox swapboxbenchkeep = new VBox(10);
+							VBox swapboxbenchdef = new VBox(10);
+							VBox swapboxbenchmid = new VBox(10);
+							VBox swapboxbenchatk = new VBox(10);
+							VBox swapboxreskeep = new VBox(10);
+							VBox swapboxresdef = new VBox(10);
+							VBox swapboxresmid = new VBox(10);
+							VBox swapboxresatk = new VBox(10);
+							swapboxkeep.getChildren().addAll(lbtext,keep);
+							swapboxdef.getChildren().addAll(def);
+							swapboxmid.getChildren().addAll(mid);
+							swapboxatk.getChildren().addAll(atk);
+							swapboxbenchkeep.getChildren().addAll(bench,keep1);
+							swapboxbenchdef.getChildren().addAll(def1);
+							swapboxbenchmid.getChildren().addAll(mid1);
+							swapboxbenchatk.getChildren().addAll(atk1);
+							swapboxreskeep.getChildren().addAll(res,keep2);
+							swapboxresdef.getChildren().addAll(def2);
+							swapboxresmid.getChildren().addAll(mid2);
+							swapboxresatk.getChildren().addAll(atk2);
+							for(int i = 0; i < players.size();i++){
+								if(!(players.get(i).equals(players.get(playerchoiceint)))){
+										if(0 == players.get(i).getPosition()){
+											swapboxkeep.getChildren().addAll(playerbuttons.get(i));
+										}
+										if(0 < players.get(i).getPosition() && players.get(i).getPosition() < 11){
+											if(players.get(i).getType() == 1){
+												swapboxdef.getChildren().addAll(playerbuttons.get(i));
+											}
+											if(players.get(i).getType() == 2){
+												swapboxmid.getChildren().addAll(playerbuttons.get(i));
+											}
+											if(players.get(i).getType() == 3){
+												swapboxatk.getChildren().addAll(playerbuttons.get(i));
+											}
+										}
+										if(10 < players.get(i).getPosition() && players.get(i).getPosition() < 18){	
+											if(players.get(i).getType() == 1){
+												swapboxbenchdef.getChildren().addAll(playerbuttons.get(i));
+											}
+											if(players.get(i).getType() == 2){
+												swapboxbenchmid.getChildren().addAll(playerbuttons.get(i));
+											}
+											if(players.get(i).getType() == 3){
+												swapboxbenchatk.getChildren().addAll(playerbuttons.get(i));
+											}
+										}
+										if(-1 == players.get(i).getPosition()){
+											if(players.get(i).getType() == 1){
+												swapboxresdef.getChildren().addAll(playerbuttons.get(i));
+											}
+											if(players.get(i).getType() == 2){
+												swapboxresmid.getChildren().addAll(playerbuttons.get(i));
+											}
+											if(players.get(i).getType() == 3){
+												swapboxresatk.getChildren().addAll(playerbuttons.get(i));
+											}
+										}
+									}
+								}
+							swapboxkeep.getChildren().add(swapboxdef);
+							swapboxmid.getChildren().add(swapboxatk);
+							swapboxmid.setTranslateX(-100);
+							swapboxmid.setTranslateY(70);
+							swapboxbenchkeep.getChildren().addAll(swapboxbenchdef,swapboxbenchmid,swapboxbenchatk);
+							swapboxbenchkeep.setTranslateX(-100);
+							swapboxreskeep.getChildren().addAll(swapboxresdef,swapboxresmid,swapboxresatk);
+							swapboxreskeep.setTranslateX(-100);
+							totalswap.getChildren().addAll(swapboxkeep,swapboxmid,swapboxbenchkeep,swapboxreskeep);
+							totalswap.getStylesheets().add("mystyle.css");
+							Scene swapscreen = new Scene(totalswap,1000,500);
+							stage.setScene(swapscreen);
+						}
+						if(swapfirst == true && showboolean == false && pastnewgame == true){
+							players.get(swapplayer).setPosition((players.get(playerchoiceint).getPosition()));
+							players.get(playerchoiceint).setPosition(positionint);
+							select.fire();
+						}
+						showboolean = false;
+						swapfirst = true;
 					}
 				});
 				backteam.setOnAction(new EventHandler<ActionEvent>(){
@@ -715,6 +685,8 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
+						pastnewgame = true;
+						swapfirst = false;
 						VBox teamchoicebox = new VBox(10);
 						HBox imageadd = new HBox(10);
 						teamchoicebox.getStylesheets().add("mystyle.css");
@@ -722,14 +694,144 @@ public class javafx extends Application{
 						Scene teamchoicescreen = new Scene(imageadd,1000,500);
 						lbtext.setText(teams.get(teamchoiceint).getName());
 						if(traintoday == false){
-						teamchoicebox.getChildren().addAll(lbtext,nextday,train,savegame);
+						teamchoicebox.getChildren().addAll(lbtext,nextday,train,position,showteam,savegame);
 						}
 						else{
-							teamchoicebox.getChildren().addAll(lbtext,nextday,savegame);
+							teamchoicebox.getChildren().addAll(lbtext,nextday,position,showteam,savegame);
 						}
 						imageadd.getChildren().addAll(teamchoicebox,imagechoice);
-						stage.setScene(teamchoicescreen);
-						
+						stage.setScene(teamchoicescreen);	
+					}
+				});
+				showteam.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						VBox showteambox1 = new VBox(10);
+						VBox showteambox2 = new VBox(10);
+						VBox showteambox3 = new VBox(10);
+						HBox showplayerdisplay = new HBox();
+						VBox showback = new VBox(10);
+						showback.setAlignment(Pos.BOTTOM_RIGHT);
+						imagechoice.setFitWidth(60);imagechoice.setFitHeight(60);
+						showback.getChildren().addAll(next);
+						showteambox1.getChildren().addAll(lbtext);
+						showteambox2.getChildren().addAll(imagechoice);
+						for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+							playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+							if(0 <= i && i < 10){
+								showteambox1.getChildren().addAll(playerbuttons.get(i));
+							}
+							if(10 <= i && i < 20){
+								showteambox2.getChildren().addAll(playerbuttons.get(i));
+							}
+							if(20 <= i && i < 30){
+								showteambox3.getChildren().addAll(playerbuttons.get(i));
+							}
+						}
+						showteambox2.translateYProperty().set(10);
+						showteambox3.translateYProperty().set(70);
+						showplayerdisplay.getChildren().addAll(showteambox1,showteambox2,showteambox3,showback);
+						Scene showteamscreen = new Scene(showplayerdisplay,1000,500);
+						showteamscreen.getStylesheets().add("mystyle.css");
+						stage.setScene(showteamscreen);
+						showboolean = true;
+					}
+				});
+				position.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("change positions");
+						Label def = new Label("defense");
+						Label def1 = new Label("defense");
+						Label def2 = new Label("defense");
+						Label atk = new Label("attack");
+						Label atk1 = new Label("attack");
+						Label atk2 = new Label("attack");
+						Label mid = new Label("midfield");
+						Label mid1 = new Label("midfield");
+						Label mid2 = new Label("midfield");
+						Label keep = new Label("goalkeeper");
+						Label keep1 = new Label("goalkeeper");
+						Label keep2 = new Label("goalkeeper");
+						Label bench = new Label("bench");
+						Label res = new Label("reserve");
+						HBox totalteam = new HBox();
+						VBox teamboxkeep = new VBox(10);
+						VBox teamboxdef = new VBox(10);
+						VBox teamboxmid = new VBox(10);
+						VBox teamboxatk = new VBox(10);
+						VBox teamboxbenchkeep = new VBox(10);
+						VBox teamboxbenchdef = new VBox(10);
+						VBox teamboxbenchmid = new VBox(10);
+						VBox teamboxbenchatk = new VBox(10);
+						VBox teamboxreskeep = new VBox(10);
+						VBox teamboxresdef = new VBox(10);
+						VBox teamboxresmid = new VBox(10);
+						VBox teamboxresatk = new VBox(10);
+						teamboxkeep.getChildren().addAll(lbtext,keep);
+						teamboxdef.getChildren().addAll(def);
+						teamboxmid.getChildren().addAll(mid);
+						teamboxatk.getChildren().addAll(atk);
+						teamboxbenchkeep.getChildren().addAll(bench,keep1);
+						teamboxbenchdef.getChildren().addAll(def1);
+						teamboxbenchmid.getChildren().addAll(mid1);
+						teamboxbenchatk.getChildren().addAll(atk1);
+						teamboxreskeep.getChildren().addAll(res,keep2);
+						teamboxresdef.getChildren().addAll(def2);
+						teamboxresmid.getChildren().addAll(mid2);
+						teamboxresatk.getChildren().addAll(atk2);
+						for(int i = 0; i < players.size();i++){
+							if(0 == players.get(i).getPosition()){
+								teamboxkeep.getChildren().addAll(playerbuttons.get(i));
+							}
+							if(0 < players.get(i).getPosition() && players.get(i).getPosition() < 11){
+								if(players.get(i).getType() == 1){
+									teamboxdef.getChildren().addAll(playerbuttons.get(i));
+								}
+								if(players.get(i).getType() == 2){
+									teamboxmid.getChildren().addAll(playerbuttons.get(i));
+								}
+								if(players.get(i).getType() == 3){
+									teamboxatk.getChildren().addAll(playerbuttons.get(i));
+								}
+							}
+							if(10 < players.get(i).getPosition() && players.get(i).getPosition() < 18){	
+								if(players.get(i).getType() == 1){
+									teamboxbenchdef.getChildren().addAll(playerbuttons.get(i));
+								}
+								if(players.get(i).getType() == 2){
+									teamboxbenchmid.getChildren().addAll(playerbuttons.get(i));
+								}
+								if(players.get(i).getType() == 3){
+									teamboxbenchatk.getChildren().addAll(playerbuttons.get(i));
+								}
+							}
+							if(-1 == players.get(i).getPosition()){
+								if(players.get(i).getType() == 1){
+									teamboxresdef.getChildren().addAll(playerbuttons.get(i));
+								}
+								if(players.get(i).getType() == 2){
+									teamboxresmid.getChildren().addAll(playerbuttons.get(i));
+								}
+								if(players.get(i).getType() == 3){
+									teamboxresatk.getChildren().addAll(playerbuttons.get(i));
+								}
+							}
+						}
+						teamboxkeep.getChildren().add(teamboxdef);
+						teamboxmid.getChildren().add(teamboxatk);
+						teamboxmid.setTranslateX(-100);
+						teamboxmid.setTranslateY(70);
+						teamboxbenchkeep.getChildren().addAll(teamboxbenchdef,teamboxbenchmid,teamboxbenchatk);
+						teamboxbenchkeep.setTranslateX(-100);
+						teamboxreskeep.getChildren().addAll(teamboxresdef,teamboxresmid,teamboxresatk);
+						teamboxreskeep.setTranslateX(-100);
+						totalteam.getChildren().addAll(teamboxkeep,teamboxmid,teamboxbenchkeep,teamboxreskeep);
+						totalteam.getStylesheets().add("mystyle.css");
+						Scene pos = new Scene(totalteam,1000,500);
+						stage.setScene(pos);
 					}
 				});
 				savegame.setOnAction(new EventHandler<ActionEvent>(){
