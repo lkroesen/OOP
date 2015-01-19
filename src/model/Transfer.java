@@ -11,7 +11,7 @@ public class Transfer {
 
 	private static int curId = 0;
 
-	public Transfer(int id, int from, int to, int player, int price, int day) {
+	public Transfer(int from, int to, int player, int price, int day) {
 		this.id = Transfer.curId;
 		curId++;
 
