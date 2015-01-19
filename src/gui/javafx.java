@@ -499,7 +499,7 @@ public class javafx extends Application{
 			public void handle(ActionEvent arg0){
 				lbtext.setText(teams.get(teamchoiceint).getName().toString());
 				final ArrayList<Player> players = teams.get(teamchoiceint).getPlayers();
-				ArrayList<Button> playerbuttons = new ArrayList<Button>();
+				final ArrayList<Button> playerbuttons = new ArrayList<Button>();
 				VBox teambox1 = new VBox(10);
 				VBox teambox2 = new VBox(10);
 				VBox teambox3 = new VBox(10);
