@@ -15,21 +15,25 @@ public class Betting
 	private int team1;
 	private int team2;
 	
+	//matchid
+	private int matchid;
+	
 	private String result;
 	
 	
-	public Betting(double rate1, double rate2, int team1, int team2, String result) 
+	public Betting(double rate1, double rate2, int team1, int team2, String result, int matchid) 
 	{
 		this.rate1 = rate1;
 		this.rate2 = rate2;
 		this.team1 = team1;
 		this.team2 = team2;
 		this.result = result;
+		this.matchid = matchid;
 	}	
 
 	public String toString()
 	{
-		return "[" + team1 + " Rate: " + rate1 + " " + team2 + " Rate: " + rate2 + " Predicted Result: " + result + "]";
+		return "[" + team1 + " Rate: " + rate1 + " " + team2 + " Rate: " + rate2 + " Predicted Result: " + result + " Matchid: " + matchid + "]";
 	}
 	
 	
@@ -71,7 +75,15 @@ public class Betting
 
 	public void setResult(String result) {
 		this.result = result;
-	}	
+	}
+	
+	public int getMatchid() {
+		return matchid;
+	}
+	
+	public void setMatchid(int matchid) {
+		this.matchid = matchid;
+	}
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -165,7 +177,7 @@ public class Betting
 			{
 				rateone = (double) 0.5;
 				ratetwo = (double) 0.5;
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "tie");
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "tie", ListOfBets.get(c).getId());
 				BetList.add(bet);
 			}
 			
@@ -178,7 +190,7 @@ public class Betting
 				System.out.println("Winning out-rate: " + ratetwo);
 				
 				
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "home");
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "home", ListOfBets.get(c).getId());
 				BetList.add(bet);
 			}
 			
@@ -190,7 +202,7 @@ public class Betting
 				System.out.println("Wining out-rate: " + rateone);
 				System.out.println("Winning home-rate: " + ratetwo);
 				
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_away().getId(), ListOfBets.get(c).getTeam_home().getId(), "away");
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_away().getId(), ListOfBets.get(c).getTeam_home().getId(), "away", ListOfBets.get(c).getId());
 				BetList.add(bet);
 			}
 		
@@ -233,7 +245,7 @@ public class Betting
 		
 		Double rate = 0.0;
 		int win = 0;
-		String winner = "none";
+		int matchid = BL.get(choice).getMatchid();
 		long bet_amount = (long) 500000;
 		if(home == false){
 			rate = BL.get(choice - 1).getRate1();
@@ -247,7 +259,7 @@ public class Betting
 		int a = (int) n.charAt(0) - 48;
 		System.out.println("Selected: " + a);
 		
-		Bet b = new Bet(bet_amount, rate, win, winner);
+		Bet b = new Bet(bet_amount, rate, win, matchid);
 		
 		// Don't forget to change the amount of money in budget!
 		return b;
@@ -255,7 +267,7 @@ public class Betting
 	
 	public static long After_Match (long Money, Bet bet, int TeamIDWon)
 	{
-		// Check if the team that won is the team that was bet on
+		// Check if the team that won is the team that was bet ons
 		if (bet.getS_won() == TeamIDWon)
 			Money = (long) (bet.getMoney_bet() * bet.getRate());
 				

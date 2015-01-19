@@ -13,15 +13,15 @@ public class Bet
 	// Team user selected as winner
 	private int id_won;
 	
-	// Score the user predicted
-	private String result;
+	// Match id
+	private int matchid;
 
-	public Bet(long money_bet, double rate, int id_won, String result) 
+	public Bet(long money_bet, double rate, int id_won,int matchid) 
 	{
 		this.money_bet = money_bet;
 		this.rate = rate;
 		this.id_won = id_won;
-		this.result = result;
+		this.matchid = matchid;
 	}
 	
 	public long getMoney_bet() {
@@ -48,18 +48,18 @@ public class Bet
 		this.id_won = id_won;
 	}
 
-	public String getResult() {
-		return result;
+	public int getMatchid() {
+		return matchid;
 	}
 
-	public void setResult(String result) {
-		this.result = result;
+	public void setMatchid(int matchid) {
+		this.matchid = matchid;
 	}
 
 	@Override
 	public String toString() {
 		return "Bet [money_bet=" + money_bet + ", rate=" + rate + ", id_won="
-				+ id_won + ", result=" + result + "]";
+				+ id_won + ", matchid=" + matchid + "]";
 	}
 
 	@Override
@@ -78,10 +78,7 @@ public class Bet
 		if (Double.doubleToLongBits(rate) != Double
 				.doubleToLongBits(other.rate))
 			return false;
-		if (result == null) {
-			if (other.result != null)
-				return false;
-		} else if (!result.equals(other.result))
+		if (matchid != other.matchid)
 			return false;
 		return true;
 	}

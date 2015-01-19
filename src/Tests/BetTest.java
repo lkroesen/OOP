@@ -12,14 +12,14 @@ public class BetTest {
 	{
 		Team one = new Team(1, "one");
 		Team two = new Team(2, "two");
-		Bet b = new Bet(1337, 1.3, two.getId(), "2-1");
+		Bet b = new Bet(1337, 1.3, two.getId(), 1);
 		
 		b.setMoney_bet(100000);
 		b.setRate(1.5);
 		b.setS_won(one.getId());
-		b.setResult("1-2");
+		b.setMatchid(2);
 		
-		Bet c = new Bet(100000, 1.5, one.getId(), "1-2");
+		Bet c = new Bet(100000, 1.5, one.getId(), 2);
 		
 		assertEquals(b,c);		
 	}
@@ -29,12 +29,12 @@ public class BetTest {
 	public void testGetters()
 	{
 		Team two = new Team(2, "two");
-		Bet b = new Bet(1337, 1.3, two.getId(), "2-1");
+		Bet b = new Bet(1337, 1.3, two.getId(), 1);
 		
 		assertEquals(b.getMoney_bet(), 1337);
 		assertEquals(b.getRate(),1.3,0.0);
 		assertEquals(b.getS_won(), two.getId());
-		assertEquals(b.getResult(), "2-1");
+		assertEquals(b.getMatchid(), 1);
 	}
 	
 	@Test
@@ -42,9 +42,9 @@ public class BetTest {
 	{
 
 		Team two = new Team(2, "two");
-		Bet b = new Bet(1337, 1.3, two.getId(), "2-1");
+		Bet b = new Bet(1337, 1.3, two.getId(), 1);
 		System.out.println(b.toString());
-		assertEquals(b.toString(), "Bet [money_bet=1337, rate=1.3, id_won=2, result=2-1]");
+		assertEquals(b.toString(), "Bet [money_bet=1337, rate=1.3, id_won=2, matchid=1]");
 	}
 	
 	@Test
@@ -52,14 +52,14 @@ public class BetTest {
 	{
 		Team test1 = new Team(1, "test");
 
-		Bet test3 = new Bet(420, 1.337, test1.getId(), "a");
+		Bet test3 = new Bet(420, 1.337, test1.getId(), 1);
 		Bet test4 = null;
-		Bet test5 = new Bet(420, 1.337, test1.getId(), "a");
-		Bet test7 = new Bet(420, 1.338, test1.getId(), "a");
-		Bet test8 = new Bet(421, 1.337, test1.getId(), "a");
-		Bet test10 = new Bet(420, 1.337, test1.getId(), "c");
-		Bet test11 = new Bet(420, 1.337, test1.getId(), null);
-		Bet test12 = new Bet(0, 0.1, 1, null);
+		Bet test5 = new Bet(420, 1.337, test1.getId(), 1);
+		Bet test7 = new Bet(420, 1.338, test1.getId(), 1);
+		Bet test8 = new Bet(421, 1.337, test1.getId(), 1);
+		Bet test10 = new Bet(420, 1.337, test1.getId(), 2);
+		Bet test11 = new Bet(420, 1.337, test1.getId(), 0);
+		Bet test12 = new Bet(0, 0.1, 1, 0);
 		
 		
 		assertTrue(test3.equals(test5));

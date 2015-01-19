@@ -113,13 +113,13 @@ public class BettingTest {
 	@Test
 	public void testGettersNSetters()
 	{
-		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1");
-		Betting c = new Betting((double)1.6, (double)1.3, 2,3, "2-2");
-		Betting d = new Betting((double)1.2, (double)1.6, 1,0, "2-2");
-		Betting e = new Betting((double)1.2, (double)1.3, 6,3, "2-2");
-		Betting f = new Betting((double)1.2, (double)1.3, 2,1, "2-2");
-		Betting g = new Betting((double)1.2, (double)1.3, 2,3, "2-1");
-		Betting h = new Betting((double)1.2, (double)1.3, 2,3, null);
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting c = new Betting((double)1.6, (double)1.3, 2,3, "2-2", 0);
+		Betting d = new Betting((double)1.2, (double)1.6, 1,0, "2-2", 0);
+		Betting e = new Betting((double)1.2, (double)1.3, 6,3, "2-2", 0);
+		Betting f = new Betting((double)1.2, (double)1.3, 2,1, "2-2", 0);
+		Betting g = new Betting((double)1.2, (double)1.3, 2,3, "2-1", 0);
+		Betting h = new Betting((double)1.2, (double)1.3, 2,3, null, 0);
 		
 		Player one    = new Player	(1, 	"Neo", 		"Keeper", 		(byte)  1, 	 0, 	1, 	(byte)  99, (byte) 99,  (byte) 99, 	 1000);
 		

@@ -3,10 +3,12 @@ package gui;
 //unused imports are unused
 import java.io.File;
 import java.util.ArrayList;
+
 import AI.Bet;
 import AI.Betting;
 import AI.PlayMatch;
 import AI.PlayRound;
+import AI.Ranking;
 import AI.Schedule;
 import AI.Scheduler;
 import AI.Training;
@@ -49,7 +51,7 @@ public class javafx extends Application{
     //toptext of every scene and button for starting screen
 	Label lbtext;
 	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, nextday, next, teamaction, playeraction, train, lighttrain
-	, heavytrain, rest, position, showteam, market, bet, upcoming, savegame, save1, save2, save3, save4;
+	, heavytrain, rest, position, showteam, market, bet, upcoming, showrank, savegame, save1, save2, save3, save4;
 	ImageView imagechoice;
 	Button betbutton10, betbutton11, betbutton20, betbutton21, betbutton30, betbutton31, betbutton40, betbutton41, betbutton50,
 	betbutton51, betbutton60, betbutton61, betbutton70, betbutton71, betbutton80, betbutton81, betbutton90, betbutton91;
@@ -64,6 +66,7 @@ public class javafx extends Application{
 	boolean betmaking = false;
 	boolean betmade = false;
 	Bet bets;
+	Ranking rank;
 	
 	
 	
@@ -83,6 +86,7 @@ public class javafx extends Application{
 		final ArrayList<Team> teams = league.getTeams();
 		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
 		final Schedule scheme = Scheduler.scheduler(leaguee);
+		rank = Ranking.generate(scheme);
 		
 		//song name in file form
 		File file = new File("src/fmsong.mp3");
@@ -146,6 +150,7 @@ public class javafx extends Application{
 		market = new Button ("market");
 		upcoming = new Button ("this weeks matches");
 		savegame = new Button("save game");
+		showrank = new Button("show current rank");
 		save1 = new Button("save 1");
 		save2 = new Button("save 2");
 		save3 = new Button("save 3");
@@ -721,27 +726,68 @@ public class javafx extends Application{
 						Scene teamchoicescreen = new Scene(imageadd,1000,500);
 						lbtext.setText(teams.get(teamchoiceint).getName());
 						if(traintoday == false){
-							if(betmade == true){
-								teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,market,upcoming,savegame);
+							if(betmade == false && currentday < 5){
+								teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,bet,market,upcoming, showrank,savegame);
 							}
 							else{
-								teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,bet,market,upcoming,savegame);
-							}
+								teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,market,upcoming, showrank,savegame);							}
 						}
-						else if(betmade == true){
-							teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,market,upcoming,savegame);
+						else if(betmade == false && currentday < 5){
+							teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,bet,market,upcoming, showrank,savegame);
 						}
-						else if(betmade == false){
-							teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,bet,market,upcoming,savegame);
+						else{
+							teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,market,upcoming, showrank,savegame);
 						}
 						imageadd.getChildren().addAll(teamchoicebox,imagechoice);
 						stage.setScene(teamchoicescreen);	
+					}
+				});
+				showrank.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("ranking");
+						Label rank0 = new Label(rank.getRanking()[0].getName().toString() + " " + rank.getScoreOfTeam()[0]);
+						Label rank1 = new Label(rank.getRanking()[1].getName().toString() + " " + rank.getScoreOfTeam()[1]);
+						Label rank2 = new Label(rank.getRanking()[2].getName().toString() + " " + rank.getScoreOfTeam()[2]);
+						Label rank3 = new Label(rank.getRanking()[3].getName().toString() + " " + rank.getScoreOfTeam()[3]);
+						Label rank4 = new Label(rank.getRanking()[4].getName().toString() + " " + rank.getScoreOfTeam()[4]);
+						Label rank5 = new Label(rank.getRanking()[5].getName().toString() + " " + rank.getScoreOfTeam()[5]);
+						Label rank6 = new Label(rank.getRanking()[6].getName().toString() + " " + rank.getScoreOfTeam()[6]);
+						Label rank7 = new Label(rank.getRanking()[7].getName().toString() + " " + rank.getScoreOfTeam()[7]);
+						Label rank8 = new Label(rank.getRanking()[8].getName().toString() + " " + rank.getScoreOfTeam()[8]);
+						Label rank9 = new Label(rank.getRanking()[9].getName().toString() + " " + rank.getScoreOfTeam()[9]);
+						Label rank10 = new Label(rank.getRanking()[10].getName().toString() + " " + rank.getScoreOfTeam()[10]);
+						Label rank11 = new Label(rank.getRanking()[11].getName().toString() + " " + rank.getScoreOfTeam()[11]);
+						Label rank12 = new Label(rank.getRanking()[12].getName().toString() + " " + rank.getScoreOfTeam()[12]);
+						Label rank13 = new Label(rank.getRanking()[13].getName().toString() + " " + rank.getScoreOfTeam()[13]);
+						Label rank14 = new Label(rank.getRanking()[14].getName().toString() + " " + rank.getScoreOfTeam()[14]);
+						Label rank15 = new Label(rank.getRanking()[15].getName().toString() + " " + rank.getScoreOfTeam()[15]);
+						Label rank16 = new Label(rank.getRanking()[16].getName().toString() + " " + rank.getScoreOfTeam()[16]);
+						Label rank17 = new Label(rank.getRanking()[17].getName().toString() + " " + rank.getScoreOfTeam()[17]);
+						VBox rankbox1 = new VBox(10);
+						VBox rankbox2 = new VBox(10);
+						VBox rankbox3 = new VBox(10);
+						VBox rankback = new VBox(10);
+						rankback.setAlignment(Pos.BOTTOM_RIGHT);
+						rankbox2.setTranslateY(80);
+						rankbox3.setTranslateY(80);
+						rankback.getChildren().add(next);
+						HBox rankboxtotal = new HBox(10);
+						rankbox1.getChildren().addAll(lbtext,rank0,rank1,rank2,rank3,rank4,rank5);
+						rankbox2.getChildren().addAll(rank6,rank7,rank8,rank9,rank10,rank11);
+						rankbox3.getChildren().addAll(rank12,rank13,rank14,rank15,rank16,rank17);
+						rankboxtotal.getChildren().addAll(rankbox1,rankbox2,rankbox3,rankback);
+						rankboxtotal.getStylesheets().add("mystyle.css");
+						Scene rankscreen = new Scene(rankboxtotal,1000,500);
+						stage.setScene(rankscreen);
 					}
 				});
 				bet.setOnAction(new EventHandler<ActionEvent>(){
 					
 					@Override
 					public void handle(ActionEvent arg0){
+						System.out.print(teams.get(teamchoiceint).getBudget());
 						betmaking = true;
 						upcoming.fire();
 					}
@@ -816,66 +862,66 @@ public class javafx extends Application{
 						matchsundayupcoming.getChildren().addAll(sunday,standard2);
 							for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
 								if(betmaking == false){
-									String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getFriday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchfridayupcoming.getChildren().addAll(matchlabel);
 								}
 								else{
-									String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getFriday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchfridayupcoming.getChildren().addAll(matchlabel,betbox1);
 								}
 							}
 							for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
 								if(betmaking == false){
-									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsaturdayupcoming.getChildren().addAll(matchlabel);
 								}
 								else if(i == 0){
-									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsaturdayupcoming.getChildren().addAll(matchlabel,betbox2);
 								}
 								else if(i == 1){
-									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsaturdayupcoming.getChildren().addAll(matchlabel,betbox3);
 								}
 								else if(i == 2){
-									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsaturdayupcoming.getChildren().addAll(matchlabel,betbox4);
 								}
 								else if(i == 3){
-									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsaturdayupcoming.getChildren().addAll(matchlabel,betbox5);
 								}
 							}
 							for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
 								if(betmaking == false){
-									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsundayupcoming.getChildren().addAll(matchlabel);
 								}
 								else if (i == 0){
-									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsundayupcoming.getChildren().addAll(matchlabel,betbox6);
 								}
 								else if (i == 1){
-									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsundayupcoming.getChildren().addAll(matchlabel,betbox7);
 								}
 								else if (i == 2){
-									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsundayupcoming.getChildren().addAll(matchlabel,betbox8);
 								}
 								else if (i == 3){
-									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
 									matchsundayupcoming.getChildren().addAll(matchlabel,betbox9);
 								}
@@ -893,7 +939,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 1, true);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 0, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -903,7 +949,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 1, false);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 0, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -913,7 +959,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 2, true);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 1, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -923,7 +969,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 2, false);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 1, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -933,7 +979,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 3, true);
+									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 2, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -943,7 +989,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 3, false);
+									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 2, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -953,7 +999,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 4, true);
+									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 3, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -963,7 +1009,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 4, false);
+									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 3, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -973,7 +1019,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 5, true);
+									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 4, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -983,7 +1029,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 5, false);
+									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 4, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -993,7 +1039,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 6, true);
+									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 5, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -1003,7 +1049,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 6, false);
+									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 5, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -1013,7 +1059,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 7, true);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 6, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -1023,7 +1069,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 7, false);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 6, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -1033,7 +1079,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 8, true);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 7, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -1043,7 +1089,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 8, false);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 7, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -1053,7 +1099,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 9, true);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 8, true);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -1063,7 +1109,7 @@ public class javafx extends Application{
 								
 								@Override
 								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 9, false);
+									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 8, false);
 									betmade = true;
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 									select.fire();
@@ -1294,7 +1340,7 @@ public class javafx extends Application{
 					}
 					if (currentday == 4) {
 						for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
-							String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getFriday().getMatches().get(i).getTeam_away().getName());
+							String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName());
 							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i)));
 							Label matchlabel = new Label(match);
 							Label resultlabel = new Label(result);
@@ -1307,7 +1353,7 @@ public class javafx extends Application{
 					}
 					if (currentday == 5){
 						for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
-							String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+							String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i)));
 							Label matchlabel = new Label(match);
 							Label resultlabel = new Label(result);
@@ -1320,9 +1366,8 @@ public class javafx extends Application{
 					}
 					if(currentday == 6){
 						currentday = 0;
-						betmade = false;
 						for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
-							String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+							String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i)));
 							Label matchlabel = new Label(match);
 							Label resultlabel = new Label(result);
@@ -1333,7 +1378,54 @@ public class javafx extends Application{
 						playmatchbox.getChildren().addAll(lbtext,matchresult,next);
 						stage.setScene(playmatchscreen);
 						currentplayround ++;
-						Betting.After_Match(0, bets, scheme.getS().get(currentplayround).getSunday().getMatches().get(Betting.Before_Match(scheme,currentplayround).get(1)));
+						if(betmade == true){
+							if(bets.getMatchid() == ((currentplayround - 1) * 10)){
+								String r[] = (scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getResult()).split("-");
+								int home = Integer.parseInt(r[0]);
+								int out = Integer.parseInt(r[1]);
+								if(home < out){
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_home().getId()));
+								}
+								else if(home > out) {
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_away().getId()));
+								}
+								else {
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
+								}
+								betmade = false;
+							}
+							if(bets.getMatchid() > ((currentplayround - 1) * 10) && bets.getMatchid() < (5 + (currentplayround - 1) * 10)){
+								String r[] = (scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getResult()).split("-");
+								int home = Integer.parseInt(r[0]);
+								int out = Integer.parseInt(r[1]);
+								if(home < out){
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_home().getId()));
+								}
+								else if(home > out) {
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_away().getId()));
+								}
+								else {
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
+								}
+								betmade = false;
+							}
+							if(bets.getMatchid() > (4 + (currentplayround - 1) * 10) && bets.getMatchid() < (9 + (currentplayround - 1) * 10)){
+								String r[] = (scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getResult()).split("-");
+								int home = Integer.parseInt(r[0]);
+								int out = Integer.parseInt(r[1]);
+								if(home < out){
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_home().getId()));
+								}
+								else if(home > out) {
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_away().getId()));
+								}
+								else {
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
+								}
+								betmade = false;
+							}
+						}
+						rank = Ranking.generate(scheme);
 					}
 					else{
 						currentday++;
