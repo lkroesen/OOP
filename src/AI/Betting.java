@@ -163,8 +163,8 @@ public class Betting
 			// This means that this match is likely to tie
 			if (ties > c_home && ties > c_out)
 			{
-				rateone = (double) 1.5;
-				ratetwo = (double) 1.5;
+				rateone = (double) 0.5;
+				ratetwo = (double) 0.5;
 				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "tie");
 				BetList.add(bet);
 			}
