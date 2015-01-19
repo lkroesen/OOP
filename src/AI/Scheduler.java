@@ -54,7 +54,7 @@ public class Scheduler
 				s.add(Gen(TeamSize, league, Order, week));
 			else
 			{
-				Order = ClockShuffle(Order, TeamSize);
+				Order = ClockShufflePlusPlus(Order, TeamSize);
 				s.add(Gen(TeamSize, league, Order, week));
 			}
 			
@@ -84,7 +84,7 @@ public class Scheduler
 				s.add(Gen(TeamSize, league, Order, week));
 			else
 			{
-				Order = ClockShuffle(Order, TeamSize);
+				Order = ClockShufflePlusPlus(Order, TeamSize);
 				s.add(Gen(TeamSize, league, Order, week));
 			}
 			
@@ -149,8 +149,50 @@ public class Scheduler
 		return Order;
 	}
 	
+	public static int[] ClockShufflePlusPlus (int[] Old_Order, int TeamSize)
+	{
+		int[] New_Order;
+		
+		// If teams are even
+		if (TeamSize % 2 == 0)
+		{
+			New_Order = new int[TeamSize];
+			
+			//Exceptions are declared
+			New_Order[0] = Old_Order[0];
+			
+			New_Order[(TeamSize-1)] = Old_Order[(TeamSize/2) - 1];
+			
+			New_Order[1] = Old_Order[(TeamSize/2)];
+			
+			
+			//Linear parts
+			for (int c = 2; c < (TeamSize/2); c++)
+				New_Order[c] = Old_Order[c-1];
+			
+			// Linear parts
+			for (int c = (TeamSize/2); c < TeamSize-1; c++)
+				New_Order[c] = Old_Order[c+1];
+		}
+		
+		// If teams are uneven we need to add a bye
+		else
+		{
+			int[] Temp_Order = new int[TeamSize+1];
+			for (int c = 0; c < TeamSize; c++)
+				Temp_Order[c] = Old_Order[c];
+			Temp_Order[TeamSize] = -1;
+			New_Order = ClockShufflePlusPlus(Temp_Order, TeamSize+1);
+		}
+		
+		
+		
+		return New_Order;
+	}
+	
+	
 	/**
-	 * Clockshufles teams, this is hardcoded and will only work for 18 teams
+	 * Deprecated Clock Shuffle USE: ClockShufflePlusPlus
 	 * @param Old_Order
 	 * The order to be shuffled
 	 * @param TeamSize
@@ -158,6 +200,7 @@ public class Scheduler
 	 * @return
 	 * Returns a clockshuffled array
 	 */
+	@Deprecated
 	public static int[] ClockShuffle(int[] Old_Order, int TeamSize)
 	{
 		int[] New_Order = new int[18];
