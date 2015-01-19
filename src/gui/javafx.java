@@ -52,10 +52,6 @@ public class javafx extends Application{
 	Label lbtext;
 	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, nextday, next, teamaction, playeraction, train, lighttrain
 	, heavytrain, rest, position, showteam, market, bet, upcoming, showrank, savegame, save1, save2, save3, save4;
-	ImageView imagechoice;
-	Button betbutton10, betbutton11, betbutton20, betbutton21, betbutton30, betbutton31, betbutton40, betbutton41, betbutton50,
-	betbutton51, betbutton60, betbutton61, betbutton70, betbutton71, betbutton80, betbutton81, betbutton90, betbutton91;
-	
 	
 	Button Back = new Button ("Back");
 	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0, positionint = 0, swapplayer;
@@ -156,25 +152,6 @@ public class javafx extends Application{
 		save3 = new Button("save 3");
 		save4 = new Button("save 4");
 		
-		final ImageView image0 = new ImageView(new Image("/ADO_Den_Haag 200px.png", true));
-		final ImageView image1 = new ImageView(new Image("/AFC_AJAX 200px.png", true));
-		final ImageView image2 = new ImageView(new Image("/AZ 200px.png", true));
-		final ImageView image3 = new ImageView(new Image("/FC_Dordrecht 200px.png", true));
-		final ImageView image4 = new ImageView(new Image("/FC_Groningen 200px.png", true));
-		final ImageView image5 = new ImageView(new Image("/FC_Twente 200px.png", true));
-		final ImageView image6 = new ImageView(new Image("/FC_Utrecht 200px.png", true));
-		final ImageView image7 = new ImageView(new Image("/Feyenoord 200px.png", true));
-		final ImageView image8 = new ImageView(new Image("/Go_Ahead_Eagles 200px.png", true));
-		final ImageView image9 = new ImageView(new Image("/Heracles 200px.png", true));
-		final ImageView image10 = new ImageView(new Image("/NAC_Breda 200px.png", true));
-		final ImageView image11 = new ImageView(new Image("/PEC_Zwolle 200px.png", true));
-		final ImageView image12 = new ImageView(new Image("/PSV 200px.png", true));
-		final ImageView image13 = new ImageView(new Image("/SBV_Excelsior 200px.png", true));
-		final ImageView image14 = new ImageView(new Image("/SC_Cambuur 200px.png", true));
-		final ImageView image15 = new ImageView(new Image("/Heerenveen 200px.png", true));
-		final ImageView image16 = new ImageView(new Image("/Vitesse 200px.png", true));
-		final ImageView image17 = new ImageView(new Image("/Willem_II 200px.png", true));
-		
 		lbtext.setEffect(reflection);
 		
 		lbtext.getStyleClass().add("Headline");
@@ -217,36 +194,25 @@ public class javafx extends Application{
 				
 				//makes new boxes for layout new game screen
 				HBox container = new HBox(10);
-				VBox imagerow1 = new VBox(10);
-				VBox imagerow2 = new VBox(10);
 				VBox teams1 = new VBox(10);
 				VBox teams2 = new VBox(10);
+				VBox teams3 = new VBox(10);
 				VBox vbBack = new VBox(10);
+				for(int i = 0; i < league.getTeams().size(); i++){
+					if(i < 10){
+						teams1.getChildren().add(teambuttons.get(i));
+					}
+					if(9 < i && i < 20){
+						teams2.getChildren().add(teambuttons.get(i));
+					}
+					if(19 < i && i < 30){
+						teams2.getChildren().add(teambuttons.get(i));
+					}
+				}
 				//adds the buttons and the label and sets the scene in the stage
-				image0.setFitWidth(21);image0.setFitHeight(21);
-				image1.setFitWidth(21);image1.setFitHeight(21);
-				image2.setFitWidth(21);image2.setFitHeight(21);
-				image3.setFitWidth(21);image3.setFitHeight(21);
-				image4.setFitWidth(21);image4.setFitHeight(21);
-				image5.setFitWidth(21);image5.setFitHeight(21);
-				image6.setFitWidth(21);image6.setFitHeight(21);
-				image7.setFitWidth(21);image7.setFitHeight(21);
-				image8.setFitWidth(21);image8.setFitHeight(21);
-				image9.setFitWidth(21);image9.setFitHeight(21);
-				image10.setFitWidth(21);image10.setFitHeight(21);
-				image11.setFitWidth(21);image11.setFitHeight(21);
-				image12.setFitWidth(21);image12.setFitHeight(21);
-				image13.setFitWidth(21);image13.setFitHeight(21);
-				image14.setFitWidth(21);image14.setFitHeight(21);
-				image15.setFitWidth(21);image15.setFitHeight(21);
-				image16.setFitWidth(21);image16.setFitHeight(21);
-				image17.setFitWidth(21);image17.setFitHeight(21);
-				imagerow1.getChildren().addAll(image0,image1,image2,image3,image4,image5,image6,image7,image8);
-				imagerow2.getChildren().addAll(image9,image10,image11,image12,image13,image14,image15,image16,image17);
-				teams1.getChildren().addAll(lbtext,teambuttons.get(0),teambuttons.get(1),teambuttons.get(2),teambuttons.get(3),teambuttons.get(4),teambuttons.get(5),teambuttons.get(6),teambuttons.get(7),teambuttons.get(8));
-				teams2.getChildren().addAll(teambuttons.get(9),teambuttons.get(10),teambuttons.get(11),teambuttons.get(12),teambuttons.get(13),teambuttons.get(14),teambuttons.get(15),teambuttons.get(16),teambuttons.get(17));
+				teams1.getChildren().addAll(lbtext);
 				vbBack.getChildren().addAll(mutesong,Back);
-				container.getChildren().addAll(imagerow1,teams1,teams2,imagerow2);
+				container.getChildren().addAll(teams1,teams2,teams3);
 				container.setTranslateY(100);
 				HBox ngtext = new HBox();
 				ngtext.getChildren().addAll(lbtext,container,vbBack);
@@ -330,169 +296,17 @@ public class javafx extends Application{
 				
 			}
 		});
-		
-	teambuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+	for(int i = 0; i < teams.size(); i++){
+		final int a = i;
+	teambuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
 
 			@Override
 			public void handle(ActionEvent arg0){
-				teamchoiceint = 0;
-				imagechoice = image0;
+				teamchoiceint = a;
 				teamaction.fire();
 			}
 	});
-	teambuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 1;
-			imagechoice = image1;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 2;
-			imagechoice = image2;
-			teamaction.fire();
-		}
-	});
-	teambuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 3;
-			imagechoice = image3;
-			teamaction.fire();
-		}
-	});
-	teambuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 4;
-			imagechoice = image4;
-			teamaction.fire();
-		}
-	});
-	teambuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 5;
-			imagechoice = image5;
-			teamaction.fire();
-		}
-	});
-	teambuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 6;
-			imagechoice = image6;
-			teamaction.fire();
-		}
-	});
-	teambuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 7;
-			imagechoice = image7;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 8;
-			imagechoice = image8;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 9;
-			imagechoice = image9;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 10;
-			imagechoice = image10;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 11;
-			imagechoice = image11;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 12;
-			imagechoice = image12;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 13;
-			imagechoice = image13;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 14;
-			imagechoice = image14;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 15;
-			imagechoice = image15;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 16;
-			imagechoice = image16;
-			teamaction.fire();
-		}
-});
-	teambuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
-		
-		@Override
-		public void handle(ActionEvent arg0){
-			teamchoiceint = 17;
-			imagechoice = image17;
-			teamaction.fire();
-		}
-});
+	}
 	teamaction.setOnAction(new EventHandler<ActionEvent>(){
 			
 			@Override
@@ -506,10 +320,8 @@ public class javafx extends Application{
 				HBox playerdisplay = new HBox();
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
-				imagechoice.setFitWidth(60);imagechoice.setFitHeight(60);
 				vbBack.getChildren().addAll(select,mutesong,backng);
 				teambox1.getChildren().addAll(lbtext);
-				teambox2.getChildren().addAll(imagechoice);
 				for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
 					playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 					if(0 <= i && i < 10){
@@ -522,7 +334,7 @@ public class javafx extends Application{
 						teambox3.getChildren().addAll(playerbuttons.get(i));
 					}
 				}
-				teambox2.translateYProperty().set(10);
+				teambox2.translateYProperty().set(70);
 				teambox3.translateYProperty().set(70);
 				playerdisplay.getChildren().addAll(teambox1,teambox2,teambox3,vbBack);
 				Scene teamscreen = new Scene(playerdisplay,1000,500);
@@ -738,7 +550,7 @@ public class javafx extends Application{
 						else{
 							teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,market,upcoming, showrank,savegame);
 						}
-						imageadd.getChildren().addAll(teamchoicebox,imagechoice);
+						imageadd.getChildren().addAll(teamchoicebox);
 						stage.setScene(teamchoicescreen);	
 					}
 				});
@@ -747,36 +559,29 @@ public class javafx extends Application{
 					@Override
 					public void handle(ActionEvent arg0){
 						lbtext.setText("ranking");
-						Label rank0 = new Label(rank.getRanking()[0].getName().toString() + " " + rank.getScoreOfTeam()[0]);
-						Label rank1 = new Label(rank.getRanking()[1].getName().toString() + " " + rank.getScoreOfTeam()[1]);
-						Label rank2 = new Label(rank.getRanking()[2].getName().toString() + " " + rank.getScoreOfTeam()[2]);
-						Label rank3 = new Label(rank.getRanking()[3].getName().toString() + " " + rank.getScoreOfTeam()[3]);
-						Label rank4 = new Label(rank.getRanking()[4].getName().toString() + " " + rank.getScoreOfTeam()[4]);
-						Label rank5 = new Label(rank.getRanking()[5].getName().toString() + " " + rank.getScoreOfTeam()[5]);
-						Label rank6 = new Label(rank.getRanking()[6].getName().toString() + " " + rank.getScoreOfTeam()[6]);
-						Label rank7 = new Label(rank.getRanking()[7].getName().toString() + " " + rank.getScoreOfTeam()[7]);
-						Label rank8 = new Label(rank.getRanking()[8].getName().toString() + " " + rank.getScoreOfTeam()[8]);
-						Label rank9 = new Label(rank.getRanking()[9].getName().toString() + " " + rank.getScoreOfTeam()[9]);
-						Label rank10 = new Label(rank.getRanking()[10].getName().toString() + " " + rank.getScoreOfTeam()[10]);
-						Label rank11 = new Label(rank.getRanking()[11].getName().toString() + " " + rank.getScoreOfTeam()[11]);
-						Label rank12 = new Label(rank.getRanking()[12].getName().toString() + " " + rank.getScoreOfTeam()[12]);
-						Label rank13 = new Label(rank.getRanking()[13].getName().toString() + " " + rank.getScoreOfTeam()[13]);
-						Label rank14 = new Label(rank.getRanking()[14].getName().toString() + " " + rank.getScoreOfTeam()[14]);
-						Label rank15 = new Label(rank.getRanking()[15].getName().toString() + " " + rank.getScoreOfTeam()[15]);
-						Label rank16 = new Label(rank.getRanking()[16].getName().toString() + " " + rank.getScoreOfTeam()[16]);
-						Label rank17 = new Label(rank.getRanking()[17].getName().toString() + " " + rank.getScoreOfTeam()[17]);
 						VBox rankbox1 = new VBox(10);
 						VBox rankbox2 = new VBox(10);
 						VBox rankbox3 = new VBox(10);
 						VBox rankback = new VBox(10);
+						ArrayList<Label> ranks = new ArrayList<Label>();
+						rankbox1.getChildren().addAll(lbtext);
+						for(int i = 0; i < league.getTeams().size(); i++){
+							ranks.add(new Label(rank.getRanking()[i].getName().toString() + " " + rank.getScoreOfTeam()[i]));
+							if(i < 10){
+								rankbox1.getChildren().addAll(ranks.get(i));
+							}
+							if(9 < i && i < 20){
+								rankbox2.getChildren().addAll(ranks.get(i));
+							}
+							if(19 < i && i < 30){
+								rankbox3.getChildren().addAll(ranks.get(i));
+							}
+						}
 						rankback.setAlignment(Pos.BOTTOM_RIGHT);
 						rankbox2.setTranslateY(80);
 						rankbox3.setTranslateY(80);
 						rankback.getChildren().add(next);
 						HBox rankboxtotal = new HBox(10);
-						rankbox1.getChildren().addAll(lbtext,rank0,rank1,rank2,rank3,rank4,rank5);
-						rankbox2.getChildren().addAll(rank6,rank7,rank8,rank9,rank10,rank11);
-						rankbox3.getChildren().addAll(rank12,rank13,rank14,rank15,rank16,rank17);
 						rankboxtotal.getChildren().addAll(rankbox1,rankbox2,rankbox3,rankback);
 						rankboxtotal.getStylesheets().add("mystyle.css");
 						Scene rankscreen = new Scene(rankboxtotal,1000,500);
@@ -810,42 +615,38 @@ public class javafx extends Application{
 						else{
 							lbtext.setText("betting on teams");
 						}
-						betbutton10 = new Button(scheme.getS().get(currentplayround).getFriday().getMatches().get(0).getTeam_home().getName().toString());
-						betbutton11 = new Button(scheme.getS().get(currentplayround).getFriday().getMatches().get(0).getTeam_away().getName().toString());
-						betbutton20 = new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(0).getTeam_home().getName().toString());
-						betbutton21 = new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(0).getTeam_away().getName().toString());
-						betbutton30 = new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(1).getTeam_home().getName().toString());
-						betbutton31 = new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(1).getTeam_away().getName().toString());
-						betbutton40 = new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(2).getTeam_home().getName().toString());
-						betbutton41 = new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(2).getTeam_away().getName().toString());
-						betbutton50 = new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(3).getTeam_home().getName().toString());
-						betbutton51 = new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(3).getTeam_away().getName().toString());
-						betbutton60 = new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(0).getTeam_home().getName().toString());
-						betbutton61 = new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(0).getTeam_away().getName().toString());
-						betbutton70 = new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(1).getTeam_home().getName().toString());
-						betbutton71 = new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(1).getTeam_away().getName().toString());
-						betbutton80 = new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(2).getTeam_home().getName().toString());
-						betbutton81 = new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(2).getTeam_away().getName().toString());
-						betbutton90 = new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(3).getTeam_home().getName().toString());
-						betbutton91 = new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(3).getTeam_away().getName().toString());
-						HBox betbox1 = new HBox(10);
-						HBox betbox2 = new HBox(10);
-						HBox betbox3 = new HBox(10);
-						HBox betbox4 = new HBox(10);
-						HBox betbox5 = new HBox(10);
-						HBox betbox6 = new HBox(10);
-						HBox betbox7 = new HBox(10);
-						HBox betbox8 = new HBox(10);
-						HBox betbox9 = new HBox(10);
-						betbox1.getChildren().addAll(betbutton10,betbutton11);
-						betbox2.getChildren().addAll(betbutton20,betbutton21);
-						betbox3.getChildren().addAll(betbutton30,betbutton31);
-						betbox4.getChildren().addAll(betbutton40,betbutton41);
-						betbox5.getChildren().addAll(betbutton50,betbutton51);
-						betbox6.getChildren().addAll(betbutton60,betbutton61);
-						betbox7.getChildren().addAll(betbutton70,betbutton71);
-						betbox8.getChildren().addAll(betbutton80,betbutton81);
-						betbox9.getChildren().addAll(betbutton90,betbutton91);
+						ArrayList<Button> betbuttons = new ArrayList<Button>();
+						ArrayList<HBox> betboxes = new ArrayList<HBox>();
+						for(int i = 0; i < scheme.getS().get(currentplayround).getFriday().getMatches().size(); i++){
+							if(i % 2 == 1){
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName().toString()));
+							}
+							else{
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName().toString()));
+								betboxes.add(new HBox(10));
+								betboxes.get(i/2).getChildren().addAll(betbuttons.get(i-1),betbuttons.get(i));
+							}
+						}
+						for(int i = 0; i < scheme.getS().get(currentplayround).getSaturday().getMatches().size(); i++){
+							if(i % 2 == 1){
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName().toString()));
+							}
+							else{
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName().toString()));
+								betboxes.add(new HBox(10));
+								betboxes.get(i/2).getChildren().addAll(betbuttons.get(i-1),betbuttons.get(i));
+							}
+						}
+						for(int i = 0; i < scheme.getS().get(currentplayround).getSunday().getMatches().size(); i++){
+							if(i % 2 == 1){
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName().toString()));
+							}
+							else{
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName().toString()));
+								betboxes.add(new HBox(10));
+								betboxes.get(i/2).getChildren().addAll(betbuttons.get(i-1),betbuttons.get(i));
+							}
+						}
 						Label standard0 = new Label("home - away");
 						Label standard1 = new Label("home - away");
 						Label standard2 = new Label("home - away");
@@ -869,7 +670,7 @@ public class javafx extends Application{
 								else{
 									String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchfridayupcoming.getChildren().addAll(matchlabel,betbox1);
+									matchfridayupcoming.getChildren().addAll(matchlabel,betboxes.get(0));
 								}
 							}
 							for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
@@ -881,22 +682,22 @@ public class javafx extends Application{
 								else if(i == 0){
 									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsaturdayupcoming.getChildren().addAll(matchlabel,betbox2);
+									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxes.get(1));
 								}
 								else if(i == 1){
 									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsaturdayupcoming.getChildren().addAll(matchlabel,betbox3);
+									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxes.get(2));
 								}
 								else if(i == 2){
 									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsaturdayupcoming.getChildren().addAll(matchlabel,betbox4);
+									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxes.get(3));
 								}
 								else if(i == 3){
 									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsaturdayupcoming.getChildren().addAll(matchlabel,betbox5);
+									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxes.get(4));
 								}
 							}
 							for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
@@ -908,22 +709,22 @@ public class javafx extends Application{
 								else if (i == 0){
 									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsundayupcoming.getChildren().addAll(matchlabel,betbox6);
+									matchsundayupcoming.getChildren().addAll(matchlabel,betboxes.get(5));
 								}
 								else if (i == 1){
 									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsundayupcoming.getChildren().addAll(matchlabel,betbox7);
+									matchsundayupcoming.getChildren().addAll(matchlabel,betboxes.get(6));
 								}
 								else if (i == 2){
 									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsundayupcoming.getChildren().addAll(matchlabel,betbox8);
+									matchsundayupcoming.getChildren().addAll(matchlabel,betboxes.get(7));
 								}
 								else if (i == 3){
 									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsundayupcoming.getChildren().addAll(matchlabel,betbox9);
+									matchsundayupcoming.getChildren().addAll(matchlabel,betboxes.get(8));
 								}
 							}
 							matchsaturdayupcoming.setTranslateY(80);
@@ -935,7 +736,8 @@ public class javafx extends Application{
 							Scene upcomingscreen = new Scene(totalupcoming,1000,500);
 							stage.setScene(upcomingscreen);
 							betmaking = false;
-							betbutton10.setOnAction(new EventHandler<ActionEvent>(){
+							
+							betbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -945,7 +747,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton11.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -955,7 +757,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton20.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -965,7 +767,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton21.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -975,7 +777,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton30.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -985,7 +787,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton31.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -995,7 +797,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton40.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1005,7 +807,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton41.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1015,7 +817,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton50.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1025,7 +827,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton51.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1035,7 +837,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton60.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1045,7 +847,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton61.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1055,7 +857,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton70.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1065,7 +867,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton71.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1075,7 +877,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton80.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1085,7 +887,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton81.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1095,7 +897,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton90.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1105,7 +907,7 @@ public class javafx extends Application{
 									select.fire();
 								}
 							});
-							betbutton91.setOnAction(new EventHandler<ActionEvent>(){
+							betbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
 								
 								@Override
 								public void handle(ActionEvent arg0){
@@ -1127,10 +929,8 @@ public class javafx extends Application{
 						HBox showplayerdisplay = new HBox();
 						VBox showback = new VBox(10);
 						showback.setAlignment(Pos.BOTTOM_RIGHT);
-						imagechoice.setFitWidth(60);imagechoice.setFitHeight(60);
 						showback.getChildren().addAll(next);
 						showteambox1.getChildren().addAll(lbtext);
-						showteambox2.getChildren().addAll(imagechoice);
 						for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
 							playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 							if(0 <= i && i < 10){
