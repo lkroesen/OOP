@@ -50,7 +50,6 @@ public class PlayMatch {
 			last = !last;
 		}
 		
-		match.setResult(hgoal + "-" + agoal);
 		return hgoal+"-"+agoal;
 	}
 	

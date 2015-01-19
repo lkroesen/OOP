@@ -88,7 +88,7 @@ public class BettingTest {
 		Team P_Team = new Team(4, "Player");
 		TeamList.add(P_Team);
 		
-		long Budget = Betting.After_Match((long)123456, Betting.Bet_Maker(b, (long)123456, tl), winners.getId());
+		long Budget = Betting.After_Match((long)123456, Betting.Bet_Maker(b, (long)123456, tl,  1, true), winners.getId());
 		System.out.println("The player now has: " + Budget + " imaginary money left");
 		
 		assertNotNull(b);

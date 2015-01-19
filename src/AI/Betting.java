@@ -218,7 +218,7 @@ public class Betting
 	 * @return
 	 * Returns the made bet
 	 */
-	public static Bet Bet_Maker(ArrayList<Betting> BL, long Money, ArrayList<Team> TeamList)
+	public static Bet Bet_Maker(ArrayList<Betting> BL, long Money, ArrayList<Team> TeamList, int choice, boolean home)
 	{
 		// Show users bets he can make
 		for (int c = 0; c < BL.size(); c++)
@@ -226,16 +226,23 @@ public class Betting
 		
 		// Select a match to bet on
 		//Scanner sc = new Scanner(System.in);
-		String n = "1";//sc.next();
+		String n = String.valueOf(choice);//sc.next();
 		
 		// Get info from GUI to make a bet.
 		// Method() here
 		
-		
-		String winner = "none";
-		long bet_amount = (long) 0;
-		Double rate = 0.00;
+		Double rate = 0.0;
 		int win = 0;
+		String winner = "none";
+		long bet_amount = (long) 500000;
+		if(home == false){
+			rate = BL.get(choice - 1).getRate1();
+			win = BL.get(choice - 1).getTeam1();
+		}
+		else{
+			rate = BL.get(choice - 1).getRate2();
+			win = BL.get(choice - 1).getTeam2();
+		}
 		
 		int a = (int) n.charAt(0) - 48;
 		System.out.println("Selected: " + a);
