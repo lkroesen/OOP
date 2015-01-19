@@ -5,6 +5,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import AI.Bet;
+import AI.Betting;
 import AI.PlayMatch;
 import AI.PlayRound;
 import AI.Schedule;
@@ -49,7 +51,7 @@ public class javafx extends Application{
     //toptext of every scene and button for starting screen
 	Label lbtext;
 	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, nextday, next, teamaction, playeraction, train, lighttrain
-	, heavytrain, rest, position, showteam, savegame, save1, save2, save3, save4;
+	, heavytrain, rest, position, showteam, market, bet, upcoming, savegame, save1, save2, save3, save4;
 	ImageView imagechoice;
 	
 	
@@ -137,6 +139,9 @@ public class javafx extends Application{
 		rest = new Button ("rest");
 		position = new Button ("change positions");
 		showteam = new Button ("show team");
+		bet = new Button ("bet");
+		market = new Button ("market");
+		upcoming = new Button ("this weeks matches");
 		savegame = new Button("save game");
 		save1 = new Button("save 1");
 		save2 = new Button("save 2");
@@ -687,6 +692,25 @@ public class javafx extends Application{
 					public void handle(ActionEvent arg0){
 						pastnewgame = true;
 						swapfirst = false;
+						Label currentdaylabel = new Label("monday");
+						if(currentday == 1){
+							currentdaylabel.setText("tuesday");
+						}
+						if(currentday == 2){
+							currentdaylabel.setText("wednesday");
+						}
+						if(currentday == 3){
+							currentdaylabel.setText("thursday");
+						}
+						if(currentday == 4){
+							currentdaylabel.setText("friday");
+						}
+						if(currentday == 5){
+							currentdaylabel.setText("saturday");
+						}
+						if(currentday == 6){
+							currentdaylabel.setText("sunday");
+						}
 						VBox teamchoicebox = new VBox(10);
 						HBox imageadd = new HBox(10);
 						teamchoicebox.getStylesheets().add("mystyle.css");
@@ -694,13 +718,91 @@ public class javafx extends Application{
 						Scene teamchoicescreen = new Scene(imageadd,1000,500);
 						lbtext.setText(teams.get(teamchoiceint).getName());
 						if(traintoday == false){
-						teamchoicebox.getChildren().addAll(lbtext,nextday,train,position,showteam,savegame);
+						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,bet,market,upcoming,savegame);
 						}
 						else{
-							teamchoicebox.getChildren().addAll(lbtext,nextday,position,showteam,savegame);
+							teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,bet,market,upcoming,savegame);
 						}
 						imageadd.getChildren().addAll(teamchoicebox,imagechoice);
 						stage.setScene(teamchoicescreen);	
+					}
+				});
+				bet.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						Button betbutton10 = new Button();
+						Button betbutton11 = new Button();
+						Button betbutton20 = new Button();
+						Button betbutton21 = new Button();
+						Button betbutton30 = new Button();
+						Button betbutton31 = new Button();
+						Button betbutton40 = new Button();
+						Button betbutton41 = new Button();
+						Button betbutton50 = new Button();
+						Button betbutton51 = new Button();
+						Button betbutton60 = new Button();
+						Button betbutton61 = new Button();
+						Button betbutton70 = new Button();
+						Button betbutton71 = new Button();
+						Button betbutton80 = new Button();
+						Button betbutton81 = new Button();
+						Button betbutton90 = new Button();
+						Button betbutton91 = new Button();
+						Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams);
+						upcoming.fire();
+					}
+				});
+				market.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						//transfers
+					}
+				});
+				upcoming.setOnAction(new EventHandler<ActionEvent>(){
+					
+
+					@Override
+					public void handle(ActionEvent arg0){
+						Label standard0 = new Label("home - away");
+						Label standard1 = new Label("home - away");
+						Label standard2 = new Label("home - away");
+						Label friday = new Label("Friday");
+						Label saturday = new Label("saturday");
+						Label sunday = new Label("sunday");
+						HBox totalupcoming = new HBox();
+						VBox matchfridayupcoming = new VBox (10);
+						VBox matchsaturdayupcoming = new VBox (10);
+						VBox matchsundayupcoming = new VBox (10);
+						VBox upcomingback = new VBox();
+						matchfridayupcoming.getChildren().addAll(friday,standard0);
+						matchsaturdayupcoming.getChildren().addAll(saturday,standard1);
+						matchsundayupcoming.getChildren().addAll(sunday,standard2);
+							for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
+								String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getFriday().getMatches().get(i).getTeam_away().getName());
+								Label matchlabel = new Label(match);
+								matchfridayupcoming.getChildren().addAll(matchlabel);
+							}
+							for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
+								String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSaturday().getMatches().get(i).getTeam_away().getName());
+								Label matchlabel = new Label(match);
+								matchsaturdayupcoming.getChildren().addAll(matchlabel);
+							}
+							for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
+								String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(0).getSunday().getMatches().get(i).getTeam_away().getName());
+								Label matchlabel = new Label(match);
+								matchsundayupcoming.getChildren().addAll(matchlabel);
+							}
+							matchfridayupcoming.setTranslateY(80);
+							matchsaturdayupcoming.setTranslateY(80);
+							matchsundayupcoming.setTranslateY(80);
+							upcomingback.getChildren().add(next);
+							upcomingback.setAlignment(Pos.BOTTOM_RIGHT);
+							totalupcoming.getChildren().addAll(matchfridayupcoming,matchsaturdayupcoming,matchsundayupcoming,upcomingback);
+							totalupcoming.getStylesheets().add("mystyle.css");
+							Scene upcomingscreen = new Scene(totalupcoming,1000,500);
+							stage.setScene(upcomingscreen);
 					}
 				});
 				showteam.setOnAction(new EventHandler<ActionEvent>(){
@@ -849,7 +951,6 @@ public class javafx extends Application{
 							
 							@Override
 							public void handle(ActionEvent arg0){
-								Game.setCurrentDay(currentday);
 								Game.setCurrentTeam(teamchoiceint);
 								xml.writeGame(game, "save1");
 							}
@@ -931,6 +1032,7 @@ public class javafx extends Application{
 							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i)));
 							Label matchlabel = new Label(match);
 							Label resultlabel = new Label(result);
+							scheme.getS().get(currentplayround).getFriday().getMatches().get(i).setResult(result);
 							matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
 						}
 						matchresult.getChildren().addAll(matchresultfriday);
@@ -943,6 +1045,7 @@ public class javafx extends Application{
 							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i)));
 							Label matchlabel = new Label(match);
 							Label resultlabel = new Label(result);
+							scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).setResult(result);
 							matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
 						}
 						matchresult.getChildren().addAll(matchresultsaturday);
@@ -956,6 +1059,7 @@ public class javafx extends Application{
 							String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i)));
 							Label matchlabel = new Label(match);
 							Label resultlabel = new Label(result);
+							scheme.getS().get(currentplayround).getSunday().getMatches().get(i).setResult(result);
 							matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
 						}
 						matchresult.getChildren().addAll(matchresultsunday);
@@ -967,6 +1071,7 @@ public class javafx extends Application{
 						currentday++;
 					}
 					traintoday = false;
+					Game.setCurrentDay(currentday);
 					}
 				});
 				next.setOnAction(new EventHandler<ActionEvent>(){

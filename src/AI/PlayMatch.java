@@ -51,8 +51,6 @@ public class PlayMatch {
 		}
 		
 		match.setResult(hgoal + "-" + agoal);
-		System.out.println(home.getName() + " - " + away.getName());
-		System.out.println(hgoal + "-" + agoal);
 		return hgoal+"-"+agoal;
 	}
 	

@@ -124,6 +124,7 @@ public class Betting
 		
 		// Creates an object, that has matches that can be bet on.
 		ArrayList<Match> ListOfBets = GenerateBetsPerWeek(c_week, s.getS());
+		System.out.print(ListOfBets.toString());
 		ArrayList<Betting> BetList = new ArrayList<Betting>();
 		
 		for (int c = 0; c < ListOfBets.size(); c++)
@@ -257,7 +258,6 @@ public class Betting
 	public static ArrayList<Match> GenerateBetsPerWeek(int c_week, ArrayList<PlayRound> S)
 	{
 		ArrayList<Match> ListOfBets = new ArrayList<Match>();
-		
 		// Check which days have been played
 		// Can only bet if none of the matches of that day have taken place
 		
@@ -276,7 +276,7 @@ public class Betting
 		// Check if Sunday has not been played
 		if (!DayPlayed(S.get(c_week).getSunday()))
 			for (int c = 0; c < S.get(c_week).getSunday().getMatches().size(); c++)
-				ListOfBets.add(S.get(c_week).getSaturday().getMatches().get(c));
+				ListOfBets.add(S.get(c_week).getSunday().getMatches().get(c));
 		
 		return ListOfBets;
 	}
