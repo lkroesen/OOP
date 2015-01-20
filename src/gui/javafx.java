@@ -168,15 +168,17 @@ public class javafx extends Application{
 				audio.play();
 				mediaPlayer.setVolume(0);
 				//changes the text
-				lbtext.setText("Selection menu");
+				lbtext.setText("leagues");
 				
 				//makes new boxes for layout new game screen
 				HBox container = new HBox(10);
 				VBox leagues1 = new VBox(10);
 				VBox leagues2 = new VBox(10);
 				VBox leagues3 = new VBox(10);
+				VBox leagues4 = new VBox(10);
 				VBox backlgs = new VBox(10);
 				ArrayList<Button> leaguebuttons = new ArrayList<Button>();
+				leagues1.getChildren().addAll(lbtext);
 				for(int i = 0; i < game.getLeagues().size(); i++){
 					leaguebuttons.add(new Button(game.getLeagues().get(i).getName()));
 					if(i < 10){
@@ -188,11 +190,13 @@ public class javafx extends Application{
 					if(19 < i && i < 30){
 						leagues3.getChildren().add(leaguebuttons.get(i));
 					}
+					if(29 < i && i < 40){
+						leagues4.getChildren().add(leaguebuttons.get(i));
+					}
 				}
 				//adds the buttons and the label and sets the scene in the stage
-				leagues1.getChildren().addAll(lbtext);
 				backlgs.getChildren().addAll(mutesong,Back);
-				container.getChildren().addAll(leagues1,leagues2,leagues3);
+				container.getChildren().addAll(leagues1,leagues2,leagues3,leagues4);
 				container.setTranslateY(100);
 				HBox ngtext = new HBox();
 				ngtext.getChildren().addAll(lbtext,container,backlgs);
