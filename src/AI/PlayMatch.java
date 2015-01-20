@@ -29,6 +29,8 @@ public class PlayMatch {
 	private static ArrayList<Player> areserve;
 	private static int hgoal;
 	private static int agoal;
+	private static int hswitch;
+	private static int aswitch;
 	
 	public static String play(Match match){
 		attackn = 0;
@@ -132,6 +134,9 @@ public class PlayMatch {
 			int pos = randompos(0.2, 0.4, 1.27, 1);
 			int time = (int) Math.round((new Random().nextDouble() * 8.18) + (attackn * 8.18)); 
 			if(random(1, 1)){
+				if(hswitch >= 3){
+					return;
+				}
 				ArrayList<Player> hr =  new ArrayList<Player>();
 				ArrayList<Player> hb =  new ArrayList<Player>();
 				for(Player p:hplayers){
@@ -153,7 +158,11 @@ public class PlayMatch {
 				amatch.addEventHome(new Event(pr.getId(), 5, time, 0));
 				amatch.addEventHome(new Event(pb.getId(), 4, time, 0));
 				generatestats(amatch);
+				hswitch++;
 			}else{
+				if(aswitch >= 3){
+					return;
+				}
 				ArrayList<Player> ar =  new ArrayList<Player>();
 				ArrayList<Player> ab =  new ArrayList<Player>();
 				for(Player p:aplayers){
@@ -175,6 +184,7 @@ public class PlayMatch {
 				amatch.addEventAway(new Event(pr.getId(), 5, time, 0));
 				amatch.addEventAway(new Event(pb.getId(), 4, time, 0));
 				generatestats(amatch);
+				aswitch++;
 			}
 		}
 	}
