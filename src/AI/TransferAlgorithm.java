@@ -61,31 +61,20 @@ public class TransferAlgorithm {
 				for(Player p1 : t.getPlayers()){
 					if(p1.equals(p)){
 						CalculateWorth(p1);
+						//needs to be changed
+						int id = 0;
 						int cost = p1.getPrice();
 						tn.setBudget((tn.getBudget()-cost));
 						t.setBudget((t.getBudget()+cost));
 						t.delPlayer(p1);
 						tn.addPlayer(p1);
-						Transfer tr = new Transfer(t.getId(), tn.getId(), p.getId(), cost, game.getCurrentDay());
+						Transfer tr = new Transfer(id, t.getId(), tn.getId(), p.getId(), cost, game.getCurrentDay());
 						DelPlayer(p);
 						game.addTransfer(tr);
 					}
 				}
 			}
 		}
-<<<<<<< HEAD
-		//needs to be changed
-		int id = 0;
-		int cost = p.getPrice();
-		tn.setBudget((tn.getBudget()-cost));
-		to.setBudget((to.getBudget()+cost));
-		to.delPlayer(p);
-		tn.addPlayer(p);
-		DelPlayer(p);
-		Transfer t = new Transfer(id, to.getId(), tn.getId(), p.getId(), cost, game.getCurrentDay());
-		game.addTransfer(t);
-=======
->>>>>>> origin/master
 	}
 	/**Adds Player to the ArrayList with Players for sale.
 	 * 

@@ -34,7 +34,7 @@ public class testGame {
 		ArrayList<League> ll = new ArrayList<League>();
 		ll.add(l);
 		g.setLeagues(ll);
-		Transfer t = new Transfer(1,1,1,1,1);
+		Transfer t = new Transfer(0,1,1,1,1,1);
 		g.addTransfer(t);
 		Match m = new Match(1,1);
 		g.addMatch(m);
