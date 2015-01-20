@@ -46,13 +46,15 @@ public class TransferAlgorithm {
 				}
 			}
 		}
+		//needs to be changed
+		int id = 0;
 		int cost = p.getPrice();
 		tn.setBudget((tn.getBudget()-cost));
 		to.setBudget((to.getBudget()+cost));
 		to.delPlayer(p);
 		tn.addPlayer(p);
 		DelPlayer(p);
-		Transfer t = new Transfer(to.getId(), tn.getId(), p.getId(), cost, game.getCurrentDay());
+		Transfer t = new Transfer(id, to.getId(), tn.getId(), p.getId(), cost, game.getCurrentDay());
 		game.addTransfer(t);
 	}
 	/**Adds Player to the ArrayList with Players for sale.

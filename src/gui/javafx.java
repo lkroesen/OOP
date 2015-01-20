@@ -74,7 +74,7 @@ public class javafx extends Application{
 	@Override
 	public void start(final Stage stage) throws Exception {
 		
-		stage.setResizable(false);
+		//stage.setResizable(false);
 		final XML xml = new XML("toms_teams.xml");
 		final Game game = xml.parseGame();
 		ArrayList<League> leagues = game.getLeagues();
@@ -592,7 +592,6 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
-						System.out.print(teams.get(teamchoiceint).getBudget());
 						betmaking = true;
 						upcoming.fire();
 					}
@@ -616,35 +615,37 @@ public class javafx extends Application{
 							lbtext.setText("betting on teams");
 						}
 						ArrayList<Button> betbuttons = new ArrayList<Button>();
-						ArrayList<HBox> betboxes = new ArrayList<HBox>();
-						for(int i = 0; i < scheme.getS().get(currentplayround).getFriday().getMatches().size(); i++){
-							if(i % 2 == 1){
-								betbuttons.add(new Button(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName().toString()));
+						ArrayList<HBox> betboxesfri = new ArrayList<HBox>();
+						ArrayList<HBox> betboxessat = new ArrayList<HBox>();
+						ArrayList<HBox> betboxessun = new ArrayList<HBox>();
+						for(int i = 0; i < scheme.getS().get(currentplayround).getFriday().getMatches().size()*2; i++){
+							if(i % 2 == 0){
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getFriday().getMatches().get(i/2).getTeam_home().getName().toString()));
 							}
 							else{
-								betbuttons.add(new Button(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName().toString()));
-								betboxes.add(new HBox(10));
-								betboxes.get(i/2).getChildren().addAll(betbuttons.get(i-1),betbuttons.get(i));
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getFriday().getMatches().get((int) (i/2)).getTeam_away().getName().toString()));
+								betboxesfri.add(new HBox(10));
+								betboxesfri.get((int) (i/2)).getChildren().addAll(betbuttons.get(i-1),betbuttons.get(i));
 							}
 						}
-						for(int i = 0; i < scheme.getS().get(currentplayround).getSaturday().getMatches().size(); i++){
-							if(i % 2 == 1){
-								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName().toString()));
+						for(int i = 0; i < scheme.getS().get(currentplayround).getSaturday().getMatches().size()*2; i++){
+							if(i % 2 == 0){
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i/2).getTeam_home().getName().toString()));
 							}
 							else{
-								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName().toString()));
-								betboxes.add(new HBox(10));
-								betboxes.get(i/2).getChildren().addAll(betbuttons.get(i-1),betbuttons.get(i));
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSaturday().getMatches().get((int) (i/2)).getTeam_away().getName().toString()));
+								betboxessat.add(new HBox(10));
+								betboxessat.get((int) (i/2)).getChildren().addAll(betbuttons.get(i-1 + betboxesfri.size()*2),betbuttons.get(i + betboxesfri.size()*2));
 							}
 						}
-						for(int i = 0; i < scheme.getS().get(currentplayround).getSunday().getMatches().size(); i++){
-							if(i % 2 == 1){
-								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName().toString()));
+						for(int i = 0; i < scheme.getS().get(currentplayround).getSunday().getMatches().size()*2; i++){
+							if(i % 2 == 0){
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(i/2).getTeam_home().getName().toString()));
 							}
 							else{
-								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName().toString()));
-								betboxes.add(new HBox(10));
-								betboxes.get(i/2).getChildren().addAll(betbuttons.get(i-1),betbuttons.get(i));
+								betbuttons.add(new Button(scheme.getS().get(currentplayround).getSunday().getMatches().get((int) (i/2)).getTeam_away().getName().toString()));
+								betboxessun.add(new HBox(10));
+								betboxessun.get((int) (i/2)).getChildren().addAll(betbuttons.get(i-1 + betboxesfri.size()*2 + betboxessat.size()*2),betbuttons.get(i + betboxesfri.size()*2 + betboxessat.size()*2));
 							}
 						}
 						Label standard0 = new Label("home - away");
@@ -670,7 +671,7 @@ public class javafx extends Application{
 								else{
 									String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchfridayupcoming.getChildren().addAll(matchlabel,betboxes.get(0));
+									matchfridayupcoming.getChildren().addAll(matchlabel,betboxesfri.get(i));
 								}
 							}
 							for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
@@ -679,25 +680,10 @@ public class javafx extends Application{
 									Label matchlabel = new Label(match);
 									matchsaturdayupcoming.getChildren().addAll(matchlabel);
 								}
-								else if(i == 0){
+								else {
 									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxes.get(1));
-								}
-								else if(i == 1){
-									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
-									Label matchlabel = new Label(match);
-									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxes.get(2));
-								}
-								else if(i == 2){
-									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
-									Label matchlabel = new Label(match);
-									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxes.get(3));
-								}
-								else if(i == 3){
-									String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
-									Label matchlabel = new Label(match);
-									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxes.get(4));
+									matchsaturdayupcoming.getChildren().addAll(matchlabel,betboxessat.get(i));
 								}
 							}
 							for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
@@ -706,25 +692,10 @@ public class javafx extends Application{
 									Label matchlabel = new Label(match);
 									matchsundayupcoming.getChildren().addAll(matchlabel);
 								}
-								else if (i == 0){
+								else{
 									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 									Label matchlabel = new Label(match);
-									matchsundayupcoming.getChildren().addAll(matchlabel,betboxes.get(5));
-								}
-								else if (i == 1){
-									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
-									Label matchlabel = new Label(match);
-									matchsundayupcoming.getChildren().addAll(matchlabel,betboxes.get(6));
-								}
-								else if (i == 2){
-									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
-									Label matchlabel = new Label(match);
-									matchsundayupcoming.getChildren().addAll(matchlabel,betboxes.get(7));
-								}
-								else if (i == 3){
-									String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
-									Label matchlabel = new Label(match);
-									matchsundayupcoming.getChildren().addAll(matchlabel,betboxes.get(8));
+									matchsundayupcoming.getChildren().addAll(matchlabel,betboxessun.get(i));
 								}
 							}
 							matchsaturdayupcoming.setTranslateY(80);
@@ -736,187 +707,34 @@ public class javafx extends Application{
 							Scene upcomingscreen = new Scene(totalupcoming,1000,500);
 							stage.setScene(upcomingscreen);
 							betmaking = false;
-							
-							betbuttons.get(0).setOnAction(new EventHandler<ActionEvent>(){
+							for(int i = 0; i < betbuttons.size(); i++){
+								final int a = i;
+								if(i % 2 == 0){
+									betbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
 								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 0, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
+										@Override
+										public void handle(ActionEvent arg0){
+											bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, a/2, true);
+											betmade = true;
+											System.out.print(a);
+											teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
+											select.fire();
+										}
+									});
 								}
-							});
-							betbuttons.get(1).setOnAction(new EventHandler<ActionEvent>(){
+								else{
+									betbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
 								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 0, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
+										@Override
+										public void handle(ActionEvent arg0){
+											bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, (int) (a/2), false);
+											betmade = true;
+											teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
+											select.fire();
+										}
+									});
 								}
-							});
-							betbuttons.get(2).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 1, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(3).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 1, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(4).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 2, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(5).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 2, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(6).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 3, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(7).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 3, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(8).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 4, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(9).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 4, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(10).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 5, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(11).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 5, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(12).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 6, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(13).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 6, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(14).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 7, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(15).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 7, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(16).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 8, true);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
-							betbuttons.get(17).setOnAction(new EventHandler<ActionEvent>(){
-								
-								@Override
-								public void handle(ActionEvent arg0){
-									bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, 8, false);
-									betmade = true;
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-									select.fire();
-								}
-							});
+							}
 					}
 				});
 				showteam.setOnAction(new EventHandler<ActionEvent>(){
@@ -1180,7 +998,7 @@ public class javafx extends Application{
 						currentplayround ++;
 						if(betmade == true){
 							if(bets.getMatchid() == ((currentplayround - 1) * 10)){
-								String r[] = (scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getResult()).split("-");
+								String r[] = (scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getResult()).split("-");
 								int home = Integer.parseInt(r[0]);
 								int out = Integer.parseInt(r[1]);
 								if(home < out){
@@ -1195,7 +1013,7 @@ public class javafx extends Application{
 								betmade = false;
 							}
 							if(bets.getMatchid() > ((currentplayround - 1) * 10) && bets.getMatchid() < (5 + (currentplayround - 1) * 10)){
-								String r[] = (scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getResult()).split("-");
+								String r[] = (scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getResult()).split("-");
 								int home = Integer.parseInt(r[0]);
 								int out = Integer.parseInt(r[1]);
 								if(home < out){
@@ -1210,7 +1028,7 @@ public class javafx extends Application{
 								betmade = false;
 							}
 							if(bets.getMatchid() > (4 + (currentplayround - 1) * 10) && bets.getMatchid() < (9 + (currentplayround - 1) * 10)){
-								String r[] = (scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getResult()).split("-");
+								String r[] = (scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getResult()).split("-");
 								int home = Integer.parseInt(r[0]);
 								int out = Integer.parseInt(r[1]);
 								if(home < out){
