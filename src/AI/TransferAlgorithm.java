@@ -14,21 +14,21 @@ import model.Transfer;
  */
 public class TransferAlgorithm {
 
-	private Game game;
-	private ArrayList<Player> player;
-	private double sellChance = 0.05;
-	private double buyChance = 0.04;
+	private static Game game;
+	private static ArrayList<Player> player;
+	private static double sellChance = 0.05;
+	private static double buyChance = 0.04;
 
 	public TransferAlgorithm(Game game){
-		this.game = game;
+		TransferAlgorithm.game = game;
 	}
-	public void DailyRoutine(){
+	public static void DailyRoutine(){
 		Updater();
 		AIsell();
 		AIbuy();
 	}
-	public void Updater(){
-		for(Player p : this.player){
+	public static void Updater(){
+		for(Player p : TransferAlgorithm.player){
 			for(League l : game.getLeagues()){
 				for(Team t : l.getTeams()){
 					for(Player p1 : t.getPlayers()){
@@ -41,11 +41,14 @@ public class TransferAlgorithm {
 			}
 		}
 	}
+	public static ArrayList<Player> getTransferringplayers(){
+		return TransferAlgorithm.player;
+	}
 	/**Calculates the Price of a give Player p
 	 * 
 	 * @param p
 	 */
-	public void CalculateWorth(Player p){
+	public static void CalculateWorth(Player p){
 		int worth = 33333*(p.getDefensiveScore()+p.getOffensiveScore()+p.getStaminaScore());
 		p.setPrice(worth);
 	}
@@ -55,7 +58,7 @@ public class TransferAlgorithm {
 	 * @param tn
 	 * @param p
 	 */
-	public void TransferPlayer(Team tn, Player p){
+	public static void TransferPlayer(Team tn, Player p){
 		for(League l : game.getLeagues()){
 			for(Team t : l.getTeams()){
 				for(Player p1 : t.getPlayers()){
@@ -80,20 +83,20 @@ public class TransferAlgorithm {
 	 * 
 	 * @param p
 	 */
-	public void AddPlayer(Player p){
-		player.add(p);
+	public static void AddPlayer(Player p){
+		TransferAlgorithm.player.add(p);
 	}
 	/**Removes Player from the ArrayList with Players for sale.
 	 * 
 	 * @param p
 	 */
-	public void DelPlayer(Player p){
+	public static void DelPlayer(Player p){
 		player.remove(p);
 	}
 	/**Generates for each team a random chance to put a Player on the for sale list
 	 * 
 	 */
-	public void AIsell(){
+	public static void AIsell(){
 		double d = 0, e = 0;
 		for(League l : game.getLeagues()){
 			for(Team t : l.getTeams()){
@@ -118,7 +121,7 @@ public class TransferAlgorithm {
 	/**Generates for each team a random chance to buy a Player from the for sale list
 	 * 
 	 */
-	public void AIbuy(){
+	public static void AIbuy(){
 		double d = 0, e = 0;
 		for(League l : game.getLeagues()){
 			for(Team t : l.getTeams()){
@@ -127,7 +130,7 @@ public class TransferAlgorithm {
 					if(d < buyChance){
 						int i = 1;
 						while(i == 1){
-							for(Player p : this.player){
+							for(Player p : player){
 								e = Math.random();
 								if(e < 0.1){
 									CalculateWorth(p);

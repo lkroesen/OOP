@@ -11,7 +11,9 @@ import AI.PlayRound;
 import AI.Ranking;
 import AI.Schedule;
 import AI.Scheduler;
+import AI.Team_Training_User;
 import AI.Training;
+import AI.TransferAlgorithm;
 import xml.XML;
 import model.Game;
 import model.League;
@@ -51,7 +53,7 @@ public class javafx extends Application{
     //toptext of every scene and button for starting screen
 	Label lbtext;
 	Button newgame, loadgame, mutesong, mutevideo, backng, backteam, select, nextday, next, teamaction, playeraction, train, lighttrain
-	, heavytrain, rest, position, showteam, market, bet, upcoming, showrank, savegame, save1, save2, save3, save4;
+	, heavytrain, rest, position, showteam, market, sell, buy, bet, upcoming, showrank, savegame, save1, save2, save3, save4;
 	
 	Button Back = new Button ("Back");
 	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0, positionint = 0, swapplayer;
@@ -61,6 +63,7 @@ public class javafx extends Application{
 	boolean showboolean = false;
 	boolean betmaking = false;
 	boolean betmade = false;
+	boolean sellplayer = false;
 	Bet bets;
 	Ranking rank;
 	
@@ -74,7 +77,7 @@ public class javafx extends Application{
 	@Override
 	public void start(final Stage stage) throws Exception {
 		
-		//stage.setResizable(false);
+		stage.setResizable(false);
 		final XML xml = new XML("toms_teams.xml");
 		final Game game = xml.parseGame();
 		ArrayList<League> leagues = game.getLeagues();
@@ -144,6 +147,8 @@ public class javafx extends Application{
 		showteam = new Button ("show team");
 		bet = new Button ("bet");
 		market = new Button ("market");
+		sell = new Button("sell");
+		buy = new Button("buy");
 		upcoming = new Button ("this weeks matches");
 		savegame = new Button("save game");
 		showrank = new Button("show current rank");
@@ -347,8 +352,15 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
-						playerchoiceint = a;
-						playeraction.fire();
+						if(sellplayer == false){
+							playerchoiceint = a;
+							playeraction.fire();
+						}
+						else{
+							AI.TransferAlgorithm.AddPlayer(teams.get(teamchoiceint).getPlayers().get(a));
+							sellplayer = false;
+							select.fire();
+						}
 					}
 				});
 				}
@@ -443,7 +455,7 @@ public class javafx extends Application{
 											swapboxkeep.getChildren().addAll(playerbuttons.get(i));
 										}
 										if(0 < players.get(i).getPosition() && players.get(i).getPosition() < 11){
-											if(players.get(i).getType() == 1){
+											if(players.get(i).getType() == 1 || players.get(i).getType() == 0){
 												swapboxdef.getChildren().addAll(playerbuttons.get(i));
 											}
 											if(players.get(i).getType() == 2){
@@ -490,13 +502,13 @@ public class javafx extends Application{
 							Scene swapscreen = new Scene(totalswap,1000,500);
 							stage.setScene(swapscreen);
 						}
-						if(swapfirst == true && showboolean == false && pastnewgame == true){
+						swapfirst = true;
+						if(swapfirst == true && showboolean == false && pastnewgame == true && swapplayer != playerchoiceint){
 							players.get(swapplayer).setPosition((players.get(playerchoiceint).getPosition()));
 							players.get(playerchoiceint).setPosition(positionint);
 							select.fire();
 						}
 						showboolean = false;
-						swapfirst = true;
 					}
 				});
 				backteam.setOnAction(new EventHandler<ActionEvent>(){
@@ -510,6 +522,7 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
+						Game.setCurrentTeam(teamchoiceint);
 						pastnewgame = true;
 						swapfirst = false;
 						Label currentdaylabel = new Label("monday");
@@ -554,6 +567,7 @@ public class javafx extends Application{
 						stage.setScene(teamchoicescreen);	
 					}
 				});
+				
 				showrank.setOnAction(new EventHandler<ActionEvent>(){
 					
 					@Override
@@ -600,7 +614,66 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
-						//transfers
+						VBox markettotal = new VBox(10);
+						VBox marketbox = new VBox(10);
+						VBox marketback = new VBox();
+						marketback.setAlignment(Pos.BOTTOM_RIGHT);
+						marketbox.getChildren().addAll(lbtext,sell,buy);
+						marketback.getChildren().addAll(next);
+						markettotal.getChildren().addAll(marketbox,marketback);
+						lbtext.setText("market");
+						markettotal.getStylesheets().add("mystyle.css");
+						Scene marketscreen = new Scene(markettotal,1000,500);
+						stage.setScene(marketscreen);
+					}
+				});
+				sell.setOnAction(new EventHandler<ActionEvent>(){
+					
+					@Override
+					public void handle(ActionEvent arg0){
+						if(11 < teams.get(teamchoiceint).getPlayers().size()){
+							sellplayer = true;
+							teamaction.fire();
+						}
+						else{
+							select.fire();
+						}
+					}
+				});
+
+				buy.setOnAction(new EventHandler<ActionEvent>(){
+	
+					@Override
+					public void handle(ActionEvent arg0){
+						lbtext.setText("players for sale");
+						ArrayList<Player> playerstransfer = AI.TransferAlgorithm.getTransferringplayers();
+						VBox transferbox = new VBox();
+						VBox transferback = new VBox();
+						VBox transfertotal = new VBox();
+						transferbox.getChildren().add(lbtext);
+						transferback.getChildren().add(next);
+						transfertotal.getChildren().addAll(transferbox,transferback);
+						transfertotal.getStylesheets().add("mystyle.css");
+						ArrayList<Button> transferbuttons = new ArrayList<Button>();
+						if( playerstransfer != null){
+							for(int i = 0; i < playerstransfer.size(); i++){
+								transferbuttons.add(new Button(playerstransfer.get(i).getFirstname().toString() + " " + playerstransfer.get(i).getSurname().toString()));
+								transferbox.getChildren().add(transferbuttons.get(i));
+							}
+							for(int i = 0; i < transferbuttons.size(); i++){
+								final int a = i;
+								transferbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
+								
+									@Override
+									public void handle(ActionEvent arg0){
+										AI.TransferAlgorithm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
+										select.fire();
+									}
+								});
+							}
+						}
+						Scene transferscreen = new Scene(transfertotal,1000,500);
+						stage.setScene(transferscreen);
 					}
 				});
 				upcoming.setOnAction(new EventHandler<ActionEvent>(){
@@ -761,7 +834,7 @@ public class javafx extends Application{
 								showteambox3.getChildren().addAll(playerbuttons.get(i));
 							}
 						}
-						showteambox2.translateYProperty().set(10);
+						showteambox2.translateYProperty().set(70);
 						showteambox3.translateYProperty().set(70);
 						showplayerdisplay.getChildren().addAll(showteambox1,showteambox2,showteambox3,showback);
 						Scene showteamscreen = new Scene(showplayerdisplay,1000,500);
@@ -790,6 +863,8 @@ public class javafx extends Application{
 						Label bench = new Label("bench");
 						Label res = new Label("reserve");
 						HBox totalteam = new HBox();
+						VBox teamback = new VBox();
+						teamback.setAlignment(Pos.BOTTOM_RIGHT);
 						VBox teamboxkeep = new VBox(10);
 						VBox teamboxdef = new VBox(10);
 						VBox teamboxmid = new VBox(10);
@@ -802,6 +877,7 @@ public class javafx extends Application{
 						VBox teamboxresdef = new VBox(10);
 						VBox teamboxresmid = new VBox(10);
 						VBox teamboxresatk = new VBox(10);
+						teamback.getChildren().add(next);
 						teamboxkeep.getChildren().addAll(lbtext,keep);
 						teamboxdef.getChildren().addAll(def);
 						teamboxmid.getChildren().addAll(mid);
@@ -819,7 +895,7 @@ public class javafx extends Application{
 								teamboxkeep.getChildren().addAll(playerbuttons.get(i));
 							}
 							if(0 < players.get(i).getPosition() && players.get(i).getPosition() < 11){
-								if(players.get(i).getType() == 1){
+								if(players.get(i).getType() == 1 || players.get(i).getType() == 0){
 									teamboxdef.getChildren().addAll(playerbuttons.get(i));
 								}
 								if(players.get(i).getType() == 2){
@@ -860,7 +936,7 @@ public class javafx extends Application{
 						teamboxbenchkeep.setTranslateX(-100);
 						teamboxreskeep.getChildren().addAll(teamboxresdef,teamboxresmid,teamboxresatk);
 						teamboxreskeep.setTranslateX(-100);
-						totalteam.getChildren().addAll(teamboxkeep,teamboxmid,teamboxbenchkeep,teamboxreskeep);
+						totalteam.getChildren().addAll(teamboxkeep,teamboxmid,teamboxbenchkeep,teamboxreskeep,teamback);
 						totalteam.getStylesheets().add("mystyle.css");
 						Scene pos = new Scene(totalteam,1000,500);
 						stage.setScene(pos);
@@ -881,7 +957,6 @@ public class javafx extends Application{
 							
 							@Override
 							public void handle(ActionEvent arg0){
-								Game.setCurrentTeam(teamchoiceint);
 								xml.writeGame(game, "save1");
 							}
 						});
@@ -891,11 +966,16 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
-						VBox trainbox = new VBox();
-						trainbox.getStylesheets().add("mystyle.css");
+						VBox trainbox = new VBox(10);
+						VBox trainback = new VBox();
+						VBox traintotal = new VBox();
+						trainback.setAlignment(Pos.BOTTOM_RIGHT);
+						traintotal.getStylesheets().add("mystyle.css");
 						lbtext.setText("Training");
 						trainbox.getChildren().addAll(lbtext,lighttrain,heavytrain,rest);
-						Scene trainscreen = new Scene(trainbox,1000,500);
+						trainback.getChildren().addAll(next);
+						traintotal.getChildren().addAll(trainbox,trainback);
+						Scene trainscreen = new Scene(traintotal,1000,500);
 						stage.setScene(trainscreen);
 					}
 				});
@@ -936,6 +1016,10 @@ public class javafx extends Application{
 					
 					@Override
 					public void handle(ActionEvent arg0){
+						for(int i = 0; i < teams.size(); i++){
+							AI.Team_Training_User.Core(teams.get(i));
+						}
+						//AI.TransferAlgorithm.DailyRoutine();
 						VBox playmatchbox = new VBox();
 						HBox matchresult = new HBox(20);
 						VBox matchresultfriday = new VBox();
@@ -1002,10 +1086,10 @@ public class javafx extends Application{
 								int home = Integer.parseInt(r[0]);
 								int out = Integer.parseInt(r[1]);
 								if(home < out){
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_home().getId()));
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_home().getId()));
 								}
 								else if(home > out) {
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_away().getId()));
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_away().getId()));
 								}
 								else {
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
@@ -1017,10 +1101,10 @@ public class javafx extends Application{
 								int home = Integer.parseInt(r[0]);
 								int out = Integer.parseInt(r[1]);
 								if(home < out){
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_home().getId()));
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_home().getId()));
 								}
 								else if(home > out) {
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_away().getId()));
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_away().getId()));
 								}
 								else {
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
@@ -1032,10 +1116,10 @@ public class javafx extends Application{
 								int home = Integer.parseInt(r[0]);
 								int out = Integer.parseInt(r[1]);
 								if(home < out){
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_home().getId()));
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_home().getId()));
 								}
 								else if(home > out) {
-									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - 1 - ((currentplayround - 1)*10)).getTeam_away().getId()));
+									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_away().getId()));
 								}
 								else {
 									teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
