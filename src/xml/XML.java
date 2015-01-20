@@ -251,7 +251,7 @@ public class XML {
 	}
 	
 	
-	public String getChildValue(Node p, String name) {
+	public static String getChildValue(Node p, String name) {
 		for (int i = 0; i < p.getChildNodes().getLength(); i++) {
 			if (p.getChildNodes().item(i).getNodeType() != Node.ELEMENT_NODE)
 				continue;
@@ -262,7 +262,7 @@ public class XML {
 		return null;
 	}
 	
-	public String getAttribute(NamedNodeMap attrs, String name) {
+	public static String getAttribute(NamedNodeMap attrs, String name) {
 		return attrs.getNamedItem(name).getNodeValue();
 	}
 

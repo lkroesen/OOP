@@ -248,12 +248,12 @@ public class Betting
 		int matchid = BL.get(choice).getMatchid();
 		long bet_amount = (long) 500000;
 		if(home == false){
-			rate = BL.get(choice - 1).getRate1();
-			win = BL.get(choice - 1).getTeam1();
+			rate = BL.get(choice).getRate1();
+			win = BL.get(choice).getTeam1();
 		}
 		else{
-			rate = BL.get(choice - 1).getRate2();
-			win = BL.get(choice - 1).getTeam2();
+			rate = BL.get(choice).getRate2();
+			win = BL.get(choice).getTeam2();
 		}
 		
 		int a = (int) n.charAt(0) - 48;
