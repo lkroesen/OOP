@@ -94,11 +94,11 @@ public class javafx extends Application{
 		}
 		
 		//song name in file form
-		File file = new File("src/fmsong.mp3");
+		//File file = new File("src/fmsong.mp3");
 
 		
 		//plays the song endless
-		final String mediaLocation = file.toURI().toURL().toExternalForm();
+		final String mediaLocation = javafx.class.getResource("/resources/fmsong.mp3").toExternalForm();
 		Media song = new Media(mediaLocation);
 		final MediaPlayer audio = new MediaPlayer(song);
 		audio.setCycleCount(audio.INDEFINITE);
@@ -115,15 +115,15 @@ public class javafx extends Application{
 		reflection.setFraction(0.8);
 		reflection.setTopOffset(-20);
 		
-		Media media = new Media(new File("src/Footballvideo.mp4").toURI().toString());
+		Media media = new Media(javafx.class.getResource("/resources/Footballvideo.mp4").toExternalForm());
 	    final MediaPlayer mediaPlayer = new MediaPlayer(media);
 	    mediaPlayer.setAutoPlay(true);
 	    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 	    
-	    Media mediawin = new Media(new File("src/win.mp4").toURI().toString());
+	    Media mediawin = new Media(javafx.class.getResource("/resources/win.mp4").toExternalForm());
 	    final MediaPlayer mediaPlayerwin = new MediaPlayer(mediawin);
 	    
-	    Media medialose = new Media(new File("src/lose.mp4").toURI().toString());
+	    Media medialose = new Media(javafx.class.getResource("/resources/lose.mp4").toExternalForm());
 	    final MediaPlayer mediaPlayerlose = new MediaPlayer(medialose);
 		//all video stuff
 
@@ -182,7 +182,7 @@ public class javafx extends Application{
 		final Scene scene = new Scene(test,1500,750);
 		stage.setTitle("Footballmanager");
 		stage.setScene(scene);
-		scene.getStylesheets().add("mystyle.css");
+		scene.getStylesheets().add("resources/mystyle.css");
 
 		//shows current scene
 		stage.show();
@@ -226,7 +226,7 @@ public class javafx extends Application{
 				HBox ngtext = new HBox();
 				ngtext.getChildren().addAll(lbtext,container,backlgs);
 				Scene ng = new Scene(ngtext,1500,750);
-				ng.getStylesheets().add("mystyle.css");
+				ng.getStylesheets().add("resources/mystyle.css");
 				stage.setScene(ng);
 				container.setAlignment(Pos.BOTTOM_CENTER);
 				backlgs.setAlignment(Pos.BOTTOM_RIGHT);
@@ -250,7 +250,7 @@ public class javafx extends Application{
 				lbtext.setAlignment(Pos.TOP_LEFT);
 				backpos.getChildren().addAll(mutesong,backlg);
 				lgtext.getChildren().addAll(lbtext,save1,save2,save3,save4,backpos);
-				lgtext.getStylesheets().add("mystyle.css");
+				lgtext.getStylesheets().add("resources/mystyle.css");
 				Scene lg = new Scene(lgtext,1500,750);
 				stage.setScene(lg);
 				
@@ -389,7 +389,7 @@ public class javafx extends Application{
 				teambox3.translateYProperty().set(70);
 				playerdisplay.getChildren().addAll(teambox1,teambox2,teambox3,vbBack);
 				Scene teamscreen = new Scene(playerdisplay,1500,750);
-				teamscreen.getStylesheets().add("mystyle.css");
+				teamscreen.getStylesheets().add("resources/mystyle.css");
 				stage.setScene(teamscreen);
 				
 				
@@ -434,7 +434,7 @@ public class javafx extends Application{
 				screenbox.getChildren().addAll(playerbox,next);
 			}
 			Scene playerscreen = new Scene(screenbox,1500,750);
-			playerscreen.getStylesheets().add("mystyle.css");
+			playerscreen.getStylesheets().add("resources/mystyle.css");
 			stage.setScene(playerscreen);
 			}
 			if(swapfirst == false && showboolean == false && pastnewgame == true){
@@ -529,9 +529,9 @@ public class javafx extends Application{
 				swapboxreskeep.getChildren().addAll(swapboxresdef,swapboxresmid,swapboxresatk);
 				swapboxreskeep.setTranslateX(-100);
 				totalswap.getChildren().addAll(swapboxkeep,swapboxmid,swapboxbenchkeep,swapboxreskeep);
-				totalswap.getStylesheets().add("mystyle.css");
+				totalswap.getStylesheets().add("resources/mystyle.css");
 				Scene swapscreen = new Scene(totalswap,1500,750);
-				swapscreen.getStylesheets().add("mystyle.css");
+				swapscreen.getStylesheets().add("resources/mystyle.css");
 				stage.setScene(swapscreen);
 			}
 			swapfirst = true;
@@ -577,9 +577,9 @@ public class javafx extends Application{
 			}
 			VBox teamchoicebox = new VBox(10);
 			HBox imageadd = new HBox(10);
-			teamchoicebox.getStylesheets().add("mystyle.css");
+			teamchoicebox.getStylesheets().add("resources/mystyle.css");
 			teamchoicebox.getStyleClass().add("main_menu");
-			imageadd.getStylesheets().add("mystyle.css");
+			imageadd.getStylesheets().add("resources/mystyle.css");
 			Scene teamchoicescreen = new Scene(imageadd,1500,750);
 			lbtext.setText(teams.get(teamchoiceint).getName());
 			if(traintoday == false){
@@ -628,7 +628,7 @@ public class javafx extends Application{
 			rankback.getChildren().add(next);
 			HBox rankboxtotal = new HBox(10);
 			rankboxtotal.getChildren().addAll(rankbox1,rankbox2,rankbox3,rankback);
-			rankboxtotal.getStylesheets().add("mystyle.css");
+			rankboxtotal.getStylesheets().add("resources/mystyle.css");
 			Scene rankscreen = new Scene(rankboxtotal,1500,750);
 			stage.setScene(rankscreen);
 		}
@@ -654,7 +654,7 @@ public class javafx extends Application{
 			marketback.getChildren().addAll(next);
 			markettotal.getChildren().addAll(marketbox,marketback);
 			lbtext.setText("Market");
-			markettotal.getStylesheets().add("mystyle.css");
+			markettotal.getStylesheets().add("resources/mystyle.css");
 			Scene marketscreen = new Scene(markettotal,1500,750);
 			stage.setScene(marketscreen);
 		}
@@ -684,7 +684,7 @@ public class javafx extends Application{
 			transferbox.getChildren().add(lbtext);
 			transferback.getChildren().add(next);
 			transfertotal.getChildren().addAll(transferbox,transferback);
-			transfertotal.getStylesheets().add("mystyle.css");
+			transfertotal.getStylesheets().add("resources/mystyle.css");
 			ArrayList<Button> transferbuttons = new ArrayList<Button>();
 			if( playerstransfer != null){
 				for(int i = 0; i < playerstransfer.size(); i++){
@@ -807,7 +807,7 @@ public class javafx extends Application{
 				upcomingback.getChildren().add(next);
 				upcomingback.setAlignment(Pos.BOTTOM_RIGHT);
 				totalupcoming.getChildren().addAll(matchfridayupcoming,matchsaturdayupcoming,matchsundayupcoming,upcomingback);
-				totalupcoming.getStylesheets().add("mystyle.css");
+				totalupcoming.getStylesheets().add("resources/mystyle.css");
 				Scene upcomingscreen = new Scene(totalupcoming,1500,750);
 				stage.setScene(upcomingscreen);
 				betmaking = false;
@@ -885,7 +885,7 @@ public class javafx extends Application{
 			showteambox3.translateYProperty().set(70);
 			showplayerdisplay.getChildren().addAll(showteambox1,showteambox2,showteambox3,showback);
 			Scene showteamscreen = new Scene(showplayerdisplay,1500,750);
-			showteamscreen.getStylesheets().add("mystyle.css");
+			showteamscreen.getStylesheets().add("resources/mystyle.css");
 			stage.setScene(showteamscreen);
 			showboolean = true;
 		}
@@ -985,7 +985,7 @@ public class javafx extends Application{
 			teamboxreskeep.getChildren().addAll(teamboxresdef,teamboxresmid,teamboxresatk);
 			teamboxreskeep.setTranslateX(-100);
 			totalteam.getChildren().addAll(teamboxkeep,teamboxmid,teamboxbenchkeep,teamboxreskeep,teamback);
-			totalteam.getStylesheets().add("mystyle.css");
+			totalteam.getStylesheets().add("resources/mystyle.css");
 			Scene pos = new Scene(totalteam,1500,750);
 			stage.setScene(pos);
 		}
@@ -997,7 +997,7 @@ public class javafx extends Application{
 			lbtext.setText("Save game");
 			VBox saves = new VBox();
 			saves.getChildren().addAll(lbtext,save1,save2,save3,save4,next);
-			saves.getStylesheets().add("mystyle.css");
+			saves.getStylesheets().add("resources/mystyle.css");
 			Scene savegamescreen = new Scene(saves,1500,750);
 			stage.setScene(savegamescreen);
 			
@@ -1041,7 +1041,7 @@ public class javafx extends Application{
 			VBox trainback = new VBox();
 			VBox traintotal = new VBox();
 			trainback.setAlignment(Pos.BOTTOM_RIGHT);
-			traintotal.getStylesheets().add("mystyle.css");
+			traintotal.getStylesheets().add("resources/mystyle.css");
 			lbtext.setText("Training for whole team");
 			trainbox.getChildren().addAll(lbtext,lighttrain,heavytrain,rest);
 			trainback.getChildren().addAll(next);
@@ -1104,7 +1104,7 @@ public class javafx extends Application{
 			matchresultfriday.getChildren().addAll(friday,standard0);
 			matchresultsaturday.getChildren().addAll(saturday,standard1);
 			matchresultsunday.getChildren().addAll(sunday, standard2);
-			playmatchbox.getStylesheets().add("mystyle.css");
+			playmatchbox.getStylesheets().add("resources/mystyle.css");
 			Scene playmatchscreen = new Scene(playmatchbox,1500,750);
 		if(currentday<5){
 			select.fire();
@@ -1428,7 +1428,7 @@ public class javafx extends Application{
 				HBox ngtext = new HBox();
 				ngtext.getChildren().addAll(lbtext,container,vbBack);
 				Scene ng = new Scene(ngtext,1500,750);
-				ng.getStylesheets().add("mystyle.css");
+				ng.getStylesheets().add("resources/mystyle.css");
 				stage.setScene(ng);
 				container.setAlignment(Pos.BOTTOM_CENTER);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
