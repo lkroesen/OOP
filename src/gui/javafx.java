@@ -133,8 +133,8 @@ public class javafx extends Application{
 		teamaction = new Button();
 		playeraction = new Button();
 		loadgame = new Button("Load game");
-		mutesong = new Button("Mute/resume");
-		mutevideo = new Button("Mute/resume");
+		mutesong = new Button("Mute/unmute");
+		mutevideo = new Button("Mute/unmute");
 		backng = new Button("Back");
 		backlg = new Button("Back");
 		backteam = new Button("Back");
