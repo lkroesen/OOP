@@ -167,8 +167,9 @@ public class javafx extends Application{
 		save2 = new Button("Save 2");
 		save3 = new Button("Save 3");
 		save4 = new Button("Save 4");
-		
-		lbtext.setEffect(reflection);
+
+		//Ugly as fuck
+		//lbtext.setEffect(reflection);
 		
 		lbtext.getStyleClass().add("Headline");
 		
@@ -523,6 +524,7 @@ public class javafx extends Application{
 				totalswap.getChildren().addAll(swapboxkeep,swapboxmid,swapboxbenchkeep,swapboxreskeep);
 				totalswap.getStylesheets().add("mystyle.css");
 				Scene swapscreen = new Scene(totalswap,1500,750);
+				swapscreen.getStylesheets().add("mystyle.css");
 				stage.setScene(swapscreen);
 			}
 			swapfirst = true;
