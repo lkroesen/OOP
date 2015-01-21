@@ -163,5 +163,22 @@ public class Player {
 		
 	}
 	
-
+	/**
+	 * Returns the changed values on a player's stats
+	 * @param old_player
+	 * Input the Old_Player
+	 * @param new_player
+	 * Input the new Player
+	 * @return
+	 * returns an array with at 0 the change to offensive, at 1 the change to defensive and at 2 the stamina
+	 */
+	public static int[] ChangedStats(Player old_player, Player new_player)
+	{
+		int[] delta = new int[2];
+		delta[0] = (int) ( new_player.getOffensiveScore() - old_player.getOffensiveScore() );
+		delta[1] = (int) ( new_player.getDefensiveScore() - old_player.getDefensiveScore() );
+		delta[2] = (int) ( new_player.getStaminaScore() - old_player.getStaminaScore() );
+		
+		return delta;
+	}
 }
