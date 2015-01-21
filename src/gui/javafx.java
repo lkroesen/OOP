@@ -262,10 +262,12 @@ public class javafx extends Application{
 			@Override
 			public void handle(ActionEvent arg0){
 				try {
-					final XML xml1 = new XML("toms_more_teams.xml");
+					final XML xml1 = new XML("save1");
 					final Game game1 = xml1.parseGame();
 					leaguechoice = (game1.getCurrentLeague());
+					System.out.print(leaguechoice);
 					teams = leagues.get(leaguechoice).getTeams();
+					System.out.print(teams.toString());
 					teamchoiceint = (game1.getCurrentTeam());
 					currentday = (game1.getCurrentDay());
 					currentplayround = (game1.getCurrentPlayRound());
@@ -609,7 +611,7 @@ public class javafx extends Application{
 			ArrayList<Label> ranks = new ArrayList<Label>();
 			rankbox1.getChildren().addAll(lbtext);
 			for(int i = 0; i <teams.size(); i++){
-				ranks.add(new Label(rank.getRanking()[i].getName().toString() + " " + rank.getScoreOfTeam()[i]));
+				ranks.add(new Label(i + 1 + " " + rank.getRanking()[i].getName().toString() + " " + rank.getScoreOfTeam()[i]));
 				if(i < 10){
 					rankbox1.getChildren().addAll(ranks.get(i));
 				}
