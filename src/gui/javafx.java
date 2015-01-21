@@ -133,8 +133,8 @@ public class javafx extends Application{
 		teamaction = new Button();
 		playeraction = new Button();
 		loadgame = new Button("Load game");
-		mutesong = new Button("Mute/resume");
-		mutevideo = new Button("Mute/resume");
+		mutesong = new Button("Mute/unmute");
+		mutevideo = new Button("Mute/unmute");
 		backng = new Button("Back");
 		backlg = new Button("Back");
 		backteam = new Button("Back");
@@ -236,6 +236,7 @@ public class javafx extends Application{
 						lbtext.setText("Selection team");
 						final ArrayList<Team> teams = leagues.get(leaguechoice).getTeams();
 						final Schedule scheme = Scheduler.scheduler(game.getLeagues().get(leaguechoice));
+						game.setSchedule(scheme);
 						rank = Ranking.generate(scheme);
 						   final ArrayList<Button> teambuttons = new ArrayList<Button>();
 							for(int i = 0;i < teams.size();i++){
@@ -297,7 +298,67 @@ public class javafx extends Application{
 									
 									@Override
 									public void handle(ActionEvent arg0){
-										//take scheduler
+										try {
+											final XML xml1 = new XML("toms_more_teams.xml");
+											final Game game1 = xml1.parseGame();
+											leaguechoice = (game1.getCurrentLeague());
+											teamchoiceint = (game1.getCurrentTeam());
+											currentday = (game1.getCurrentDay());
+											currentplayround = (game1.getCurrentPlayround());
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
+										select.fire();
+									}
+								});
+								save2.setOnAction(new EventHandler<ActionEvent>(){
+									
+									@Override
+									public void handle(ActionEvent arg0){
+										try {
+											final XML xml2 = new XML("toms_more_teams.xml");
+											final Game game2 = xml2.parseGame();
+											leaguechoice = (game2.getCurrentLeague());
+											teamchoiceint = (game2.getCurrentTeam());
+											currentday = (game2.getCurrentDay());
+											currentplayround = (game2.getCurrentPlayround());
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
+										select.fire();
+									}
+								});
+								save3.setOnAction(new EventHandler<ActionEvent>(){
+									
+									@Override
+									public void handle(ActionEvent arg0){
+										try {
+											final XML xml3 = new XML("toms_more_teams.xml");
+											final Game game3 = xml3.parseGame();
+											leaguechoice = (game3.getCurrentLeague());
+											teamchoiceint = (game3.getCurrentTeam());
+											currentday = (game3.getCurrentDay());
+											currentplayround = (game3.getCurrentPlayround());
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
+										select.fire();
+									}
+								});
+								save4.setOnAction(new EventHandler<ActionEvent>(){
+									
+									@Override
+									public void handle(ActionEvent arg0){
+										try {
+											final XML xml4 = new XML("toms_more_teams.xml");
+											final Game game4 = xml4.parseGame();
+											leaguechoice = (game4.getCurrentLeague());
+											teamchoiceint = (game4.getCurrentTeam());
+											currentday = (game4.getCurrentDay());
+											currentplayround = (game4.getCurrentPlayround());
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
 										select.fire();
 									}
 								});
@@ -979,6 +1040,27 @@ public class javafx extends Application{
 												xml.writeGame(game, "save1");
 											}
 										});
+										save2.setOnAction(new EventHandler<ActionEvent>(){
+											
+											@Override
+											public void handle(ActionEvent arg0){
+												xml.writeGame(game, "save2");
+											}
+										});
+										save3.setOnAction(new EventHandler<ActionEvent>(){
+											
+											@Override
+											public void handle(ActionEvent arg0){
+												xml.writeGame(game, "save3");
+											}
+										});
+										save4.setOnAction(new EventHandler<ActionEvent>(){
+											
+											@Override
+											public void handle(ActionEvent arg0){
+												xml.writeGame(game, "save4");
+											}
+										});
 									}
 								});
 								train.setOnAction(new EventHandler<ActionEvent>(){
@@ -990,7 +1072,7 @@ public class javafx extends Application{
 										VBox traintotal = new VBox();
 										trainback.setAlignment(Pos.BOTTOM_RIGHT);
 										traintotal.getStylesheets().add("mystyle.css");
-										lbtext.setText("Training");
+										lbtext.setText("Training for whole team");
 										trainbox.getChildren().addAll(lbtext,lighttrain,heavytrain,rest);
 										trainback.getChildren().addAll(next);
 										traintotal.getChildren().addAll(trainbox,trainback);
