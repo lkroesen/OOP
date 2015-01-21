@@ -52,7 +52,7 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mutesong, mutevideo, backng, backlg, backteam, select, nextday, next, leagueaction, teamaction, playeraction, train, lighttrain
+	Button newgame, loadgame, mutesong, mutevideo, backng, backlg, backteam, select, central, nextday, next, leagueaction, teamaction, playeraction, train, lighttrain
 	, heavytrain, rest, position, showteam, market, sell, buy, bet, upcoming, showrank, savegame, save1, save2, save3, save4;
 	
 	Button Back = new Button ("Back");
@@ -106,6 +106,7 @@ public class javafx extends Application{
 		//first boxes for scene layout
 		StackPane test = new StackPane();
 		final VBox root = new VBox(10);
+		root.setAlignment(Pos.CENTER);
 		HBox start = new HBox(10);
 		start.setAlignment(Pos.CENTER);
 		
@@ -148,7 +149,11 @@ public class javafx extends Application{
 		backlg = new Button("Back");
 		backteam = new Button("Back");
 		select = new Button("Choose this team");
+
+		central = new Button("Central");
+		central.getStyleClass().add("tab");
 		nextday = new Button("Next day");
+
 		next = new Button("Continue");
 		train = new Button("Train");
 		lighttrain = new Button ("Light training");
@@ -571,21 +576,22 @@ public class javafx extends Application{
 			VBox teamchoicebox = new VBox(10);
 			HBox imageadd = new HBox(10);
 			teamchoicebox.getStylesheets().add("mystyle.css");
+			teamchoicebox.getStyleClass().add("main_menu");
 			imageadd.getStylesheets().add("mystyle.css");
 			Scene teamchoicescreen = new Scene(imageadd,1500,750);
 			lbtext.setText(teams.get(teamchoiceint).getName());
 			if(traintoday == false){
 				if(betmade == false && currentday < 5){
-					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,bet,market,upcoming, showrank,savegame, mutesong);
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,central,nextday,train,position,showteam,bet,market,upcoming, showrank,savegame, mutesong);
 				}
 				else{
-					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,market,upcoming, showrank,savegame, mutesong);							}
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,central,nextday,train,position,showteam,market,upcoming, showrank,savegame, mutesong);							}
 			}
 			else if(betmade == false && currentday < 5){
-				teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,bet,market,upcoming, showrank,savegame, mutesong);
+				teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,central,nextday,position,showteam,bet,market,upcoming, showrank,savegame, mutesong);
 			}
 			else{
-				teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,market,upcoming, showrank,savegame, mutesong);
+				teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,central,nextday,position,showteam,market,upcoming, showrank,savegame, mutesong);
 			}
 			imageadd.getChildren().addAll(teamchoicebox);
 			stage.setScene(teamchoicescreen);	
