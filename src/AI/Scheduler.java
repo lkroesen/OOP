@@ -58,8 +58,8 @@ public class Scheduler
 				s.add(Gen(TeamSize, league, Order, week));
 			}
 			
-			System.out.println("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
-			print(TeamSize, league, Order);
+			//System.out.println("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
+			//print(TeamSize, league, Order);
 			
 			week++;
 			
@@ -88,8 +88,8 @@ public class Scheduler
 				s.add(Gen(TeamSize, league, Order, week));
 			}
 			
-			System.out.println("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
-			print(TeamSize, league, Order);
+			//System.out.println("*/*/*/ WEEK: " + week + " \\*\\*\\*" );
+			//print(TeamSize, league, Order);
 			
 			week++;
 			
@@ -271,7 +271,7 @@ public class Scheduler
 			c++;
 			d++;
 		}
-		
+		/*
 		for (int b = 0; b < ((TeamSize)/2); b++)
 		{
 			if (b == 0)
@@ -282,7 +282,7 @@ public class Scheduler
 				System.out.println("Sunday: " + HomeTeam[b] + " vs " + OutTeam[b]);
 			
 		}
-		
+		*/
 		
 	}
 	
@@ -338,19 +338,19 @@ public class Scheduler
 				{
 					Match match = new Match(id, 4, HomeTeam[b], OutTeam[b]);
 					friday.add(match);
-					System.out.println("Friday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+					//System.out.println("Friday: " + HomeTeam[b] + " vs " + OutTeam[b]);
 				}
 				if (b > 0 && b < 5)
 				{
 					Match match = new Match(id, 5, HomeTeam[b], OutTeam[b]);
 					saturday.add(match);
-					System.out.println("Saturday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+					//System.out.println("Saturday: " + HomeTeam[b] + " vs " + OutTeam[b]);
 				}
 				if (b > 4)
 				{
 					Match match = new Match(id, 6, HomeTeam[b], OutTeam[b]);
 					sunday.add(match);
-					System.out.println("Sunday: " + HomeTeam[b] + " vs " + OutTeam[b]);
+					//System.out.println("Sunday: " + HomeTeam[b] + " vs " + OutTeam[b]);
 				}
 			}
 		break;

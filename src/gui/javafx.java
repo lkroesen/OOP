@@ -128,36 +128,36 @@ public class javafx extends Application{
 		
 		//set the text for first buttons and label and giving effects
 		lbtext = new Label("Footballmanager");
-		newgame = new Button("new game");
+		newgame = new Button("New game");
 		leagueaction = new Button();
 		teamaction = new Button();
 		playeraction = new Button();
-		loadgame = new Button("load game");
+		loadgame = new Button("Load game");
 		mutesong = new Button("Mute/resume");
 		mutevideo = new Button("Mute/resume");
-		backng = new Button("back");
-		backlg = new Button("back");
-		backteam = new Button("back");
-		select = new Button("choose this team");
+		backng = new Button("Back");
+		backlg = new Button("Back");
+		backteam = new Button("Back");
+		select = new Button("Choose this team");
 		nextday = new Button("Next day");
-		next = new Button("continue");
-		train = new Button("train");
-		lighttrain = new Button ("light training");
-		heavytrain = new Button ("heavy training");
-		rest = new Button ("rest");
-		position = new Button ("change positions");
-		showteam = new Button ("show team");
-		bet = new Button ("bet");
-		market = new Button ("market");
-		sell = new Button("sell");
-		buy = new Button("buy");
-		upcoming = new Button ("this weeks matches");
-		savegame = new Button("save game");
-		showrank = new Button("show current rank");
-		save1 = new Button("save 1");
-		save2 = new Button("save 2");
-		save3 = new Button("save 3");
-		save4 = new Button("save 4");
+		next = new Button("Continue");
+		train = new Button("Train");
+		lighttrain = new Button ("Light training");
+		heavytrain = new Button ("Heavy training");
+		rest = new Button ("Rest");
+		position = new Button ("Change positions");
+		showteam = new Button ("Show team");
+		bet = new Button ("Bet");
+		market = new Button ("Market");
+		sell = new Button("Sell");
+		buy = new Button("Buy");
+		upcoming = new Button ("This weeks matches");
+		savegame = new Button("Save game");
+		showrank = new Button("Show current rank");
+		save1 = new Button("Save 1");
+		save2 = new Button("Save 2");
+		save3 = new Button("Save 3");
+		save4 = new Button("Save 4");
 		
 		lbtext.setEffect(reflection);
 		
@@ -180,7 +180,7 @@ public class javafx extends Application{
 				audio.play();
 				mediaPlayer.setVolume(0);
 				//changes the text
-				lbtext.setText("leagues");
+				lbtext.setText("Leagues");
 				
 				//makes new boxes for layout new game screen
 				HBox container = new HBox(10);
@@ -430,20 +430,20 @@ public class javafx extends Application{
 											lbtext.setText("swap out for");
 											positionint = players.get(playerchoiceint).getPosition();
 											swapplayer = playerchoiceint;
-											Label def = new Label("defense");
-											Label def1 = new Label("defense");
-											Label def2 = new Label("defense");
-											Label atk = new Label("attack");
-											Label atk1 = new Label("attack");
-											Label atk2 = new Label("attack");
-											Label mid = new Label("midfield");
-											Label mid1 = new Label("midfield");
-											Label mid2 = new Label("midfield");
-											Label keep = new Label("goalkeeper");
-											Label keep1 = new Label("goalkeeper");
-											Label keep2 = new Label("goalkeeper");
-											Label bench = new Label("bench");
-											Label res = new Label("reserve");
+											Label def = new Label("Defense");
+											Label def1 = new Label("Defense");
+											Label def2 = new Label("Defense");
+											Label atk = new Label("Attack");
+											Label atk1 = new Label("Attack");
+											Label atk2 = new Label("Attack");
+											Label mid = new Label("Midfield");
+											Label mid1 = new Label("Midfield");
+											Label mid2 = new Label("Midfield");
+											Label keep = new Label("Goalkeeper");
+											Label keep1 = new Label("Goalkeeper");
+											Label keep2 = new Label("Goalkeeper");
+											Label bench = new Label("Bench");
+											Label res = new Label("Reserve");
 											HBox totalswap = new HBox();
 											VBox swapboxkeep = new VBox(10);
 											VBox swapboxdef = new VBox(10);
@@ -526,7 +526,7 @@ public class javafx extends Application{
 										if(swapfirst == true && showboolean == false && pastnewgame == true && swapplayer != playerchoiceint){
 											players.get(swapplayer).setPosition((players.get(playerchoiceint).getPosition()));
 											players.get(playerchoiceint).setPosition(positionint);
-											select.fire();
+											position.fire();
 										}
 										showboolean = false;
 									}
@@ -544,25 +544,24 @@ public class javafx extends Application{
 									public void handle(ActionEvent arg0){
 										Game.setCurrentTeam(teamchoiceint);
 										pastnewgame = true;
-										swapfirst = false;
-										Label currentdaylabel = new Label("monday");
+										Label currentdaylabel = new Label("Monday");
 										if(currentday == 1){
-											currentdaylabel.setText("tuesday");
+											currentdaylabel.setText("Tuesday");
 										}
 										if(currentday == 2){
-											currentdaylabel.setText("wednesday");
+											currentdaylabel.setText("Wednesday");
 										}
 										if(currentday == 3){
-											currentdaylabel.setText("thursday");
+											currentdaylabel.setText("Thursday");
 										}
 										if(currentday == 4){
-											currentdaylabel.setText("friday");
+											currentdaylabel.setText("Friday");
 										}
 										if(currentday == 5){
-											currentdaylabel.setText("saturday");
+											currentdaylabel.setText("Saturday");
 										}
 										if(currentday == 6){
-											currentdaylabel.setText("sunday");
+											currentdaylabel.setText("Sunday");
 										}
 										VBox teamchoicebox = new VBox(10);
 										HBox imageadd = new HBox(10);
@@ -586,13 +585,12 @@ public class javafx extends Application{
 										imageadd.getChildren().addAll(teamchoicebox);
 										stage.setScene(teamchoicescreen);	
 									}
-								});
-								
+								});								
 								showrank.setOnAction(new EventHandler<ActionEvent>(){
 									
 									@Override
 									public void handle(ActionEvent arg0){
-										lbtext.setText("ranking");
+										lbtext.setText("Ranking");
 										VBox rankbox1 = new VBox(10);
 										VBox rankbox2 = new VBox(10);
 										VBox rankbox3 = new VBox(10);
@@ -642,7 +640,7 @@ public class javafx extends Application{
 										marketbox.getChildren().addAll(lbtext,budget,sell,buy);
 										marketback.getChildren().addAll(next);
 										markettotal.getChildren().addAll(marketbox,marketback);
-										lbtext.setText("market");
+										lbtext.setText("Market");
 										markettotal.getStylesheets().add("mystyle.css");
 										Scene marketscreen = new Scene(markettotal,1500,750);
 										stage.setScene(marketscreen);
@@ -661,7 +659,6 @@ public class javafx extends Application{
 										}
 									}
 								});
-
 								buy.setOnAction(new EventHandler<ActionEvent>(){
 					
 									@Override
@@ -703,10 +700,10 @@ public class javafx extends Application{
 									@Override
 									public void handle(ActionEvent arg0){
 										if(betmaking == false){
-											lbtext.setText("this weeks matches");
+											lbtext.setText("This weeks matches");
 										}
 										else{
-											lbtext.setText("betting on teams");
+											lbtext.setText("Betting on teams");
 										}
 										ArrayList<Button> betbuttons = new ArrayList<Button>();
 										ArrayList<HBox> betboxesfri = new ArrayList<HBox>();
@@ -742,12 +739,12 @@ public class javafx extends Application{
 												betboxessun.get((int) (i/2)).getChildren().addAll(betbuttons.get(i-1 + betboxesfri.size()*2 + betboxessat.size()*2),betbuttons.get(i + betboxesfri.size()*2 + betboxessat.size()*2));
 											}
 										}
-										Label standard0 = new Label("home - away");
-										Label standard1 = new Label("home - away");
-										Label standard2 = new Label("home - away");
+										Label standard0 = new Label("Home - Away");
+										Label standard1 = new Label("Home - Away");
+										Label standard2 = new Label("Home - Away");
 										Label friday = new Label("Friday");
-										Label saturday = new Label("saturday");
-										Label sunday = new Label("sunday");
+										Label saturday = new Label("Saturday");
+										Label sunday = new Label("Sunday");
 										HBox totalupcoming = new HBox();
 										VBox matchfridayupcoming = new VBox (10);
 										VBox matchsaturdayupcoming = new VBox (10);
@@ -868,21 +865,22 @@ public class javafx extends Application{
 									
 									@Override
 									public void handle(ActionEvent arg0){
-										lbtext.setText("change positions");
-										Label def = new Label("defense");
-										Label def1 = new Label("defense");
-										Label def2 = new Label("defense");
-										Label atk = new Label("attack");
-										Label atk1 = new Label("attack");
-										Label atk2 = new Label("attack");
-										Label mid = new Label("midfield");
-										Label mid1 = new Label("midfield");
-										Label mid2 = new Label("midfield");
-										Label keep = new Label("goalkeeper");
-										Label keep1 = new Label("goalkeeper");
-										Label keep2 = new Label("goalkeeper");
-										Label bench = new Label("bench");
-										Label res = new Label("reserve");
+										lbtext.setText("Change positions");
+										swapfirst = false;
+										Label def = new Label("Defense");
+										Label def1 = new Label("Defense");
+										Label def2 = new Label("Defense");
+										Label atk = new Label("Attack");
+										Label atk1 = new Label("Attack");
+										Label atk2 = new Label("Attack");
+										Label mid = new Label("Midfield");
+										Label mid1 = new Label("Midfield");
+										Label mid2 = new Label("Midfield");
+										Label keep = new Label("Goalkeeper");
+										Label keep1 = new Label("Goalkeeper");
+										Label keep2 = new Label("Goalkeeper");
+										Label bench = new Label("Bench");
+										Label res = new Label("Reserve");
 										HBox totalteam = new HBox();
 										VBox teamback = new VBox();
 										teamback.setAlignment(Pos.BOTTOM_RIGHT);
@@ -967,7 +965,7 @@ public class javafx extends Application{
 									
 									@Override
 									public void handle(ActionEvent arg0){
-										lbtext.setText("save game");
+										lbtext.setText("Save game");
 										VBox saves = new VBox();
 										saves.getChildren().addAll(lbtext,save1,save2,save3,save4,next);
 										saves.getStylesheets().add("mystyle.css");
@@ -1038,18 +1036,19 @@ public class javafx extends Application{
 									@Override
 									public void handle(ActionEvent arg0){
 										currentday++;
+										traintoday = false;
 										//AI.TransferAlgorithm.DailyRoutine();
 										VBox playmatchbox = new VBox();
 										HBox matchresult = new HBox(20);
 										VBox matchresultfriday = new VBox();
 										VBox matchresultsaturday = new VBox();
 										VBox matchresultsunday = new VBox();
-										Label standard0 = new Label("home - away");
-										Label standard1 = new Label("home - away");
-										Label standard2 = new Label("home - away");
+										Label standard0 = new Label("Home - Away");
+										Label standard1 = new Label("Home - Away");
+										Label standard2 = new Label("Home - Away");
 										Label friday = new Label("Friday");
-										Label saturday = new Label("saturday");
-										Label sunday = new Label("sunday");
+										Label saturday = new Label("Saturday");
+										Label sunday = new Label("Sunday");
 										matchresultfriday.getChildren().addAll(friday,standard0);
 										matchresultsaturday.getChildren().addAll(saturday,standard1);
 										matchresultsunday.getChildren().addAll(sunday,standard2);
@@ -1307,7 +1306,6 @@ public class javafx extends Application{
 										}
 										rank = Ranking.generate(scheme);
 									}
-									traintoday = false;
 									Game.setCurrentDay(currentday);
 									}
 								});

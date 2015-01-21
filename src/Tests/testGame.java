@@ -28,7 +28,7 @@ public class testGame {
 	
 	
 	@Test
-	public void TestSetters(){
+	public void TestSetters1(){
 		Game g = new Game(1,"1",1,1);
 		League l = new League(0, null, null);
 		ArrayList<League> ll = new ArrayList<League>();
@@ -48,7 +48,51 @@ public class testGame {
 		g.setTransfers(tl);
 		
 		assertEquals(g.getTransfers(),tl);
+	}
+	
+	@Test
+	public void TestSetters2(){
+		Game g = new Game(1,"1",1,1);
+		League l = new League(0, null, null);
+		ArrayList<League> ll = new ArrayList<League>();
+		ll.add(l);
+		g.setLeagues(ll);
+		Transfer t = new Transfer(0,1,1,1,1,1);
+		g.addTransfer(t);
+		Match m = new Match(1,1);
+		g.addMatch(m);
+		g.setId(0);
+		Game.setCurrentTeam(1);
+		ArrayList<Match> ml = new ArrayList<Match>();
+		ml.add(m);
+		g.setMatches(ml);
+		ArrayList<Transfer> tl = new ArrayList<Transfer>();
+		tl.add(t);
+		g.setTransfers(tl);
+		
 		assertEquals(g.getMatches(),ml);
+	}
+	
+	@Test
+	public void TestSetters3(){
+		Game g = new Game(1,"1",1,1);
+		League l = new League(0, null, null);
+		ArrayList<League> ll = new ArrayList<League>();
+		ll.add(l);
+		g.setLeagues(ll);
+		Transfer t = new Transfer(0,1,1,1,1,1);
+		g.addTransfer(t);
+		Match m = new Match(1,1);
+		g.addMatch(m);
+		g.setId(0);
+		Game.setCurrentTeam(1);
+		ArrayList<Match> ml = new ArrayList<Match>();
+		ml.add(m);
+		g.setMatches(ml);
+		ArrayList<Transfer> tl = new ArrayList<Transfer>();
+		tl.add(t);
+		g.setTransfers(tl);
+		
 		assertEquals(g.getLeagues(),ll);
 	}
 

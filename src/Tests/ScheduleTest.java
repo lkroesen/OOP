@@ -133,4 +133,54 @@ public class ScheduleTest {
 		boolean[] a = s.WeeksPlayed();
 		assertFalse(a[0]);
 	}
+	
+	@Test
+	public void testEquals(){
+		ArrayList<Team> teams = new ArrayList<Team>();
+		for (int c = 0; c < 18; c++){String a = "team " + c;Team team = new Team(c, a);teams.add(c, team);}
+		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
+		Schedule s = Scheduler.scheduler(leaguee);
+		
+		assertTrue(s.equals(s));
+	}
+	
+	@Test
+	public void testSetS() 
+	{
+		// Do not touch this please <START>
+		ArrayList<Team> teams = new ArrayList<Team>();
+		for (int c = 0; c < 18; c++){String a = "team " + c;Team team = new Team(c, a);teams.add(c, team);}
+		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
+		Schedule s = Scheduler.scheduler(leaguee);
+		
+		s.setS(null);
+		assertNotNull(s);
+	}
+	
+	@Test
+	public void testEquals1() 
+	{
+		ArrayList<Team> teams = new ArrayList<Team>();
+		for (int c = 0; c < 18; c++){String a = "team " + c;Team team = new Team(c, a);teams.add(c, team);}
+		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
+		Schedule s = Scheduler.scheduler(leaguee);
+	
+		ArrayList<Team> teams1 = new ArrayList<Team>();
+		for (int c = 0; c < 18; c++){String a = "team " + c;Team team = new Team(c, a);teams.add(c, team);}
+		League leagueee = new League(0, "Eredivisie", "Nederland", teams1);
+		Schedule d = Scheduler.scheduler(leagueee);
+
+		assertFalse(s.equals(d));
+	}
+	
+	@Test
+	public void testtoString() 
+	{
+		ArrayList<Team> teams = new ArrayList<Team>();
+		for (int c = 0; c < 18; c++){String a = "team " + c;Team team = new Team(c, a);teams.add(c, team);}
+		League leaguee = new League(0, "Eredivisie", "Nederland", teams);
+		Schedule s = Scheduler.scheduler(leaguee);
+
+		assertNotNull(s.toString());
+	}
 }
