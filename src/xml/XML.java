@@ -71,13 +71,26 @@ public class XML {
 			String name = getAttribute(gameNode.getAttributes(), "name");
 			int currentDay = Integer.parseInt(getAttribute(gameNode.getAttributes(), "currentday"));
 			int currentTeam = Integer.parseInt(getAttribute(gameNode.getAttributes(), "currentteam"));
+			int currentLeague = Integer.parseInt(getAttribute(gameNode.getAttributes(), "currentleague"));
+			int currentPlayRound = Integer.parseInt(getAttribute(gameNode.getAttributes(), "currentplayround"));
 
 			// Create instance of Game with appropriate settings
-			game = new Game(id, name, currentDay, currentTeam, null);
+			game = new Game(id, name, currentDay, currentTeam, currentLeague, currentPlayRound, null);
 
+			// Get PlayRound data
 			NodeList playRoundData = gameNode.getElementsByTagName("playround");
-			for (int i = 0; i < playRoundData.getLength(); i++){
 
+			//Loop trough PlayRounds
+			for (int i = 0; i < playRoundData.getLength(); i++){
+				Node playRoundNode = playRoundData.item(i);
+				if (playRoundNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element playRound = (Element) playRoundNode;
+
+					//Get PlayRound attribute
+					int roundnumber = Integer.parseInt(getAttribute(playRound.getAttributes(), "roundnumber"));
+
+					
+				}
 			}
 
 			// Get match data
@@ -296,6 +309,8 @@ public class XML {
 			rootElement.setAttribute("name", g.getName()+"");
 			rootElement.setAttribute("currentday", g.getCurrentDay()+"");
 			rootElement.setAttribute("currentteam", g.getCurrentTeam()+"");
+			rootElement.setAttribute("currentleague", g.getCurrentLeague()+"");
+			rootElement.setAttribute("currentplayround", g.getCurrentLeague()+"");
 
 			// Loop through leagues
 			for (League l : g.getLeagues()) {
