@@ -87,7 +87,7 @@ public class javafx extends Application{
 		final Game game = xml.parseGame();
 		final TransferAlgorithm algoritm = new TransferAlgorithm(game);
 		final ArrayList<League> leagues = game.getLeagues();
-		ArrayList<Button> leaguebuttons = new ArrayList<Button>();
+		final ArrayList<Button> leaguebuttons = new ArrayList<Button>();
 		final ArrayList<Button> playerbuttons = new ArrayList<Button>();
 		for(int i = 0; i < game.getLeagues().size(); i++){
 			leaguebuttons.add(new Button(game.getLeagues().get(i).getName()));

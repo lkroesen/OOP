@@ -1,9 +1,16 @@
 @CHARSET "ISO-8859-1";
 
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: normal;
+	src: url("http") format('opentype');
+}
+
 .root {
 	-fx-spacing: 30;
 	-fx-background-color:#BDBDBD;
-	-fx-background-image: url(image.jpg);
+	-fx-background-image: url(arena.png);
 	-fx-background-size: cover;
 	-fx-background-repeat: no-repeat;
 	-fx-padding: 10;
@@ -20,20 +27,23 @@
 }
 
 .button {
-	-fx-font-family: "Arial";
+	-fx-font-family: "Avenir";
 	-fx-padding: 15 30 15 30;
 	-fx-font-size: 17px;
 	-fx-font-weight: bold;
-	-fx-background-color: dodgerblue;
+	-fx-background-color: rgba(0,89,255, 0.5);
 	-fx-text-fill: #ffffff;
-	-fx-border-radius: 0px;
+	-fx-border-radius: 0;
 	-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.25) , 10, 0.0 , 0 , 3 );
 }
 
 .button:hover {
-	-fx-background-color: deepskyblue;
-	-fx-text-fill: #ffffff;
+	-fx-background-color: rgba(0,89,255, 0.7);
 	-fx-cursor: hand;
+}
+
+.button:active {
+	-fx-background-color: rgba(0,89,255, 0.8);
 }
 
 .teamchoicebox{
