@@ -18,7 +18,7 @@ public class Game {
 	private static int currentDay;
 	private static int currentTeam;
 	private static int currentLeague;
-	private static int curentPlayRound;
+	private static int currentPlayRound;
 	private ArrayList<League> leagues;
 	private ArrayList<Transfer> transfers;
 	private ArrayList<Match> matches;
@@ -31,7 +31,7 @@ public class Game {
 		Game.currentDay = currentDay;
 		Game.currentTeam = currentTeam;
 		Game.currentLeague = currentLeague;
-		Game.curentPlayRound = currentPlayRound;
+		Game.currentPlayRound = currentPlayRound;
 
 		this.schedule = schedule;
 
@@ -40,12 +40,12 @@ public class Game {
 		matches = new ArrayList<Match>();
 	}
 
-	public static int getCurentPlayRound() {
-		return curentPlayRound;
+	public static int getCurrentPlayRound() {
+		return currentPlayRound;
 	}
 
-	public static void setCurentPlayRound(int curentPlayRound) {
-		Game.curentPlayRound = curentPlayRound;
+	public static void setCurrentPlayRound(int curentPlayRound) {
+		Game.currentPlayRound = curentPlayRound;
 	}
 
 	public static int getCurrentLeague() {
