@@ -82,7 +82,7 @@ public class javafx extends Application{
 		stage.setResizable(false);
 		final XML xml = new XML("toms_more_teams.xml");
 		final Game game = xml.parseGame();
-		ArrayList<League> leagues = game.getLeagues();
+		final ArrayList<League> leagues = game.getLeagues();
 		
 		//song name in file form
 		File file = new File("src/fmsong.mp3");
@@ -116,11 +116,11 @@ public class javafx extends Application{
 	    Media medialose = new Media(new File("src/lose.mp4").toURI().toString());
 	    final MediaPlayer mediaPlayerlose = new MediaPlayer(medialose);
 		//all video stuff
-	        
-	       
-	       MediaView mediaView = new MediaView(mediaPlayer);
-	       MediaView mediaViewwin = new MediaView(mediaPlayerwin);
-	       MediaView mediaViewlose = new MediaView(mediaPlayerlose);
+
+
+		final MediaView mediaView = new MediaView(mediaPlayer);
+		final MediaView mediaViewwin = new MediaView(mediaPlayerwin);
+	       final MediaView mediaViewlose = new MediaView(mediaPlayerlose);
 	       
 	       mediaView.setFitWidth(1500);
 	       mediaViewwin.setFitWidth(400);
@@ -664,7 +664,7 @@ public class javafx extends Application{
 									@Override
 									public void handle(ActionEvent arg0){
 										lbtext.setText("players for sale");
-										ArrayList<Player> playerstransfer = AI.TransferAlgorithm.getTransferringplayers();
+										final ArrayList<Player> playerstransfer = AI.TransferAlgorithm.getTransferringplayers();
 										VBox transferbox = new VBox();
 										VBox transferback = new VBox();
 										VBox transfertotal = new VBox();
@@ -1051,7 +1051,7 @@ public class javafx extends Application{
 										Label sunday = new Label("Sunday");
 										matchresultfriday.getChildren().addAll(friday,standard0);
 										matchresultsaturday.getChildren().addAll(saturday,standard1);
-										matchresultsunday.getChildren().addAll(sunday,standard2);
+										matchresultsunday.getChildren().addAll(sunday, standard2);
 										playmatchbox.getStylesheets().add("mystyle.css");
 										Scene playmatchscreen = new Scene(playmatchbox,1500,750);
 									if(currentday<5){
