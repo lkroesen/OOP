@@ -114,23 +114,47 @@ public class testEvent
 	}
 	
 	@Test
-	public void testEquals2()
+	public void testEquals1()
 	{
 		Event e = new Event(1,2,3,4);
 		Event e1 = new Event(0,2,3,4);
-		Event e2 = new Event(1,3,3,4);
-		Event e3 = new Event(1,2,4,4);
-		Event e4 = new Event(1,2,3,5);
 		
 		assertNotEquals(e,e1);
+		
+	}
+	
+	@Test
+	public void testEquals2()
+	{
+		Event e = new Event(1,2,3,4);
+		Event e2 = new Event(1,3,3,4);
+		
 		assertNotEquals(e,e2);
-		assertNotEquals(e,e3);
-		assertNotEquals(e,e4);
 		
 	}
 	
 	@Test
 	public void testEquals3()
+	{
+		Event e = new Event(1,2,3,4);
+		Event e3 = new Event(1,2,4,4);
+		
+		assertNotEquals(e,e3);
+		
+	}
+	
+	@Test
+	public void testEquals4()
+	{
+		Event e = new Event(1,2,3,4);
+		Event e4 = new Event(1,2,3,5);
+		
+		assertNotEquals(e,e4);
+		
+	}
+	
+	@Test
+	public void testEquals6()
 	{
 		Event e = new Event(1,2,3,4);
 		Team t = new Team(5,"hi");
