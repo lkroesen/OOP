@@ -56,7 +56,7 @@ public class javafx extends Application{
 	, heavytrain, rest, position, showteam, market, sell, buy, bet, upcoming, showrank, savegame, save1, save2, save3, save4;
 	
 	Button Back = new Button ("Back");
-	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0, positionint = 0,leaguechoice = 0, swapplayer;
+	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0, positionint = 0,leaguechoice = 0, swapplayer, matchid;
 	boolean traintoday = false;
 	boolean pastnewgame = false;
 	boolean swapfirst = false;
@@ -64,6 +64,8 @@ public class javafx extends Application{
 	boolean betmaking = false;
 	boolean betmade = false;
 	boolean sellplayer = false;
+	boolean homematch = false;
+	boolean awaymatch = false;
 	Bet bets;
 	Ranking rank;
 	
@@ -107,12 +109,22 @@ public class javafx extends Application{
 	    final MediaPlayer mediaPlayer = new MediaPlayer(media);
 	    mediaPlayer.setAutoPlay(true);
 	    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+	    
+	    Media mediawin = new Media(new File("src/win.mp4").toURI().toString());
+	    final MediaPlayer mediaPlayerwin = new MediaPlayer(mediawin);
+	    
+	    Media medialose = new Media(new File("src/lose.mp4").toURI().toString());
+	    final MediaPlayer mediaPlayerlose = new MediaPlayer(medialose);
 		//all video stuff
 	        
 	       
 	       MediaView mediaView = new MediaView(mediaPlayer);
+	       MediaView mediaViewwin = new MediaView(mediaPlayerwin);
+	       MediaView mediaViewlose = new MediaView(mediaPlayerlose);
 	       
-	       mediaView.setFitWidth(1000);
+	       mediaView.setFitWidth(1500);
+	       mediaViewwin.setFitWidth(400);
+	       mediaViewlose.setFitWidth(400);
 		
 		//set the text for first buttons and label and giving effects
 		lbtext = new Label("Footballmanager");
@@ -152,7 +164,7 @@ public class javafx extends Application{
 		lbtext.getStyleClass().add("Headline");
 		
 		//makes a scene with the title setting it in the stage
-		final Scene scene = new Scene(test,1000,500);
+		final Scene scene = new Scene(test,1500,750);
 		stage.setTitle("Footballmanager");
 		stage.setScene(scene);
 		scene.getStylesheets().add("mystyle.css");
@@ -200,7 +212,7 @@ public class javafx extends Application{
 				container.setTranslateY(100);
 				HBox ngtext = new HBox();
 				ngtext.getChildren().addAll(lbtext,container,backlgs);
-				Scene ng = new Scene(ngtext,1000,500);
+				Scene ng = new Scene(ngtext,1500,750);
 				ng.getStylesheets().add("mystyle.css");
 				stage.setScene(ng);
 				container.setAlignment(Pos.BOTTOM_CENTER);
@@ -255,7 +267,7 @@ public class javafx extends Application{
 						container.setTranslateY(100);
 						HBox ngtext = new HBox();
 						ngtext.getChildren().addAll(lbtext,container,vbBack);
-						Scene ng = new Scene(ngtext,1000,500);
+						Scene ng = new Scene(ngtext,1500,750);
 						ng.getStylesheets().add("mystyle.css");
 						stage.setScene(ng);
 						container.setAlignment(Pos.BOTTOM_CENTER);
@@ -279,7 +291,7 @@ public class javafx extends Application{
 								backpos.getChildren().addAll(mutesong,backlg);
 								lgtext.getChildren().addAll(lbtext,save1,save2,save3,save4,backpos);
 								lgtext.getStylesheets().add("mystyle.css");
-								Scene lg = new Scene(lgtext,1000,500);
+								Scene lg = new Scene(lgtext,1500,750);
 								stage.setScene(lg);
 								save1.setOnAction(new EventHandler<ActionEvent>(){
 									
@@ -350,7 +362,7 @@ public class javafx extends Application{
 								teambox2.translateYProperty().set(70);
 								teambox3.translateYProperty().set(70);
 								playerdisplay.getChildren().addAll(teambox1,teambox2,teambox3,vbBack);
-								Scene teamscreen = new Scene(playerdisplay,1000,500);
+								Scene teamscreen = new Scene(playerdisplay,1500,750);
 								teamscreen.getStylesheets().add("mystyle.css");
 								stage.setScene(teamscreen);
 								
@@ -410,7 +422,7 @@ public class javafx extends Application{
 										if(showboolean == true){
 											screenbox.getChildren().addAll(playerbox,next);
 										}
-										Scene playerscreen = new Scene(screenbox,1000,500);
+										Scene playerscreen = new Scene(screenbox,1500,750);
 										playerscreen.getStylesheets().add("mystyle.css");
 										stage.setScene(playerscreen);
 										}
@@ -507,7 +519,7 @@ public class javafx extends Application{
 											swapboxreskeep.setTranslateX(-100);
 											totalswap.getChildren().addAll(swapboxkeep,swapboxmid,swapboxbenchkeep,swapboxreskeep);
 											totalswap.getStylesheets().add("mystyle.css");
-											Scene swapscreen = new Scene(totalswap,1000,500);
+											Scene swapscreen = new Scene(totalswap,1500,750);
 											stage.setScene(swapscreen);
 										}
 										swapfirst = true;
@@ -556,7 +568,7 @@ public class javafx extends Application{
 										HBox imageadd = new HBox(10);
 										teamchoicebox.getStylesheets().add("mystyle.css");
 										imageadd.getStylesheets().add("mystyle.css");
-										Scene teamchoicescreen = new Scene(imageadd,1000,500);
+										Scene teamchoicescreen = new Scene(imageadd,1500,750);
 										lbtext.setText(teams.get(teamchoiceint).getName());
 										if(traintoday == false){
 											if(betmade == false && currentday < 5){
@@ -606,7 +618,7 @@ public class javafx extends Application{
 										HBox rankboxtotal = new HBox(10);
 										rankboxtotal.getChildren().addAll(rankbox1,rankbox2,rankbox3,rankback);
 										rankboxtotal.getStylesheets().add("mystyle.css");
-										Scene rankscreen = new Scene(rankboxtotal,1000,500);
+										Scene rankscreen = new Scene(rankboxtotal,1500,750);
 										stage.setScene(rankscreen);
 									}
 								});
@@ -631,7 +643,7 @@ public class javafx extends Application{
 										markettotal.getChildren().addAll(marketbox,marketback);
 										lbtext.setText("market");
 										markettotal.getStylesheets().add("mystyle.css");
-										Scene marketscreen = new Scene(markettotal,1000,500);
+										Scene marketscreen = new Scene(markettotal,1500,750);
 										stage.setScene(marketscreen);
 									}
 								});
@@ -680,7 +692,7 @@ public class javafx extends Application{
 												});
 											}
 										}
-										Scene transferscreen = new Scene(transfertotal,1000,500);
+										Scene transferscreen = new Scene(transfertotal,1500,750);
 										stage.setScene(transferscreen);
 									}
 								});
@@ -785,7 +797,7 @@ public class javafx extends Application{
 											upcomingback.setAlignment(Pos.BOTTOM_RIGHT);
 											totalupcoming.getChildren().addAll(matchfridayupcoming,matchsaturdayupcoming,matchsundayupcoming,upcomingback);
 											totalupcoming.getStylesheets().add("mystyle.css");
-											Scene upcomingscreen = new Scene(totalupcoming,1000,500);
+											Scene upcomingscreen = new Scene(totalupcoming,1500,750);
 											stage.setScene(upcomingscreen);
 											betmaking = false;
 											for(int i = 0; i < betbuttons.size(); i++){
@@ -845,7 +857,7 @@ public class javafx extends Application{
 										showteambox2.translateYProperty().set(70);
 										showteambox3.translateYProperty().set(70);
 										showplayerdisplay.getChildren().addAll(showteambox1,showteambox2,showteambox3,showback);
-										Scene showteamscreen = new Scene(showplayerdisplay,1000,500);
+										Scene showteamscreen = new Scene(showplayerdisplay,1500,750);
 										showteamscreen.getStylesheets().add("mystyle.css");
 										stage.setScene(showteamscreen);
 										showboolean = true;
@@ -946,7 +958,7 @@ public class javafx extends Application{
 										teamboxreskeep.setTranslateX(-100);
 										totalteam.getChildren().addAll(teamboxkeep,teamboxmid,teamboxbenchkeep,teamboxreskeep,teamback);
 										totalteam.getStylesheets().add("mystyle.css");
-										Scene pos = new Scene(totalteam,1000,500);
+										Scene pos = new Scene(totalteam,1500,750);
 										stage.setScene(pos);
 									}
 								});
@@ -958,7 +970,7 @@ public class javafx extends Application{
 										VBox saves = new VBox();
 										saves.getChildren().addAll(lbtext,save1,save2,save3,save4,next);
 										saves.getStylesheets().add("mystyle.css");
-										Scene savegamescreen = new Scene(saves,1000,500);
+										Scene savegamescreen = new Scene(saves,1500,750);
 										stage.setScene(savegamescreen);
 										
 										save1.setOnAction(new EventHandler<ActionEvent>(){
@@ -983,7 +995,7 @@ public class javafx extends Application{
 										trainbox.getChildren().addAll(lbtext,lighttrain,heavytrain,rest);
 										trainback.getChildren().addAll(next);
 										traintotal.getChildren().addAll(trainbox,trainback);
-										Scene trainscreen = new Scene(traintotal,1000,500);
+										Scene trainscreen = new Scene(traintotal,1500,750);
 										stage.setScene(trainscreen);
 									}
 								});
@@ -1043,19 +1055,70 @@ public class javafx extends Application{
 										matchresultsaturday.getChildren().addAll(saturday,standard1);
 										matchresultsunday.getChildren().addAll(sunday,standard2);
 										playmatchbox.getStylesheets().add("mystyle.css");
-										Scene playmatchscreen = new Scene(playmatchbox,1000,500);
+										Scene playmatchscreen = new Scene(playmatchbox,1500,750);
 									if(currentday<4){
-										playmatchbox.getChildren().addAll(lbtext,matchresult,next);
-										stage.setScene(playmatchscreen);
+										select.fire();
 									}
 									if (currentday == 4) {
 										for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
+											if(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName().equals(teams.get(teamchoiceint).getName())){
+												homematch = true;
+												matchid = i;
+											}
+											if(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName().equals(teams.get(teamchoiceint).getName())){
+												awaymatch = true;
+												matchid = i;
+											}
 											String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName());
 											String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i)));
 											Label matchlabel = new Label(match);
 											Label resultlabel = new Label(result);
 											scheme.getS().get(currentplayround).getFriday().getMatches().get(i).setResult(result);
-											matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+											if(homematch == true){
+												homematch = false;
+												String r[] = (scheme.getS().get(currentplayround).getFriday().getMatches().get(matchid).getResult().split("-"));
+												int home = Integer.parseInt(r[0]);
+												int out = Integer.parseInt(r[1]);
+												if(home < out){
+													matchresultfriday.getChildren().addAll(matchlabel,resultlabel,mediaViewlose);
+												    mediaPlayerlose.setAutoPlay(true);
+												    mediaPlayerlose.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerlose.setVolume(0);
+												}
+												else if(home > out) {
+													matchresultfriday.getChildren().addAll(matchlabel,resultlabel,mediaViewwin);
+												    mediaPlayerwin.setAutoPlay(true);
+												    mediaPlayerwin.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerwin.setVolume(0);
+												}
+												else{
+													matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+												}
+											}
+											else if(awaymatch == true){
+												awaymatch = false;
+												String r[] = (scheme.getS().get(currentplayround).getFriday().getMatches().get(matchid).getResult().split("-"));
+												int home = Integer.parseInt(r[0]);
+												int out = Integer.parseInt(r[1]);
+												if(home < out){
+													matchresultfriday.getChildren().addAll(matchlabel,resultlabel,mediaViewwin);
+												    mediaPlayerwin.setAutoPlay(true);
+												    mediaPlayerwin.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerwin.setVolume(0);
+												}
+												else if(home > out) {
+													matchresultfriday.getChildren().addAll(matchlabel,resultlabel,mediaViewlose);
+												    mediaPlayerlose.setAutoPlay(true);
+												    mediaPlayerlose.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerlose.setVolume(0);
+												}
+												else{
+													matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+												}
+											}
+											else {
+												matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+											}
 										}
 										matchresult.getChildren().addAll(matchresultfriday);
 										playmatchbox.getChildren().addAll(lbtext,matchresult,next);
@@ -1063,12 +1126,64 @@ public class javafx extends Application{
 									}
 									if (currentday == 5){
 										for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
+											if(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName().equals(teams.get(teamchoiceint).getName())){
+												homematch = true;
+												matchid = i;
+											}
+											if(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName().equals(teams.get(teamchoiceint).getName())){
+												awaymatch = true;
+												matchid = i;
+											}
 											String match = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName());
 											String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i)));
 											Label matchlabel = new Label(match);
 											Label resultlabel = new Label(result);
 											scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).setResult(result);
-											matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+											if(homematch == true){
+												homematch = false;
+												String r[] = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(matchid).getResult().split("-"));
+												int home = Integer.parseInt(r[0]);
+												int out = Integer.parseInt(r[1]);
+												if(home < out){
+													matchresultsaturday.getChildren().addAll(matchlabel,resultlabel,mediaViewlose);
+												    mediaPlayerlose.setAutoPlay(true);
+												    mediaPlayerlose.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerlose.setVolume(0);
+												}
+												else if(home > out) {
+													matchresultsaturday.getChildren().addAll(matchlabel,resultlabel,mediaViewwin);
+												    mediaPlayerwin.setAutoPlay(true);
+												    mediaPlayerwin.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerwin.setVolume(0);
+												}
+												else{
+													matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+												}
+											}
+											else if(awaymatch == true){
+												awaymatch = false;
+												String r[] = (scheme.getS().get(currentplayround).getSaturday().getMatches().get(matchid).getResult().split("-"));
+												int home = Integer.parseInt(r[0]);
+												int out = Integer.parseInt(r[1]);
+												if(home < out){
+													matchresultsaturday.getChildren().addAll(matchlabel,resultlabel,mediaViewwin);
+												    mediaPlayerwin.setAutoPlay(true);
+												    mediaPlayerwin.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerwin.setVolume(0);
+												}
+												else if(home > out) {
+													matchresultsaturday.getChildren().addAll(matchlabel,resultlabel,mediaViewlose);
+												    mediaPlayerlose.setAutoPlay(true);
+												    mediaPlayerlose.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerlose.setVolume(0);
+												}
+												else{
+													matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+												}
+											}
+											else {
+												matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+											}
 										}
 										matchresult.getChildren().addAll(matchresultsaturday);
 										playmatchbox.getChildren().addAll(lbtext,matchresult,next);
@@ -1077,12 +1192,65 @@ public class javafx extends Application{
 									if(currentday == 6){
 										currentday = 0;
 										for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
+
+											if(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName().equals(teams.get(teamchoiceint).getName())){
+												homematch = true;
+												matchid = i;
+											}
+											if(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName().equals(teams.get(teamchoiceint).getName())){
+												awaymatch = true;
+												matchid = i;
+											}
 											String match = (scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName());
 											String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i)));
 											Label matchlabel = new Label(match);
 											Label resultlabel = new Label(result);
 											scheme.getS().get(currentplayround).getSunday().getMatches().get(i).setResult(result);
-											matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+											if(homematch == true){
+												homematch = false;
+												String r[] = (scheme.getS().get(currentplayround).getSunday().getMatches().get(matchid).getResult().split("-"));
+												int home = Integer.parseInt(r[0]);
+												int out = Integer.parseInt(r[1]);
+												if(home < out){
+													matchresultsunday.getChildren().addAll(matchlabel,resultlabel,mediaViewlose);
+												    mediaPlayerlose.setAutoPlay(true);
+												    mediaPlayerlose.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerlose.setVolume(0);
+												}
+												else if(home > out) {
+													matchresultsunday.getChildren().addAll(matchlabel,resultlabel,mediaViewwin);
+												    mediaPlayerwin.setAutoPlay(true);
+												    mediaPlayerwin.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerwin.setVolume(0);
+												}
+												else{
+													matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+												}
+											}
+											else if(awaymatch == true){
+												awaymatch = false;
+												String r[] = (scheme.getS().get(currentplayround).getSunday().getMatches().get(matchid).getResult().split("-"));
+												int home = Integer.parseInt(r[0]);
+												int out = Integer.parseInt(r[1]);
+												if(home < out){
+													matchresultsunday.getChildren().addAll(matchlabel,resultlabel,mediaViewwin);
+												    mediaPlayerwin.setAutoPlay(true);
+												    mediaPlayerwin.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerwin.setVolume(0);
+												}
+												else if(home > out) {
+													matchresultsunday.getChildren().addAll(matchlabel,resultlabel,mediaViewlose);
+												    mediaPlayerlose.setAutoPlay(true);
+												    mediaPlayerlose.setCycleCount(MediaPlayer.INDEFINITE);
+												    mediaPlayerlose.setVolume(0);
+												}
+												else{
+													matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+												}
+											}
+											else {
+												matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+											}
 										}
 										matchresult.getChildren().addAll(matchresultsunday);
 										playmatchbox.getChildren().addAll(lbtext,matchresult,next);
