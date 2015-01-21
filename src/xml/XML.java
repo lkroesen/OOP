@@ -514,7 +514,7 @@ public class XML {
 			rootElement.setAttribute("currentday", g.getCurrentDay()+"");
 			rootElement.setAttribute("currentteam", g.getCurrentTeam()+"");
 			rootElement.setAttribute("currentleague", g.getCurrentLeague()+"");
-			rootElement.setAttribute("currentplayround", g.getCurrentLeague()+"");
+			rootElement.setAttribute("currentplayround", g.getCurrentPlayRound()+"");
 
 			// Loop through leagues
 			for (League l : g.getLeagues()) {
