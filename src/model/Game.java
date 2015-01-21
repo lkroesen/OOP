@@ -1,5 +1,7 @@
 package model;
 
+import AI.Schedule;
+
 import java.util.ArrayList;
 
 /**
@@ -18,17 +20,28 @@ public class Game {
 	private ArrayList<League> leagues;
 	private ArrayList<Transfer> transfers;
 	private ArrayList<Match> matches;
+	private Schedule schedule;
 
-	public Game(int id, String name, int currentDay, int currentTeam) {
+	public Game(int id, String name, int currentDay, int currentTeam, Schedule schedule) {
 		super();
 		this.id = id;
 		this.name = name;
 		Game.currentDay = currentDay;
 		Game.currentTeam = currentTeam;
-		
+
+		this.schedule = schedule;
+
 		leagues = new ArrayList<League>();
 		transfers = new ArrayList<Transfer>();
 		matches = new ArrayList<Match>();
+	}
+
+	public Schedule getSchedule() {
+		return schedule;
+	}
+
+	public void setSchedule(Schedule schedule) {
+		this.schedule = schedule;
 	}
 
 	public String getName() {
@@ -101,11 +114,13 @@ public class Game {
 
 	@Override
 	public String toString() {
-		return "Game [id=" + id + ", name=" + name + ", currentDay="
-				+ currentDay + ", currentTeam=" + currentTeam + ", leagues="
-				+ leagues + ", transfers=" + transfers + ", matches=" + matches
-				+ "]";
-	}	
-	
-	
+		return "Game{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", leagues=" + leagues +
+				", transfers=" + transfers +
+				", matches=" + matches +
+				", schedule=" + schedule +
+				'}';
+	}
 }
