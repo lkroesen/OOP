@@ -203,7 +203,7 @@ public class Ranking
 			}
 			
 			// The away team won
-			if (res[1] > res[0])
+			else if (res[1] > res[0])
 			{
 				TeamScores[FindTeamAtLocation(aTeam, m.getTeam_away())] += 3;
 			}
