@@ -9,8 +9,6 @@
 	-fx-padding: 10;
 }
 
-
-
 .label {
 	-fx-font-size: 20px;
 	-fx-font-weight: bold;
@@ -23,15 +21,21 @@
 
 .button {
 	-fx-font-family: "Arial";
-	-fx-padding: 5 10 5 10;
-	-fx-font-size: 10px;
+	-fx-padding: 15 30 15 30;
+	-fx-font-size: 17px;
 	-fx-font-weight: bold;
-	-fx-background-color: Linear-gradient(#9EA7E5, #61a2b1);
-	-fx-text-fill: #383640;
-	-fx-effect: dropshadow( three-pass-box , rgba(2,3,4,0.6) , 0, 1.0 , 5 , 5 );
+	-fx-background-color: dodgerblue;
+	-fx-text-fill: #ffffff;
+	-fx-border-radius: 0px;
+	-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.25) , 10, 0.0 , 0 , 3 );
 }
 
 .button:hover {
-	-fx-background-color: Linear-gradient(#2A5058, #61a2b1);
+	-fx-background-color: deepskyblue;
 	-fx-text-fill: #ffffff;
+	-fx-cursor: hand;
+}
+
+.teamchoicebox{
+	-fx-background-color: rgba(0,0,0,0.25);
 }
