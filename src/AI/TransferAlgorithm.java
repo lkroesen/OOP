@@ -22,12 +22,13 @@ public class TransferAlgorithm {
 	public TransferAlgorithm(Game game){
 		TransferAlgorithm.game = game;
 	}
-	public void DailyRoutine(){
-		Updater();
+	public void DailyRoutine(Game game){
+		Updater(game);
 		AIsell();
 		AIbuy();
 	}
-	public void Updater(){
+	public void Updater(Game game){
+		this.game = game;
 		for(Player p : TransferAlgorithm.player){
 			for(League l : game.getLeagues()){
 				for(Team t : l.getTeams()){
