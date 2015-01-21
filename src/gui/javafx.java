@@ -1038,6 +1038,7 @@ public class javafx extends Application{
 									@Override
 									public void handle(ActionEvent arg0){
 										currentday++;
+										traintoday = false;
 										//AI.TransferAlgorithm.DailyRoutine();
 										VBox playmatchbox = new VBox();
 										HBox matchresult = new HBox(20);
@@ -1307,7 +1308,6 @@ public class javafx extends Application{
 										}
 										rank = Ranking.generate(scheme);
 									}
-									traintoday = false;
 									Game.setCurrentDay(currentday);
 									}
 								});
