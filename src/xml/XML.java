@@ -185,6 +185,199 @@ public class XML {
 						}
 
 					}
+					mPlayRound.setFriday(pFriday);
+
+					NodeList saturdayData = playRound.getElementsByTagName("saturday");
+					PlayDay pSaturday = new PlayDay();
+
+					for(int a = 0; a < saturdayData.getLength(); a++){
+						Node saturdayNode = saturdayData.item(a);
+						if(saturdayNode.getNodeType() == Node.ELEMENT_NODE){
+							Element saturday = (Element)saturdayNode;
+
+							// Get match data
+							NodeList matchData = saturday.getElementsByTagName("match");
+							for (int b = 0; b < matchData.getLength(); b++){
+								// Looping through matches
+								Node matchNode = matchData.item(b);
+								if (matchNode.getNodeType() == Node.ELEMENT_NODE) {
+									Element match = (Element)matchNode;
+
+									// Getting match attributes
+									int mid = Integer.parseInt(getAttribute(match.getAttributes(), "id"));
+									int day = Integer.parseInt(getAttribute(match.getAttributes(), "day"));
+
+									// Create match instance with appropriate settings
+									Match matchObject = new Match(mid,day);
+
+									// Get home team data
+									NodeList homeData = match.getElementsByTagName("team_home");
+									for (int c = 0; c < homeData.getLength(); c++) {
+										Node homeNode = homeData.item(c);
+										if(homeNode.getNodeType() == Node.ELEMENT_NODE){
+											Element home = (Element)homeNode;
+
+											// Get home team id
+											int team = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
+
+											NodeList homeEvents = home.getElementsByTagName("event");
+											for(int d = 0; d < homeEvents.getLength(); d++){
+												// Loop through events
+												Node eventNode = homeEvents.item(d);
+												if(eventNode.getNodeType() == Node.ELEMENT_NODE){
+													// Create instance of Event
+													Element event = (Element)eventNode;
+
+													// Get Event attributes
+													int player = Integer.parseInt(getAttribute(event.getAttributes(), "player"));
+
+													int type = Integer.parseInt(getChildValue(event, "type"));
+													int minute = Integer.parseInt(getChildValue(event, "minute"));
+													int outfor = Integer.parseInt(getChildValue(event, "outfor"));
+
+													// Add Event to match object
+													matchObject.addEventHome(new Event(player, type, minute, outfor));
+												}
+											}
+										}
+									}
+
+									// Get away team data
+									NodeList awayData = match.getElementsByTagName("team_away");
+									for (int e = 0; e < awayData.getLength(); e++) {
+										Node awayNode = awayData.item(e);
+										if(awayNode.getNodeType() == Node.ELEMENT_NODE){
+											Element away = (Element)awayNode;
+
+											// Get away team id
+											int team = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
+
+											NodeList awayEvents = away.getElementsByTagName("event");
+											for(int f = 0; f < awayEvents.getLength(); f++){
+												// Loop through events
+												Node eventNode = awayEvents.item(b);
+												if(eventNode.getNodeType() == Node.ELEMENT_NODE){
+													// Create instance of Event
+													Element event = (Element)eventNode;
+
+													// Get Event attributes
+													int player = Integer.parseInt(getAttribute(event.getAttributes(), "player"));
+
+													int type = Integer.parseInt(getChildValue(event, "type"));
+													int minute = Integer.parseInt(getChildValue(event, "minute"));
+													int outfor = Integer.parseInt(getChildValue(event, "outfor"));
+
+													// Add Event to match object
+													matchObject.addEventAway(new Event(player, type, minute, outfor));
+												}
+											}
+										}
+									}
+
+									pSaturday.addMatch(matchObject);
+
+								}
+							}
+						}
+
+					}
+					mPlayRound.setSaturday(pSaturday);
+
+					NodeList sundayData = playRound.getElementsByTagName("sunday");
+					PlayDay pSunday = new PlayDay();
+
+					for(int a = 0; a < sundayData.getLength(); a++){
+						Node sundayNode = saturdayData.item(a);
+						if(sundayNode.getNodeType() == Node.ELEMENT_NODE){
+							Element sunday = (Element)sundayNode;
+
+							// Get match data
+							NodeList matchData = sunday.getElementsByTagName("match");
+							for (int b = 0; b < matchData.getLength(); b++){
+								// Looping through matches
+								Node matchNode = matchData.item(b);
+								if (matchNode.getNodeType() == Node.ELEMENT_NODE) {
+									Element match = (Element)matchNode;
+
+									// Getting match attributes
+									int mid = Integer.parseInt(getAttribute(match.getAttributes(), "id"));
+									int day = Integer.parseInt(getAttribute(match.getAttributes(), "day"));
+
+									// Create match instance with appropriate settings
+									Match matchObject = new Match(mid,day);
+
+									// Get home team data
+									NodeList homeData = match.getElementsByTagName("team_home");
+									for (int c = 0; c < homeData.getLength(); c++) {
+										Node homeNode = homeData.item(c);
+										if(homeNode.getNodeType() == Node.ELEMENT_NODE){
+											Element home = (Element)homeNode;
+
+											// Get home team id
+											int team = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
+
+											NodeList homeEvents = home.getElementsByTagName("event");
+											for(int d = 0; d < homeEvents.getLength(); d++){
+												// Loop through events
+												Node eventNode = homeEvents.item(d);
+												if(eventNode.getNodeType() == Node.ELEMENT_NODE){
+													// Create instance of Event
+													Element event = (Element)eventNode;
+
+													// Get Event attributes
+													int player = Integer.parseInt(getAttribute(event.getAttributes(), "player"));
+
+													int type = Integer.parseInt(getChildValue(event, "type"));
+													int minute = Integer.parseInt(getChildValue(event, "minute"));
+													int outfor = Integer.parseInt(getChildValue(event, "outfor"));
+
+													// Add Event to match object
+													matchObject.addEventHome(new Event(player, type, minute, outfor));
+												}
+											}
+										}
+									}
+
+									// Get away team data
+									NodeList awayData = match.getElementsByTagName("team_away");
+									for (int e = 0; e < awayData.getLength(); e++) {
+										Node awayNode = awayData.item(e);
+										if(awayNode.getNodeType() == Node.ELEMENT_NODE){
+											Element away = (Element)awayNode;
+
+											// Get away team id
+											int team = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
+
+											NodeList awayEvents = away.getElementsByTagName("event");
+											for(int f = 0; f < awayEvents.getLength(); f++){
+												// Loop through events
+												Node eventNode = awayEvents.item(b);
+												if(eventNode.getNodeType() == Node.ELEMENT_NODE){
+													// Create instance of Event
+													Element event = (Element)eventNode;
+
+													// Get Event attributes
+													int player = Integer.parseInt(getAttribute(event.getAttributes(), "player"));
+
+													int type = Integer.parseInt(getChildValue(event, "type"));
+													int minute = Integer.parseInt(getChildValue(event, "minute"));
+													int outfor = Integer.parseInt(getChildValue(event, "outfor"));
+
+													// Add Event to match object
+													matchObject.addEventAway(new Event(player, type, minute, outfor));
+												}
+											}
+										}
+									}
+
+									pSunday.addMatch(matchObject);
+
+								}
+							}
+						}
+
+					}
+					mPlayRound.setSunday(pSunday);
 				}
 			}
 			
