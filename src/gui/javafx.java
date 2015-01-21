@@ -82,6 +82,7 @@ public class javafx extends Application{
 		stage.setResizable(false);
 		final XML xml = new XML("toms_more_teams.xml");
 		final Game game = xml.parseGame();
+		final TransferAlgorithm algoritm = new TransferAlgorithm(game);
 		final ArrayList<League> leagues = game.getLeagues();
 		
 		//song name in file form
@@ -304,7 +305,7 @@ public class javafx extends Application{
 											leaguechoice = (game1.getCurrentLeague());
 											teamchoiceint = (game1.getCurrentTeam());
 											currentday = (game1.getCurrentDay());
-											currentplayround = (game1.getCurrentPlayround());
+											currentplayround = (game1.getCurrentPlayRound());
 										} catch (Exception e) {
 											e.printStackTrace();
 										}
@@ -321,7 +322,7 @@ public class javafx extends Application{
 											leaguechoice = (game2.getCurrentLeague());
 											teamchoiceint = (game2.getCurrentTeam());
 											currentday = (game2.getCurrentDay());
-											currentplayround = (game2.getCurrentPlayround());
+											currentplayround = (game2.getCurrentPlayRound());
 										} catch (Exception e) {
 											e.printStackTrace();
 										}
@@ -338,7 +339,7 @@ public class javafx extends Application{
 											leaguechoice = (game3.getCurrentLeague());
 											teamchoiceint = (game3.getCurrentTeam());
 											currentday = (game3.getCurrentDay());
-											currentplayround = (game3.getCurrentPlayround());
+											currentplayround = (game3.getCurrentPlayRound());
 										} catch (Exception e) {
 											e.printStackTrace();
 										}
@@ -355,7 +356,7 @@ public class javafx extends Application{
 											leaguechoice = (game4.getCurrentLeague());
 											teamchoiceint = (game4.getCurrentTeam());
 											currentday = (game4.getCurrentDay());
-											currentplayround = (game4.getCurrentPlayround());
+											currentplayround = (game4.getCurrentPlayRound());
 										} catch (Exception e) {
 											e.printStackTrace();
 										}
@@ -438,7 +439,7 @@ public class javafx extends Application{
 											playeraction.fire();
 										}
 										else{
-											AI.TransferAlgorithm.AddPlayer(teams.get(teamchoiceint).getPlayers().get(a));
+											algoritm.AddPlayer(teams.get(teamchoiceint).getPlayers().get(a));
 											sellplayer = false;
 											select.fire();
 										}
@@ -725,7 +726,7 @@ public class javafx extends Application{
 									@Override
 									public void handle(ActionEvent arg0){
 										lbtext.setText("players for sale");
-										final ArrayList<Player> playerstransfer = AI.TransferAlgorithm.getTransferringplayers();
+										final ArrayList<Player> playerstransfer = algoritm.getTransferringplayers();
 										VBox transferbox = new VBox();
 										VBox transferback = new VBox();
 										VBox transfertotal = new VBox();
@@ -745,7 +746,7 @@ public class javafx extends Application{
 												
 													@Override
 													public void handle(ActionEvent arg0){
-														AI.TransferAlgorithm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
+														algoritm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
 														select.fire();
 													}
 												});
