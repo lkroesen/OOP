@@ -572,16 +572,16 @@ public class javafx extends Application{
 										lbtext.setText(teams.get(teamchoiceint).getName());
 										if(traintoday == false){
 											if(betmade == false && currentday < 5){
-												teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,bet,market,upcoming, showrank,savegame);
+												teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,bet,market,upcoming, showrank,savegame, mutesong);
 											}
 											else{
-												teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,market,upcoming, showrank,savegame);							}
+												teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,train,position,showteam,market,upcoming, showrank,savegame, mutesong);							}
 										}
 										else if(betmade == false && currentday < 5){
-											teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,bet,market,upcoming, showrank,savegame);
+											teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,bet,market,upcoming, showrank,savegame, mutesong);
 										}
 										else{
-											teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,market,upcoming, showrank,savegame);
+											teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,nextday,position,showteam,market,upcoming, showrank,savegame, mutesong);
 										}
 										imageadd.getChildren().addAll(teamchoicebox);
 										stage.setScene(teamchoicescreen);	
@@ -634,11 +634,12 @@ public class javafx extends Application{
 									
 									@Override
 									public void handle(ActionEvent arg0){
+										Label budget = new Label("Budget:" + teams.get(teamchoiceint).getBudget());
 										VBox markettotal = new VBox(10);
 										VBox marketbox = new VBox(10);
 										VBox marketback = new VBox();
 										marketback.setAlignment(Pos.BOTTOM_RIGHT);
-										marketbox.getChildren().addAll(lbtext,sell,buy);
+										marketbox.getChildren().addAll(lbtext,budget,sell,buy);
 										marketback.getChildren().addAll(next);
 										markettotal.getChildren().addAll(marketbox,marketback);
 										lbtext.setText("market");
