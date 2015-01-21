@@ -162,11 +162,9 @@ public class Ranking
 	 */
 	public static int FindTeamAtLocation(Team[] TeamList, Team Team)
 	{
-		for (int f = 0; f < TeamList.length; f++)
-		{
-			if (TeamList[f].equals(Team))
+		for (int f = 0; f < TeamList.length; f++)			
+			if (TeamList[f].getId() == Team.getId())
 				return f;
-		}
 		//defaults to 0
 		return 0;
 	}
