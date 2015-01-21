@@ -304,7 +304,7 @@ public class javafx extends Application{
 											leaguechoice = (game1.getCurrentLeague());
 											teamchoiceint = (game1.getCurrentTeam());
 											currentday = (game1.getCurrentDay());
-											currentplayround = (game1.getCurrentPlayround());
+											currentplayround = (game1.getCurentPlayRound());
 										} catch (Exception e) {
 											e.printStackTrace();
 										}
@@ -321,7 +321,7 @@ public class javafx extends Application{
 											leaguechoice = (game2.getCurrentLeague());
 											teamchoiceint = (game2.getCurrentTeam());
 											currentday = (game2.getCurrentDay());
-											currentplayround = (game2.getCurrentPlayround());
+											currentplayround = (game2.getCurentPlayRound());
 										} catch (Exception e) {
 											e.printStackTrace();
 										}
@@ -338,7 +338,7 @@ public class javafx extends Application{
 											leaguechoice = (game3.getCurrentLeague());
 											teamchoiceint = (game3.getCurrentTeam());
 											currentday = (game3.getCurrentDay());
-											currentplayround = (game3.getCurrentPlayround());
+											currentplayround = (game3.getCurentPlayRound());
 										} catch (Exception e) {
 											e.printStackTrace();
 										}
@@ -355,7 +355,7 @@ public class javafx extends Application{
 											leaguechoice = (game4.getCurrentLeague());
 											teamchoiceint = (game4.getCurrentTeam());
 											currentday = (game4.getCurrentDay());
-											currentplayround = (game4.getCurrentPlayround());
+											currentplayround = (game4.getCurentPlayRound());
 										} catch (Exception e) {
 											e.printStackTrace();
 										}
