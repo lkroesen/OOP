@@ -1,7 +1,7 @@
 package model;
 
 import java.util.ArrayList;
-
+import AI.Schedule;
 /**
  * Represents a Game object with leagues and played matches. This holds all the
  * game data necessary for one instance of the game to function.
@@ -18,6 +18,7 @@ public class Game {
 	private ArrayList<League> leagues;
 	private ArrayList<Transfer> transfers;
 	private ArrayList<Match> matches;
+	private Schedule s;
 
 	public Game(int id, String name, int currentDay, int currentTeam) {
 		super();
