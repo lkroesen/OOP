@@ -526,7 +526,7 @@ public class javafx extends Application{
 										if(swapfirst == true && showboolean == false && pastnewgame == true && swapplayer != playerchoiceint){
 											players.get(swapplayer).setPosition((players.get(playerchoiceint).getPosition()));
 											players.get(playerchoiceint).setPosition(positionint);
-											select.fire();
+											position.fire();
 										}
 										showboolean = false;
 									}
@@ -544,7 +544,6 @@ public class javafx extends Application{
 									public void handle(ActionEvent arg0){
 										Game.setCurrentTeam(teamchoiceint);
 										pastnewgame = true;
-										swapfirst = false;
 										Label currentdaylabel = new Label("monday");
 										if(currentday == 1){
 											currentdaylabel.setText("tuesday");
@@ -586,8 +585,7 @@ public class javafx extends Application{
 										imageadd.getChildren().addAll(teamchoicebox);
 										stage.setScene(teamchoicescreen);	
 									}
-								});
-								
+								});								
 								showrank.setOnAction(new EventHandler<ActionEvent>(){
 									
 									@Override
@@ -661,7 +659,6 @@ public class javafx extends Application{
 										}
 									}
 								});
-
 								buy.setOnAction(new EventHandler<ActionEvent>(){
 					
 									@Override
@@ -869,6 +866,7 @@ public class javafx extends Application{
 									@Override
 									public void handle(ActionEvent arg0){
 										lbtext.setText("change positions");
+										swapfirst = false;
 										Label def = new Label("defense");
 										Label def1 = new Label("defense");
 										Label def2 = new Label("defense");
