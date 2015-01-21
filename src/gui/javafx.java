@@ -85,7 +85,7 @@ public class javafx extends Application{
 		stage.setResizable(false);
 		final XML xml = new XML("toms_more_teams.xml");
 		final Game game = xml.parseGame();
-		final TransferAlgorithm algoritm = new TransferAlgorithm(game);
+		final TransferAlgorithm algorithm = new TransferAlgorithm(game);
 		final ArrayList<League> leagues = game.getLeagues();
 		final ArrayList<Button> leaguebuttons = new ArrayList<Button>();
 		final ArrayList<Button> playerbuttons = new ArrayList<Button>();
@@ -369,7 +369,7 @@ public class javafx extends Application{
 								playeraction.fire();
 							}
 							else{
-								algoritm.AddPlayer(teams.get(teamchoiceint).getPlayers().get(a));
+								algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
 								sellplayer = false;
 								select.fire();
 							}
@@ -677,7 +677,7 @@ public class javafx extends Application{
 		@Override
 		public void handle(ActionEvent arg0){
 			lbtext.setText("players for sale");
-			final ArrayList<Player> playerstransfer = algoritm.getTransferringplayers();
+			final ArrayList<Player> playerstransfer = algorithm.getTransferringplayers();
 			VBox transferbox = new VBox();
 			VBox transferback = new VBox();
 			VBox transfertotal = new VBox();
@@ -697,7 +697,7 @@ public class javafx extends Application{
 					
 						@Override
 						public void handle(ActionEvent arg0){
-							algoritm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
+							algorithm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
 							select.fire();
 						}
 					});
@@ -865,7 +865,7 @@ public class javafx extends Application{
 							playeraction.fire();
 						}
 						else{
-							algoritm.AddPlayer(teams.get(teamchoiceint).getPlayers().get(a));
+							algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
 							sellplayer = false;
 							select.fire();
 						}
@@ -1089,7 +1089,7 @@ public class javafx extends Application{
 		public void handle(ActionEvent arg0){
 			currentday++;
 			traintoday = false;
-			//AI.TransferAlgorithm.DailyRoutine();
+			algorithm.DailyRoutine(game);
 			VBox playmatchbox = new VBox();
 			HBox matchresult = new HBox(20);
 			VBox matchresultfriday = new VBox();

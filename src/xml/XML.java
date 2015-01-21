@@ -533,6 +533,7 @@ public class XML {
 					eTeam.setAttribute("id", t.getId()+"");
 					eTeam.setAttribute("name", t.getName());
 				   	eTeam.setAttribute("stadium", t.getStadium());
+					eTeam.setAttribute("budget", t.getBudget()+"");
 
 					// Loop trough players
 					for (Player p : t.getPlayers()) {
