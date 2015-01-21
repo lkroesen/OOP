@@ -1037,9 +1037,7 @@ public class javafx extends Application{
 									
 									@Override
 									public void handle(ActionEvent arg0){
-										for(int i = 0; i < teams.size(); i++){
-											AI.Team_Training_User.Core(teams.get(i));
-										}
+										currentday++;
 										//AI.TransferAlgorithm.DailyRoutine();
 										VBox playmatchbox = new VBox();
 										HBox matchresult = new HBox(20);
@@ -1057,16 +1055,16 @@ public class javafx extends Application{
 										matchresultsunday.getChildren().addAll(sunday,standard2);
 										playmatchbox.getStylesheets().add("mystyle.css");
 										Scene playmatchscreen = new Scene(playmatchbox,1500,750);
-									if(currentday<4){
+									if(currentday<5){
 										select.fire();
 									}
-									if (currentday == 4) {
+									if (currentday == 5) {
 										for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
-											if(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName().equals(teams.get(teamchoiceint).getName())){
+											if(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getId() == teams.get(teamchoiceint).getId()){
 												homematch = true;
 												matchid = i;
 											}
-											if(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName().equals(teams.get(teamchoiceint).getName())){
+											if(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getId() == teams.get(teamchoiceint).getId()){
 												awaymatch = true;
 												matchid = i;
 											}
@@ -1125,13 +1123,13 @@ public class javafx extends Application{
 										playmatchbox.getChildren().addAll(lbtext,matchresult,next);
 										stage.setScene(playmatchscreen);
 									}
-									if (currentday == 5){
+									if (currentday == 6){
 										for(int i = 0;i < scheme.getS().get(currentplayround).getSaturday().getMatches().size();i++){
-											if(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getName().equals(teams.get(teamchoiceint).getName())){
+											if(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home().getId() == teams.get(teamchoiceint).getId()){
 												homematch = true;
 												matchid = i;
 											}
-											if(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getName().equals(teams.get(teamchoiceint).getName())){
+											if(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away().getId() == teams.get(teamchoiceint).getId()){
 												awaymatch = true;
 												matchid = i;
 											}
@@ -1190,15 +1188,15 @@ public class javafx extends Application{
 										playmatchbox.getChildren().addAll(lbtext,matchresult,next);
 										stage.setScene(playmatchscreen);
 									}
-									if(currentday == 6){
+									if(currentday == 7){
 										currentday = 0;
 										for(int i = 0;i < scheme.getS().get(currentplayround).getSunday().getMatches().size();i++){
 
-											if(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getName().equals(teams.get(teamchoiceint).getName())){
+											if(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home().getId() == teams.get(teamchoiceint).getId()){
 												homematch = true;
 												matchid = i;
 											}
-											if(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getName().equals(teams.get(teamchoiceint).getName())){
+											if(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away().getId() == teams.get(teamchoiceint).getId()){
 												awaymatch = true;
 												matchid = i;
 											}
@@ -1304,10 +1302,10 @@ public class javafx extends Application{
 												betmade = false;
 											}
 										}
+										for(int i = 0; i < teams.size(); i++){
+											AI.Team_Training_User.Core(teams.get(i));
+										}
 										rank = Ranking.generate(scheme);
-									}
-									else{
-										currentday++;
 									}
 									traintoday = false;
 									Game.setCurrentDay(currentday);
