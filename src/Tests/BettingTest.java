@@ -96,7 +96,7 @@ public class BettingTest {
 	}
 
 	@Test
-	public void testTeamByID()
+	public void testTeamByID1()
 	{
 		Team winners = new Team(1, "Winners");
 		Team losers = new Team(2, "Losers");
@@ -104,24 +104,45 @@ public class BettingTest {
 		tl.add(winners);
 		tl.add(losers);
 		assertEquals(Betting.getTeamNameById(1, tl), "Winners");
-		assertEquals(Betting.getTeamNameById(2, tl), "Losers");
-		assertNotEquals(Betting.getTeamNameById(1,tl),"Losers");
-		assertEquals(Betting.getTeamNameById(0,tl),"");
-		
 	}
 	
 	@Test
-	public void testGettersNSetters()
+	public void testTeamByID2()
+	{
+		Team winners = new Team(1, "Winners");
+		Team losers = new Team(2, "Losers");
+		ArrayList<Team> tl = new ArrayList<Team>();
+		tl.add(winners);
+		tl.add(losers);
+		assertEquals(Betting.getTeamNameById(2, tl), "Losers");
+	}
+	
+	@Test
+	public void testTeamByID3()
+	{
+		Team winners = new Team(1, "Winners");
+		Team losers = new Team(2, "Losers");
+		ArrayList<Team> tl = new ArrayList<Team>();
+		tl.add(winners);
+		tl.add(losers);
+		assertNotEquals(Betting.getTeamNameById(1,tl),"Losers");
+	}
+	
+	@Test
+	public void testTeamByID4()
+	{
+		Team winners = new Team(1, "Winners");
+		Team losers = new Team(2, "Losers");
+		ArrayList<Team> tl = new ArrayList<Team>();
+		tl.add(winners);
+		tl.add(losers);
+		assertEquals(Betting.getTeamNameById(0,tl),"");
+	}
+	
+	@Test
+	public void testGettersNSetters1()
 	{
 		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
-		Betting c = new Betting((double)1.6, (double)1.3, 2,3, "2-2", 0);
-		Betting d = new Betting((double)1.2, (double)1.6, 1,0, "2-2", 0);
-		Betting e = new Betting((double)1.2, (double)1.3, 6,3, "2-2", 0);
-		Betting f = new Betting((double)1.2, (double)1.3, 2,1, "2-2", 0);
-		Betting g = new Betting((double)1.2, (double)1.3, 2,3, "2-1", 0);
-		Betting h = new Betting((double)1.2, (double)1.3, 2,3, null, 0);
-		
-		Player one    = new Player	(1, 	"Neo", 		"Keeper", 		(byte)  1, 	 0, 	1, 	(byte)  99, (byte) 99,  (byte) 99, 	 1000);
 		
 		b.setRate1(1.2);
 		b.setRate2(1.3);
@@ -130,22 +151,232 @@ public class BettingTest {
 		b.setTeam2(3);
 		
 		assertEquals(b.equals(b),true);
+	}
+	
+	@Test
+	public void testGettersNSetters2()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting c = new Betting((double)1.6, (double)1.3, 2,3, "2-2", 0);
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
 		assertEquals(b.equals(c), false);
+	}
+	
+	@Test
+	public void testGettersNSetters3()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting d = new Betting((double)1.2, (double)1.6, 1,0, "2-2", 0);
+		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
 		assertEquals(b.equals(d), false);
+	}
+	
+	@Test
+	public void testGettersNSetters4()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting e = new Betting((double)1.2, (double)1.3, 6,3, "2-2", 0);
+		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
 		assertEquals(b.equals(e), false);
+	}
+	
+	@Test
+	public void testGettersNSetters5()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting f = new Betting((double)1.2, (double)1.3, 2,1, "2-2", 0);
+		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
 		assertEquals(b.equals(f), false);
+	}
+	
+	@Test
+	public void testGettersNSetters6()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting g = new Betting((double)1.2, (double)1.3, 2,3, "2-1", 0);
+		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
 		assertEquals(b.equals(g), false);
+	}
+	
+	@Test
+	public void testGettersNSetters7()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Player one    = new Player	(1, 	"Neo", 		"Keeper", 		(byte)  1, 	 0, 	1, 	(byte)  99, (byte) 99,  (byte) 99, 	 1000);
+		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
 		assertEquals(b.equals(one), false);
+	}
+	
+	@Test
+	public void testGettersNSetters8()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+	
 		assertEquals(b.equals(null), false);
+	}
+	
+	@Test
+	public void testGettersNSetters9()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting h = new Betting((double)1.2, (double)1.3, 2,3, null, 0);
+		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
 		assertEquals(b.equals(h), false);
+	}
+	
+	@Test
+	public void testGettersNSetters10()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting h = new Betting((double)1.2, (double)1.3, 2,3, null, 0);
+	
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+	
 		assertEquals(h.equals(h), true);
+	}
+	
+	@Test
+	public void testGettersNSetters11()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+		Betting h = new Betting((double)1.2, (double)1.3, 2,3, null, 0);
+		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
 		assertEquals(h.equals(b), false);
 		
-		assertEquals(b.getRate1(),1.2,0.0);
-		assertEquals(b.getRate2(),1.3,0.0);
-		assertEquals(b.getResult(),"2-2");
-		assertEquals(b.getTeam1(),2);
-		assertEquals(b.getTeam2(),3);
+	}
+	
+	@Test
+	public void testGettersNSetters12()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
 		
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
+		assertEquals(b.getRate1(),1.2,0.0);
+	}
+	
+	@Test
+	public void testGettersNSetters13()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
+		assertEquals(b.getRate2(),1.3,0.0);
+	}
+	
+	@Test
+	public void testGettersNSetters14()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+	
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
+		assertEquals(b.getResult(),"2-2");
+	}
+	
+	@Test
+	public void testGettersNSetters15()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+	
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
+		assertEquals(b.getTeam1(),2);
+	}
+	
+	@Test
+	public void testGettersNSetters16()
+	{
+		Betting b = new Betting((double)1.5, (double)1.5, 1,0, "1-1", 0);
+
+		b.setRate1(1.2);
+		b.setRate2(1.3);
+		b.setResult("2-2");
+		b.setTeam1(2);
+		b.setTeam2(3);
+		
+		assertEquals(b.getTeam2(),3);
+	}
+	
+	@Test
+	public void testSetMatchid(){
+		Betting d = new Betting((double)1.2, (double)1.6, 1,0, "2-2", 0);
+		d.setMatchid(62);
+		Betting e = new Betting((double)1.2, (double)1.6, 1,0, "2-2", 62);
+		assertTrue(d.equals(e));
 	}
 }
