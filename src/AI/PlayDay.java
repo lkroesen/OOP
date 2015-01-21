@@ -30,6 +30,11 @@ public class PlayDay
 	public void setMatches(ArrayList<Match> matches) {
 		this.Matches = matches;
 	}
+
+	public void addMatch(Match match){
+		Matches.add(match);
+	}
+
 	public String getDay() {
 		return Day;
 	}
