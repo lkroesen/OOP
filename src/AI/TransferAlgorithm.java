@@ -14,13 +14,13 @@ import model.Transfer;
  */
 public class TransferAlgorithm {
 
-	private static Game game;
-	private static ArrayList<Player> player = new ArrayList<Player>();
-	private static double sellChance = 0.05;
-	private static double buyChance = 0.04;
+	private Game game;
+	private ArrayList<Player> player = new ArrayList<Player>();
+	private double sellChance = 0.05;
+	private double buyChance = 0.04;
 
 	public TransferAlgorithm(Game game){
-		TransferAlgorithm.game = game;
+		this.game = game;
 	}
 	public void DailyRoutine(Game game){
 		Updater(game);
@@ -29,7 +29,7 @@ public class TransferAlgorithm {
 	}
 	public void Updater(Game game){
 		this.game = game;
-		for(Player p : TransferAlgorithm.player){
+		for(Player p : this.player){
 			for(League l : game.getLeagues()){
 				for(Team t : l.getTeams()){
 					for(Player p1 : t.getPlayers()){
@@ -43,7 +43,7 @@ public class TransferAlgorithm {
 		}
 	}
 	public ArrayList<Player> getTransferringplayers(){
-		return TransferAlgorithm.player;
+		return this.player;
 	}
 	/**Calculates the Price of a give Player p
 	 * 
@@ -86,7 +86,7 @@ public class TransferAlgorithm {
 	 * @param p
 	 */
 	public void AddPlayer(Player p){
-		TransferAlgorithm.player.add(p);
+		this.player.add(p);
 	}
 	/**Removes Player from the ArrayList with Players for sale.
 	 * 
