@@ -15,7 +15,7 @@ import model.Transfer;
 public class TransferAlgorithm {
 
 	private static Game game;
-	private static ArrayList<Player> player;
+	private static ArrayList<Player> player = new ArrayList<Player>();
 	private static double sellChance = 0.05;
 	private static double buyChance = 0.04;
 
