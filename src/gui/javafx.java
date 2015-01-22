@@ -506,7 +506,10 @@ public class javafx extends Application{
 									swapboxatk.getChildren().addAll(playerbuttons.get(i));
 								}
 							}
-							if(10 < players.get(i).getPosition() && players.get(i).getPosition() < 18){	
+							if(10 < players.get(i).getPosition() && players.get(i).getPosition() < 18){
+								if(players.get(i).getType() == 0){
+									swapboxbenchkeep.getChildren().add(playerbuttons.get(i));
+								}
 								if(players.get(i).getType() == 1){
 									swapboxbenchdef.getChildren().addAll(playerbuttons.get(i));
 								}
@@ -518,6 +521,9 @@ public class javafx extends Application{
 								}
 							}
 							if(-1 == players.get(i).getPosition()){
+								if(players.get(i).getType() == 0){
+									swapboxreskeep.getChildren().add(playerbuttons.get(i));
+								}
 								if(players.get(i).getType() == 1){
 									swapboxresdef.getChildren().addAll(playerbuttons.get(i));
 								}
@@ -1019,6 +1025,9 @@ public class javafx extends Application{
 					}
 				}
 				if(10 < players.get(i).getPosition() && players.get(i).getPosition() < 18){	
+					if(players.get(i).getType() == 0){
+						teamboxbenchkeep.getChildren().add(playerbuttons.get(i));
+					}
 					if(players.get(i).getType() == 1){
 						teamboxbenchdef.getChildren().addAll(playerbuttons.get(i));
 					}
@@ -1030,6 +1039,9 @@ public class javafx extends Application{
 					}
 				}
 				if(-1 == players.get(i).getPosition()){
+					if(players.get(i).getType() == 0){
+						teamboxreskeep.getChildren().add(playerbuttons.get(i));
+					}
 					if(players.get(i).getType() == 1){
 						teamboxresdef.getChildren().addAll(playerbuttons.get(i));
 					}
