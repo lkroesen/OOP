@@ -820,7 +820,6 @@ public class javafx extends Application{
 							public void handle(ActionEvent arg0){
 								bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, a/2, true);
 								betmade = true;
-								System.out.print(a);
 								teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
 								select.fire();
 							}
@@ -1308,53 +1307,65 @@ public class javafx extends Application{
 			currentplayround ++;
 			if(betmade == true){
 				if(bets.getMatchid() == ((currentplayround - 1) * 10)){
+					System.out.print(scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getResult());
 					String r[] = (scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getResult()).split("-");
 					int home = Integer.parseInt(r[0]);
 					int out = Integer.parseInt(r[1]);
 					if(home < out){
+						System.out.print("Friday out won");
 						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_home().getId()));
 					}
 					else if(home > out) {
+						System.out.print("Friday home won");
 						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getFriday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_away().getId()));
 					}
 					else {
+						System.out.print("Friday  won");
 						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
 					}
 					betmade = false;
 				}
-				if(bets.getMatchid() > ((currentplayround - 1) * 10) && bets.getMatchid() < (5 + (currentplayround - 1) * 10)){
-					String r[] = (scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getResult()).split("-");
+				if(bets.getMatchid() > ((currentplayround - 1) * 10) && bets.getMatchid() < ((scheme.getS().get(currentplayround - 1).getSaturday().getMatches().size() + 1) + (currentplayround - 1) * (10))){	
+					System.out.print(scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10) - 1).getResult());
+					String r[] = (scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10) - 1).getResult()).split("-");
 					int home = Integer.parseInt(r[0]);
 					int out = Integer.parseInt(r[1]);
 					if(home < out){
-						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_home().getId()));
+						System.out.print("sat out won");
+						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10) - 1).getTeam_home().getId()));
 					}
 					else if(home > out) {
-						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_away().getId()));
+						System.out.print("sat home won");
+						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSaturday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10) - 1).getTeam_away().getId()));
 					}
 					else {
+						System.out.print("sat tie won");
 						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
 					}
 					betmade = false;
 				}
-				if(bets.getMatchid() > (4 + (currentplayround - 1) * 10) && bets.getMatchid() < (9 + (currentplayround - 1) * 10)){
-					String r[] = (scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getResult()).split("-");
+				if(bets.getMatchid() > ((scheme.getS().get(currentplayround - 1).getSaturday().getMatches().size()) + (currentplayround - 1) * 10) && bets.getMatchid() < ((scheme.getS().get(currentplayround - 1).getSaturday().getMatches().size() + scheme.getS().get(currentplayround - 1).getSunday().getMatches().size()) + (currentplayround - 1) * 10)){
+					System.out.print(scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10) - 5).getResult());
+					String r[] = (scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10) - 5).getResult()).split("-");
 					int home = Integer.parseInt(r[0]);
 					int out = Integer.parseInt(r[1]);
 					if(home < out){
-						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_home().getId()));
+						System.out.print("sun out won");
+						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10) - 5).getTeam_home().getId()));
 					}
 					else if(home > out) {
-						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10)).getTeam_away().getId()));
+						System.out.print("sun home won");
+						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, scheme.getS().get(currentplayround - 1).getSunday().getMatches().get(bets.getMatchid() - ((currentplayround - 1)*10) - 5).getTeam_away().getId()));
 					}
 					else {
+						System.out.print("sun tie won");
 						teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() + Betting.After_Match(0, bets, bets.getS_won()));
 					}
 					betmade = false;
 				}
 			}
 			for(int i = 0; i < teams.size(); i++){
-				AI.Team_Training_User.Core(teams.get(i));
+				//AI.Team_Training_User.Core(teams.get(i));
 			}
 			rank = Ranking.generate(scheme);
 		}

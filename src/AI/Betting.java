@@ -281,21 +281,27 @@ public class Betting
 		// Can only bet if none of the matches of that day have taken place
 		
 		// Check if Friday has not been played
-		if (!DayPlayed(S.get(c_week).getFriday())) 
-			ListOfBets.add(S.get(c_week).getFriday().getMatches().get(0));
+		if(S.get(c_week).getFriday() != null){
+			if (!DayPlayed(S.get(c_week).getFriday())) 
+				ListOfBets.add(S.get(c_week).getFriday().getMatches().get(0));
+		}
 			
 			
 			
 		// Check if Saturday has not been played
-		if (!DayPlayed(S.get(c_week).getSaturday()))
-			for (int c = 0; c < S.get(c_week).getSaturday().getMatches().size(); c++)
-				ListOfBets.add(S.get(c_week).getSaturday().getMatches().get(c));
+		if(S.get(c_week).getSaturday() != null){
+			if (!DayPlayed(S.get(c_week).getSaturday()))
+				for (int c = 0; c < S.get(c_week).getSaturday().getMatches().size(); c++)
+					ListOfBets.add(S.get(c_week).getSaturday().getMatches().get(c));
+		}
 			
 			
 		// Check if Sunday has not been played
-		if (!DayPlayed(S.get(c_week).getSunday()))
-			for (int c = 0; c < S.get(c_week).getSunday().getMatches().size(); c++)
-				ListOfBets.add(S.get(c_week).getSunday().getMatches().get(c));
+		if(S.get(c_week).getSunday().getMatches().size() != 0){
+			if (!DayPlayed(S.get(c_week).getSunday()))
+				for (int c = 0; c < S.get(c_week).getSunday().getMatches().size(); c++)
+					ListOfBets.add(S.get(c_week).getSunday().getMatches().get(c));
+		}
 		
 		return ListOfBets;
 	}
