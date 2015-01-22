@@ -66,6 +66,7 @@ public class javafx extends Application{
 	boolean sellplayer = false;
 	boolean homematch = false;
 	boolean awaymatch = false;
+	boolean endofgame = false;
 	Bet bets;
 	Ranking rank;
 	ArrayList<Team> teams = new ArrayList<Team>();
@@ -394,8 +395,7 @@ public class javafx extends Application{
 				
 				
 			}
-		});
-	
+		});	
 	playeraction.setOnAction(new EventHandler<ActionEvent>(){
 		
 		@Override
@@ -604,12 +604,13 @@ public class javafx extends Application{
 		@Override
 		public void handle(ActionEvent arg0){
 			lbtext.setText("Ranking");
+			Label place = new Label("wtf is this");
 			VBox rankbox1 = new VBox(10);
 			VBox rankbox2 = new VBox(10);
 			VBox rankbox3 = new VBox(10);
 			VBox rankback = new VBox(10);
 			ArrayList<Label> ranks = new ArrayList<Label>();
-			rankbox1.getChildren().addAll(lbtext);
+			rankbox1.getChildren().addAll(lbtext,place);
 			for(int i = 0; i <teams.size(); i++){
 				ranks.add(new Label(i + 1 + " " + rank.getRanking()[i].getName().toString() + " " + rank.getScoreOfTeam()[i]));
 				if(i < 10){
@@ -622,12 +623,25 @@ public class javafx extends Application{
 					rankbox3.getChildren().addAll(ranks.get(i));
 				}
 			}
+			if(endofgame == true){
+				lbtext.setText("Season is over");
+			}
 			rankback.setAlignment(Pos.BOTTOM_RIGHT);
 			rankbox2.setTranslateY(80);
 			rankbox3.setTranslateY(80);
 			rankback.getChildren().add(next);
 			HBox rankboxtotal = new HBox(10);
-			rankboxtotal.getChildren().addAll(rankbox1,rankbox2,rankbox3,rankback);
+			if(endofgame == true){
+				for(int i = 0; i < ranks.size(); i++ ){
+					if(rank.getRanking()[i].getId() == teams.get(teamchoiceint).getId()){
+						place.setText("you finished: " + (i + 1));
+					}
+				}
+				rankboxtotal.getChildren().addAll(rankbox1,rankbox2,rankbox3);
+			}
+			else{
+				rankboxtotal.getChildren().addAll(rankbox1,rankbox2,rankbox3,rankback);
+			}
 			rankboxtotal.getStylesheets().add("resources/mystyle.css");
 			Scene rankscreen = new Scene(rankboxtotal,1500,750);
 			stage.setScene(rankscreen);
@@ -1370,6 +1384,10 @@ public class javafx extends Application{
 			rank = Ranking.generate(scheme);
 		}
 		Game.setCurrentDay(currentday);
+		if(scheme.getS().size() == currentplayround){
+			endofgame = true;
+			showrank.fire();
+		}
 		}
 	});
 	next.setOnAction(new EventHandler<ActionEvent>(){
