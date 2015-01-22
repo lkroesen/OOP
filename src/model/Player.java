@@ -174,10 +174,10 @@ public class Player {
 	 */
 	public static int[] ChangedStats(Player old_player, Player new_player)
 	{
-		int[] delta = new int[2];
-		delta[0] = (int) ( new_player.getOffensiveScore() - old_player.getOffensiveScore() );
-		delta[1] = (int) ( new_player.getDefensiveScore() - old_player.getDefensiveScore() );
-		delta[2] = (int) ( new_player.getStaminaScore() - old_player.getStaminaScore() );
+		int[] delta = new int[10];
+		delta[0] = ( new_player.getOffensiveScore() - old_player.getOffensiveScore() );
+		delta[1] = ( new_player.getDefensiveScore() - old_player.getDefensiveScore() );
+		delta[2] = ( new_player.getStaminaScore() - old_player.getStaminaScore() );
 		
 		return delta;
 	}

@@ -25,7 +25,7 @@ public class Training {
 		 int points = (int) (Math.random() * 100);
 		 int spendable = 0;
 		 
-		 System.out.println(points);
+		// System.out.println(points);
 		 
 		 if (points >=80 && points < 95)
 			 spendable = 1;

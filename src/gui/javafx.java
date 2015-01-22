@@ -1119,33 +1119,348 @@ public class javafx extends Application{
 		
 		@Override
 		public void handle(ActionEvent arg0){
+			lbtext.setText("changed stats");
+			VBox changebox1 = new VBox(10);
+			VBox changebox2 = new VBox(10);
+			VBox changebox3 = new VBox(10);
+			VBox changebox4 = new VBox(10);
+			VBox changebox5 = new VBox(10);
+			HBox changeboxtotal = new HBox();
+			changebox1.getChildren().add(lbtext);
+			changeboxtotal.getStylesheets().add("/resources/mystyle.css");
+			ArrayList<Player> oldplayers = new ArrayList<Player>();
+			ArrayList<Label> changes = new ArrayList<Label>();
 			for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+				oldplayers.add(new Player(0, " ", " ",(byte) 0, 0, 0,
+						(byte) teams.get(teamchoiceint).getPlayers().get(i).getOffensiveScore(),(byte) teams.get(teamchoiceint).getPlayers().get(i).getDefensiveScore(),
+						(byte) teams.get(teamchoiceint).getPlayers().get(i).getStaminaScore(), 0));
 			Training.RegularTraining(teams.get(teamchoiceint).getPlayers().get(i));
+			int[] numbers = Player.ChangedStats(oldplayers.get(i),teams.get(teamchoiceint).getPlayers().get(i));
+			changes.add(new Label(teams.get(teamchoiceint).getPlayers().get(i).getFirstname() + " " + teams.get(teamchoiceint).getPlayers().get(i).getSurname()));
+			changes.add(new Label("offensive changed: " + numbers[0]));
+			changes.add(new Label("defensive changed: " + numbers[1]));
+			changes.add(new Label("stamina changed: " + numbers[2]));
+			if(i < 6){
+				changebox1.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox1.getChildren().add(new Label("nothing changed"));
+				}
 			}
+			if(5 < i && i < 13){
+				changebox2.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox2.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(12 < i && i < 19){
+				changebox3.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox3.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(18 < i && i < 25){
+				changebox4.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox4.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(24 < i && i < 31){
+				changebox5.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox5.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			}
+			changebox2.setTranslateY(70);
+			changebox3.setTranslateY(70);
+			changebox4.setTranslateY(70);
+			changebox5.setTranslateY(70);
+			changeboxtotal.getChildren().addAll(changebox1,changebox2,changebox3,changebox4,changebox5, next);
+			Scene changescreen = new Scene(changeboxtotal,1500,750);
+			stage.setScene(changescreen);
 			traintoday = true;
-			select.fire();
 		}
 	});
 	heavytrain.setOnAction(new EventHandler<ActionEvent>(){
 		
 		@Override
 		public void handle(ActionEvent arg0){
+			lbtext.setText("changed stats");
+			VBox changebox1 = new VBox(10);
+			VBox changebox2 = new VBox(10);
+			VBox changebox3 = new VBox(10);
+			VBox changebox4 = new VBox(10);
+			VBox changebox5 = new VBox(10);
+			HBox changeboxtotal = new HBox();
+			changebox1.getChildren().add(lbtext);
+			changeboxtotal.getStylesheets().add("/resources/mystyle.css");
+			ArrayList<Player> oldplayers = new ArrayList<Player>();
+			ArrayList<Label> changes = new ArrayList<Label>();
 			for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+				oldplayers.add(new Player(0, " ", " ",(byte) 0, 0, 0,
+						(byte) teams.get(teamchoiceint).getPlayers().get(i).getOffensiveScore(),(byte) teams.get(teamchoiceint).getPlayers().get(i).getDefensiveScore(),
+						(byte) teams.get(teamchoiceint).getPlayers().get(i).getStaminaScore(), 0));
 			Training.HeavyTraining(teams.get(teamchoiceint).getPlayers().get(i));
+			int[] numbers = Player.ChangedStats(oldplayers.get(i),teams.get(teamchoiceint).getPlayers().get(i));
+			changes.add(new Label(teams.get(teamchoiceint).getPlayers().get(i).getFirstname() + " " + teams.get(teamchoiceint).getPlayers().get(i).getSurname()));
+			changes.add(new Label("offensive changed: " + numbers[0]));
+			changes.add(new Label("defensive changed: " + numbers[1]));
+			changes.add(new Label("stamina changed: " + numbers[2]));
+			if(i < 6){
+				changebox1.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox1.getChildren().add(new Label("nothing changed"));
+				}
 			}
+			if(5 < i && i < 13){
+				changebox2.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox2.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(12 < i && i < 19){
+				changebox3.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox3.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(18 < i && i < 25){
+				changebox4.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox4.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(24 < i && i < 31){
+				changebox5.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox5.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			}
+			changebox2.setTranslateY(70);
+			changebox3.setTranslateY(70);
+			changebox4.setTranslateY(70);
+			changebox5.setTranslateY(70);
+			changeboxtotal.getChildren().addAll(changebox1,changebox2,changebox3,changebox4,changebox5, next);
+			Scene changescreen = new Scene(changeboxtotal,1500,750);
+			stage.setScene(changescreen);
 			traintoday = true;
-			select.fire();
 		}
 	});
 	rest.setOnAction(new EventHandler<ActionEvent>(){
 		
 		@Override
 		public void handle(ActionEvent arg0){
+			lbtext.setText("changed stats");
+			VBox changebox1 = new VBox(10);
+			VBox changebox2 = new VBox(10);
+			VBox changebox3 = new VBox(10);
+			VBox changebox4 = new VBox(10);
+			VBox changebox5 = new VBox(10);
+			HBox changeboxtotal = new HBox();
+			changebox1.getChildren().add(lbtext);
+			changeboxtotal.getStylesheets().add("/resources/mystyle.css");
+			ArrayList<Player> oldplayers = new ArrayList<Player>();
+			ArrayList<Label> changes = new ArrayList<Label>();
 			for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+				oldplayers.add(new Player(0, " ", " ",(byte) 0, 0, 0,
+						(byte) teams.get(teamchoiceint).getPlayers().get(i).getOffensiveScore(),(byte) teams.get(teamchoiceint).getPlayers().get(i).getDefensiveScore(),
+						(byte) teams.get(teamchoiceint).getPlayers().get(i).getStaminaScore(), 0));
 			Training.rest(teams.get(teamchoiceint).getPlayers().get(i));
+			int[] numbers = Player.ChangedStats(oldplayers.get(i),teams.get(teamchoiceint).getPlayers().get(i));
+			changes.add(new Label(teams.get(teamchoiceint).getPlayers().get(i).getFirstname() + " " + teams.get(teamchoiceint).getPlayers().get(i).getSurname()));
+			changes.add(new Label("offensive changed: " + numbers[0]));
+			changes.add(new Label("defensive changed: " + numbers[1]));
+			changes.add(new Label("stamina changed: " + numbers[2]));
+			if(i < 6){
+				changebox1.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox1.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox1.getChildren().add(new Label("nothing changed"));
+				}
 			}
+			if(5 < i && i < 13){
+				changebox2.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox2.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox2.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(12 < i && i < 19){
+				changebox3.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox3.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox3.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(18 < i && i < 25){
+				changebox4.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox4.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox4.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			if(24 < i && i < 31){
+				changebox5.getChildren().addAll(changes.get(i*4));
+				if(!(changes.get(i*4 + 1).getText().equals("offensive changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 1));
+				}
+				if(!(changes.get(i*4 + 2).getText().equals("defensive changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 2));
+				}
+				if(!(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox5.getChildren().add(changes.get(i*4 + 3));
+				}
+				if((changes.get(i*4 + 1).getText().equals("offensive changed: " + 0)) && (changes.get(i*4 + 2).getText().equals("defensive changed: " + 0)) && 
+						(changes.get(i*4 + 3).getText().equals("stamina changed: " + 0))){
+					changebox5.getChildren().add(new Label("nothing changed"));
+				}
+			}
+			}
+			changebox2.setTranslateY(70);
+			changebox3.setTranslateY(70);
+			changebox4.setTranslateY(70);
+			changebox5.setTranslateY(70);
+			changeboxtotal.getChildren().addAll(changebox1,changebox2,changebox3,changebox4,changebox5, next);
+			Scene changescreen = new Scene(changeboxtotal,1500,750);
+			stage.setScene(changescreen);
 			traintoday = true;
-			select.fire();
 		}
 	});
 	nextday.setOnAction(new EventHandler<ActionEvent>(){
