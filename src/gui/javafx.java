@@ -53,7 +53,7 @@ public class javafx extends Application{
     //toptext of every scene and button for starting screen
 	Label lbtext;
 	Button newgame, loadgame, mutesong, mutevideo, backng, backlg, backteam, select, central, nextday, next, leagueaction, teamaction, playeraction, train, lighttrain
-	, heavytrain, rest, position, showteam, market, sell, buy, bet, upcoming, showrank, savegame, save1, save2, save3, save4;
+	, heavytrain, rest, position, showteam, market, sell, buy, bet, selectbudget, upcoming, showrank, savegame, save1, save2, save3, save4, amount1, amount2, amount3, amount4;
 	
 	Button Back = new Button ("Back");
 	int teamchoiceint, playerchoiceint, currentplayround = 0, currentday = 0, positionint = 0,leaguechoice = 0, swapplayer, matchid;
@@ -143,6 +143,7 @@ public class javafx extends Application{
 		leagueaction = new Button();
 		teamaction = new Button();
 		playeraction = new Button();
+		selectbudget = new Button();
 		loadgame = new Button("Load game");
 		mutesong = new Button("Mute/unmute");
 		mutevideo = new Button("Mute/unmute");
@@ -173,6 +174,10 @@ public class javafx extends Application{
 		save2 = new Button("Save 2");
 		save3 = new Button("Save 3");
 		save4 = new Button("Save 4");
+		amount1 = new Button("100000");
+		amount2 = new Button("250000");
+		amount3 = new Button("500000");
+		amount4 = new Button("1000000");
 
 		//Ugly as fuck
 		//lbtext.setEffect(reflection);
@@ -333,7 +338,7 @@ public class javafx extends Application{
 			
 			@Override
 			public void handle(ActionEvent arg0){
-				leagueaction.fire();
+				Back.fire();
 				
 			}
 		});
@@ -655,6 +660,50 @@ public class javafx extends Application{
 			upcoming.fire();
 		}
 	});
+	selectbudget.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			VBox betamountbox = new VBox(10);
+			lbtext.setText("select betting amount");
+			betamountbox.getChildren().addAll(lbtext,amount1,amount2,amount3,amount4);
+			betamountbox.getStylesheets().add("/resources/mystyle.css");
+			Scene betamountscreen = new Scene(betamountbox,1500,750);
+			stage.setScene(betamountscreen);
+		}
+	});
+	amount1.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 100000);
+			select.fire();
+		}
+	});
+	amount2.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 250000);
+			select.fire();
+		}
+	});
+	amount3.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
+			select.fire();
+		}
+	});
+	amount4.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 1000000);
+			select.fire();
+		}
+	});
 	market.setOnAction(new EventHandler<ActionEvent>(){
 		
 		@Override
@@ -834,8 +883,7 @@ public class javafx extends Application{
 							public void handle(ActionEvent arg0){
 								bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, a/2, true);
 								betmade = true;
-								teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-								select.fire();
+								selectbudget.fire();
 							}
 						});
 					}
@@ -846,8 +894,7 @@ public class javafx extends Application{
 							public void handle(ActionEvent arg0){
 								bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, (int) (a/2), false);
 								betmade = true;
-								teams.get(teamchoiceint).setBudget(teams.get(teamchoiceint).getBudget() - 500000);
-								select.fire();
+								selectbudget.fire();
 							}
 						});
 					}
