@@ -124,6 +124,9 @@ public class javafx extends Application{
 	    Media mediawin = new Media(javafx.class.getResource("/resources/win.mp4").toExternalForm());
 	    final MediaPlayer mediaPlayerwin = new MediaPlayer(mediawin);
 	    
+	    Media mediatie = new Media(javafx.class.getResource("/resources/tie.mp4").toExternalForm());
+	    final MediaPlayer mediaPlayertie = new MediaPlayer(mediatie);
+	    
 	    Media medialose = new Media(javafx.class.getResource("/resources/lose.mp4").toExternalForm());
 	    final MediaPlayer mediaPlayerlose = new MediaPlayer(medialose);
 		//all video stuff
@@ -131,11 +134,13 @@ public class javafx extends Application{
 
 		final MediaView mediaView = new MediaView(mediaPlayer);
 		final MediaView mediaViewwin = new MediaView(mediaPlayerwin);
-	       final MediaView mediaViewlose = new MediaView(mediaPlayerlose);
+		final MediaView mediaViewtie = new MediaView(mediaPlayertie);
+	    final MediaView mediaViewlose = new MediaView(mediaPlayerlose);
 	       
 	       mediaView.setFitWidth(1500);
 	       mediaViewwin.setFitWidth(400);
 	       mediaViewlose.setFitWidth(400);
+	       mediaViewtie.setFitWidth(400);
 		
 		//set the text for first buttons and label and giving effects
 		lbtext = new Label("Footballmanager");
@@ -1202,7 +1207,10 @@ public class javafx extends Application{
 					    mediaPlayerwin.setVolume(0);
 					}
 					else{
-						matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+						matchresultfriday.getChildren().addAll(matchlabel,resultlabel,mediaViewtie);
+						mediaPlayertie.setAutoPlay(true);
+						mediaPlayertie.setCycleCount(MediaPlayer.INDEFINITE);
+						mediaPlayertie.setVolume(0);
 					}
 				}
 				else if(awaymatch == true){
@@ -1223,7 +1231,10 @@ public class javafx extends Application{
 					    mediaPlayerlose.setVolume(0);
 					}
 					else{
-						matchresultfriday.getChildren().addAll(matchlabel,resultlabel);
+						matchresultfriday.getChildren().addAll(matchlabel,resultlabel,mediaViewtie);
+						mediaPlayertie.setAutoPlay(true);
+						mediaPlayertie.setCycleCount(MediaPlayer.INDEFINITE);
+						mediaPlayertie.setVolume(0);
 					}
 				}
 				else {
@@ -1267,7 +1278,10 @@ public class javafx extends Application{
 					    mediaPlayerwin.setVolume(0);
 					}
 					else{
-						matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+						matchresultsaturday.getChildren().addAll(matchlabel,resultlabel,mediaViewtie);
+						mediaPlayertie.setAutoPlay(true);
+						mediaPlayertie.setCycleCount(MediaPlayer.INDEFINITE);
+						mediaPlayertie.setVolume(0);
 					}
 				}
 				else if(awaymatch == true){
@@ -1288,7 +1302,10 @@ public class javafx extends Application{
 					    mediaPlayerlose.setVolume(0);
 					}
 					else{
-						matchresultsaturday.getChildren().addAll(matchlabel,resultlabel);
+						matchresultsaturday.getChildren().addAll(matchlabel,resultlabel,mediaViewtie);
+						mediaPlayertie.setAutoPlay(true);
+						mediaPlayertie.setCycleCount(MediaPlayer.INDEFINITE);
+						mediaPlayertie.setVolume(0);
 					}
 				}
 				else {
@@ -1334,7 +1351,10 @@ public class javafx extends Application{
 					    mediaPlayerwin.setVolume(0);
 					}
 					else{
-						matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+						matchresultsunday.getChildren().addAll(matchlabel,resultlabel,mediaViewtie);
+						mediaPlayertie.setAutoPlay(true);
+						mediaPlayertie.setCycleCount(MediaPlayer.INDEFINITE);
+						mediaPlayertie.setVolume(0);
 					}
 				}
 				else if(awaymatch == true){
@@ -1355,7 +1375,10 @@ public class javafx extends Application{
 					    mediaPlayerlose.setVolume(0);
 					}
 					else{
-						matchresultsunday.getChildren().addAll(matchlabel,resultlabel);
+						matchresultsunday.getChildren().addAll(matchlabel,resultlabel,mediaViewtie);
+						mediaPlayertie.setAutoPlay(true);
+						mediaPlayertie.setCycleCount(MediaPlayer.INDEFINITE);
+						mediaPlayertie.setVolume(0);
 					}
 				}
 				else {
