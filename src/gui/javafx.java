@@ -724,7 +724,7 @@ public class javafx extends Application{
 						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,nextday,upcoming, showrank,savegame, mutesong);
 					}
 					if(financeboolean == true){
-						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,bet,market, mutesong);
+						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,market, mutesong);
 					}
 					if(teamboolean == true){
 						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,train,position,showteam, mutesong);
@@ -747,7 +747,7 @@ public class javafx extends Application{
 					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,nextday,upcoming, showrank,savegame, mutesong);
 				}
 				if(financeboolean == true){
-					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,bet,market, mutesong);
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,market, mutesong);
 				}
 				if(teamboolean == true){
 					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,train,position,showteam, mutesong);
