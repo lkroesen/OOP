@@ -2,12 +2,14 @@ package AI;
 
 import java.util.ArrayList;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 import model.Match;
 
 public class PlayDay 
 {
 	
-	private ArrayList<Match> Matches;
+	private ArrayList<Match> Matches = new ArrayList<Match>();
 	private String Day;
 	
 	public PlayDay()

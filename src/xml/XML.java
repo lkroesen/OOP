@@ -117,7 +117,6 @@ public class XML {
 
 									// Create match instance with appropriate settings
 									Match matchObject = new Match(mid,day);
-
 									// Get home team data
 									NodeList homeData = match.getElementsByTagName("team_home");
 									for (int c = 0; c < homeData.getLength(); c++) {
@@ -127,7 +126,6 @@ public class XML {
 
 											// Get home team id
 											int team = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
-
 											NodeList homeEvents = home.getElementsByTagName("event");
 											for(int d = 0; d < homeEvents.getLength(); d++){
 												// Loop through events
@@ -181,14 +179,13 @@ public class XML {
 											}
 										}
 									}
-
 									pFriday.addMatch(matchObject);
-
 								}
 							}
 						}
 
 					}
+					
 					mPlayRound.setFriday(pFriday);
 
 					NodeList saturdayData = playRound.getElementsByTagName("saturday");
@@ -644,7 +641,7 @@ public class XML {
 					Element eHomeEvents = doc.createElement("team_home");
 
 					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_home()+ "");
+					eHomeEvents.setAttribute("id", m.getTeam_home().getId()+ "");
 
 					// Loop through HomeEvents
 					for (Event e : m.getEvents_home()){
@@ -675,7 +672,7 @@ public class XML {
 					Element eAwayEvents = doc.createElement("team_away");
 
 					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_away()+ "");
+					eAwayEvents.setAttribute("id", m.getTeam_away().getId()+ "");
 
 					// Loop through HomeEvents
 					for (Event e : m.getEvents_away()){
@@ -696,7 +693,7 @@ public class XML {
 						eOutfor.setTextContent(e.getOutfor() + "");
 						eEvent.appendChild(eOutfor);
 
-						eHomeEvents.appendChild(eEvent);
+						eAwayEvents.appendChild(eEvent);
 					}
 
 					eMatch.appendChild(eAwayEvents);
@@ -718,7 +715,7 @@ public class XML {
 					Element eHomeEvents = doc.createElement("team_home");
 
 					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_home()+ "");
+					eHomeEvents.setAttribute("id", m.getTeam_home().getId()+ "");
 
 					// Loop through HomeEvents
 					for (Event e : m.getEvents_home()){
@@ -749,7 +746,7 @@ public class XML {
 					Element eAwayEvents = doc.createElement("team_away");
 
 					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_away()+ "");
+					eAwayEvents.setAttribute("id", m.getTeam_away().getId()+ "");
 
 					// Loop through HomeEvents
 					for (Event e : m.getEvents_away()){
@@ -770,7 +767,7 @@ public class XML {
 						eOutfor.setTextContent(e.getOutfor() + "");
 						eEvent.appendChild(eOutfor);
 
-						eHomeEvents.appendChild(eEvent);
+						eAwayEvents.appendChild(eEvent);
 					}
 
 					eMatch.appendChild(eAwayEvents);
@@ -792,7 +789,7 @@ public class XML {
 					Element eHomeEvents = doc.createElement("team_home");
 
 					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_home()+ "");
+					eHomeEvents.setAttribute("id", m.getTeam_home().getId()+ "");
 
 					// Loop through HomeEvents
 					for (Event e : m.getEvents_home()){
@@ -823,7 +820,7 @@ public class XML {
 					Element eAwayEvents = doc.createElement("team_away");
 
 					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_away()+ "");
+					eAwayEvents.setAttribute("id", m.getTeam_away().getId()+ "");
 
 					// Loop through HomeEvents
 					for (Event e : m.getEvents_away()){
@@ -844,7 +841,7 @@ public class XML {
 						eOutfor.setTextContent(e.getOutfor() + "");
 						eEvent.appendChild(eOutfor);
 
-						eHomeEvents.appendChild(eEvent);
+						eAwayEvents.appendChild(eEvent);
 					}
 
 					eMatch.appendChild(eAwayEvents);
