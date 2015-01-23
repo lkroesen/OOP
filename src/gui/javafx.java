@@ -792,7 +792,7 @@ public class javafx extends Application{
 		@Override
 		public void handle(ActionEvent arg0){
 			lbtext.setText("Ranking");
-			Label place = new Label("current rank");
+			Label place = new Label("Your team's current rank is: " + Ranking.CurrentRank(teamchoiceint, rank));
 			VBox rankbox1 = new VBox(10);
 			VBox rankbox2 = new VBox(10);
 			VBox rankbox3 = new VBox(10);

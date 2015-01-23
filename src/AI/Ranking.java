@@ -252,4 +252,26 @@ public class Ranking
 		if (AoD > 0)
 			System.out.println(AoD + "-way tie, extra matches required!");
 	}
+	
+	/**
+	 * Gets the current rank of the team
+	 * @param ID
+	 * Input the team ID
+	 * @param r
+	 * Input the current ranking
+	 * @return
+	 * Returns the number at which the rank is located
+	 */
+	public static int CurrentRank(int ID, Ranking r)
+	{
+		int cu = 0;
+		Team[] a = r.getRanking();
+		for (int c = 0; c < r.getRanking().length; c++)
+		{
+			if (ID == a[c].getId())
+			{cu = c;}
+		}
+		
+		return cu+1;
+	}
 }
