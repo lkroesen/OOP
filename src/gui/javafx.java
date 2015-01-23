@@ -739,7 +739,7 @@ public class javafx extends Application{
 					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,bet,market, mutesong);
 				}
 				if(teamboolean == true){
-					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,train,position,showteam, mutesong);
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,position,showteam, mutesong);
 				}
 			}
 			else{
@@ -750,7 +750,7 @@ public class javafx extends Application{
 					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,market, mutesong);
 				}
 				if(teamboolean == true){
-					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,train,position,showteam, mutesong);
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,position,showteam, mutesong);
 				}
 			}
 			imageadd.getChildren().addAll(teamchoicebox);
@@ -820,11 +820,6 @@ public class javafx extends Application{
 			rankback.getChildren().add(next);
 			HBox rankboxtotal = new HBox(10);
 			if(endofgame == true){
-				for(int i = 0; i < ranks.size(); i++ ){
-					if(rank.getRanking()[i].getId() == teams.get(teamchoiceint).getId()){
-						place.setText("you finished: " + (i + 1));
-					}
-				}
 				rankboxtotal.getChildren().addAll(rankbox1,rankbox2,rankbox3);
 			}
 			else{
