@@ -1,7 +1,9 @@
 package xml;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -15,6 +17,7 @@ import javax.xml.transform.stream.StreamResult;
 import AI.PlayDay;
 import AI.PlayRound;
 import AI.Schedule;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -57,7 +60,8 @@ public class XML {
 	 * @throws Exception
 	 */
 	public Game parseGame() throws SAXException, IOException, Exception {		
-		Document document = builder.parse(ClassLoader.getSystemResourceAsStream(filename));
+		//Document document = builder.parse(ClassLoader.getSystemResourceAsStream(filename));
+		Document document = builder.parse(new FileInputStream(filename));
 		document.normalize();
 		
 		Game game = null;

@@ -2,7 +2,13 @@ package gui;
 
 //unused imports are unused
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
+
+import org.omg.CORBA.PRIVATE_MEMBER;
 
 import AI.Bet;
 import AI.Betting;
@@ -67,6 +73,7 @@ public class javafx extends Application{
 	boolean homematch = false;
 	boolean awaymatch = false;
 	boolean endofgame = false;
+	static String savelocation = "";
 	Bet bets;
 	Ranking rank;
 	ArrayList<Team> teams = new ArrayList<Team>();
@@ -77,14 +84,67 @@ public class javafx extends Application{
 	
 	//launches the gui
 	public static void main(String[] args){
+		System.out.println(System.getProperty("os.name"));
+		if(System.getProperty("os.name").toLowerCase().startsWith("windows")){
+			File f = new File(System.getenv("APPDATA") + "/UltimateFootbalManager2014");
+			try{
+				System.out.println("making dir" + f.mkdirs());
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			System.out.println("win " + f.getAbsolutePath());
+			savelocation = f.getAbsolutePath();
+		}else if(System.getProperty("os.name").toLowerCase().startsWith("mac")){
+			
+			File f = new File(System.getProperty("user.home") + "/Library/Application Support/UltimateFootbalManager2014/");
+			f.mkdir();
+			System.out.println("mac " + f.getAbsolutePath());
+
+			savelocation = f.getAbsolutePath();
+		}else{
+			File f = new File("saves");
+			f.mkdir();
+			System.out.println("else " + f.getAbsolutePath());
+			savelocation = f.getAbsolutePath();
+		}
+		File dest = new File(savelocation+"/default.xml");
+		copy_save(javafx.class.getResourceAsStream("/toms_more_teams.xml"), savelocation+"/default.xml");
 		launch(args);
+	}
+	
+	private static void copy_save(InputStream filein, String fileout) {;
+			File f = new File(fileout);
+			if(f.exists())
+				return;
+			FileOutputStream fos = null;
+			try {
+			    fos = new FileOutputStream(fileout);
+			    byte[] buf = new byte[2048];
+			    int r = filein.read(buf);
+			    while(r != -1) {
+			        fos.write(buf, 0, r);
+			        r = filein.read(buf);
+			    }
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+			    if(fos != null) {
+			        try {
+						fos.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			    }
+			}
 	}
 
 	@Override
 	public void start(final Stage stage) throws Exception {
 		
 		stage.setResizable(false);
-		final XML xml = new XML("toms_more_teams.xml");
+		final XML xml = new XML(savelocation + "/default.xml");
 		final Game game = xml.parseGame();
 		final TransferAlgorithm algorithm = new TransferAlgorithm(game);
 		final ArrayList<League> leagues = game.getLeagues();
@@ -273,7 +333,7 @@ public class javafx extends Application{
 			@Override
 			public void handle(ActionEvent arg0){
 				try {
-					final XML xml1 = new XML("save1");
+					final XML xml1 = new XML(savelocation + "/save1");
 					final Game game1 = xml1.parseGame();
 					leaguechoice = (game1.getCurrentLeague());
 					System.out.print(leaguechoice);
@@ -1138,28 +1198,28 @@ public class javafx extends Application{
 				public void handle(ActionEvent arg0){
 					game.setCurrentLeague(leaguechoice);
 					game.setCurrentPlayRound(currentplayround);
-					xml.writeGame(game, "save1");
+					xml.writeGame(game, savelocation + "/save1");
 				}
 			});
 			save2.setOnAction(new EventHandler<ActionEvent>(){
 				
 				@Override
 				public void handle(ActionEvent arg0){
-					xml.writeGame(game, "save2");
+					xml.writeGame(game, savelocation +"/save2");
 				}
 			});
 			save3.setOnAction(new EventHandler<ActionEvent>(){
 				
 				@Override
 				public void handle(ActionEvent arg0){
-					xml.writeGame(game, "save3");
+					xml.writeGame(game, savelocation + "/save3");
 				}
 			});
 			save4.setOnAction(new EventHandler<ActionEvent>(){
 				
 				@Override
 				public void handle(ActionEvent arg0){
-					xml.writeGame(game, "save4");
+					xml.writeGame(game, savelocation + "/save4");
 				}
 			});
 		}
