@@ -478,20 +478,39 @@ public class javafx extends Application{
 							}
 						}
 					});
-					if(0 <= i && i < 10){
-						teambox1.getChildren().addAll(playerbuttons.get(i));
+					if(sellplayer == true){
+						if(0 <= i && i < 10 && players.get(i).getPosition() == -1){
+							teambox1.getChildren().addAll(playerbuttons.get(i));
+						}
+						if(10 <= i && i < 20 && players.get(i).getPosition() == -1){
+							teambox2.getChildren().addAll(playerbuttons.get(i));
+						}
+						if(20 <= i && i < 30 && players.get(i).getPosition() == -1){
+							teambox3.getChildren().addAll(playerbuttons.get(i));
+						}
+						if(30 <= i && i < 40 && players.get(i).getPosition() == -1){
+							teambox4.getChildren().addAll(playerbuttons.get(i));
+						}
+						if(40 <= i && i < 50 && players.get(i).getPosition() == -1){
+							teambox5.getChildren().addAll(playerbuttons.get(i));
+						}
 					}
-					if(10 <= i && i < 20){
-						teambox2.getChildren().addAll(playerbuttons.get(i));
-					}
-					if(20 <= i && i < 30){
-						teambox3.getChildren().addAll(playerbuttons.get(i));
-					}
-					if(30 <= i && i < 40){
-						teambox4.getChildren().addAll(playerbuttons.get(i));
-					}
-					if(40 <= i && i < 50){
-						teambox5.getChildren().addAll(playerbuttons.get(i));
+					else{
+						if(0 <= i && i < 10){
+							teambox1.getChildren().addAll(playerbuttons.get(i));
+						}
+						if(10 <= i && i < 20){
+							teambox2.getChildren().addAll(playerbuttons.get(i));
+						}
+						if(20 <= i && i < 30){
+							teambox3.getChildren().addAll(playerbuttons.get(i));
+						}
+						if(30 <= i && i < 40){
+							teambox4.getChildren().addAll(playerbuttons.get(i));
+						}
+						if(40 <= i && i < 50){
+							teambox5.getChildren().addAll(playerbuttons.get(i));
+						}
 					}
 				}
 				teambox2.translateYProperty().set(70);
@@ -904,7 +923,7 @@ public class javafx extends Application{
 		
 		@Override
 		public void handle(ActionEvent arg0){
-			if(11 < teams.get(teamchoiceint).getPlayers().size()){
+			if(18 < teams.get(teamchoiceint).getPlayers().size()){
 				sellplayer = true;
 				teamaction.fire();
 			}
