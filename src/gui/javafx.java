@@ -343,12 +343,33 @@ public class javafx extends Application{
 					final XML xml1 = new XML(savelocation + "/save1");
 					final Game game1 = xml1.parseGame();
 					leaguechoice = (game1.getCurrentLeague());
-					System.out.print(leaguechoice);
 					teams = leagues.get(leaguechoice).getTeams();
-					System.out.print(teams.toString());
 					teamchoiceint = (game1.getCurrentTeam());
+					players = teams.get(teamchoiceint).getPlayers();
+					scheme = game1.getSchedule();
+					for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+						playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+						final int a = i;
+						playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
+							@Override
+							public void handle(ActionEvent arg0){
+								if(sellplayer == false){
+									playerchoiceint = a;
+									playeraction.fire();
+								}
+								else{
+									algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
+									sellplayer = false;
+									select.fire();
+								}
+							}
+						});
+					}
+					game1.setSchedule(scheme);
 					currentday = (game1.getCurrentDay());
 					currentplayround = (game1.getCurrentPlayRound());
+					System.out.print(game1.getSchedule());
+					rank = rank.generate(scheme);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

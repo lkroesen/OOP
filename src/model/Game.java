@@ -57,7 +57,7 @@ public class Game {
 	}
 
 	public Schedule getSchedule() {
-		return schedule;
+		return this.schedule;
 	}
 
 	public void setSchedule(Schedule schedule) {

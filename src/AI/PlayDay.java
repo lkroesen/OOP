@@ -34,7 +34,7 @@ public class PlayDay
 	}
 
 	public void addMatch(Match match){
-		Matches.add(match);
+		this.Matches.add(match);
 	}
 
 	public String getDay() {
