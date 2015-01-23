@@ -53,7 +53,16 @@ public class PlayMatch {
 			attack(!last);
 			last = !last;
 		}
-		
+		if(hgoal > agoal){
+			home.setBudget(home.getBudget() + 1000000);
+		}
+		else if(hgoal < agoal){
+			away.setBudget(away.getBudget() + 1000000);
+		}
+		else {
+			home.setBudget(home.getBudget() + 500000);
+			away.setBudget(away.getBudget() + 500000);
+		}
 		return hgoal+"-"+agoal;
 	}
 	

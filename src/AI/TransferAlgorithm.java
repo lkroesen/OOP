@@ -16,8 +16,8 @@ public class TransferAlgorithm {
 
 	private Game game;
 	private ArrayList<Player> player = new ArrayList<Player>();
-	private double sellChance = 0.01;
-	private double buyChance = 0.0099;
+	private double sellChance = 0.001;
+	private double buyChance = 0.00099;
 
 	public TransferAlgorithm(Game game){
 		this.game = game;
@@ -51,7 +51,7 @@ public class TransferAlgorithm {
 	 * @param p
 	 */
 	public void CalculateWorth(Player p){
-		int worth = 33333*(p.getDefensiveScore()+p.getOffensiveScore()+p.getStaminaScore());
+		int worth = 10*(p.getDefensiveScore()*p.getOffensiveScore()*p.getStaminaScore());
 		p.setPrice(worth);
 	}
 	/**Transfers a Player p from the old team to a new team(tn)
@@ -66,21 +66,23 @@ public class TransferAlgorithm {
 				for(int k = 0; k < game.getLeagues().get(i).getTeams().get(j).getPlayers().size(); k++){
 					if(game.getLeagues().get(i).getTeams().get(j).getPlayers().get(k).equals(p)){
 						CalculateWorth(p);
-
-						int cost = p.getPrice();
-						tn.setBudget((tn.getBudget()-cost));
-						game.getLeagues().get(i).getTeams().get(j).setBudget((game.getLeagues().get(i).getTeams().get(j).getBudget()+cost));
-						game.getLeagues().get(i).getTeams().get(j).delPlayer(p);
-						tn.addPlayer(p);
-						p.setPosition(-1);
-						int id = 0;
-						Transfer tr = new Transfer(id, game.getLeagues().get(i).getTeams().get(j).getId(), tn.getId(), p.getPrice(), cost, game.getCurrentDay());
-						game.addTransfer(tr);
+						System.out.println(p.getPrice() + " " + tn.getBudget());
+						if(p.getPrice() < tn.getBudget()){
+							int cost = p.getPrice();
+							tn.setBudget((tn.getBudget()-cost));
+							game.getLeagues().get(i).getTeams().get(j).setBudget((game.getLeagues().get(i).getTeams().get(j).getBudget()+cost));
+							game.getLeagues().get(i).getTeams().get(j).delPlayer(p);
+							tn.addPlayer(p);
+							p.setPosition(-1);
+							int id = 0;
+							Transfer tr = new Transfer(id, game.getLeagues().get(i).getTeams().get(j).getId(), tn.getId(), p.getPrice(), cost, game.getCurrentDay());
+							game.addTransfer(tr);
+							DelPlayer(p);
+						}
 					}
 				}
 			}
 		}
-		DelPlayer(p);
 	}
 	/**Adds Player to the ArrayList with Players for sale.
 	 * 

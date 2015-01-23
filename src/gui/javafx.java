@@ -58,7 +58,7 @@ public class javafx extends Application{
 	
     //toptext of every scene and button for starting screen
 	Label lbtext;
-	Button newgame, loadgame, mutesong, mutevideo, backng, backlg, backteam, select, central, nextday, next, leagueaction, teamaction, playeraction, train, lighttrain
+	Button newgame, loadgame, mutesong, mutevideo, backng, backlg, backteam, select, central, team, finance, nextday, next, leagueaction, teamaction, playeraction, train, lighttrain
 	, heavytrain, rest, position, showteam, market, sell, buy, bet, selectbudget, upcoming, showrank, savegame, save1, save2, save3, save4, amount1, amount2, amount3, amount4;
 	
 	Button Back = new Button ("Back");
@@ -73,6 +73,9 @@ public class javafx extends Application{
 	boolean homematch = false;
 	boolean awaymatch = false;
 	boolean endofgame = false;
+	boolean centralboolean = true;
+	boolean financeboolean = false;
+	boolean teamboolean = false;
 	static String savelocation = "";
 	Bet bets;
 	Ranking rank;
@@ -205,7 +208,7 @@ public class javafx extends Application{
 		//set the text for first buttons and label and giving effects
 		lbtext = new Label("Footballmanager");
 		newgame = new Button("New game");
-		leagueaction = new Button();
+		leagueaction = new Button("Back");
 		teamaction = new Button();
 		playeraction = new Button();
 		selectbudget = new Button();
@@ -219,6 +222,10 @@ public class javafx extends Application{
 
 		central = new Button("Central");
 		central.getStyleClass().add("tab");
+		finance = new Button("Finance");
+		finance.getStyleClass().add("tab");
+		team = new Button("Team");
+		team.getStyleClass().add("tab");
 		nextday = new Button("Next day");
 
 		next = new Button("Continue");
@@ -429,7 +436,7 @@ public class javafx extends Application{
 				HBox playerdisplay = new HBox();
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
-				vbBack.getChildren().addAll(select,mutesong,backng);
+				vbBack.getChildren().addAll(select,mutesong,leagueaction);
 				teambox1.getChildren().addAll(lbtext);
 				for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
 					final int a = i;
@@ -615,13 +622,14 @@ public class javafx extends Application{
 					}
 				swapboxkeep.getChildren().add(swapboxdef);
 				swapboxmid.getChildren().add(swapboxatk);
-				swapboxmid.setTranslateX(-100);
+				swapboxmid.setTranslateX(-50);
 				swapboxmid.setTranslateY(70);
 				swapboxbenchkeep.getChildren().addAll(swapboxbenchdef,swapboxbenchmid,swapboxbenchatk);
-				swapboxbenchkeep.setTranslateX(-100);
-				swapboxreskeep.getChildren().addAll(swapboxresdef,swapboxresmid,swapboxresatk);
-				swapboxreskeep.setTranslateX(-100);
-				totalswap.getChildren().addAll(swapboxkeep,swapboxmid,swapboxbenchkeep,swapboxreskeep);
+				swapboxbenchkeep.setTranslateX(-50);
+				swapboxreskeep.getChildren().addAll(swapboxresdef);
+				swapboxresmid.getChildren().addAll(swapboxresatk);
+				swapboxreskeep.setTranslateX(-50);
+				totalswap.getChildren().addAll(swapboxkeep,swapboxmid,swapboxbenchkeep,swapboxreskeep,swapboxresmid);
 				totalswap.getStylesheets().add("resources/mystyle.css");
 				Scene swapscreen = new Scene(totalswap,1500,750);
 				swapscreen.getStylesheets().add("resources/mystyle.css");
@@ -650,6 +658,7 @@ public class javafx extends Application{
 			Game.setCurrentTeam(teamchoiceint);
 			transferbuttons.clear();
 			pastnewgame = true;
+			HBox tabs = new HBox(10);
 			Label currentdaylabel = new Label("Monday");
 			if(currentday == 1){
 				currentdaylabel.setText("Tuesday");
@@ -671,6 +680,7 @@ public class javafx extends Application{
 			}
 			VBox teamchoicebox = new VBox(10);
 			HBox imageadd = new HBox(10);
+			tabs.getChildren().addAll(central,finance,team);
 			teamchoicebox.getStylesheets().add("resources/mystyle.css");
 			teamchoicebox.getStyleClass().add("main_menu");
 			imageadd.getStylesheets().add("resources/mystyle.css");
@@ -678,27 +688,90 @@ public class javafx extends Application{
 			lbtext.setText(teams.get(teamchoiceint).getName());
 			if(traintoday == false){
 				if(betmade == false && currentday < 5){
-					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,central,nextday,train,position,showteam,bet,market,upcoming, showrank,savegame, mutesong);
+					if(centralboolean == true){
+						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,nextday,upcoming, showrank,savegame, mutesong);
+					}
+					if(financeboolean == true){
+						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,bet,market, mutesong);
+					}
+					if(teamboolean == true){
+						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,train,position,showteam, mutesong);
+					}
 				}
 				else{
-					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,central,nextday,train,position,showteam,market,upcoming, showrank,savegame, mutesong);							}
+					if(centralboolean == true){
+						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,nextday,upcoming, showrank,savegame, mutesong);
+					}
+					if(financeboolean == true){
+						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,bet,market, mutesong);
+					}
+					if(teamboolean == true){
+						teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,train,position,showteam, mutesong);
+					}
+				}
 			}
 			else if(betmade == false && currentday < 5){
-				teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,central,nextday,position,showteam,bet,market,upcoming, showrank,savegame, mutesong);
+				if(centralboolean == true){
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,nextday,upcoming, showrank,savegame, mutesong);
+				}
+				if(financeboolean == true){
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,bet,market, mutesong);
+				}
+				if(teamboolean == true){
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,train,position,showteam, mutesong);
+				}
 			}
 			else{
-				teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,central,nextday,position,showteam,market,upcoming, showrank,savegame, mutesong);
+				if(centralboolean == true){
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,nextday,upcoming, showrank,savegame, mutesong);
+				}
+				if(financeboolean == true){
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,bet,market, mutesong);
+				}
+				if(teamboolean == true){
+					teamchoicebox.getChildren().addAll(lbtext,currentdaylabel,tabs,train,position,showteam, mutesong);
+				}
 			}
 			imageadd.getChildren().addAll(teamchoicebox);
 			stage.setScene(teamchoicescreen);	
 		}
 	});								
+	central.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			centralboolean = true;
+			financeboolean = false;
+			teamboolean = false;
+			select.fire();
+		}
+	});
+	finance.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			centralboolean = false;
+			financeboolean = true;
+			teamboolean = false;
+			select.fire();
+		}
+	});
+	team.setOnAction(new EventHandler<ActionEvent>(){
+		
+		@Override
+		public void handle(ActionEvent arg0){
+			centralboolean = false;
+			financeboolean = false;
+			teamboolean = true;
+			select.fire();
+		}
+	});	
 	showrank.setOnAction(new EventHandler<ActionEvent>(){
 		
 		@Override
 		public void handle(ActionEvent arg0){
 			lbtext.setText("Ranking");
-			Label place = new Label("wtf is this");
+			Label place = new Label("current rank");
 			VBox rankbox1 = new VBox(10);
 			VBox rankbox2 = new VBox(10);
 			VBox rankbox3 = new VBox(10);
@@ -871,10 +944,10 @@ public class javafx extends Application{
 					
 							@Override
 							public void handle(ActionEvent arg0){
-								System.out.print(playerbuttons.size());
-								playerbuttons.add(new Button(playerstransfer.get(a).getFirstname() + " " + playerstransfer.get(a).getSurname()));
-								algorithm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
-								System.out.print(playerbuttons.size());
+								if((playerstransfer.get(a).getDefensiveScore()*playerstransfer.get(a).getOffensiveScore()*playerstransfer.get(a).getStaminaScore()) < teams.get(teamchoiceint).getBudget()){
+									playerbuttons.add(new Button(playerstransfer.get(a).getFirstname() + " " + playerstransfer.get(a).getSurname()));
+									algorithm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));	
+								}
 								select.fire();
 							}
 						});
@@ -1125,9 +1198,10 @@ public class javafx extends Application{
 			teamboxmid.setTranslateY(70);
 			teamboxbenchkeep.getChildren().addAll(teamboxbenchdef,teamboxbenchmid,teamboxbenchatk);
 			teamboxbenchkeep.setTranslateX(-100);
-			teamboxreskeep.getChildren().addAll(teamboxresdef,teamboxresmid,teamboxresatk);
+			teamboxreskeep.getChildren().addAll(teamboxresdef);
+			teamboxresmid.getChildren().addAll(teamboxresatk);
 			teamboxreskeep.setTranslateX(-100);
-			totalteam.getChildren().addAll(teamboxkeep,teamboxmid,teamboxbenchkeep,teamboxreskeep,teamback);
+			totalteam.getChildren().addAll(teamboxkeep,teamboxmid,teamboxbenchkeep,teamboxreskeep,teamboxresmid,teamback);
 			totalteam.getStylesheets().add("resources/mystyle.css");
 			Scene pos = new Scene(totalteam,1500,750);
 			stage.setScene(pos);
