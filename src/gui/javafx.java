@@ -433,7 +433,9 @@ public class javafx extends Application{
 				teambox1.getChildren().addAll(lbtext);
 				for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
 					final int a = i;
-					playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+					if(showboolean == false && sellplayer == false){
+						playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+					}
 					playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
 						@Override
 						public void handle(ActionEvent arg0){
@@ -468,7 +470,7 @@ public class javafx extends Application{
 				teambox3.translateYProperty().set(70);
 				teambox4.translateYProperty().set(70);
 				teambox5.translateYProperty().set(70);
-				if(sellplayer == true){
+				if(sellplayer == true || showboolean == true){
 					playerdisplay.getChildren().addAll(teambox1,teambox2,teambox3,teambox4,teambox5,next);
 				}
 				else{
@@ -869,9 +871,10 @@ public class javafx extends Application{
 					
 							@Override
 							public void handle(ActionEvent arg0){
-								System.out.print(playerstransfer.get(a).getFirstname() + " " + playerstransfer.get(a).getSurname());
+								System.out.print(playerbuttons.size());
 								playerbuttons.add(new Button(playerstransfer.get(a).getFirstname() + " " + playerstransfer.get(a).getSurname()));
 								algorithm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
+								System.out.print(playerbuttons.size());
 								select.fire();
 							}
 						});
@@ -1020,59 +1023,8 @@ public class javafx extends Application{
 		
 		@Override
 		public void handle(ActionEvent arg0){
-			VBox showteambox1 = new VBox(10);
-			VBox showteambox2 = new VBox(10);
-			VBox showteambox3 = new VBox(10);
-			VBox showteambox4 = new VBox(10);
-			VBox showteambox5 = new VBox(10);
-			HBox showplayerdisplay = new HBox();
-			VBox showback = new VBox(10);
-			showback.setAlignment(Pos.BOTTOM_RIGHT);
-			showback.getChildren().addAll(next);
-			showteambox1.getChildren().addAll(lbtext);
-			for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
-				playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
-					final int a = i;
-				playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
-					
-					@Override
-					public void handle(ActionEvent arg0){
-						if(sellplayer == false){
-							playerchoiceint = a;
-							playeraction.fire();
-						}
-						else{
-							algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
-							sellplayer = false;
-							select.fire();
-						}
-					}
-				});
-				if(0 <= i && i < 10){
-					showteambox1.getChildren().addAll(playerbuttons.get(i));
-				}
-				if(10 <= i && i < 20){
-					showteambox2.getChildren().addAll(playerbuttons.get(i));
-				}
-				if(20 <= i && i < 30){
-					showteambox3.getChildren().addAll(playerbuttons.get(i));
-				}
-				if(30 <= i && i < 40){
-					showteambox4.getChildren().addAll(playerbuttons.get(i));
-				}
-				if(40 <= i && i < 50){
-					showteambox5.getChildren().addAll(playerbuttons.get(i));
-				}
-			}
-			showteambox2.translateYProperty().set(70);
-			showteambox3.translateYProperty().set(70);
-			showteambox4.translateYProperty().set(70);
-			showteambox5.translateYProperty().set(70);
-			showplayerdisplay.getChildren().addAll(showteambox1,showteambox2,showteambox3,showteambox4,showteambox5,showback);
-			Scene showteamscreen = new Scene(showplayerdisplay,1500,750);
-			showteamscreen.getStylesheets().add("resources/mystyle.css");
-			stage.setScene(showteamscreen);
 			showboolean = true;
+			teamaction.fire();
 		}
 	});
 	position.setOnAction(new EventHandler<ActionEvent>(){
