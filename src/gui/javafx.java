@@ -662,13 +662,13 @@ public class javafx extends Application{
 					}
 				swapboxkeep.getChildren().add(swapboxdef);
 				swapboxmid.getChildren().add(swapboxatk);
-				swapboxmid.setTranslateX(-50);
+				swapboxmid.setTranslateX(-20);
 				swapboxmid.setTranslateY(70);
 				swapboxbenchkeep.getChildren().addAll(swapboxbenchdef,swapboxbenchmid,swapboxbenchatk);
-				swapboxbenchkeep.setTranslateX(-50);
+				swapboxbenchkeep.setTranslateX(-20);
 				swapboxreskeep.getChildren().addAll(swapboxresdef);
 				swapboxresmid.getChildren().addAll(swapboxresatk);
-				swapboxreskeep.setTranslateX(-50);
+				swapboxreskeep.setTranslateX(-20);
 				totalswap.getChildren().addAll(swapboxkeep,swapboxmid,swapboxbenchkeep,swapboxreskeep,swapboxresmid);
 				totalswap.getStylesheets().add("resources/mystyle.css");
 				Scene swapscreen = new Scene(totalswap,1500,750);
@@ -1054,7 +1054,12 @@ public class javafx extends Application{
 			VBox upcomingback = new VBox();
 			matchfridayupcoming.getChildren().addAll(lbtext,friday,standard0);
 			matchsaturdayupcoming.getChildren().addAll(saturday,standard1);
-			matchsundayupcoming.getChildren().addAll(sunday,standard2);
+			if(scheme.getS().get(currentplayround).getSunday().getMatches().size() == 0){
+				matchsundayupcoming.getChildren().addAll(sunday);
+			}
+			else{
+				matchsundayupcoming.getChildren().addAll(sunday, standard2);
+			}
 				for(int i = 0;i < scheme.getS().get(currentplayround).getFriday().getMatches().size();i++){
 					if(betmaking == false){
 						String match = (scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home().getName() + " vs " + scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away().getName());
@@ -1266,6 +1271,8 @@ public class javafx extends Application{
 				
 				@Override
 				public void handle(ActionEvent arg0){
+					game.setCurrentLeague(leaguechoice);
+					game.setCurrentPlayRound(currentplayround);
 					xml.writeGame(game, savelocation +"/save2");
 				}
 			});
@@ -1273,6 +1280,8 @@ public class javafx extends Application{
 				
 				@Override
 				public void handle(ActionEvent arg0){
+					game.setCurrentLeague(leaguechoice);
+					game.setCurrentPlayRound(currentplayround);
 					xml.writeGame(game, savelocation + "/save3");
 				}
 			});
@@ -1280,6 +1289,8 @@ public class javafx extends Application{
 				
 				@Override
 				public void handle(ActionEvent arg0){
+					game.setCurrentLeague(leaguechoice);
+					game.setCurrentPlayRound(currentplayround);
 					xml.writeGame(game, savelocation + "/save4");
 				}
 			});
@@ -1670,7 +1681,12 @@ public class javafx extends Application{
 			Label sunday = new Label("Sunday");
 			matchresultfriday.getChildren().addAll(friday,standard0);
 			matchresultsaturday.getChildren().addAll(saturday,standard1);
-			matchresultsunday.getChildren().addAll(sunday, standard2);
+			if(scheme.getS().get(currentplayround).getSunday().getMatches().size() == 0){
+				matchresultsunday.getChildren().addAll(sunday);
+			}
+			else{
+				matchresultsunday.getChildren().addAll(sunday, standard2);
+			}
 			playmatchbox.getStylesheets().add("resources/mystyle.css");
 			Scene playmatchscreen = new Scene(playmatchbox,1500,750);
 		if(currentday<5){
