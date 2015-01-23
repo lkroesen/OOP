@@ -25,7 +25,7 @@ public class TransferAlgorithm {
 	public void DailyRoutine(Game game){
 		Updater(game);
 		AIsell();
-		//AIbuy(); Want transferplayer werkt nog niet
+		AIbuy();
 	}
 	public void Updater(Game game){
 		this.game = game;
@@ -61,19 +61,20 @@ public class TransferAlgorithm {
 	 * @param p
 	 */
 	public void TransferPlayer(Team tn, Player p){
-		for(League l : game.getLeagues()){
-			for(Team t : l.getTeams()){
-				for(Player p1 : t.getPlayers()){
-					if(p1.equals(p)){
+		for(int i = 0; i < game.getLeagues().size(); i++){
+			for(int j = 0; j < game.getLeagues().get(i).getTeams().size(); j++){
+				for(int k = 0; k < game.getLeagues().get(i).getTeams().get(j).getPlayers().size(); k++){
+					if(game.getLeagues().get(i).getTeams().get(j).getPlayers().get(k).equals(p)){
 						CalculateWorth(p);
 
 						int cost = p.getPrice();
 						tn.setBudget((tn.getBudget()-cost));
-						t.setBudget((t.getBudget()+cost));
-						t.delPlayer(p);
-						tn.addPlayer(p);						
+						game.getLeagues().get(i).getTeams().get(j).setBudget((game.getLeagues().get(i).getTeams().get(j).getBudget()+cost));
+						game.getLeagues().get(i).getTeams().get(j).delPlayer(p);
+						tn.addPlayer(p);
+						p.setPosition(-1);
 						int id = 0;
-						Transfer tr = new Transfer(id, t.getId(), tn.getId(), p.getId(), cost, game.getCurrentDay());
+						Transfer tr = new Transfer(id, game.getLeagues().get(i).getTeams().get(j).getId(), tn.getId(), p.getPrice(), cost, game.getCurrentDay());
 						game.addTransfer(tr);
 					}
 				}
@@ -86,7 +87,8 @@ public class TransferAlgorithm {
 	 * @param p
 	 */
 	public void AddPlayer(Player p){
-		this.player.add(p);
+		if(!(this.player.size() == 51))
+			this.player.add(p);
 	}
 	/**Removes Player from the ArrayList with Players for sale.
 	 * 

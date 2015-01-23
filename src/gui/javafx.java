@@ -72,7 +72,7 @@ public class javafx extends Application{
 	ArrayList<Team> teams = new ArrayList<Team>();
 	ArrayList<Player> players = new ArrayList<Player>();
 	Schedule scheme = new Schedule();
-	
+	ArrayList<Button> transferbuttons = new ArrayList<Button>();
 	
 	
 	//launches the gui
@@ -364,6 +364,8 @@ public class javafx extends Application{
 				VBox teambox1 = new VBox(10);
 				VBox teambox2 = new VBox(10);
 				VBox teambox3 = new VBox(10);
+				VBox teambox4 = new VBox(10);
+				VBox teambox5 = new VBox(10);
 				HBox playerdisplay = new HBox();
 				VBox vbBack = new VBox(10);
 				vbBack.setAlignment(Pos.BOTTOM_RIGHT);
@@ -395,10 +397,23 @@ public class javafx extends Application{
 					if(20 <= i && i < 30){
 						teambox3.getChildren().addAll(playerbuttons.get(i));
 					}
+					if(30 <= i && i < 40){
+						teambox4.getChildren().addAll(playerbuttons.get(i));
+					}
+					if(40 <= i && i < 50){
+						teambox5.getChildren().addAll(playerbuttons.get(i));
+					}
 				}
 				teambox2.translateYProperty().set(70);
 				teambox3.translateYProperty().set(70);
-				playerdisplay.getChildren().addAll(teambox1,teambox2,teambox3,vbBack);
+				teambox4.translateYProperty().set(70);
+				teambox5.translateYProperty().set(70);
+				if(sellplayer == true){
+					playerdisplay.getChildren().addAll(teambox1,teambox2,teambox3,teambox4,teambox5,next);
+				}
+				else{
+					playerdisplay.getChildren().addAll(teambox1,teambox2,teambox3,teambox4,teambox5,vbBack);
+				}
 				Scene teamscreen = new Scene(playerdisplay,1500,750);
 				teamscreen.getStylesheets().add("resources/mystyle.css");
 				stage.setScene(teamscreen);
@@ -571,6 +586,7 @@ public class javafx extends Application{
 		@Override
 		public void handle(ActionEvent arg0){
 			Game.setCurrentTeam(teamchoiceint);
+			transferbuttons.clear();
 			pastnewgame = true;
 			Label currentdaylabel = new Label("Monday");
 			if(currentday == 1){
@@ -750,35 +766,63 @@ public class javafx extends Application{
 
 		@Override
 		public void handle(ActionEvent arg0){
-			lbtext.setText("players for sale");
-			final ArrayList<Player> playerstransfer = algorithm.getTransferringplayers();
-			VBox transferbox = new VBox();
-			VBox transferback = new VBox();
-			VBox transfertotal = new VBox();
-			transferbox.getChildren().add(lbtext);
-			transferback.getChildren().add(next);
-			transfertotal.getChildren().addAll(transferbox,transferback);
-			transfertotal.getStylesheets().add("resources/mystyle.css");
-			ArrayList<Button> transferbuttons = new ArrayList<Button>();
-			if( playerstransfer != null){
-				for(int i = 0; i < playerstransfer.size(); i++){
-					transferbuttons.add(new Button(playerstransfer.get(i).getFirstname().toString() + " " + playerstransfer.get(i).getSurname().toString()));
-					transferbox.getChildren().add(transferbuttons.get(i));
-				}
-				for(int i = 0; i < transferbuttons.size(); i++){
-					final int a = i;
-					transferbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
-					
-						@Override
-						public void handle(ActionEvent arg0){
-							algorithm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
-							select.fire();
+			if(!(teams.get(teamchoiceint).getPlayers().size() == 50)){
+				lbtext.setText("players for sale");
+				final ArrayList<Player> playerstransfer = algorithm.getTransferringplayers();
+				VBox transferbox1 = new VBox(10);
+				VBox transferbox2 = new VBox(10);
+				VBox transferbox3 = new VBox(10);
+				VBox transferbox4 = new VBox(10);
+				VBox transferbox5 = new VBox(10);
+				VBox transferback = new VBox(10);
+				HBox transfertotal = new HBox();
+				transferbox1.getChildren().add(lbtext);
+				transferback.getChildren().add(next);
+				transferbox2.setTranslateY(70);
+				transferbox3.setTranslateY(70);
+				transferbox4.setTranslateY(70);
+				transferbox5.setTranslateY(70);
+				transfertotal.getChildren().addAll(transferbox1,transferbox2,transferbox3,transferbox4,transferbox5,transferback);
+				transfertotal.getStylesheets().add("resources/mystyle.css");
+				if( playerstransfer != null){
+					for(int i = 0; i < playerstransfer.size(); i++){
+						transferbuttons.add(new Button(playerstransfer.get(i).getFirstname().toString() + " " + playerstransfer.get(i).getSurname().toString()));
+						if(i < 10){
+							transferbox1.getChildren().add(transferbuttons.get(i));
 						}
-					});
+						if(9 < i && i < 20){
+							transferbox2.getChildren().add(transferbuttons.get(i));
+						}
+						if(19 < i && i < 30){
+							transferbox3.getChildren().add(transferbuttons.get(i));
+						}
+						if(29 < i && i < 40){
+							transferbox4.getChildren().add(transferbuttons.get(i));
+						}
+						if(39 < i && i < 50){
+							transferbox5.getChildren().add(transferbuttons.get(i));
+						}
+					}
+					for(int i = 0; i < transferbuttons.size(); i++){
+						final int a = i;
+						transferbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
+					
+							@Override
+							public void handle(ActionEvent arg0){
+								System.out.print(playerstransfer.get(a).getFirstname() + " " + playerstransfer.get(a).getSurname());
+								playerbuttons.add(new Button(playerstransfer.get(a).getFirstname() + " " + playerstransfer.get(a).getSurname()));
+								algorithm.TransferPlayer(teams.get(teamchoiceint), playerstransfer.get(a));
+								select.fire();
+							}
+						});
+					}
 				}
+				Scene transferscreen = new Scene(transfertotal,1500,750);
+				stage.setScene(transferscreen);
 			}
-			Scene transferscreen = new Scene(transfertotal,1500,750);
-			stage.setScene(transferscreen);
+			else{
+				select.fire();
+			}
 		}
 	});
 	upcoming.setOnAction(new EventHandler<ActionEvent>(){
@@ -919,6 +963,8 @@ public class javafx extends Application{
 			VBox showteambox1 = new VBox(10);
 			VBox showteambox2 = new VBox(10);
 			VBox showteambox3 = new VBox(10);
+			VBox showteambox4 = new VBox(10);
+			VBox showteambox5 = new VBox(10);
 			HBox showplayerdisplay = new HBox();
 			VBox showback = new VBox(10);
 			showback.setAlignment(Pos.BOTTOM_RIGHT);
@@ -951,10 +997,18 @@ public class javafx extends Application{
 				if(20 <= i && i < 30){
 					showteambox3.getChildren().addAll(playerbuttons.get(i));
 				}
+				if(30 <= i && i < 40){
+					showteambox4.getChildren().addAll(playerbuttons.get(i));
+				}
+				if(40 <= i && i < 50){
+					showteambox5.getChildren().addAll(playerbuttons.get(i));
+				}
 			}
 			showteambox2.translateYProperty().set(70);
 			showteambox3.translateYProperty().set(70);
-			showplayerdisplay.getChildren().addAll(showteambox1,showteambox2,showteambox3,showback);
+			showteambox4.translateYProperty().set(70);
+			showteambox5.translateYProperty().set(70);
+			showplayerdisplay.getChildren().addAll(showteambox1,showteambox2,showteambox3,showteambox4,showteambox5,showback);
 			Scene showteamscreen = new Scene(showplayerdisplay,1500,750);
 			showteamscreen.getStylesheets().add("resources/mystyle.css");
 			stage.setScene(showteamscreen);
