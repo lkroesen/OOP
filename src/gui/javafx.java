@@ -5,52 +5,35 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
-
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 import AI.Bet;
 import AI.Betting;
 import AI.PlayMatch;
-import AI.PlayRound;
 import AI.Ranking;
 import AI.Schedule;
 import AI.Scheduler;
-import AI.Team_Training_User;
 import AI.Training;
 import AI.TransferAlgorithm;
 import xml.XML;
 import model.Game;
 import model.League;
-import model.Match;
 import model.Team;
 import model.Player;
 import javafx.application.Application;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Reflection;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaPlayerBuilder;
 import javafx.scene.media.MediaView;
-import javafx.scene.media.MediaViewBuilder;
 import javafx.stage.Stage;
 
 
@@ -340,7 +323,7 @@ public class javafx extends Application{
 			@Override
 			public void handle(ActionEvent arg0){
 				try {
-					final XML xml1 = new XML(savelocation + "/save1");
+					final XML xml1 = new XML(savelocation + "/save1.xml");
 					final Game game1 = xml1.parseGame();
 					leaguechoice = (game1.getCurrentLeague());
 					teams = leagues.get(leaguechoice).getTeams();
@@ -1264,7 +1247,7 @@ public class javafx extends Application{
 				public void handle(ActionEvent arg0){
 					game.setCurrentLeague(leaguechoice);
 					game.setCurrentPlayRound(currentplayround);
-					xml.writeGame(game, savelocation + "/save1");
+					xml.writeGame(game, savelocation + "/save1.xml");
 				}
 			});
 			save2.setOnAction(new EventHandler<ActionEvent>(){
