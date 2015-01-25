@@ -351,7 +351,6 @@ public class javafx extends Application{
 					game1.setSchedule(scheme);
 					currentday = (game1.getCurrentDay());
 					currentplayround = (game1.getCurrentPlayRound());
-					System.out.print(game1.getSchedule());
 					rank = rank.generate(scheme);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -456,6 +455,7 @@ public class javafx extends Application{
 							}
 							else{
 								algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
+								playerbuttons.remove(playerbuttons.get(a));
 								sellplayer = false;
 								select.fire();
 							}
@@ -1247,6 +1247,7 @@ public class javafx extends Application{
 				public void handle(ActionEvent arg0){
 					game.setCurrentLeague(leaguechoice);
 					game.setCurrentPlayRound(currentplayround);
+					game.setSchedule(scheme);
 					xml.writeGame(game, savelocation + "/save1.xml");
 				}
 			});
@@ -1256,7 +1257,7 @@ public class javafx extends Application{
 				public void handle(ActionEvent arg0){
 					game.setCurrentLeague(leaguechoice);
 					game.setCurrentPlayRound(currentplayround);
-					xml.writeGame(game, savelocation +"/save2");
+					xml.writeGame(game, savelocation +"/save2.xml");
 				}
 			});
 			save3.setOnAction(new EventHandler<ActionEvent>(){
@@ -1265,7 +1266,7 @@ public class javafx extends Application{
 				public void handle(ActionEvent arg0){
 					game.setCurrentLeague(leaguechoice);
 					game.setCurrentPlayRound(currentplayround);
-					xml.writeGame(game, savelocation + "/save3");
+					xml.writeGame(game, savelocation + "/save3.xml");
 				}
 			});
 			save4.setOnAction(new EventHandler<ActionEvent>(){
@@ -1274,7 +1275,7 @@ public class javafx extends Application{
 				public void handle(ActionEvent arg0){
 					game.setCurrentLeague(leaguechoice);
 					game.setCurrentPlayRound(currentplayround);
-					xml.writeGame(game, savelocation + "/save4");
+					xml.writeGame(game, savelocation + "/save4.xml");
 				}
 			});
 		}
