@@ -25,7 +25,7 @@ public class XMLTest{
     @Test
     public void testXML(){
         try {
-            XML xml = new XML("toms_teams.xml");
+            XML xml = new XML("src\\toms_more_teams.xml");
             Game g = xml.parseGame();
             assertTrue(XML.writeGame(g, "test_write_xml.xml"));
         } catch (ParserConfigurationException e) {

@@ -635,239 +635,243 @@ public class XML {
 				rootElement.appendChild(eTransfer);
 			}
 
-			Schedule schedule = g.getSchedule();
+			if(g.getSchedule() != null) {
 
-			Element eSchedule = doc.createElement("schedule");
+				Schedule schedule = g.getSchedule();
 
-			for (PlayRound pr : schedule.getS()){
-				Element ePlayRound = doc.createElement("playround");
-				ePlayRound.setAttribute("roundnumber", pr.getRoundNumber()+"");
+				Element eSchedule = doc.createElement("schedule");
 
-				PlayDay friday = pr.getFriday();
-				Element eFriday = doc.createElement("friday");
-				for (Match m : friday.getMatches()) {
-					Element eMatch = doc.createElement("match");
+				for (PlayRound pr : schedule.getS()) {
+					Element ePlayRound = doc.createElement("playround");
+					ePlayRound.setAttribute("roundnumber", pr.getRoundNumber() + "");
 
-					// Set Match attributes
-					eMatch.setAttribute("id", m.getId() + "");
-					eMatch.setAttribute("day", m.getDay() + "");
+					PlayDay friday = pr.getFriday();
+					Element eFriday = doc.createElement("friday");
+					for (Match m : friday.getMatches()) {
+						Element eMatch = doc.createElement("match");
 
-					// Initialize HomeEvents
-					Element eHomeEvents = doc.createElement("team_home");
+						// Set Match attributes
+						eMatch.setAttribute("id", m.getId() + "");
+						eMatch.setAttribute("day", m.getDay() + "");
 
-					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_home().getId()+ "");
+						// Initialize HomeEvents
+						Element eHomeEvents = doc.createElement("team_home");
 
-					// Loop through HomeEvents
-					for (Event e : m.getEvents_home()){
-						Element eEvent = doc.createElement("event");
+						// Set team_home attributes
+						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
 
-						// Set attributes for event
-						eEvent.setAttribute("player", e.getPlayer()+ "");
+						// Loop through HomeEvents
+						for (Event e : m.getEvents_home()) {
+							Element eEvent = doc.createElement("event");
 
-						Element eType = doc.createElement("type");
-						eType.setTextContent(e.getPlayer() + "");
-						eEvent.appendChild(eType);
+							// Set attributes for event
+							eEvent.setAttribute("player", e.getPlayer() + "");
 
-						Element eMinute = doc.createElement("minute");
-						eMinute.setTextContent(e.getMinute() + "");
-						eEvent.appendChild(eMinute);
+							Element eType = doc.createElement("type");
+							eType.setTextContent(e.getPlayer() + "");
+							eEvent.appendChild(eType);
 
-						Element eOutfor = doc.createElement("outfor");
-						eOutfor.setTextContent(e.getOutfor() + "");
-						eEvent.appendChild(eOutfor);
+							Element eMinute = doc.createElement("minute");
+							eMinute.setTextContent(e.getMinute() + "");
+							eEvent.appendChild(eMinute);
 
-						eHomeEvents.appendChild(eEvent);
+							Element eOutfor = doc.createElement("outfor");
+							eOutfor.setTextContent(e.getOutfor() + "");
+							eEvent.appendChild(eOutfor);
+
+							eHomeEvents.appendChild(eEvent);
+						}
+
+						eMatch.appendChild(eHomeEvents);
+
+
+						// Initialize AwayEvents
+						Element eAwayEvents = doc.createElement("team_away");
+
+						// Set team_home attributes
+						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
+
+						// Loop through HomeEvents
+						for (Event e : m.getEvents_away()) {
+							Element eEvent = doc.createElement("event");
+
+							// Set attributes for event
+							eEvent.setAttribute("player", e.getPlayer() + "");
+
+							Element eType = doc.createElement("type");
+							eType.setTextContent(e.getPlayer() + "");
+							eEvent.appendChild(eType);
+
+							Element eMinute = doc.createElement("minute");
+							eMinute.setTextContent(e.getMinute() + "");
+							eEvent.appendChild(eMinute);
+
+							Element eOutfor = doc.createElement("outfor");
+							eOutfor.setTextContent(e.getOutfor() + "");
+							eEvent.appendChild(eOutfor);
+
+							eAwayEvents.appendChild(eEvent);
+						}
+
+						eMatch.appendChild(eAwayEvents);
+
+						eFriday.appendChild(eMatch);
 					}
+					ePlayRound.appendChild(eFriday);
 
-					eMatch.appendChild(eHomeEvents);
+					PlayDay saturday = pr.getSaturday();
+					Element eSaturday = doc.createElement("saturday");
+					for (Match m : saturday.getMatches()) {
+						Element eMatch = doc.createElement("match");
+
+						// Set Match attributes
+						eMatch.setAttribute("id", m.getId() + "");
+						eMatch.setAttribute("day", m.getDay() + "");
+
+						// Initialize HomeEvents
+						Element eHomeEvents = doc.createElement("team_home");
+
+						// Set team_home attributes
+						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
+
+						// Loop through HomeEvents
+						for (Event e : m.getEvents_home()) {
+							Element eEvent = doc.createElement("event");
+
+							// Set attributes for event
+							eEvent.setAttribute("player", e.getPlayer() + "");
+
+							Element eType = doc.createElement("type");
+							eType.setTextContent(e.getPlayer() + "");
+							eEvent.appendChild(eType);
+
+							Element eMinute = doc.createElement("minute");
+							eMinute.setTextContent(e.getMinute() + "");
+							eEvent.appendChild(eMinute);
+
+							Element eOutfor = doc.createElement("outfor");
+							eOutfor.setTextContent(e.getOutfor() + "");
+							eEvent.appendChild(eOutfor);
+
+							eHomeEvents.appendChild(eEvent);
+						}
+
+						eMatch.appendChild(eHomeEvents);
 
 
-					// Initialize AwayEvents
-					Element eAwayEvents = doc.createElement("team_away");
+						// Initialize AwayEvents
+						Element eAwayEvents = doc.createElement("team_away");
 
-					// Set team_home attributes
-					eAwayEvents.setAttribute("id", m.getTeam_away().getId()+ "");
+						// Set team_home attributes
+						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
 
-					// Loop through HomeEvents
-					for (Event e : m.getEvents_away()){
-						Element eEvent = doc.createElement("event");
+						// Loop through HomeEvents
+						for (Event e : m.getEvents_away()) {
+							Element eEvent = doc.createElement("event");
 
-						// Set attributes for event
-						eEvent.setAttribute("player", e.getPlayer()+ "");
+							// Set attributes for event
+							eEvent.setAttribute("player", e.getPlayer() + "");
 
-						Element eType = doc.createElement("type");
-						eType.setTextContent(e.getPlayer() + "");
-						eEvent.appendChild(eType);
+							Element eType = doc.createElement("type");
+							eType.setTextContent(e.getPlayer() + "");
+							eEvent.appendChild(eType);
 
-						Element eMinute = doc.createElement("minute");
-						eMinute.setTextContent(e.getMinute() + "");
-						eEvent.appendChild(eMinute);
+							Element eMinute = doc.createElement("minute");
+							eMinute.setTextContent(e.getMinute() + "");
+							eEvent.appendChild(eMinute);
 
-						Element eOutfor = doc.createElement("outfor");
-						eOutfor.setTextContent(e.getOutfor() + "");
-						eEvent.appendChild(eOutfor);
+							Element eOutfor = doc.createElement("outfor");
+							eOutfor.setTextContent(e.getOutfor() + "");
+							eEvent.appendChild(eOutfor);
 
-						eAwayEvents.appendChild(eEvent);
+							eAwayEvents.appendChild(eEvent);
+						}
+
+						eMatch.appendChild(eAwayEvents);
+
+						eSaturday.appendChild(eMatch);
 					}
+					ePlayRound.appendChild(eSaturday);
 
-					eMatch.appendChild(eAwayEvents);
+					PlayDay sunday = pr.getSunday();
+					Element eSunday = doc.createElement("sunday");
+					for (Match m : sunday.getMatches()) {
+						Element eMatch = doc.createElement("match");
 
-					eFriday.appendChild(eMatch);
+						// Set Match attributes
+						eMatch.setAttribute("id", m.getId() + "");
+						eMatch.setAttribute("day", m.getDay() + "");
+
+						// Initialize HomeEvents
+						Element eHomeEvents = doc.createElement("team_home");
+
+						// Set team_home attributes
+						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
+
+						// Loop through HomeEvents
+						for (Event e : m.getEvents_home()) {
+							Element eEvent = doc.createElement("event");
+
+							// Set attributes for event
+							eEvent.setAttribute("player", e.getPlayer() + "");
+
+							Element eType = doc.createElement("type");
+							eType.setTextContent(e.getPlayer() + "");
+							eEvent.appendChild(eType);
+
+							Element eMinute = doc.createElement("minute");
+							eMinute.setTextContent(e.getMinute() + "");
+							eEvent.appendChild(eMinute);
+
+							Element eOutfor = doc.createElement("outfor");
+							eOutfor.setTextContent(e.getOutfor() + "");
+							eEvent.appendChild(eOutfor);
+
+							eHomeEvents.appendChild(eEvent);
+						}
+
+						eMatch.appendChild(eHomeEvents);
+
+
+						// Initialize AwayEvents
+						Element eAwayEvents = doc.createElement("team_away");
+
+						// Set team_home attributes
+						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
+
+						// Loop through HomeEvents
+						for (Event e : m.getEvents_away()) {
+							Element eEvent = doc.createElement("event");
+
+							// Set attributes for event
+							eEvent.setAttribute("player", e.getPlayer() + "");
+
+							Element eType = doc.createElement("type");
+							eType.setTextContent(e.getPlayer() + "");
+							eEvent.appendChild(eType);
+
+							Element eMinute = doc.createElement("minute");
+							eMinute.setTextContent(e.getMinute() + "");
+							eEvent.appendChild(eMinute);
+
+							Element eOutfor = doc.createElement("outfor");
+							eOutfor.setTextContent(e.getOutfor() + "");
+							eEvent.appendChild(eOutfor);
+
+							eAwayEvents.appendChild(eEvent);
+						}
+
+						eMatch.appendChild(eAwayEvents);
+
+						eSaturday.appendChild(eMatch);
+					}
+					ePlayRound.appendChild(eSunday);
+
+					eSchedule.appendChild(ePlayRound);
 				}
-				ePlayRound.appendChild(eFriday);
+				rootElement.appendChild(eSchedule);
 
-				PlayDay saturday = pr.getSaturday();
-				Element eSaturday = doc.createElement("saturday");
-				for (Match m : saturday.getMatches()) {
-					Element eMatch = doc.createElement("match");
-
-					// Set Match attributes
-					eMatch.setAttribute("id", m.getId() + "");
-					eMatch.setAttribute("day", m.getDay() + "");
-
-					// Initialize HomeEvents
-					Element eHomeEvents = doc.createElement("team_home");
-
-					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_home().getId()+ "");
-
-					// Loop through HomeEvents
-					for (Event e : m.getEvents_home()){
-						Element eEvent = doc.createElement("event");
-
-						// Set attributes for event
-						eEvent.setAttribute("player", e.getPlayer()+ "");
-
-						Element eType = doc.createElement("type");
-						eType.setTextContent(e.getPlayer() + "");
-						eEvent.appendChild(eType);
-
-						Element eMinute = doc.createElement("minute");
-						eMinute.setTextContent(e.getMinute() + "");
-						eEvent.appendChild(eMinute);
-
-						Element eOutfor = doc.createElement("outfor");
-						eOutfor.setTextContent(e.getOutfor() + "");
-						eEvent.appendChild(eOutfor);
-
-						eHomeEvents.appendChild(eEvent);
-					}
-
-					eMatch.appendChild(eHomeEvents);
-
-
-					// Initialize AwayEvents
-					Element eAwayEvents = doc.createElement("team_away");
-
-					// Set team_home attributes
-					eAwayEvents.setAttribute("id", m.getTeam_away().getId()+ "");
-
-					// Loop through HomeEvents
-					for (Event e : m.getEvents_away()){
-						Element eEvent = doc.createElement("event");
-
-						// Set attributes for event
-						eEvent.setAttribute("player", e.getPlayer()+ "");
-
-						Element eType = doc.createElement("type");
-						eType.setTextContent(e.getPlayer() + "");
-						eEvent.appendChild(eType);
-
-						Element eMinute = doc.createElement("minute");
-						eMinute.setTextContent(e.getMinute() + "");
-						eEvent.appendChild(eMinute);
-
-						Element eOutfor = doc.createElement("outfor");
-						eOutfor.setTextContent(e.getOutfor() + "");
-						eEvent.appendChild(eOutfor);
-
-						eAwayEvents.appendChild(eEvent);
-					}
-
-					eMatch.appendChild(eAwayEvents);
-
-					eSaturday.appendChild(eMatch);
-				}
-				ePlayRound.appendChild(eSaturday);
-
-				PlayDay sunday = pr.getSunday();
-				Element eSunday = doc.createElement("sunday");
-				for (Match m : sunday.getMatches()) {
-					Element eMatch = doc.createElement("match");
-
-					// Set Match attributes
-					eMatch.setAttribute("id", m.getId() + "");
-					eMatch.setAttribute("day", m.getDay() + "");
-
-					// Initialize HomeEvents
-					Element eHomeEvents = doc.createElement("team_home");
-
-					// Set team_home attributes
-					eHomeEvents.setAttribute("id", m.getTeam_home().getId()+ "");
-
-					// Loop through HomeEvents
-					for (Event e : m.getEvents_home()){
-						Element eEvent = doc.createElement("event");
-
-						// Set attributes for event
-						eEvent.setAttribute("player", e.getPlayer()+ "");
-
-						Element eType = doc.createElement("type");
-						eType.setTextContent(e.getPlayer() + "");
-						eEvent.appendChild(eType);
-
-						Element eMinute = doc.createElement("minute");
-						eMinute.setTextContent(e.getMinute() + "");
-						eEvent.appendChild(eMinute);
-
-						Element eOutfor = doc.createElement("outfor");
-						eOutfor.setTextContent(e.getOutfor() + "");
-						eEvent.appendChild(eOutfor);
-
-						eHomeEvents.appendChild(eEvent);
-					}
-
-					eMatch.appendChild(eHomeEvents);
-
-
-					// Initialize AwayEvents
-					Element eAwayEvents = doc.createElement("team_away");
-
-					// Set team_home attributes
-					eAwayEvents.setAttribute("id", m.getTeam_away().getId()+ "");
-
-					// Loop through HomeEvents
-					for (Event e : m.getEvents_away()){
-						Element eEvent = doc.createElement("event");
-
-						// Set attributes for event
-						eEvent.setAttribute("player", e.getPlayer()+ "");
-
-						Element eType = doc.createElement("type");
-						eType.setTextContent(e.getPlayer() + "");
-						eEvent.appendChild(eType);
-
-						Element eMinute = doc.createElement("minute");
-						eMinute.setTextContent(e.getMinute() + "");
-						eEvent.appendChild(eMinute);
-
-						Element eOutfor = doc.createElement("outfor");
-						eOutfor.setTextContent(e.getOutfor() + "");
-						eEvent.appendChild(eOutfor);
-
-						eAwayEvents.appendChild(eEvent);
-					}
-
-					eMatch.appendChild(eAwayEvents);
-
-					eSaturday.appendChild(eMatch);
-				}
-				ePlayRound.appendChild(eSunday);
-
-				eSchedule.appendChild(ePlayRound);
 			}
-			rootElement.appendChild(eSchedule);
 
 			// write the content into xml file
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
