@@ -15,8 +15,7 @@ public class TrainingTest {
 		Player test = new Player(1, "Mr.", "Test", (byte)1, 1, 1, (byte)50, (byte)50, (byte)50, 500000);
 		for (int c = 0; c < 10000; c++){
 		test = Training.rest(test);
-		System.out.println(test);
-		assertNotNull(test.getStaminaScore());
+		assertNotEquals(test.getStaminaScore(), 50);
 		}
 	}
 	
@@ -27,8 +26,7 @@ public class TrainingTest {
 		Player test = new Player(1, "Mr.", "Test", (byte)1, 1, 1, (byte)50, (byte)50, (byte)50, 500000);
 		for (int c = 0; c < 10000; c++){
 		test = Training.RegularTraining(test);
-		System.out.println(test);
-		assertNotNull(test.getStaminaScore());
+		assertNotEquals(test.getStaminaScore(), 50);
 		}
 	}
 	
@@ -39,8 +37,7 @@ public class TrainingTest {
 		Player test = new Player(1, "Mr.", "Test", (byte)1, 1, 1, (byte)50, (byte)50, (byte)50, 500000);
 		for (int c = 0; c < 10000; c++){
 		test = Training.HeavyTraining(test);
-		System.out.println(test);
-		assertNotNull(test.getStaminaScore());
+		assertNotEquals(test.getStaminaScore(), 50);
 		}
 	}
 	
@@ -51,8 +48,7 @@ public class TrainingTest {
 		Player test = new Player(1, "Mr.", "Test", (byte)1, 3, 3, (byte)50, (byte)50, (byte)1, 500000);
 		for (int c = 0; c < 10000; c++){
 		test = Training.HeavyTraining(test);
-		System.out.println(test);
-		assertNotNull(test.getStaminaScore());
+		assertNotEquals(test.getStaminaScore(), 50);
 		}
 	}
 	
@@ -64,8 +60,7 @@ public class TrainingTest {
 		
 		for (int c = 0; c < 10000; c++){
 		test = Training.RegularTraining(test);
-		System.out.println(test);
-		assertNotNull(test.getStaminaScore());
+		assertNotEquals(test.getStaminaScore(), 50);
 		}
 	}
 	
@@ -73,8 +68,23 @@ public class TrainingTest {
 	public void testCheck()
 	{
 		Player test = new Player(1, "Mr.", "Test", (byte)1, 1, 1, (byte)101, (byte)101, (byte)101, 500000);
-		test = Training.check(test);
-		assertNotNull(test.getOffensiveScore());
+		Training.check(test);
+		assertEquals(test.getOffensiveScore(), 100);
 	}
-
+	
+	@Test
+	public void testCheck2()
+	{
+		Player test = new Player(1, "Mr.", "Test", (byte)1, 1, 1, (byte)99, (byte)101, (byte)101, 500000);
+		Training.check(test);
+		assertEquals(test.getDefensiveScore(), 100);
+	}
+	
+	@Test
+	public void testCheck3()
+	{
+		Player test = new Player(1, "Mr.", "Test", (byte)1, 1, 1, (byte)99, (byte)99, (byte)101, 500000);
+		Training.check(test);
+		assertEquals(test.getStaminaScore(), 100);
+	}
 }

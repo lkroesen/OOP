@@ -43,7 +43,6 @@ public class Team_Training_UserTest {
 		for (int c = 0; c < 100000; c++){
 		Team_Training_User.Core(AI);
 		assertNotNull(AI);
-		System.out.println(AI.getPlayers().get(14).toString());
 		}
 
 	}
