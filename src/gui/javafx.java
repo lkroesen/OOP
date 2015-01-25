@@ -443,9 +443,7 @@ public class javafx extends Application{
 				teambox1.getChildren().addAll(lbtext);
 				for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
 					final int a = i;
-					if(showboolean == false && sellplayer == false){
-						playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
-					}
+					playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 					playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
 						@Override
 						public void handle(ActionEvent arg0){
@@ -492,6 +490,13 @@ public class javafx extends Application{
 						}
 						if(40 <= i && i < 50){
 							teambox5.getChildren().addAll(playerbuttons.get(i));
+						}
+					}
+				}
+				for(int i = 0; i < algorithm.getTransferringplayers().size(); i ++){
+					for(int j = 0; j < playerbuttons.size(); j ++){
+						if((algorithm.getTransferringplayers().get(i).getFirstname() + " " + algorithm.getTransferringplayers().get(i).getSurname()).equals(playerbuttons.get(j).getText())){
+							playerbuttons.remove(playerbuttons.get(j));
 						}
 					}
 				}
@@ -679,6 +684,7 @@ public class javafx extends Application{
 		public void handle(ActionEvent arg0){
 			Game.setCurrentTeam(teamchoiceint);
 			transferbuttons.clear();
+			playerbuttons.clear();
 			pastnewgame = true;
 			HBox tabs = new HBox(10);
 			Label currentdaylabel = new Label("Monday");
