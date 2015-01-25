@@ -40,7 +40,7 @@ public class XMLTest{
     }
 
     @Test
-    public void testGetChildValueAndAttribute() throws ParserConfigurationException, IOException, SAXException {
+    public void testGetAndAttribute() throws ParserConfigurationException, IOException, SAXException {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); // Open factory
         factory.setIgnoringElementContentWhitespace(true);
@@ -51,10 +51,33 @@ public class XMLTest{
 
         Element transferNode = document.getDocumentElement();
         assertEquals(Integer.parseInt(XML.getAttribute(transferNode.getAttributes(), "id")), 0);
+    }
+
+    @Test
+    public void testGetChildValue() throws ParserConfigurationException, IOException, SAXException {
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); // Open factory
+        factory.setIgnoringElementContentWhitespace(true);
+        DocumentBuilder builder = factory.newDocumentBuilder(); // Initialize builder
+
+        Document document = builder.parse(new FileInputStream("src/XMLTest.xml"));
+        document.normalize();
+
+        Element transferNode = document.getDocumentElement();
 
         Element transfer = (Element)transferNode;
 
         assertEquals(XML.getChildValue(transfer, "message"), "Hoi");
+    }
+
+    @Test
+    public void testConstructor(){
+        try {
+            XML xml = new XML("src/XMLTest.xml");
+            assertEquals("src/XMLTest.xml", xml.getFilename());
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
     }
 
 }

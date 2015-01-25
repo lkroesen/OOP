@@ -52,6 +52,10 @@ public class XML {
 		
 	}
 
+	public String getFilename() {
+		return filename;
+	}
+
 	/**
 	 * Parses the Game element in the XML-file and all child nodes and puts them into a Game object.
 	 * @return Game to be used by application
