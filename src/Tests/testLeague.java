@@ -107,7 +107,7 @@ public class testLeague {
 		assertNotEquals(l1.toString(),"'nddnjfnsdknfksd n");
 	}
 
-	@Test
+	/*@Test
 	public void testTeams()
 	{
 		League lr = new League(2, "ere", "hol");
@@ -144,5 +144,263 @@ public class testLeague {
 		assertNotEquals(lf, lf5);
 		assertNotEquals(lf, t2);
 		assertNotEquals(lf, lr);
+	}*/
+	
+	@Test
+	public void testTeams1()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		assertEquals(lr.getTeamById(2), t);
 	}
+	
+	@Test
+	public void testTeams2()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		assertEquals(lr.getTeamByName("hi"), t);
+	}
+	
+	@Test
+	public void testTeams3()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		assertEquals(lr.getTeamById(4), t2);
+
+	}
+	
+	@Test
+	public void testTeams4()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		assertEquals(lr.getTeamByName("fi"), t3);
+	}
+	
+	@Test
+	public void testTeams5()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		assertEquals(lr.getTeamByName(""), t);
+	}
+	
+	@Test
+	public void testTeams6()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		assertEquals(lr.getTeams(),tl);
+	}
+	
+	@Test
+	public void testTeams7()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		League lf = new League(2,"hi","ho", tl);
+		League lf2 = new League(3,"hi","ho", tl);
+
+		assertNotEquals(lf, lf2);
+	}
+	
+	@Test
+	public void testTeams8()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		League lf = new League(2,"hi","ho", tl);
+		League lf3 = new League(2,"h0","ho", tl);
+
+		assertNotEquals(lf, lf3);
+	}
+	
+	@Test
+	public void testTeams9()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		League lf = new League(2,"hi","ho", tl);
+		League lf4 = new League(2,"hi","h0", tl);
+
+		assertNotEquals(lf, lf4);
+	}
+	
+	@Test
+	public void testTeams10()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		League lf5 = new League(2,"hi","ho", null);
+		tl.add(t2);
+		tl.add(t3);
+		
+		League lf = new League(2,"hi","ho", tl);
+
+		assertNotEquals(lf, lf5);
+	}
+	
+	@Test
+	public void testTeams11()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		League lf = new League(2,"hi","ho", tl);
+
+		assertNotEquals(lf, t2);
+	}
+	
+	@Test
+	public void testTeams12()
+	{
+		League lr = new League(2, "ere", "hol");
+
+		ArrayList<Team> tl = new ArrayList<Team>();
+		Team t = new Team(1,"hi");
+		lr.setTeams(tl);
+		tl.add(t);
+		lr.addTeam(t);
+		
+		Team t2 = new Team(4,"di");
+		Team t3 = new Team(3,"fi");
+		lr.addTeam(t2);
+		lr.addTeam(t3);
+		tl.add(t2);
+		tl.add(t3);
+		
+		League lf = new League(2,"hi","ho", tl);
+
+		assertNotEquals(lf, lr);
+	}
+
 }
