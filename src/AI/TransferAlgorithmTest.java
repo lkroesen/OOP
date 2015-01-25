@@ -1,0 +1,14 @@
+package AI;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TransferAlgorithmTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
