@@ -455,7 +455,6 @@ public class javafx extends Application{
 							}
 							else{
 								algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
-								playerbuttons.remove(playerbuttons.get(a));
 								sellplayer = false;
 								select.fire();
 							}
