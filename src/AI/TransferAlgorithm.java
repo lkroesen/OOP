@@ -17,7 +17,7 @@ public class TransferAlgorithm {
 	private Game game;
 	private ArrayList<Player> player = new ArrayList<Player>();
 	private double sellChance = 0.001;
-	private double buyChance = 0.00099;
+	private double buyChance = 0.0099;
 
 	public TransferAlgorithm(Game game){
 		this.game = game;

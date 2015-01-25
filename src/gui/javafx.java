@@ -1177,6 +1177,22 @@ public class javafx extends Application{
 			teamboxresmid.getChildren().addAll(mid2);
 			teamboxresatk.getChildren().addAll(atk2);
 			for(int i = 0; i < players.size();i++){
+					final int a = i;
+					playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+					playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
+						@Override
+						public void handle(ActionEvent arg0){
+							if(sellplayer == false){
+								playerchoiceint = a;
+								playeraction.fire();
+							}
+							else{
+								algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
+								sellplayer = false;
+								select.fire();
+							}
+						}
+					});
 				if(0 == players.get(i).getPosition()){
 					teamboxkeep.getChildren().addAll(playerbuttons.get(i));
 				}
@@ -2008,6 +2024,7 @@ public class javafx extends Application{
 			@Override
 			public void handle(ActionEvent arg0){
 				//changes the text
+				playerbuttons.clear();
 				lbtext.setText("Selection team");
 				teams = leagues.get(leaguechoice).getTeams();
 				scheme = Scheduler.scheduler(game.getLeagues().get(leaguechoice));
