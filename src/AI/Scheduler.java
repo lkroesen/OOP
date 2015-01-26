@@ -298,8 +298,8 @@ public class Scheduler
 		// first order our first matches
 		// change 1
 		PlayRound PR = new PlayRound(w);
-		Team[] HomeTeam = new Team[(TeamSize/2)];
-		Team[] OutTeam = new Team[(TeamSize/2)];
+		int[] HomeTeam = new int[(TeamSize/2)];
+		int[] OutTeam = new int[(TeamSize/2)];
 
 		// Assign teams to Home and Out positions
 		int c = 0;
@@ -307,8 +307,8 @@ public class Scheduler
 		
 		while (d < TeamSize)
 		{
-			HomeTeam[c] = league.getTeams().get(Order[c]);
-			OutTeam[c] = league.getTeams().get(Order[d]);
+			HomeTeam[c] = league.getTeams().get(Order[c]).getId();
+			OutTeam[c] = league.getTeams().get(Order[d]).getId();
 			c++;
 			d++;
 		}
