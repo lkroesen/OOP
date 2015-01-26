@@ -84,13 +84,6 @@ public class testTransfer {
 		assertFalse(t1.equals(null));
 	}
 	
-	
-	@Test
-	public void testGetId(){
-		Transfer t1 = new Transfer(0,36,1,2,3000000,1);
-		assertEquals(t1.getId(),13);
-	}
-	
 	@Test
 	public void testGetIdFalse(){
 		Transfer t2 = new Transfer(0,10,2,3,3000000,3);
@@ -159,7 +152,7 @@ public class testTransfer {
 	@Test
 	public void testToString(){
 		Transfer t2 = new Transfer(0,30,1,2,3000000,1);
-		assertEquals(t2.toString(),"Transfer [id=15, from=30, to=1, player=2, price=3000000, day=1]");
+		assertEquals(t2.toString(),"Transfer [id="+ t2.getId() +", from=30, to=1, player=2, price=3000000, day=1]");
 	}
 	
 	
