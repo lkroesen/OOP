@@ -26,7 +26,7 @@ public class TrainingTest {
 		Player test = new Player(1, "Mr.", "Test", (byte)1, 1, 1, (byte)50, (byte)50, (byte)50, 500000);
 		for (int c = 0; c < 10000; c++){
 		test = Training.RegularTraining(test);
-		assertNotEquals(test.getStaminaScore(), 50);
+		assertNotEquals(test.getStaminaScore(), 100);
 		}
 	}
 	
