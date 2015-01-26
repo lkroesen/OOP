@@ -17,9 +17,6 @@ import AI.Scheduler;
 
 public class testGame {
 	
-	
-	
-
 	@Test
 	public void testConstructor() {
 		ArrayList<Team> teams = new ArrayList<Team>();

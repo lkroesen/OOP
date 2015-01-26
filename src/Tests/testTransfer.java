@@ -21,39 +21,81 @@ public class testTransfer {
 	}
 	
 	@Test
-	public void testEquals(){
+	public void testEquals1(){
 		Transfer t1 = new Transfer(0,15,20,3,10000,3);
 		Transfer t2 = new Transfer(0,15,21,3,10000,3);
 		assertFalse(t1.equals(t2));
-		assertEquals(t1.getDay(),3);
-		assertTrue(t1.equals(t1));
-		assertTrue(t1.equals(t1));
-		assertNotEquals(t1,t2);
-		assertEquals(t1,t1);
 	}
 	
 	@Test
-	public void testEqualsFalse(){
+	public void testEquals2(){
+		Transfer t1 = new Transfer(0,15,20,3,10000,3);
+		assertEquals(t1.getDay(),3);
+	}
+	
+	@Test
+	public void testEquals3(){
+		Transfer t1 = new Transfer(0,15,20,3,10000,3);
+		assertTrue(t1.equals(t1));
+	}
+	
+	@Test
+	public void testEquals4(){
+		Transfer t1 = new Transfer(0,15,20,3,10000,3);
+		assertTrue(t1.equals(t1));
+	}
+	
+	@Test
+	public void testEquals5(){
+		Transfer t1 = new Transfer(0,15,20,3,10000,3);
+		Transfer t2 = new Transfer(0,15,21,3,10000,3);
+		assertNotEquals(t1,t2);
+	}
+	
+	@Test
+	public void testEquals6(){
+		Transfer t1 = new Transfer(0,15,20,3,10000,3);
+		assertEquals(t1,t1);
+	}
+
+	@Test
+	public void testEquals7(){
+		Transfer t2 = new Transfer(0,15,21,3,10000,3);
+		assertTrue(t2.equals(t2));
+	}
+	
+	@Test
+	public void testEqualsFalse1(){
 		Transfer t1 = new Transfer(0,10,6,3,300000,31);
 		Transfer t2 = new Transfer(0,156,31,31,250,15);
 		assertFalse(t1.equals(t2));
+	}
+	
+	@Test
+	public void testEqualsFalse2(){
+		Transfer t1 = new Transfer(0,10,6,3,300000,31);
 		Transfer t3 = new Transfer(0,10,6,3,300000,31);
 		assertFalse(t1.equals(t3));
+	}
+	
+	@Test
+	public void testEqualsFalse3(){
+		Transfer t1 = new Transfer(0,10,6,3,300000,31);
 		assertFalse(t1.equals(null));
 	}
 	
-	/*
+	
 	@Test
 	public void testGetId(){
 		Transfer t1 = new Transfer(0,36,1,2,3000000,1);
-		assertEquals(t1.getId(),7);
+		assertEquals(t1.getId(),13);
 	}
 	
 	@Test
 	public void testGetIdFalse(){
 		Transfer t2 = new Transfer(0,10,2,3,3000000,3);
 		assertNotEquals(t2.getId(), 12);
-	}*/
+	}
 	
 	@Test
 	public void testGetFrom(){
@@ -103,9 +145,21 @@ public class testTransfer {
 	}
 	
 	@Test
+	public void testGetPlayer(){
+		Transfer t2 = new Transfer(0,10,2,3,3000000,3);
+		assertEquals(t2.getPlayer(), 3);
+	}
+	
+	@Test
+	public void testGetPlayerFalse(){
+		Transfer t2 = new Transfer(0,10,2,3,3000000,3);
+		assertNotEquals(t2.getPlayer(), 12);
+	}
+	
+	@Test
 	public void testToString(){
 		Transfer t2 = new Transfer(0,30,1,2,3000000,1);
-		assertEquals(t2.toString(),"Transfer [id=7, from=30, to=1, player=2, price=3000000, day=1]");
+		assertEquals(t2.toString(),"Transfer [id=15, from=30, to=1, player=2, price=3000000, day=1]");
 	}
 	
 	

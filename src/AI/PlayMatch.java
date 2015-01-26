@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import model.Event;
+import model.League;
 import model.Match;
 import model.Player;
 import model.Team;
@@ -23,6 +24,7 @@ public class PlayMatch {
 	private static double adefend;
 	private static int attackn;
 	private static Match amatch;
+	private static League aleague;
 	private static ArrayList<Player> hplayers;
 	private static ArrayList<Player> aplayers;
 	private static ArrayList<Player> hreserve;
@@ -32,15 +34,16 @@ public class PlayMatch {
 	private static int hswitch;
 	private static int aswitch;
 	
-	public static String play(Match match){
+	public static String play(Match match, League league){
 		attackn = 0;
 		amatch = match;
-		Team home = match.getTeam_home();
+		aleague = league;
+		Team home = aleague.getTeamById(match.getTeam_home());
 		//hplayers = home.getPlayers();
 		//System.out.println(home.getPlayers());
-		Team away = match.getTeam_away();
+		Team away = aleague.getTeamById(match.getTeam_away());
 		//aplayers = away.getPlayers();
-		generatestats(amatch);
+		generatestats(amatch, aleague);
 		
 		
 		
@@ -77,8 +80,13 @@ public class PlayMatch {
 					posplayers.add(player);
 				}
 			}
-			int pid = posplayers.get(new Random().nextInt(posplayers.size())).getId();
-			amatch.addEventHome(new Event(pid, id, time, 0));
+			int top = posplayers.size();
+			if(!(top <= 0)){
+				int pid = posplayers.get(new Random().nextInt(top)).getId();
+				amatch.addEventHome(new Event(pid, id, time, 0));
+			}else{
+				System.out.println("no players with type:" + pos);
+			}
 		}else{
 			ArrayList<Player> posplayers = new ArrayList<Player>();
 			for(Player player:aplayers){
@@ -87,8 +95,13 @@ public class PlayMatch {
 					posplayers.add(player);
 				}
 			}
-			int pid = posplayers.get(new Random().nextInt(posplayers.size())).getId();
-			amatch.addEventAway(new Event(pid, id, time, 0));
+			int top = posplayers.size();
+			if(!(top <= 0)){
+				int pid = posplayers.get(new Random().nextInt(top)).getId();
+				amatch.addEventAway(new Event(pid, id, time, 0));
+			}else{
+				System.out.println("no players with type:" + pos);
+			}
 		}
 		
 	}
@@ -166,7 +179,7 @@ public class PlayMatch {
 				pb.setPosition(tp);
 				amatch.addEventHome(new Event(pr.getId(), 5, time, 0));
 				amatch.addEventHome(new Event(pb.getId(), 4, time, 0));
-				generatestats(amatch);
+				generatestats(amatch, aleague);
 				hswitch++;
 			}else{
 				if(aswitch >= 3){
@@ -192,7 +205,7 @@ public class PlayMatch {
 				pb.setPosition(tp);
 				amatch.addEventAway(new Event(pr.getId(), 5, time, 0));
 				amatch.addEventAway(new Event(pb.getId(), 4, time, 0));
-				generatestats(amatch);
+				generatestats(amatch, aleague);
 				aswitch++;
 			}
 		}
@@ -225,13 +238,13 @@ public class PlayMatch {
 		}
 	}
 	
-	private static void generatestats(Match match){
+	private static void generatestats(Match match, League league){
 		hplayers = new ArrayList<Player>();
 		aplayers = new ArrayList<Player>();
 		hreserve = new ArrayList<Player>();
 		areserve = new ArrayList<Player>();
 		
-		for(Player player:match.getTeam_away().getPlayers()){
+		for(Player player:league.getTeamById(match.getTeam_away()).getPlayers()){
 			if(player.getPosition()<=10){
 				aplayers.add(player);
 			}else if(player.getPosition() <= 17){
@@ -239,7 +252,7 @@ public class PlayMatch {
 			}
 		}
 		
-		for(Player player:match.getTeam_home().getPlayers()){
+		for(Player player:league.getTeamById(match.getTeam_home()).getPlayers()){
 			if(player.getPosition()<=10){
 				hplayers.add(player);
 			}else if(player.getPosition() <= 17){

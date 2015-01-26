@@ -65,7 +65,7 @@ public class BettingTest {
 		tl.add(winners);
 		tl.add(losers);
 		
-		Match m = new Match(0, 5, winners, losers);
+		Match m = new Match(0, 5, 1, 2);
 		
 		ArrayList<Match> mat = new ArrayList<Match>();
 		mat.add(m);
