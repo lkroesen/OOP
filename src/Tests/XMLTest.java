@@ -40,7 +40,12 @@ public class XMLTest{
     }
 
     @Test
-    public void testGetAndAttribute() throws ParserConfigurationException, IOException, SAXException {
+    public void testParseSchedule() throws ParserConfigurationException {
+        XML xml = new XML("src\\XML_Schedule_test.xml");
+    }
+
+    @Test
+    public void testGetAttribute() throws ParserConfigurationException, IOException, SAXException {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); // Open factory
         factory.setIgnoringElementContentWhitespace(true);
