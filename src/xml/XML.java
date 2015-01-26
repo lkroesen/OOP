@@ -52,7 +52,9 @@ public class XML {
 		
 	}
 
-
+	public DocumentBuilder getBuilder() {
+		return builder;
+	}
 
 	public String getFilename() {
 		return filename;
@@ -183,10 +185,10 @@ public class XML {
 		return game;
 	}
 	
-	public Schedule parseSchedule(Element gameNode){
+	public Schedule parseSchedule(Element root){
 
 		// Get Schedule
-		NodeList scheduleData = gameNode.getElementsByTagName("schedule");
+		NodeList scheduleData = root.getElementsByTagName("schedule");
 
 		Schedule mSchedule = new Schedule();
 
