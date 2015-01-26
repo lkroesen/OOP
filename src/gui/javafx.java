@@ -325,11 +325,12 @@ public class javafx extends Application{
 				try {
 					final XML xml1 = new XML(savelocation + "/save1.xml");
 					final Game game1 = xml1.parseGame();
-					leaguechoice = (game1.getCurrentLeague());
+					leaguechoice = (game1.getCurrentLeague());					
 					teams = leagues.get(leaguechoice).getTeams();
 					teamchoiceint = (game1.getCurrentTeam());
 					players = teams.get(teamchoiceint).getPlayers();
 					scheme = game1.getSchedule();
+					System.out.println(scheme);
 					for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
 						playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
 						final int a = i;
@@ -363,12 +364,36 @@ public class javafx extends Application{
 			@Override
 			public void handle(ActionEvent arg0){
 				try {
-					final XML xml2 = new XML("toms_more_teams.xml");
+					final XML xml2 = new XML(savelocation + "/save2.xml");
 					final Game game2 = xml2.parseGame();
-					leaguechoice = (game2.getCurrentLeague());
+					leaguechoice = (game2.getCurrentLeague());					
+					teams = leagues.get(leaguechoice).getTeams();
 					teamchoiceint = (game2.getCurrentTeam());
+					players = teams.get(teamchoiceint).getPlayers();
+					scheme = game2.getSchedule();
+					System.out.println(scheme);
+					for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+						playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+						final int a = i;
+						playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
+							@Override
+							public void handle(ActionEvent arg0){
+								if(sellplayer == false){
+									playerchoiceint = a;
+									playeraction.fire();
+								}
+								else{
+									algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
+									sellplayer = false;
+									select.fire();
+								}
+							}
+						});
+					}
+					game2.setSchedule(scheme);
 					currentday = (game2.getCurrentDay());
 					currentplayround = (game2.getCurrentPlayRound());
+					rank = rank.generate(scheme);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -380,12 +405,36 @@ public class javafx extends Application{
 			@Override
 			public void handle(ActionEvent arg0){
 				try {
-					final XML xml3 = new XML("toms_more_teams.xml");
+					final XML xml3 = new XML(savelocation + "/save3.xml");
 					final Game game3 = xml3.parseGame();
-					leaguechoice = (game3.getCurrentLeague());
+					leaguechoice = (game3.getCurrentLeague());					
+					teams = leagues.get(leaguechoice).getTeams();
 					teamchoiceint = (game3.getCurrentTeam());
+					players = teams.get(teamchoiceint).getPlayers();
+					scheme = game3.getSchedule();
+					System.out.println(scheme);
+					for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+						playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+						final int a = i;
+						playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
+							@Override
+							public void handle(ActionEvent arg0){
+								if(sellplayer == false){
+									playerchoiceint = a;
+									playeraction.fire();
+								}
+								else{
+									algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
+									sellplayer = false;
+									select.fire();
+								}
+							}
+						});
+					}
+					game3.setSchedule(scheme);
 					currentday = (game3.getCurrentDay());
 					currentplayround = (game3.getCurrentPlayRound());
+					rank = rank.generate(scheme);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -397,12 +446,36 @@ public class javafx extends Application{
 			@Override
 			public void handle(ActionEvent arg0){
 				try {
-					final XML xml4 = new XML("toms_more_teams.xml");
+					final XML xml4 = new XML(savelocation + "/save4.xml");
 					final Game game4 = xml4.parseGame();
-					leaguechoice = (game4.getCurrentLeague());
+					leaguechoice = (game4.getCurrentLeague());					
+					teams = leagues.get(leaguechoice).getTeams();
 					teamchoiceint = (game4.getCurrentTeam());
+					players = teams.get(teamchoiceint).getPlayers();
+					scheme = game4.getSchedule();
+					System.out.println(scheme);
+					for(int i = 0; i < teams.get(teamchoiceint).getPlayers().size();i++){
+						playerbuttons.add(new Button(players.get(i).getFirstname().toString() + " " + players.get(i).getSurname().toString()));
+						final int a = i;
+						playerbuttons.get(i).setOnAction(new EventHandler<ActionEvent>(){
+							@Override
+							public void handle(ActionEvent arg0){
+								if(sellplayer == false){
+									playerchoiceint = a;
+									playeraction.fire();
+								}
+								else{
+									algorithm.Sell(teams.get(teamchoiceint).getPlayers().get(a));
+									sellplayer = false;
+									select.fire();
+								}
+							}
+						});
+					}
+					game4.setSchedule(scheme);
 					currentday = (game4.getCurrentDay());
 					currentplayround = (game4.getCurrentPlayRound());
+					rank = rank.generate(scheme);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
