@@ -153,6 +153,7 @@ public class TransferAlgorithm {
 									return;
 								}	
 							}
+							i++;
 						}	
 					}
 				}
