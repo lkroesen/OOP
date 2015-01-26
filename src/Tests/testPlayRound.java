@@ -14,5 +14,4 @@ public class testPlayRound {
 		assertEquals(pr.toString(), "PlayRound [Friday=null, Saturday=null, Sunday=null, RoundNumber=1, getFriday()=null, getSaturday()=null, getSunday()=null, getRoundNumber()=1]");
 	}
 
-	
 }
