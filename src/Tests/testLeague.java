@@ -106,45 +106,6 @@ public class testLeague {
 		League l1 = new League(1,"Eredivisie","Holland");
 		assertNotEquals(l1.toString(),"'nddnjfnsdknfksd n");
 	}
-
-	/*@Test
-	public void testTeams()
-	{
-		League lr = new League(2, "ere", "hol");
-
-		ArrayList<Team> tl = new ArrayList<Team>();
-		Team t = new Team(1,"hi");
-		lr.setTeams(tl);
-		tl.add(t);
-		lr.addTeam(t);
-		
-		assertEquals(lr.getTeamById(2), t);
-		assertEquals(lr.getTeamByName("hi"), t);
-		
-		Team t2 = new Team(4,"di");
-		Team t3 = new Team(3,"fi");
-		lr.addTeam(t2);
-		lr.addTeam(t3);
-		League lf5 = new League(2,"hi","ho", null);
-		tl.add(t2);
-		tl.add(t3);
-		
-		assertEquals(lr.getTeamById(4), t2);
-		assertEquals(lr.getTeamByName("fi"), t3);
-		assertEquals(lr.getTeamByName(""), t);
-		assertEquals(lr.getTeams(),tl);
-		League lf = new League(2,"hi","ho", tl);
-		League lf2 = new League(3,"hi","ho", tl);
-		League lf3 = new League(2,"h0","ho", tl);
-		League lf4 = new League(2,"hi","h0", tl);
-
-		assertNotEquals(lf, lf2);
-		assertNotEquals(lf, lf3);
-		assertNotEquals(lf, lf4);
-		assertNotEquals(lf, lf5);
-		assertNotEquals(lf, t2);
-		assertNotEquals(lf, lr);
-	}*/
 	
 	@Test
 	public void testTeams1()

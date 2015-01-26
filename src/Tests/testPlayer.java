@@ -41,29 +41,102 @@ public class testPlayer {
 	}
 	
 	@Test
-	public void Branches()
+	public void Branches1()
 	{
 		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
 		Player p1 = new Player(2,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
-		Player p2 = new Player(1,"rjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
-		Player p3 = new Player(1,"Arjen","obben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
-		Player p4 = new Player(1,"Arjen","Robben",(byte)5,4,6,(byte)88,(byte)76,(byte)82,40000000);
-		Player p5 = new Player(1,"Arjen","Robben",(byte)15,3,6,(byte)88,(byte)76,(byte)82,40000000);
-		Player p6 = new Player(1,"Arjen","Robben",(byte)15,4,2,(byte)88,(byte)76,(byte)82,40000000);
-		Player p7 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)98,(byte)76,(byte)82,40000000);
-		Player p8 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)86,(byte)82,40000000);
-		Player p9 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)72,40000000);
-		Player p10 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,4000);
 		
 		assertNotEquals(p,p1);
+		
+	}
+	
+	@Test
+	public void Branches2()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p2 = new Player(1,"rjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		
 		assertNotEquals(p,p2);
+		
+	}
+	
+	@Test
+	public void Branches3()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p3 = new Player(1,"Arjen","obben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		
 		assertNotEquals(p,p3);
+		
+		
+	}
+	
+	@Test
+	public void Branches4()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p4 = new Player(1,"Arjen","Robben",(byte)5,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		
 		assertNotEquals(p,p4);
+		
+	}
+	
+	@Test
+	public void Branches5()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p5 = new Player(1,"Arjen","Robben",(byte)15,3,6,(byte)88,(byte)76,(byte)82,40000000);
+			
 		assertNotEquals(p,p5);
+	
+	}
+	
+	@Test
+	public void Branches6()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p6 = new Player(1,"Arjen","Robben",(byte)15,4,2,(byte)88,(byte)76,(byte)82,40000000);
+		
 		assertNotEquals(p,p6);
+		
+	}
+	
+	@Test
+	public void Branches7()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p7 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)98,(byte)76,(byte)82,40000000);
+		
 		assertNotEquals(p,p7);
+		
+	}
+	
+	@Test
+	public void Branches8()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p8 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)86,(byte)82,40000000);
+		
 		assertNotEquals(p,p8);
+		
+	}
+	
+	@Test
+	public void Branches9()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p9 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)72,40000000);
+		
 		assertNotEquals(p,p9);
+		
+	}
+	
+	@Test
+	public void Branches10()
+	{
+		Player p = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,40000000);
+		Player p10 = new Player(1,"Arjen","Robben",(byte)15,4,6,(byte)88,(byte)76,(byte)82,4000);
+		
 		assertNotEquals(p,p10);
 		
 	}
