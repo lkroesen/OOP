@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import model.League;
 import model.Team;
 import model.Player;
 import model.Match;
@@ -82,7 +83,13 @@ public class BettingTest {
 		Schedule s = new Schedule();
 		s.setS(sch);
 		
-		ArrayList<Betting> b = Betting.Before_Match(s, 0);
+		ArrayList<Team> fyk = new ArrayList<Team>();
+		fyk.add(winners);
+		fyk.add(losers);
+		
+		League les = new League(1, "BETTING TEST LEAGUE", "GANADIA", fyk);
+		
+		ArrayList<Betting> b = Betting.Before_Match(s, 0, les);
 		
 		ArrayList<Team> TeamList = new ArrayList<Team>();
 		Team P_Team = new Team(4, "Player");

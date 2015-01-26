@@ -3,6 +3,7 @@ package AI;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import model.League;
 import model.Match;
 import model.Team;
 
@@ -127,7 +128,7 @@ public class Betting
 	 * Input the week for which the bet is to be generated
 	 * @return
 	 */
-	public static ArrayList<Betting> Before_Match (Schedule s, int c_week)
+	public static ArrayList<Betting> Before_Match (Schedule s, int c_week, League L)
 	{
 		// Get a list of upcoming matches this week
 		// check which matches have been played
@@ -150,7 +151,7 @@ public class Betting
 			
 			for (int d = 0; d < 1000; d++)
 			{
-				String a[] = PlayMatch.play(ListOfBets.get(c)).split("-");
+				String a[] = PlayMatch.play(ListOfBets.get(c), L).split("-");
 				home = Integer.parseInt(a[0]);
 				out = Integer.parseInt(a[1]);
 				
