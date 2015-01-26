@@ -351,7 +351,7 @@ public class javafx extends Application{
 					game1.setSchedule(scheme);
 					currentday = (game1.getCurrentDay());
 					currentplayround = (game1.getCurrentPlayRound());
-					rank = rank.generate(scheme);
+					rank = rank.generate(scheme,leagues.get(leaguechoice));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -391,7 +391,7 @@ public class javafx extends Application{
 					game2.setSchedule(scheme);
 					currentday = (game2.getCurrentDay());
 					currentplayround = (game2.getCurrentPlayRound());
-					rank = rank.generate(scheme);
+					rank = rank.generate(scheme,leagues.get(leaguechoice));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -431,7 +431,7 @@ public class javafx extends Application{
 					game3.setSchedule(scheme);
 					currentday = (game3.getCurrentDay());
 					currentplayround = (game3.getCurrentPlayRound());
-					rank = rank.generate(scheme);
+					rank = rank.generate(scheme,leagues.get(leaguechoice));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -471,7 +471,7 @@ public class javafx extends Application{
 					game4.setSchedule(scheme);
 					currentday = (game4.getCurrentDay());
 					currentplayround = (game4.getCurrentPlayRound());
-					rank = rank.generate(scheme);
+					rank = rank.generate(scheme,leagues.get(leaguechoice));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -1169,7 +1169,7 @@ public class javafx extends Application{
 					
 							@Override
 							public void handle(ActionEvent arg0){
-								bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, a/2, true);
+								bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround, leagues.get(leaguechoice)), teams.get(teamchoiceint).getBudget(), teams, a/2, true);
 								betmade = true;
 								selectbudget.fire();
 							}
@@ -1180,7 +1180,7 @@ public class javafx extends Application{
 					
 							@Override
 							public void handle(ActionEvent arg0){
-								bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround), teams.get(teamchoiceint).getBudget(), teams, (int) (a/2), false);
+								bets = Betting.Bet_Maker(Betting.Before_Match(scheme,currentplayround, leagues.get(leaguechoice)), teams.get(teamchoiceint).getBudget(), teams, (int) (a/2), false);
 								betmade = true;
 								selectbudget.fire();
 							}
@@ -1777,7 +1777,7 @@ public class javafx extends Application{
 					matchid = i;
 				}
 				String match = (leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home()).getName() + " vs " + leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away()).getName());
-				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i)));
+				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i), leagues.get(leaguechoice)));
 				Label matchlabel = new Label(match);
 				Label resultlabel = new Label(result);
 				scheme.getS().get(currentplayround).getFriday().getMatches().get(i).setResult(result);
@@ -1848,7 +1848,7 @@ public class javafx extends Application{
 					matchid = i;
 				}
 				String match = (leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home()).getName() + " vs " + leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away()).getName());
-				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i)));
+				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i), leagues.get(leaguechoice)));
 				Label matchlabel = new Label(match);
 				Label resultlabel = new Label(result);
 				scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).setResult(result);
@@ -1921,7 +1921,7 @@ public class javafx extends Application{
 					matchid = i;
 				}
 				String match = (leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home()).getName() + " vs " + leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away()).getName());
-				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i)));
+				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i), leagues.get(leaguechoice)));
 				Label matchlabel = new Label(match);
 				Label resultlabel = new Label(result);
 				scheme.getS().get(currentplayround).getSunday().getMatches().get(i).setResult(result);
@@ -2061,7 +2061,7 @@ public class javafx extends Application{
 			for(int i = 0; i < teams.size(); i++){
 				AI.Team_Training_User.Core(teams.get(i));
 			}
-			rank = Ranking.generate(scheme);
+			rank = Ranking.generate(scheme, leagues.get(leaguechoice));
 		}
 		Game.setCurrentDay(currentday);
 		if(scheme.getS().size() == currentplayround){
@@ -2098,7 +2098,7 @@ public class javafx extends Application{
 				teams = leagues.get(leaguechoice).getTeams();
 				scheme = Scheduler.scheduler(game.getLeagues().get(leaguechoice));
 				game.setSchedule(scheme);
-				rank = Ranking.generate(scheme);
+				rank = Ranking.generate(scheme, leagues.get(leaguechoice));
 				final ArrayList<Button> teambuttons = new ArrayList<Button>();
 					for(int i = 0;i < teams.size();i++){
 						String teamname =teams.get(i).getName().toString();
