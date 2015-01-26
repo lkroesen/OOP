@@ -240,7 +240,9 @@ public class XML {
 												Element home = (Element)homeNode;
 
 												// Get home team id
-												int team = 0;
+												int team = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
+												matchObject.setTeam_home(team);
+
 												NodeList homeEvents = home.getElementsByTagName("event");
 												for(int d = 0; d < homeEvents.getLength(); d++){
 													// Loop through events
@@ -671,7 +673,7 @@ public class XML {
 						Element eHomeEvents = doc.createElement("team_home");
 
 						// Set team_home attributes
-						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
+						eHomeEvents.setAttribute("id", m.getTeam_home() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_home()) {
@@ -702,7 +704,7 @@ public class XML {
 						Element eAwayEvents = doc.createElement("team_away");
 
 						// Set team_home attributes
-						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
+						eAwayEvents.setAttribute("id", m.getTeam_away() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_away()) {
@@ -745,7 +747,7 @@ public class XML {
 						Element eHomeEvents = doc.createElement("team_home");
 
 						// Set team_home attributes
-						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
+						eHomeEvents.setAttribute("id", m.getTeam_home() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_home()) {
@@ -776,7 +778,7 @@ public class XML {
 						Element eAwayEvents = doc.createElement("team_away");
 
 						// Set team_home attributes
-						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
+						eAwayEvents.setAttribute("id", m.getTeam_away() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_away()) {
@@ -819,7 +821,7 @@ public class XML {
 						Element eHomeEvents = doc.createElement("team_home");
 
 						// Set team_home attributes
-						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
+						eHomeEvents.setAttribute("id", m.getTeam_home() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_home()) {
@@ -850,7 +852,7 @@ public class XML {
 						Element eAwayEvents = doc.createElement("team_away");
 
 						// Set team_away attributes
-						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
+						eAwayEvents.setAttribute("id", m.getTeam_away() + "");
 
 						// Loop through AwayEvents
 						for (Event e : m.getEvents_away()) {
