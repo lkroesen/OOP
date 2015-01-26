@@ -274,7 +274,8 @@ public class XML {
 												Element away = (Element)awayNode;
 
 												// Get away team id
-												int team = 0;
+												int team = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
+												matchObject.setTeam_away(team);
 
 												NodeList awayEvents = away.getElementsByTagName("event");
 												for(int f = 0; f < awayEvents.getLength(); f++){
@@ -337,7 +338,8 @@ public class XML {
 												Element home = (Element)homeNode;
 
 												// Get home team id
-												int team = 0;
+												int team = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
+												matchObject.setTeam_home(team);
 
 												NodeList homeEvents = home.getElementsByTagName("event");
 												for(int d = 0; d < homeEvents.getLength(); d++){
@@ -369,7 +371,8 @@ public class XML {
 												Element away = (Element)awayNode;
 
 												// Get away team id
-												int team = 0;
+												int team = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
+												matchObject.setTeam_away(team);
 
 												NodeList awayEvents = away.getElementsByTagName("event");
 												for(int f = 0; f < awayEvents.getLength(); f++){
@@ -433,7 +436,8 @@ public class XML {
 												Element home = (Element)homeNode;
 
 												// Get home team id
-												int team = 0;
+												int team = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
+												matchObject.setTeam_home(team);
 
 												NodeList homeEvents = home.getElementsByTagName("event");
 												for(int d = 0; d < homeEvents.getLength(); d++){
@@ -465,7 +469,8 @@ public class XML {
 												Element away = (Element)awayNode;
 
 												// Get away team id
-												int team = 0;
+												int team = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
+												matchObject.setTeam_away(team);
 
 												NodeList awayEvents = away.getElementsByTagName("event");
 												for(int f = 0; f < awayEvents.getLength(); f++){
