@@ -89,7 +89,6 @@ public class XML {
 			// Create instance of Game with appropriate settings
 			game = new Game(id, name, currentDay, currentTeam, currentLeague, currentPlayRound, null);
 
-<<<<<<< HEAD
 			// Get Schedule
 			NodeList scheduleData = gameNode.getElementsByTagName("schedule");
 
@@ -546,12 +545,9 @@ public class XML {
 					}
 
 				}
-
-				game.setSchedule(mSchedule);
 			}
-=======
 			game.setSchedule(parseSchedule(gameNode));
->>>>>>> origin/master
+
 			
 			// Get transfer data			
 			NodeList transferData = gameNode.getElementsByTagName("transfer");
