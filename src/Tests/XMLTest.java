@@ -2,6 +2,7 @@ package Tests;
 
 import static org.junit.Assert.*;
 
+import AI.Schedule;
 import model.Game;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -14,6 +15,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -23,10 +25,11 @@ import java.io.IOException;
 public class XMLTest{
 
     @Test
-    public void testXML(){
+    public void testParseXML(){
         try {
             XML xml = new XML("src\\toms_more_teams.xml");
             Game g = xml.parseGame();
+            assertTrue(g instanceof Game);
             assertTrue(XML.writeGame(g, "test_write_xml.xml"));
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -40,7 +43,36 @@ public class XMLTest{
     }
 
     @Test
-    public void testGetAndAttribute() throws ParserConfigurationException, IOException, SAXException {
+    public void testWriteXML(){
+        try {
+            XML xml = new XML("src\\toms_more_teams.xml");
+            Game g = new Game(0, "test_game", 0, 0, 0, 0, null);
+            assertTrue(XML.writeGame(g, "test_write_xml.xml"));
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testParseSchedule() throws ParserConfigurationException, IOException, SAXException {
+        XML xml = new XML("src\\XML_Schedule_test.xml");
+
+        DocumentBuilder builder = xml.getBuilder();
+
+        Document document = builder.parse(new FileInputStream("src\\XML_Schedule_test.xml"));
+        document.normalize();
+
+        Element root = document.getDocumentElement();
+
+        Object schedule = xml.parseSchedule(root);
+
+        assertTrue(schedule instanceof Schedule);
+    }
+
+    @Test
+    public void testGetAttribute() throws ParserConfigurationException, IOException, SAXException {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); // Open factory
         factory.setIgnoringElementContentWhitespace(true);
