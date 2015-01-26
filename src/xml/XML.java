@@ -409,7 +409,7 @@ public class XML {
 						PlayDay pSunday = new PlayDay();
 
 						for(int a = 0; a < sundayData.getLength(); a++){
-							Node sundayNode = saturdayData.item(a);
+							Node sundayNode = sundayData.item(a);
 							if(sundayNode.getNodeType() == Node.ELEMENT_NODE){
 								Element sunday = (Element)sundayNode;
 
