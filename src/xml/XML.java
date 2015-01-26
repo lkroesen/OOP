@@ -142,8 +142,7 @@ public class XML {
 													Element home = (Element)homeNode;
 
 													// Get home team id
-													int thid = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
-													String thn = getAttribute(home.getAttributes(), "name");
+													int team = 0;
 													NodeList homeEvents = home.getElementsByTagName("event");
 													for(int d = 0; d < homeEvents.getLength(); d++){
 														// Loop through events
@@ -163,29 +162,6 @@ public class XML {
 															matchObject.addEventHome(new Event(player, type, minute, outfor));
 														}
 													}
-													matchObject.setTeam_home(new Team(thid, thn));
-													NodeList playerData = match.getElementsByTagName("player");
-													for (int li = 0; li < playerData.getLength(); li++) {
-														// Loop through players
-														Element player = (Element)playerData.item(li);
-
-														// Get player attributes
-														int pid = Integer.parseInt(getAttribute(player.getAttributes(), "id"));
-														String pname = getChildValue(player, "name");
-														String surname = getChildValue(player, "surname");
-														byte number = Byte.parseByte(getChildValue(player, "number"));
-
-														int player_type = Integer.parseInt(getChildValue(player, "type"));
-														int player_position = Integer.parseInt(getChildValue(player, "position"));
-														byte rating_offensive = Byte.parseByte(getChildValue(player, "offensiveRating"));
-														byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
-														byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
-														
-														int price = Integer.parseInt(getChildValue(player, "price"));
-
-														// Create instance of player and add him to the current team
-														matchObject.getTeam_home().addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
-													}
 												}
 											}
 
@@ -197,8 +173,7 @@ public class XML {
 													Element away = (Element)awayNode;
 
 													// Get away team id
-													int taid = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
-													String tan = getAttribute(away.getAttributes(), "name");
+													int team = 0;
 
 													NodeList awayEvents = away.getElementsByTagName("event");
 													for(int f = 0; f < awayEvents.getLength(); f++){
@@ -218,29 +193,6 @@ public class XML {
 															// Add Event to match object
 															matchObject.addEventAway(new Event(player, type, minute, outfor));
 														}
-													}
-													matchObject.setTeam_away(new Team(taid, tan));
-													NodeList playerData = match.getElementsByTagName("player");
-													for (int li = 0; li < playerData.getLength(); li++) {
-														// Loop through players
-														Element player = (Element)playerData.item(li);
-
-														// Get player attributes
-														int pid = Integer.parseInt(getAttribute(player.getAttributes(), "id"));
-														String pname = getChildValue(player, "name");
-														String surname = getChildValue(player, "surname");
-														byte number = Byte.parseByte(getChildValue(player, "number"));
-
-														int player_type = Integer.parseInt(getChildValue(player, "type"));
-														int player_position = Integer.parseInt(getChildValue(player, "position"));
-														byte rating_offensive = Byte.parseByte(getChildValue(player, "offensiveRating"));
-														byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
-														byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
-														
-														int price = Integer.parseInt(getChildValue(player, "price"));
-
-														// Create instance of player and add him to the current team
-														matchObject.getTeam_away().addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
 													}
 												}
 											}
@@ -284,8 +236,7 @@ public class XML {
 													Element home = (Element)homeNode;
 
 													// Get home team id
-													int thid = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
-													String thn = getAttribute(home.getAttributes(), "name");
+													int team = 0;
 
 													NodeList homeEvents = home.getElementsByTagName("event");
 													for(int d = 0; d < homeEvents.getLength(); d++){
@@ -306,29 +257,6 @@ public class XML {
 															matchObject.addEventHome(new Event(player, type, minute, outfor));
 														}
 													}
-													matchObject.setTeam_home(new Team(thid, thn));
-													NodeList playerData = match.getElementsByTagName("player");
-													for (int li = 0; li < playerData.getLength(); li++) {
-														// Loop through players
-														Element player = (Element)playerData.item(li);
-
-														// Get player attributes
-														int pid = Integer.parseInt(getAttribute(player.getAttributes(), "id"));
-														String pname = getChildValue(player, "name");
-														String surname = getChildValue(player, "surname");
-														byte number = Byte.parseByte(getChildValue(player, "number"));
-
-														int player_type = Integer.parseInt(getChildValue(player, "type"));
-														int player_position = Integer.parseInt(getChildValue(player, "position"));
-														byte rating_offensive = Byte.parseByte(getChildValue(player, "offensiveRating"));
-														byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
-														byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
-														
-														int price = Integer.parseInt(getChildValue(player, "price"));
-
-														// Create instance of player and add him to the current team
-														matchObject.getTeam_home().addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
-													}
 												}
 											}
 
@@ -340,8 +268,7 @@ public class XML {
 													Element away = (Element)awayNode;
 
 													// Get away team id
-													int taid = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
-													String tan = getAttribute(away.getAttributes(), "name");
+													int team = 0;
 
 													NodeList awayEvents = away.getElementsByTagName("event");
 													for(int f = 0; f < awayEvents.getLength(); f++){
@@ -362,29 +289,6 @@ public class XML {
 															matchObject.addEventAway(new Event(player, type, minute, outfor));
 														}
 													}
-													matchObject.setTeam_away(new Team(taid, tan));
-													NodeList playerData = match.getElementsByTagName("player");
-													for (int li = 0; li < playerData.getLength(); li++) {
-														// Loop through players
-														Element player = (Element)playerData.item(li);
-
-														// Get player attributes
-														int pid = Integer.parseInt(getAttribute(player.getAttributes(), "id"));
-														String pname = getChildValue(player, "name");
-														String surname = getChildValue(player, "surname");
-														byte number = Byte.parseByte(getChildValue(player, "number"));
-
-														int player_type = Integer.parseInt(getChildValue(player, "type"));
-														int player_position = Integer.parseInt(getChildValue(player, "position"));
-														byte rating_offensive = Byte.parseByte(getChildValue(player, "offensiveRating"));
-														byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
-														byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
-														
-														int price = Integer.parseInt(getChildValue(player, "price"));
-
-														// Create instance of player and add him to the current team
-														matchObject.getTeam_away().addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
-													}
 												}
 											}
 
@@ -401,7 +305,7 @@ public class XML {
 							PlayDay pSunday = new PlayDay();
 
 							for(int a = 0; a < sundayData.getLength(); a++){
-								Node sundayNode = sundayData.item(a);
+								Node sundayNode = saturdayData.item(a);
 								if(sundayNode.getNodeType() == Node.ELEMENT_NODE){
 									Element sunday = (Element)sundayNode;
 
@@ -428,8 +332,7 @@ public class XML {
 													Element home = (Element)homeNode;
 
 													// Get home team id
-													int thid = Integer.parseInt(getAttribute(home.getAttributes(), "id"));
-													String thn = getAttribute(home.getAttributes(), "name");
+													int team = 0;
 
 													NodeList homeEvents = home.getElementsByTagName("event");
 													for(int d = 0; d < homeEvents.getLength(); d++){
@@ -450,29 +353,6 @@ public class XML {
 															matchObject.addEventHome(new Event(player, type, minute, outfor));
 														}
 													}
-													matchObject.setTeam_home(new Team(thid, thn));
-													NodeList playerData = match.getElementsByTagName("player");
-													for (int li = 0; li < playerData.getLength(); li++) {
-														// Loop through players
-														Element player = (Element)playerData.item(li);
-
-														// Get player attributes
-														int pid = Integer.parseInt(getAttribute(player.getAttributes(), "id"));
-														String pname = getChildValue(player, "name");
-														String surname = getChildValue(player, "surname");
-														byte number = Byte.parseByte(getChildValue(player, "number"));
-
-														int player_type = Integer.parseInt(getChildValue(player, "type"));
-														int player_position = Integer.parseInt(getChildValue(player, "position"));
-														byte rating_offensive = Byte.parseByte(getChildValue(player, "offensiveRating"));
-														byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
-														byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
-														
-														int price = Integer.parseInt(getChildValue(player, "price"));
-
-														// Create instance of player and add him to the current team
-														matchObject.getTeam_home().addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
-													}
 												}
 											}
 
@@ -484,8 +364,7 @@ public class XML {
 													Element away = (Element)awayNode;
 
 													// Get away team id
-													int taid = Integer.parseInt(getAttribute(away.getAttributes(), "id"));
-													String tan = getAttribute(away.getAttributes(), "name");
+													int team = 0;
 
 													NodeList awayEvents = away.getElementsByTagName("event");
 													for(int f = 0; f < awayEvents.getLength(); f++){
@@ -505,29 +384,6 @@ public class XML {
 															// Add Event to match object
 															matchObject.addEventAway(new Event(player, type, minute, outfor));
 														}
-													}
-													matchObject.setTeam_away(new Team(taid, tan));
-													NodeList playerData = match.getElementsByTagName("player");
-													for (int li = 0; li < playerData.getLength(); li++) {
-														// Loop through players
-														Element player = (Element)playerData.item(li);
-
-														// Get player attributes
-														int pid = Integer.parseInt(getAttribute(player.getAttributes(), "id"));
-														String pname = getChildValue(player, "name");
-														String surname = getChildValue(player, "surname");
-														byte number = Byte.parseByte(getChildValue(player, "number"));
-
-														int player_type = Integer.parseInt(getChildValue(player, "type"));
-														int player_position = Integer.parseInt(getChildValue(player, "position"));
-														byte rating_offensive = Byte.parseByte(getChildValue(player, "offensiveRating"));
-														byte rating_def = Byte.parseByte(getChildValue(player, "defensiveRating"));
-														byte stamina = Byte.parseByte(getChildValue(player, "stamina"));
-														
-														int price = Integer.parseInt(getChildValue(player, "price"));
-
-														// Create instance of player and add him to the current team
-														matchObject.getTeam_away().addPlayer(new Player(pid, pname, surname, number, player_type, player_position, rating_offensive, rating_def, stamina, price));
 													}
 												}
 											}
@@ -1130,8 +986,6 @@ public class XML {
 
 						// Set team_home attributes
 						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
-						eHomeEvents.setAttribute("name", m.getTeam_home().getName() + "");
-						eHomeEvents.setAttribute("player", m.getTeam_home().getPlayers() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_home()) {
@@ -1163,8 +1017,6 @@ public class XML {
 
 						// Set team_home attributes
 						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
-						eAwayEvents.setAttribute("name", m.getTeam_away().getName() + "");
-						eAwayEvents.setAttribute("player", m.getTeam_away().getPlayers() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_away()) {
@@ -1208,8 +1060,6 @@ public class XML {
 
 						// Set team_home attributes
 						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
-						eHomeEvents.setAttribute("name", m.getTeam_home().getName() + "");
-						eHomeEvents.setAttribute("player", m.getTeam_home().getPlayers() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_home()) {
@@ -1241,8 +1091,6 @@ public class XML {
 
 						// Set team_home attributes
 						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
-						eAwayEvents.setAttribute("name", m.getTeam_away().getName() + "");
-						eAwayEvents.setAttribute("player", m.getTeam_away().getPlayers() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_away()) {
@@ -1286,8 +1134,6 @@ public class XML {
 
 						// Set team_home attributes
 						eHomeEvents.setAttribute("id", m.getTeam_home().getId() + "");
-						eHomeEvents.setAttribute("name", m.getTeam_home().getName() + "");
-						eHomeEvents.setAttribute("player", m.getTeam_home().getPlayers() + "");
 
 						// Loop through HomeEvents
 						for (Event e : m.getEvents_home()) {
@@ -1319,8 +1165,6 @@ public class XML {
 
 						// Set team_away attributes
 						eAwayEvents.setAttribute("id", m.getTeam_away().getId() + "");
-						eAwayEvents.setAttribute("name", m.getTeam_away().getName() + "");
-						eAwayEvents.setAttribute("player", m.getTeam_away().getPlayers() + "");
 
 						// Loop through AwayEvents
 						for (Event e : m.getEvents_away()) {
@@ -1346,7 +1190,7 @@ public class XML {
 
 						eMatch.appendChild(eAwayEvents);
 
-						eSunday.appendChild(eMatch);
+						eSaturday.appendChild(eMatch);
 					}
 					ePlayRound.appendChild(eSunday);
 
