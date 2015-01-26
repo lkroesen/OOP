@@ -177,7 +177,7 @@ public class Betting
 			{
 				rateone = (double) 0.5;
 				ratetwo = (double) 0.5;
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "tie", ListOfBets.get(c).getId());
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home(), ListOfBets.get(c).getTeam_away(), "tie", ListOfBets.get(c).getId());
 				BetList.add(bet);
 			}
 			
@@ -190,7 +190,7 @@ public class Betting
 				System.out.println("Winning out-rate: " + ratetwo);
 				
 				
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home().getId(), ListOfBets.get(c).getTeam_away().getId(), "home", ListOfBets.get(c).getId());
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_home(), ListOfBets.get(c).getTeam_away(), "home", ListOfBets.get(c).getId());
 				BetList.add(bet);
 			}
 			
@@ -202,7 +202,7 @@ public class Betting
 				System.out.println("Wining out-rate: " + rateone);
 				System.out.println("Winning home-rate: " + ratetwo);
 				
-				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_away().getId(), ListOfBets.get(c).getTeam_home().getId(), "away", ListOfBets.get(c).getId());
+				Betting bet = new Betting(rateone, ratetwo, ListOfBets.get(c).getTeam_away(), ListOfBets.get(c).getTeam_home(), "away", ListOfBets.get(c).getId());
 				BetList.add(bet);
 			}
 		
