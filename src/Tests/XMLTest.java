@@ -2,8 +2,11 @@ package Tests;
 
 import static org.junit.Assert.*;
 
+import AI.PlayDay;
+import AI.PlayRound;
 import AI.Schedule;
 import model.Game;
+import model.Match;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -14,9 +17,17 @@ import org.junit.Test;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by Joris on 14-1-2015.
@@ -29,8 +40,7 @@ public class XMLTest{
         try {
             XML xml = new XML("src\\toms_more_teams.xml");
             Game g = xml.parseGame();
-            assertTrue(g instanceof Game);
-            assertTrue(XML.writeGame(g, "test_write_xml.xml"));
+            assertNotNull(g);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -47,7 +57,7 @@ public class XMLTest{
         try {
             XML xml = new XML("src\\toms_more_teams.xml");
             Game g = new Game(0, "test_game", 0, 0, 0, 0, null);
-            assertTrue(XML.writeGame(g, "test_write_xml.xml"));
+            assertTrue(xml.writeGame(g, "test_write_xml.xml"));
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -68,7 +78,29 @@ public class XMLTest{
 
         Object schedule = xml.parseSchedule(root);
 
-        assertTrue(schedule instanceof Schedule);
+        assertNotNull(schedule instanceof Schedule);
+    }
+
+    @Test
+    public void testWriteSchedule() throws ParserConfigurationException, TransformerException {
+        XML xml = new XML("src\\XML_Schedule_test.xml");
+
+        DocumentBuilder builder = xml.getBuilder();
+
+        Document doc = builder.newDocument();
+        Element rootElement = doc.createElement("root");
+        doc.appendChild(rootElement);
+
+        Schedule schedule = new Schedule();
+        PlayDay friday = new PlayDay();
+        PlayDay saturday = new PlayDay();
+        PlayDay sunday = new PlayDay();
+        PlayRound playRound = new PlayRound(friday, saturday, sunday, 1);
+
+        schedule.add(playRound);
+
+        assertNotNull(rootElement.appendChild(xml.writeSchedule(schedule, doc)));
+
     }
 
     @Test
