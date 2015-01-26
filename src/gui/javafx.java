@@ -1777,7 +1777,7 @@ public class javafx extends Application{
 					matchid = i;
 				}
 				String match = (leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_home()).getName() + " vs " + leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getFriday().getMatches().get(i).getTeam_away()).getName());
-				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i), leagues.get(leaguechoice)));
+				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getFriday().getMatches().get(i), leagues.get(leaguechoice), true));
 				Label matchlabel = new Label(match);
 				Label resultlabel = new Label(result);
 				scheme.getS().get(currentplayround).getFriday().getMatches().get(i).setResult(result);
@@ -1848,7 +1848,7 @@ public class javafx extends Application{
 					matchid = i;
 				}
 				String match = (leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_home()).getName() + " vs " + leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).getTeam_away()).getName());
-				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i), leagues.get(leaguechoice)));
+				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSaturday().getMatches().get(i), leagues.get(leaguechoice), true));
 				Label matchlabel = new Label(match);
 				Label resultlabel = new Label(result);
 				scheme.getS().get(currentplayround).getSaturday().getMatches().get(i).setResult(result);
@@ -1921,7 +1921,7 @@ public class javafx extends Application{
 					matchid = i;
 				}
 				String match = (leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_home()).getName() + " vs " + leagues.get(leaguechoice).getTeams().get(scheme.getS().get(currentplayround).getSunday().getMatches().get(i).getTeam_away()).getName());
-				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i), leagues.get(leaguechoice)));
+				String result = (PlayMatch.play(scheme.getS().get(currentplayround).getSunday().getMatches().get(i), leagues.get(leaguechoice), true));
 				Label matchlabel = new Label(match);
 				Label resultlabel = new Label(result);
 				scheme.getS().get(currentplayround).getSunday().getMatches().get(i).setResult(result);

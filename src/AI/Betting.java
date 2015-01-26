@@ -151,7 +151,7 @@ public class Betting
 			
 			for (int d = 0; d < 1000; d++)
 			{
-				String a[] = PlayMatch.play(ListOfBets.get(c), L).split("-");
+				String a[] = PlayMatch.play(ListOfBets.get(c), L, false).split("-");
 				home = Integer.parseInt(a[0]);
 				out = Integer.parseInt(a[1]);
 				

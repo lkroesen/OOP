@@ -30,7 +30,7 @@ public class testPlayMatch {
 		
 		
 		Match match = new Match(1,1,t1.getId(),t2.getId());
-		match.setResult(PlayMatch.play(match, l));
+		match.setResult(PlayMatch.play(match, l, true));
 		assertNotNull(match.getResult());
 	}
 
