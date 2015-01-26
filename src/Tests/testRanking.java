@@ -43,7 +43,7 @@ public class testRanking {
 		// Ranking will work for any match that has a result
 		// if the match has no result it will not be used
 		// So, don't set a result EVER, unless a match has been played!
-		Ranking r = Ranking.generate(s);
+		Ranking r = Ranking.generate(s, leaguee);
 		
 		boolean[] a = s.WeeksPlayed();
 		
@@ -84,7 +84,7 @@ public class testRanking {
 		// Ranking will work for any match that has a result
 		// if the match has no result it will not be used
 		// So, don't set a result EVER, unless a match has been played!
-		Ranking r = Ranking.generate(s);
+		Ranking r = Ranking.generate(s, leaguee);
 		
 		assertNotEquals(Ranking.CurrentRank(1, r),0);
 	}
@@ -119,7 +119,7 @@ public class testRanking {
 		// Ranking will work for any match that has a result
 		// if the match has no result it will not be used
 		// So, don't set a result EVER, unless a match has been played!
-		Ranking r = Ranking.generate(s);
+		Ranking r = Ranking.generate(s, leaguee);
 		
 		assertEquals(Ranking.CurrentRank(-1, r),1);
 	}

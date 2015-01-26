@@ -19,8 +19,8 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -38,8 +38,8 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -56,8 +56,8 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -74,8 +74,8 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -90,11 +90,11 @@ public class testMatch {
 		Event e = new Event(1,1,1,1);
 		Event e2 = new Event(2,2,2,2);
 
-		Match m2 = new Match(1, 2, t1, t2);
+		Match m2 = new Match(1, 2, 1, 2);
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -111,8 +111,8 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -130,12 +130,14 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
-		assertEquals(m.toString(),"Match [id=1, day=2, events_home=[Event [player=2, type=2, minute=2, outfor=2]], events_away=[Event [player=1, type=1, minute=1, outfor=1]], team_home=Team [id=2, name=Excelsior, players=[]], team_away=Team [id=1, name=Ajax, players=[]]]");
+		System.out.println(m.toString());
+		
+		assertEquals(m.toString(),"Match [id=1, day=2, events_home=[Event [player=2, type=2, minute=2, outfor=2]], events_away=[Event [player=1, type=1, minute=1, outfor=1]], team_home=1, team_away=2]");
 
 	}
 
@@ -148,11 +150,11 @@ public class testMatch {
 		Event e = new Event(1,1,1,1);
 		Event e2 = new Event(2,2,2,2);
 		
-		Match m3 = new Match(1,3,t1,t2);
+		Match m3 = new Match(1,3,1,2);
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -168,11 +170,11 @@ public class testMatch {
 		Event e = new Event(1,1,1,1);
 		Event e2 = new Event(2,2,2,2);
 		
-		Match m4 = new Match(0,2,t1,t2);
+		Match m4 = new Match(0,2,1,2);
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -187,11 +189,11 @@ public class testMatch {
 		Event e = new Event(1,1,1,1);
 		Event e2 = new Event(2,2,2,2);
 		
-		Match m6 = new Match(1,2,t1,t1);
+		Match m6 = new Match(1,2,1,1);
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 
@@ -206,11 +208,11 @@ public class testMatch {
 		Event e = new Event(1,1,1,1);
 		Event e2 = new Event(2,2,2,2);
 		
-		Match m5 = new Match(1,2,t2,t1);
+		Match m5 = new Match(1,2,2,1);
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 
@@ -228,8 +230,8 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -246,8 +248,8 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		
@@ -266,8 +268,8 @@ public class testMatch {
 		
 		Match m = new Match(1, 2);
 		m.setResult("1-1");
-		m.setTeam_home(t1);
-		m.setTeam_away(t2);
+		m.setTeam_home(1);
+		m.setTeam_away(2);
 		m.addEventAway(e);
 		m.addEventHome(e2);
 		

@@ -2,6 +2,7 @@ package AI;
 
 import java.util.Arrays;
 
+import model.League;
 import model.Match;
 import model.Team;
 
@@ -60,10 +61,10 @@ public class Ranking
 	 * @return
 	 * Returns a Ranking object with the current ranking
 	 */
-	public static Ranking generate(Schedule S)
+	public static Ranking generate(Schedule S, League L)
 	{
 		// Parse schedule to get all teams
-		Team[] aTeam = ParseSchedule(S);
+		Team[] aTeam = ParseSchedule(S, L);
 		int[] TeamScores = new int[aTeam.length];
 		// initalize everyone at 0 points
 		
@@ -109,7 +110,7 @@ public class Ranking
 	 * @return
 	 * Returns a list with all the teams
 	 */
-	public static Team[] ParseSchedule(Schedule S)
+	public static Team[] ParseSchedule(Schedule S, League l)
 	{
 		// look at all the matches in one week to determine all teams.
 		
@@ -123,14 +124,11 @@ public class Ranking
 		int gCounter = 0;
 		
 		// look at all the teams on friday
-		for(int e = 0; e < S.getS().get(0).getFriday().getMatches().size(); e++){
-			TeamList[gCounter] = S.getS().get(0).getFriday().getMatches().get(e).getTeam_home();
-			gCounter++;
-			TeamList[gCounter] = S.getS().get(0).getFriday().getMatches().get(e).getTeam_away();
-			gCounter++;
-			
+		for(int e = 0; e < TeamSize; e++){
+			TeamList[gCounter] = l.getTeams().get(gCounter);//S.getS().get(0).getFriday().getMatches().get(e).getTeam_home();
+			gCounter++;	
 		}
-		
+		/*
 		// look at all the teams on saturday
 		for(int e = 0; e < S.getS().get(0).getSaturday().getMatches().size(); e++){
 			TeamList[gCounter] = S.getS().get(0).getSaturday().getMatches().get(e).getTeam_home();
@@ -147,7 +145,7 @@ public class Ranking
 			gCounter++;
 			
 		}
-		
+		*/
 		return TeamList;
 	}
 	
@@ -160,10 +158,10 @@ public class Ranking
 	 * @return
 	 * Returns the location where the team is, if nothing is found defaults to 0
 	 */
-	public static int FindTeamAtLocation(Team[] TeamList, Team Team)
+	public static int FindTeamAtLocation(Team[] TeamList, int ID)
 	{
 		for (int f = 0; f < TeamList.length; f++)			
-			if (TeamList[f].getId() == Team.getId())
+			if (TeamList[f].getId() == ID)
 				return f;
 		//defaults to 0
 		return 0;
